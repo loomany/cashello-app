@@ -695,7 +695,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   serviceName: { ...legacyType.field, color: legacyColor.textPrimary, flex: 1 },
-  serviceBadge: { ...legacyType.caption, color: legacyColor.logoGreen },
+  serviceBadge: { ...legacyType.caption, color: legacyColor.ubetGreen },
   historyCard: {
     marginHorizontal: legacySpace.screenX,
     backgroundColor: legacyColor.surface,
