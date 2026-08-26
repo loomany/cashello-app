@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { legacyColor, legacyFontFamily, legacySpace } from '@/design/legacyTokens';
-import { SupportChatGlyph } from '@/features/legacyHome/SupportContactIcons';
+import { SupportHeadsetGlyph } from '@/features/legacyHome/SupportContactIcons';
 import {
   SUPPORT_FAB_AUTH_BOTTOM,
   SUPPORT_FAB_GUEST_BOTTOM,
@@ -25,12 +25,12 @@ export function SupportContactFab({ variant, onPress }: Props) {
     >
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={supportContactCopy.bonusLabel}
+        accessibilityLabel={`${supportContactCopy.sheetTitle}, ${supportContactCopy.bonusLabel}`}
         onPress={onPress}
         style={({ pressed }) => [styles.fab, pressed && styles.fabPressed]}
       >
         <View style={styles.iconBubble}>
-          <SupportChatGlyph />
+          <SupportHeadsetGlyph />
         </View>
         <Text style={styles.label}>{supportContactCopy.bonusLabel}</Text>
       </Pressable>

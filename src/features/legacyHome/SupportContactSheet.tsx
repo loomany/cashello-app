@@ -55,6 +55,7 @@ export function SupportContactSheet({ visible, onClose }: Props) {
       <View style={[styles.sheet, { paddingBottom: Math.max(insets.bottom, 16) + 8 }]}>
         <View style={styles.handle} />
         <View style={styles.head}>
+          <Text style={styles.title}>{supportContactCopy.sheetTitle}</Text>
           <Pressable
             accessibilityRole="button"
             accessibilityLabel="Закрыть"
@@ -133,14 +134,20 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   head: {
-    height: 32,
+    height: 36,
     justifyContent: 'center',
-    marginBottom: 8,
+    marginBottom: 12,
+  },
+  title: {
+    ...legacyType.homeSection,
+    color: legacyColor.textPrimary,
+    textAlign: 'center',
+    fontFamily: legacyFontFamily,
   },
   closeHit: {
     position: 'absolute',
     right: 0,
-    top: 0,
+    top: 2,
     width: 32,
     height: 32,
     borderRadius: 16,

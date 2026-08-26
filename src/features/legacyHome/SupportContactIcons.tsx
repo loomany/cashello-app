@@ -2,16 +2,25 @@ import Svg, { Circle, Path } from 'react-native-svg';
 
 import { legacyColor } from '@/design/legacyTokens';
 
-export function SupportChatGlyph() {
+/** Headset icon — reads as support / связь on the green FAB bubble. */
+export function SupportHeadsetGlyph() {
   return (
     <Svg width={18} height={18} viewBox="0 0 18 18">
       <Path
-        d="M4 7.8a4.8 4.8 0 0 1 9.6 0c0 2.1-1.3 3.9-3.2 4.7l-.3 1.4-1.4-.4c-1.9-.6-3.4-2.2-3.7-4.1-.1-.5-.1-.9-.1-1.2 0-.1 0-.3 0-.4Z"
-        fill={legacyColor.primaryOnPrimary}
+        d="M4.5 9.8a4.5 4.5 0 0 1 9 0"
+        stroke={legacyColor.primaryOnPrimary}
+        strokeWidth={1.4}
+        fill="none"
+        strokeLinecap="round"
       />
-      <Circle cx={7.4} cy={7.8} r={0.7} fill={legacyColor.primaryOnPrimary} />
-      <Circle cx={9} cy={7.8} r={0.7} fill={legacyColor.primaryOnPrimary} />
-      <Circle cx={10.6} cy={7.8} r={0.7} fill={legacyColor.primaryOnPrimary} />
+      <Path
+        d="M4.5 9.8v2.2A1.2 1.2 0 0 0 5.7 13.2H6.8V8.6H4.5zM13.5 9.8v2.2a1.2 1.2 0 0 1-1.2 1.2H11.2V8.6h2.3z"
+        stroke={legacyColor.primaryOnPrimary}
+        strokeWidth={1.4}
+        fill="none"
+        strokeLinejoin="round"
+      />
+      <Circle cx={9} cy={14.8} r={0.9} fill={legacyColor.primaryOnPrimary} />
     </Svg>
   );
 }
