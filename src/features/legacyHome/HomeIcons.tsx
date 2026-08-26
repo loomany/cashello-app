@@ -16,7 +16,7 @@ export function CashhelloBrand({
   const content = (
     <>
       <CashhelloMark size={size} />
-      <Text style={styles.brandName}>ashhello</Text>
+      <Text style={styles.brandName}>Cashhello</Text>
     </>
   );
 
@@ -40,30 +40,27 @@ export function CashhelloBrand({
   );
 }
 
-/** Pac-Man style C mark — mouth opens toward the wordmark. */
+/** Previous in-app Cashhello mark (wallet on green). */
 export function CashhelloMark({ size = 32 }: { size?: number }) {
+  // Unique gradient id — shared "cashhelloMark" breaks when Home + Auth both mount.
   const uid = useId().replace(/:/g, '');
-  const bgGradId = `cashhelloBg-${uid}`;
-  const bodyGradId = `cashhelloBody-${uid}`;
+  const gradId = `cashhelloMark-${uid}`;
 
   return (
     <Svg width={size} height={size} viewBox="0 0 32 32">
       <Defs>
-        <LinearGradient id={bgGradId} x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
-          <Stop offset="0" stopColor="#2235CF" />
+        <LinearGradient id={gradId} x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+          <Stop offset="0" stopColor="#1A2FC4" />
           <Stop offset="1" stopColor={legacyColor.primaryDark} />
         </LinearGradient>
-        <LinearGradient id={bodyGradId} x1="8" y1="8" x2="22" y2="24" gradientUnits="userSpaceOnUse">
-          <Stop offset="0" stopColor="#52D04E" />
-          <Stop offset="1" stopColor={legacyColor.logoGreen} />
-        </LinearGradient>
       </Defs>
-      <Rect x={0.5} y={0.5} width={31} height={31} rx={10.5} fill={`url(#${bgGradId})`} />
+      <Rect x={0.5} y={0.5} width={31} height={31} rx={10} fill={`url(#${gradId})`} />
+      <Circle cx={16} cy={16} r={9.25} fill={legacyColor.logoGreen} />
       <Path
-        d="M13.5 16L22.5 12.9A9.6 9.6 0 1 1 22.5 19.1Z"
-        fill={`url(#${bodyGradId})`}
+        d="M19.6 11.2H12.4C11.08 11.2 10 12.28 10 13.6V18.4C10 19.72 11.08 20.8 12.4 20.8H19.6C20.92 20.8 22 19.72 22 18.4V13.6C22 12.28 20.92 11.2 19.6 11.2Z"
+        fill={legacyColor.primary}
       />
-      <Circle cx={11.2} cy={12.6} r={1.35} fill="rgba(255,255,255,0.55)" />
+      <Rect x={17.2} y={14.55} width={4.8} height={2.9} rx={1.2} fill={legacyColor.primaryOnPrimary} />
     </Svg>
   );
 }
@@ -371,7 +368,7 @@ const styles = StyleSheet.create({
   brand: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 5,
+    gap: 10,
     flexShrink: 1,
     minWidth: 0,
   },
