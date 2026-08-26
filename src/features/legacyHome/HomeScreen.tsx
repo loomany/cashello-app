@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
   Image,
+  LayoutChangeEvent,
   NativeScrollEvent,
   NativeSyntheticEvent,
   Pressable,
@@ -41,8 +42,12 @@ import { formatLegacyBalance } from '@/features/legacyTopup/mockData';
 import { useLegacyTopupStore } from '@/features/legacyTopup/store';
 import { DebugMetaHost } from '@/prototype/DebugMetaHost';
 import { useScreenMeta } from '@/prototype/metadata/useScreenMeta';
-
-const ACCOUNT_GAP = 10;
+import {
+  ACCOUNT_GAP,
+  carouselCardWidth,
+  carouselSnapIndex,
+  carouselSnapInterval,
+} from '@/features/legacyHome/carouselGeometry';
 
 const HOME_ACCOUNT_DEFS = [
   { id: 'kzt', labelKey: 'balanceLabel' as const, accountId: 'kzt-primary', currency: 'KZT' as const },
@@ -74,6 +79,7 @@ export function LegacyHomeScreen({
   const { width: windowWidth } = useWindowDimensions();
   const [accountIndex, setAccountIndex] = useState(0);
   const [bannerIndex, setBannerIndex] = useState(0);
+  const [carouselViewportWidth, setCarouselViewportWidth] = useState(0);
   const [balancesHidden, setBalancesHidden] = useState(isGuest);
   const [withdrawOpen, setWithdrawOpen] = useState(false);
   const [topupOpen, setTopupOpen] = useState(openTopup);
@@ -102,8 +108,18 @@ export function LegacyHomeScreen({
   );
   const nodeId = historyLink === 'filter' ? '980:26275' : '765:22510';
   const historyAction = historyLink === 'filter' ? homeCopy.filter : homeCopy.seeAll;
-  const cardWidth = Math.min(345, windowWidth - legacySpace.screenX * 2);
-  const snapInterval = cardWidth + ACCOUNT_GAP;
+  const cardWidth =
+    carouselViewportWidth > 0
+      ? carouselCardWidth(carouselViewportWidth, legacySpace.screenX)
+      : carouselCardWidth(windowWidth, legacySpace.screenX);
+  const snapInterval = carouselSnapInterval(cardWidth, ACCOUNT_GAP);
+
+  const onCarouselViewportLayout = (event: LayoutChangeEvent) => {
+    const nextWidth = event.nativeEvent.layout.width;
+    if (nextWidth > 0 && nextWidth !== carouselViewportWidth) {
+      setCarouselViewportWidth(nextWidth);
+    }
+  };
 
   useEffect(() => {
     if (variant === 'guest') {
@@ -169,16 +185,22 @@ export function LegacyHomeScreen({
   };
 
   const onAccountsScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const next = Math.round(event.nativeEvent.contentOffset.x / snapInterval);
-    const clamped = Math.max(0, Math.min(accountCards.length - 1, next));
+    const clamped = carouselSnapIndex(
+      event.nativeEvent.contentOffset.x,
+      snapInterval,
+      accountCards.length,
+    );
     if (clamped !== accountIndex) {
       setAccountIndex(clamped);
     }
   };
 
   const onBannersScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const next = Math.round(event.nativeEvent.contentOffset.x / snapInterval);
-    const clamped = Math.max(0, Math.min(homePromoBanners.length - 1, next));
+    const clamped = carouselSnapIndex(
+      event.nativeEvent.contentOffset.x,
+      snapInterval,
+      homePromoBanners.length,
+    );
     if (clamped !== bannerIndex) {
       setBannerIndex(clamped);
     }
@@ -224,35 +246,37 @@ export function LegacyHomeScreen({
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          <ScrollView
-            horizontal
-            nestedScrollEnabled
-            decelerationRate="fast"
-            snapToInterval={snapInterval}
-            snapToAlignment="start"
-            disableIntervalMomentum
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.bannersTrack}
-            onScroll={onBannersScroll}
-            scrollEventThrottle={16}
-          >
-            {homePromoBanners.map((banner) => (
-              <View
-                key={banner.id}
-                style={[styles.banner, { width: cardWidth, backgroundColor: banner.cardBackground }]}
-              >
-                <View style={styles.bannerTextCol}>
-                  <Text style={[styles.bannerTitle, { color: banner.titleColor }]} numberOfLines={3}>
-                    {banner.title}
-                  </Text>
-                  {banner.accent ? <Text style={styles.bannerAccent}>{banner.accent}</Text> : null}
+          <View onLayout={onCarouselViewportLayout} style={styles.carouselViewport}>
+            <ScrollView
+              horizontal
+              nestedScrollEnabled
+              decelerationRate="fast"
+              snapToInterval={snapInterval}
+              snapToAlignment="start"
+              disableIntervalMomentum
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.bannersTrack}
+              onScroll={onBannersScroll}
+              scrollEventThrottle={16}
+            >
+              {homePromoBanners.map((banner) => (
+                <View
+                  key={banner.id}
+                  style={[styles.banner, { width: cardWidth, backgroundColor: banner.cardBackground }]}
+                >
+                  <View style={styles.bannerTextCol}>
+                    <Text style={[styles.bannerTitle, { color: banner.titleColor }]} numberOfLines={3}>
+                      {banner.title}
+                    </Text>
+                    {banner.accent ? <Text style={styles.bannerAccent}>{banner.accent}</Text> : null}
+                  </View>
+                  <View style={[styles.bannerLogoSlot, { backgroundColor: banner.logoBackground }]}>
+                    <Image source={banner.logo} style={styles.bannerLogo} resizeMode="contain" />
+                  </View>
                 </View>
-                <View style={[styles.bannerLogoSlot, { backgroundColor: banner.logoBackground }]}>
-                  <Image source={banner.logo} style={styles.bannerLogo} resizeMode="contain" />
-                </View>
-              </View>
-            ))}
-          </ScrollView>
+              ))}
+            </ScrollView>
+          </View>
 
           <View style={styles.bannerDots}>
             {homePromoBanners.map((banner, index) => (
@@ -260,64 +284,65 @@ export function LegacyHomeScreen({
             ))}
           </View>
 
-          <ScrollView
-            horizontal
-            nestedScrollEnabled
-            decelerationRate="fast"
-            snapToInterval={snapInterval}
-            snapToAlignment="start"
-            disableIntervalMomentum
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.accountsTrack}
-            style={styles.accountsScroller}
-            onScroll={onAccountsScroll}
-            scrollEventThrottle={16}
-          >
-            {accountCards.map((account) => (
-              <View key={account.id} style={[styles.balance, { width: cardWidth }]}>
-                <View style={styles.balanceText}>
-                  <View style={styles.balanceLabelRow}>
-                    <Text style={styles.balanceLabel}>{account.label}</Text>
+          <View onLayout={onCarouselViewportLayout} style={styles.carouselViewport}>
+            <ScrollView
+              horizontal
+              nestedScrollEnabled
+              decelerationRate="fast"
+              snapToInterval={snapInterval}
+              snapToAlignment="start"
+              disableIntervalMomentum
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.accountsTrack}
+              onScroll={onAccountsScroll}
+              scrollEventThrottle={16}
+            >
+              {accountCards.map((account) => (
+                <View key={account.id} style={[styles.balance, { width: cardWidth }]}>
+                  <View style={styles.balanceText}>
+                    <View style={styles.balanceLabelRow}>
+                      <Text style={styles.balanceLabel}>{account.label}</Text>
+                      <Pressable
+                        accessibilityRole="button"
+                        accessibilityLabel={balancesHidden ? homeCopy.showBalance : homeCopy.hideBalance}
+                        onPress={() => setBalancesHidden((value) => !value)}
+                        style={styles.hideBtn}
+                        hitSlop={8}
+                      >
+                        <EyeGlyph hidden={balancesHidden} />
+                        <Text style={styles.hideLabel}>
+                          {balancesHidden ? homeCopy.showBalance : homeCopy.hideBalance}
+                        </Text>
+                      </Pressable>
+                    </View>
+                    <Text style={styles.balanceAmount}>
+                      {balancesHidden ? '••••••' : account.amount}
+                    </Text>
+                  </View>
+                  <View style={styles.balanceActions}>
                     <Pressable
                       accessibilityRole="button"
-                      accessibilityLabel={balancesHidden ? homeCopy.showBalance : homeCopy.hideBalance}
-                      onPress={() => setBalancesHidden((value) => !value)}
-                      style={styles.hideBtn}
-                      hitSlop={8}
+                      accessibilityLabel={accountsCopy.topUp}
+                      onPress={onTopup}
+                      style={styles.actionBtn}
                     >
-                      <EyeGlyph hidden={balancesHidden} />
-                      <Text style={styles.hideLabel}>
-                        {balancesHidden ? homeCopy.showBalance : homeCopy.hideBalance}
-                      </Text>
+                      <TopupGlyph />
+                      <Text style={styles.actionLabel}>{accountsCopy.topUp}</Text>
+                    </Pressable>
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityLabel={homeCopy.withdrawAction}
+                      onPress={onWithdraw}
+                      style={styles.actionBtn}
+                    >
+                      <WithdrawGlyph />
+                      <Text style={styles.actionLabel}>{homeCopy.withdrawAction}</Text>
                     </Pressable>
                   </View>
-                  <Text style={styles.balanceAmount}>
-                    {balancesHidden ? '••••••' : account.amount}
-                  </Text>
                 </View>
-                <View style={styles.balanceActions}>
-                  <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel={accountsCopy.topUp}
-                    onPress={onTopup}
-                    style={styles.actionBtn}
-                  >
-                    <TopupGlyph />
-                    <Text style={styles.actionLabel}>{accountsCopy.topUp}</Text>
-                  </Pressable>
-                  <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel={homeCopy.withdrawAction}
-                    onPress={onWithdraw}
-                    style={styles.actionBtn}
-                  >
-                    <WithdrawGlyph />
-                    <Text style={styles.actionLabel}>{homeCopy.withdrawAction}</Text>
-                  </Pressable>
-                </View>
-              </View>
-            ))}
-          </ScrollView>
+              ))}
+            </ScrollView>
+          </View>
 
           <View style={styles.dots}>
             {accountCards.map((account, index) => (
@@ -471,6 +496,7 @@ const styles = StyleSheet.create({
   headerActions: { flexDirection: 'row', gap: 15 },
   scroll: { flex: 1, backgroundColor: legacyColor.homeBackground },
   scrollContent: { paddingTop: 15, paddingBottom: 16 },
+  carouselViewport: { overflow: 'hidden' },
   bannersTrack: {
     paddingHorizontal: legacySpace.screenX,
     gap: ACCOUNT_GAP,
@@ -523,7 +549,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  accountsScroller: { marginHorizontal: 0 },
   accountsTrack: {
     paddingHorizontal: legacySpace.screenX,
     gap: ACCOUNT_GAP,

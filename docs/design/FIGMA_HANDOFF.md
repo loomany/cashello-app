@@ -116,7 +116,7 @@ Reference PNGs under `assets/legacy/**` are **reconstruction captures** used by 
 
 | Step | Route | Behavior |
 |------|-------|----------|
-| Launch | `/` | Redirect → `/legacy/auth` |
+| Launch | `/` | Redirect → `/legacy/home?guest=1` |
 | After auth complete | `/legacy/home` | Authorized home |
 | Guest browse | `/legacy/home?guest=1` | Guest home (HOME-001) |
 

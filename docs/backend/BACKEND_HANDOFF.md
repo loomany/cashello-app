@@ -108,7 +108,7 @@ Some source and config identifiers still originate from the prototype import. Th
 `CURRENT_CODE_FACT` — Expo Router, entry `expo-router/entry`.
 
 - Root layout: `src/app/_layout.tsx` — hydration gate, `PrototypeErrorBoundary`, `WebViewportShell`
-- App entry: `src/app/index.tsx` → redirect to `/legacy/auth`
+- App entry: `src/app/index.tsx` → redirect to `/legacy/home?guest=1`
 - Route groups: `legacy/**` (58 route files), `dev/foundation`
 
 Legacy routes are thin wrappers re-exporting screens from `src/features/**`.
