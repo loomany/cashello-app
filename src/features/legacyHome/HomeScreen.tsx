@@ -48,6 +48,7 @@ import {
   carouselSnapIndex,
   carouselSnapInterval,
 } from '@/features/legacyHome/carouselGeometry';
+import { DESKTOP_FRAME_BREAKPOINT, FRAME_WIDTH } from '@/prototype/webViewportScale';
 
 const HOME_ACCOUNT_DEFS = [
   { id: 'kzt', labelKey: 'balanceLabel' as const, accountId: 'kzt-primary', currency: 'KZT' as const },
@@ -108,10 +109,12 @@ export function LegacyHomeScreen({
   );
   const nodeId = historyLink === 'filter' ? '980:26275' : '765:22510';
   const historyAction = historyLink === 'filter' ? homeCopy.filter : homeCopy.seeAll;
+  const fallbackCarouselWidth =
+    windowWidth >= DESKTOP_FRAME_BREAKPOINT ? FRAME_WIDTH : windowWidth;
   const cardWidth =
     carouselViewportWidth > 0
       ? carouselCardWidth(carouselViewportWidth, legacySpace.screenX)
-      : carouselCardWidth(windowWidth, legacySpace.screenX);
+      : carouselCardWidth(fallbackCarouselWidth, legacySpace.screenX);
   const snapInterval = carouselSnapInterval(cardWidth, ACCOUNT_GAP);
 
   const onCarouselViewportLayout = (event: LayoutChangeEvent) => {
