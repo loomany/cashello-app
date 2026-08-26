@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { usePathname } from 'expo-router';
 
 import { SupportContactFab } from '@/features/legacyHome/SupportContactFab';
 import { SupportContactSheet } from '@/features/legacyHome/SupportContactSheet';
@@ -9,10 +8,9 @@ import { useLegacySessionStore } from '@/features/legacyHome/session';
 
 /** Global support FAB + sheet overlay for all legacy screens. */
 export function SupportContactHost() {
-  const pathname = usePathname();
   const isGuest = useLegacySessionStore((s) => s.isGuest);
   const [supportOpen, setSupportOpen] = useState(false);
-  const bottomOffset = resolveSupportFabBottom(pathname, isGuest);
+  const bottomOffset = resolveSupportFabBottom(isGuest);
 
   return (
     <View pointerEvents="box-none" style={styles.host}>

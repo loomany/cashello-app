@@ -13,15 +13,11 @@ export const SUPPORT_CONTACT_LINKS = {
   whatsapp: null as string | null,
 } as const;
 
-/** Bottom inset above fixed Home chrome (before safe-area). */
+/** Bottom inset above fixed bottom chrome (before safe-area). */
 export const SUPPORT_FAB_GUEST_BOTTOM = 98;
-export const SUPPORT_FAB_AUTH_HOME_BOTTOM = 80;
-export const SUPPORT_FAB_DEFAULT_BOTTOM = 20;
+export const SUPPORT_FAB_AUTH_BOTTOM = 80;
 
-export function resolveSupportFabBottom(pathname: string, isGuest: boolean): number {
-  const onHome = pathname === '/legacy/home' || pathname.endsWith('/home');
-  if (onHome) {
-    return isGuest ? SUPPORT_FAB_GUEST_BOTTOM : SUPPORT_FAB_AUTH_HOME_BOTTOM;
-  }
-  return SUPPORT_FAB_DEFAULT_BOTTOM;
+/** Same anchor on every legacy screen — above tab bar / guest CTA. */
+export function resolveSupportFabBottom(isGuest: boolean): number {
+  return isGuest ? SUPPORT_FAB_GUEST_BOTTOM : SUPPORT_FAB_AUTH_BOTTOM;
 }

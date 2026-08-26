@@ -1,7 +1,6 @@
 import {
   SUPPORT_CONTACT_LINKS,
-  SUPPORT_FAB_AUTH_HOME_BOTTOM,
-  SUPPORT_FAB_DEFAULT_BOTTOM,
+  SUPPORT_FAB_AUTH_BOTTOM,
   SUPPORT_FAB_GUEST_BOTTOM,
   resolveSupportFabBottom,
   supportContactCopy,
@@ -16,13 +15,11 @@ describe('support contact CTA', () => {
     expect(SUPPORT_CONTACT_LINKS.whatsapp).toBeNull();
   });
 
-  it('positions FAB above guest login, home tab bar, and default screens', () => {
-    expect(SUPPORT_FAB_GUEST_BOTTOM).toBeGreaterThan(80);
-    expect(SUPPORT_FAB_AUTH_HOME_BOTTOM).toBeGreaterThan(60);
-    expect(SUPPORT_FAB_DEFAULT_BOTTOM).toBe(20);
-    expect(resolveSupportFabBottom('/legacy/home', true)).toBe(SUPPORT_FAB_GUEST_BOTTOM);
-    expect(resolveSupportFabBottom('/legacy/home', false)).toBe(SUPPORT_FAB_AUTH_HOME_BOTTOM);
-    expect(resolveSupportFabBottom('/legacy/payment', false)).toBe(SUPPORT_FAB_DEFAULT_BOTTOM);
-    expect(resolveSupportFabBottom('/legacy/history', true)).toBe(SUPPORT_FAB_DEFAULT_BOTTOM);
+  it('keeps FAB anchored above bottom chrome on every screen', () => {
+    expect(SUPPORT_FAB_GUEST_BOTTOM).toBe(98);
+    expect(SUPPORT_FAB_AUTH_BOTTOM).toBe(80);
+    expect(resolveSupportFabBottom(true)).toBe(SUPPORT_FAB_GUEST_BOTTOM);
+    expect(resolveSupportFabBottom(false)).toBe(SUPPORT_FAB_AUTH_BOTTOM);
+    expect(resolveSupportFabBottom(false)).toBe(resolveSupportFabBottom(false));
   });
 });
