@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: legacyColor.ubetGreen,
+    backgroundColor: legacyColor.logoGreen,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#050A26',

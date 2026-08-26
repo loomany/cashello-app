@@ -35,8 +35,6 @@ export const legacyColor = {
   captureChrome: '#686868',
   splash: '#1226AA',
   logoGreen: '#39C236',
-  /** Ubet brand circle green (sampled from assets/legacy/home/services/ubet.png). */
-  ubetGreen: '#ADFF00',
   alertAction: '#007AFF',
   homeBackground: '#F9F9F9',
   homeChevronFill: '#F1F1F1',

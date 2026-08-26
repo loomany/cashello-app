@@ -335,7 +335,7 @@ export function ProfileBonusHeader({
 export function BonusCoinGlyph() {
   return (
     <Svg width={18} height={18} viewBox="0 0 18 18">
-      <Circle cx={9} cy={9} r={8} fill={legacyColor.ubetGreen} />
+      <Circle cx={9} cy={9} r={8} fill={legacyColor.logoGreen} />
       {/* Cashhello bonus mark — stylized gift / spark, not currency */}
       <Path
         d="M5.2 8.1H12.8V13.2C12.8 13.7 12.4 14.1 11.9 14.1H6.1C5.6 14.1 5.2 13.7 5.2 13.2V8.1Z"
@@ -347,7 +347,7 @@ export function BonusCoinGlyph() {
       />
       <Path
         d="M9 6.4V14.1"
-        stroke={legacyColor.ubetGreen}
+        stroke={legacyColor.logoGreen}
         strokeWidth={1.15}
         strokeLinecap="round"
       />
