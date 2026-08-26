@@ -1,7 +1,7 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { legacyColor, legacyFontFamily, legacySpace } from '@/design/legacyTokens';
+import { legacyColor, legacySpace } from '@/design/legacyTokens';
 import { SupportHeadsetGlyph } from '@/features/legacyHome/SupportContactIcons';
 import {
   SUPPORT_FAB_AUTH_BOTTOM,
@@ -25,14 +25,11 @@ export function SupportContactFab({ variant, onPress }: Props) {
     >
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`${supportContactCopy.sheetTitle}, ${supportContactCopy.bonusLabel}`}
+        accessibilityLabel={supportContactCopy.sheetTitle}
         onPress={onPress}
         style={({ pressed }) => [styles.fab, pressed && styles.fabPressed]}
       >
-        <View style={styles.iconBubble}>
-          <SupportHeadsetGlyph />
-        </View>
-        <Text style={styles.label}>{supportContactCopy.bonusLabel}</Text>
+        <SupportHeadsetGlyph />
       </Pressable>
     </View>
   );
@@ -45,39 +42,19 @@ const styles = StyleSheet.create({
     zIndex: 20,
   },
   fab: {
-    flexDirection: 'row',
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: legacyColor.logoGreen,
     alignItems: 'center',
-    gap: 8,
-    paddingLeft: 6,
-    paddingRight: 12,
-    paddingVertical: 6,
-    borderRadius: 24,
-    backgroundColor: legacyColor.surface,
-    borderWidth: 1,
-    borderColor: legacyColor.border,
+    justifyContent: 'center',
     shadowColor: '#050A26',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.12,
     shadowRadius: 10,
     elevation: 3,
   },
   fabPressed: {
     opacity: 0.88,
-  },
-  iconBubble: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: legacyColor.logoGreen,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  label: {
-    fontSize: 13,
-    lineHeight: 16,
-    fontWeight: '600',
-    color: legacyColor.textPrimary,
-    fontFamily: legacyFontFamily,
-    letterSpacing: -0.1,
   },
 });

@@ -1,6 +1,5 @@
 /** Support CTA copy and placeholder links (no real contacts until owner provides them). */
 export const supportContactCopy = {
-  bonusLabel: '+2% бонус',
   sheetTitle: 'Служба поддержки',
   telegram: 'Телеграм 24/7',
   whatsapp: 'Whatsapp 24/7',
