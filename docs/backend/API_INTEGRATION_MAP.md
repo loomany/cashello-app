@@ -1,8 +1,8 @@
 # API Integration Map
 
 **Audience:** Backend developer  
-**Source:** Read-only audit of `main` source code  
-**Companion doc:** [BACKEND_HANDOFF.md](./BACKEND_HANDOFF.md)
+**Canonical repository:** [loomany/cashello-app](https://github.com/loomany/cashello-app) — branch `main`
+**Companion docs:** [BACKEND_HANDOFF.md](./BACKEND_HANDOFF.md) · [FIGMA_HANDOFF.md](../design/FIGMA_HANDOFF.md)
 
 Endpoint names are **DRAFT only**. Confidence labels: `CURRENT_CODE_FACT`, `PROTOTYPE_ONLY`, `TECHNICAL_RECOMMENDATION`, `OWNER_DECISION_REQUIRED`, `UNKNOWN`.
 
@@ -214,7 +214,7 @@ Server persistence: `OWNER_DECISION_REQUIRED` — currently client-only.
 | UI Feature | Route | Source File | Mock Source | Required Data from Backend | Command / Query | Possible Endpoint | Confidence |
 |------------|-------|-------------|-------------|-------------------------|-----------------|-------------------|------------|
 | Card view | `/legacy/card` | `src/features/legacyCard/CardScreen.tsx` | `DEMO_CARD` static | Masked PAN, holder, expiry, status | Query | `GET /v1/card` | CURRENT_CODE_FACT |
-| Show/hide CVV | `/legacy/card` | `src/features/legacyCard/store.ts` | UI face toggle | Secure CVV reveal (step-up auth) | Command | `POST /v1/card/cvv/reveal` | TECHNICAL_RECOMMENDATION |
+| Show/hide CVV | `/legacy/card` | `src/features/legacyCard/store.ts` | UI face toggle — local face flip only | Issuer/provider-controlled reveal; PCI-scoped; step-up authenticated; short-lived/ephemeral; never persisted or logged by Cashello; prefer tokenized provider secure flow | Command (DRAFT) | `POST /v1/card/cvv/reveal` or provider-hosted step-up URL | TECHNICAL_RECOMMENDATION — if issuer architecture does not permit CVV reveal, return a secure provider flow instead |
 | Block card | `/legacy/card` | `src/features/legacyCard/store.ts` | Local `blocked: true` | Block confirmation | Command | `POST /v1/card/block` | CURRENT_CODE_FACT |
 | Spending limits | `/legacy/card/limits` | `src/features/legacyCard/LimitsScreen.tsx` | Local cap/remaining | Current limits | Query | `GET /v1/card/limits` | CURRENT_CODE_FACT |
 | Set limit | `/legacy/card/limits` | `src/features/legacyCard/store.ts` | `applyLimit()` local | Updated limits | Command | `PUT /v1/card/limits` | CURRENT_CODE_FACT |

@@ -93,3 +93,9 @@ Start here before implementing backend APIs:
 
 - [BACKEND_HANDOFF.md](docs/backend/BACKEND_HANDOFF.md) — architecture, mock state, domain contracts, integration guidance
 - [API_INTEGRATION_MAP.md](docs/backend/API_INTEGRATION_MAP.md) — feature-by-feature API capability map
+
+## Design handoff
+
+Start here before editing screens or visual behavior:
+
+- [FIGMA_HANDOFF.md](docs/design/FIGMA_HANDOFF.md) — owner-approved Figma audit, screen/route mapping, component and token reference

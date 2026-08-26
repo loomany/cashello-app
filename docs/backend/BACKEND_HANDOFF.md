@@ -1,8 +1,11 @@
 # Cashello Backend Handoff
 
 **Audience:** Backend developer  
-**Source branch:** `main` @ `8935ad0b9ea5e075c271467ba3578cae3e4802bc`  
-**Method:** Read-only audit of source code — old docs were not used as source of truth.
+**Canonical repository:** [loomany/cashello-app](https://github.com/loomany/cashello-app) — branch `main`
+**Public baseline:** `75ce303c037f57d5fc50d1f3f22ade5025ac157e` (root commit of this repository)
+**Method:** Read-only audit of application source code in the imported approved frontend snapshot. Private archive repository SHAs are not required to use this document.
+
+For visual/screen behavior, see [../design/FIGMA_HANDOFF.md](../design/FIGMA_HANDOFF.md).
 
 **Confidence labels used throughout:**
 
@@ -80,6 +83,21 @@ Business process documentation is **out of scope** for this handoff.
 **Build profiles** (`eas.json`): `development` (dev client, internal APK), `preview` (internal), `production` (AAB).
 
 **Test model:** Jest with `jest-expo` preset; 18 suites, 125 tests (`src/**/*.test.ts`).
+
+### Temporary / legacy identifiers
+
+| Identifier | Current value | Classification |
+|------------|---------------|----------------|
+| Product name (handoff) | **Cashello** | `CURRENT_CODE_FACT` — documentation/product label |
+| npm package name | `paydala-app` | `TEMPORARY_PROTOTYPE` |
+| Expo display name (`app.json`) | Cashhello | `TEMPORARY_PROTOTYPE` — spelling differs from handoff product name |
+| URL scheme | `paydala` | `TEMPORARY_PROTOTYPE` |
+| iOS bundle ID | `app.paydala.prototype` | `TEMPORARY_PROTOTYPE` |
+| Android package | `app.paydala.prototype` | `TEMPORARY_PROTOTYPE` |
+| AsyncStorage key | `@paydala/mock-state` | `TEMPORARY_PROTOTYPE` |
+| Production store IDs / branding | — | `OWNER_DECISION_REQUIRED` |
+
+Some source and config identifiers still originate from the prototype import. They must **not** be interpreted as approved production branding or permanent mobile identifiers. A separate owner-approved migration is required before App Store / Play Store release.
 
 ---
 
