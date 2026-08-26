@@ -1,0 +1,40 @@
+/** Exact visible late-UI copy from live Figma card cluster. Do not polish typos. */
+
+export const cardCopy = {
+  title: 'Карта',
+  settings: 'Настройки',
+  other: 'Прочее',
+  showCvv: 'Показать сvv',
+  hideCvv: 'Скрыть cvv',
+  block: 'Заблокировать',
+  limits: 'Лимиты',
+  changePin: 'Сменить PIN-код',
+  applePay: 'Подключить Apple Pay',
+  googlePay: 'Подключить Google Pay',
+  validThru: 'VALID THRU',
+  cvvPrefix: 'CVV: ',
+  blockTitle: 'Заблокировать карту',
+  blockBody: 'Пока карта заблокирована, операции по карте будут недоступны ',
+  cancel: 'Отменить',
+  accessOpen: 'Доступ открыт',
+  accessSupport: 'Карта открыта для оплаты',
+  monthLimits: 'Лимиты на месяц',
+  remainderPrefix: 'Остаток ',
+  remainderUnlimited: 'Остаток Без лимита',
+  internetPay: 'Оплата в интернете ',
+  changeLimit: 'Изиенить лимит',
+  limitAmount: 'Сумма лимита',
+  unlimited: 'Без лимита',
+  done: 'Готово',
+  pinOld: 'Введите старый PIN-код',
+  pinCreate: 'Придумайте код доступа',
+  pinRepeat: 'Повторите новый PIN-код',
+  pinMismatch: 'Код доступа не совпадают',
+  demoNotReal: 'DEMO / NOT REAL CARD',
+} as const;
+
+export const cardBridgeCopy = {
+  title: 'Карта',
+  module: 'RECON-004',
+  body: 'Card / Limits / Card PIN reconstructed. Top-up is RECON-005. No issuer, PCI, or real PIN.',
+} as const;

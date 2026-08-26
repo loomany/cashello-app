@@ -1,0 +1,10 @@
+node_modules
+dist
+.expo
+coverage
+package-lock.json
+tmp-scaffold
+android
+ios
+*.png
+*.jpg

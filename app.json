@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "Cashhello",
+    "slug": "paydala-app",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/cashhello-icon.png",
+    "scheme": "paydala",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.paydala.prototype",
+      "infoPlist": {
+        "CFBundleDisplayName": "Cashhello"
+      }
+    },
+    "android": {
+      "package": "app.paydala.prototype",
+      "adaptiveIcon": {
+        "backgroundColor": "#F3F1EC",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F3F1EC",
+          "image": "./assets/images/cashhello-icon.png",
+          "imageWidth": 76
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "paydala": {
+        "bundleIdsStatus": "TEMPORARY_PROTOTYPE",
+        "brandAssetsStatus": "NOT_FINAL"
+      }
+    }
+  }
+}

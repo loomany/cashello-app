@@ -1,0 +1,11 @@
+<svg width="176" height="176" viewBox="0 0 176 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="176" height="176" fill="#E5E5E5"/>
+<g id="Splash Screen">
+<rect width="375" height="812" transform="translate(-99 -318)" fill="#1226AA"/>
+<g id="logo">
+<path id="Vector" d="M88 176C136.601 176 176 136.601 176 88C176 39.3989 136.601 0 88 0C39.399 0 0 39.3989 0 88C0 136.601 39.399 176 88 176Z" fill="#39C236"/>
+<path id="Vector_2" d="M131.994 44.0059H43.9941V132.006H131.994V44.0059Z" fill="#1226AA"/>
+<path id="Vector_3" d="M153.985 77.0107H109.991V99.0138H153.985V77.0107Z" fill="white"/>
+</g>
+</g>
+</svg>
