@@ -29,8 +29,6 @@ import {
 import { homeCopy, homePromoBanners, homeServicesPreview } from '@/features/legacyHome/copy';
 import { latestHomeHistoryRows } from '@/features/legacyHome/historyPreview';
 import { LegacyTabBar } from '@/features/legacyHome/LegacyTabBar';
-import { SupportContactFab } from '@/features/legacyHome/SupportContactFab';
-import { SupportContactSheet } from '@/features/legacyHome/SupportContactSheet';
 import { WithdrawSelectSheet } from '@/features/legacyHome/WithdrawSelectSheet';
 import { HOME_BRIDGES, type HomeHistoryRow } from '@/features/legacyHome/mockData';
 import { profileHref, navigateHome, useLegacySessionStore } from '@/features/legacyHome/session';
@@ -86,7 +84,6 @@ export function LegacyHomeScreen({
   const [balancesHidden, setBalancesHidden] = useState(isGuest);
   const [withdrawOpen, setWithdrawOpen] = useState(false);
   const [topupOpen, setTopupOpen] = useState(openTopup);
-  const [supportOpen, setSupportOpen] = useState(false);
   const [actionOp, setActionOp] = useState<LegacyHistoryOp | null>(null);
   const operations = useLegacyHistoryStore((s) => s.operations);
   const getById = useLegacyHistoryStore((s) => s.getById);
@@ -421,13 +418,7 @@ export function LegacyHomeScreen({
         ) : (
           <LegacyTabBar active="home" />
         )}
-
-        <SupportContactFab
-          variant={isGuest ? 'guest' : 'authorized'}
-          onPress={() => setSupportOpen(true)}
-        />
       </SafeAreaView>
-      <SupportContactSheet visible={supportOpen} onClose={() => setSupportOpen(false)} />
       <WithdrawSelectSheet
         visible={withdrawOpen}
         onClose={() => setWithdrawOpen(false)}

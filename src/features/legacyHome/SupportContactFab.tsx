@@ -3,25 +3,20 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { legacyColor, legacySpace } from '@/design/legacyTokens';
 import { SupportHeadsetGlyph } from '@/features/legacyHome/SupportContactIcons';
-import {
-  SUPPORT_FAB_AUTH_BOTTOM,
-  SUPPORT_FAB_GUEST_BOTTOM,
-  supportContactCopy,
-} from '@/features/legacyHome/supportContact';
+import { supportContactCopy } from '@/features/legacyHome/supportContact';
 
 type Props = {
-  variant: 'guest' | 'authorized';
+  bottomOffset: number;
   onPress: () => void;
 };
 
-export function SupportContactFab({ variant, onPress }: Props) {
+export function SupportContactFab({ bottomOffset, onPress }: Props) {
   const insets = useSafeAreaInsets();
-  const baseOffset = variant === 'guest' ? SUPPORT_FAB_GUEST_BOTTOM : SUPPORT_FAB_AUTH_BOTTOM;
 
   return (
     <View
       pointerEvents="box-none"
-      style={[styles.layer, { bottom: baseOffset + insets.bottom }]}
+      style={[styles.layer, { bottom: bottomOffset + insets.bottom }]}
     >
       <Pressable
         accessibilityRole="button"

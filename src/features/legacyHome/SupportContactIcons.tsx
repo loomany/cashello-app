@@ -5,18 +5,18 @@ import { legacyColor } from '@/design/legacyTokens';
 /** Headset icon — reads as support / связь on the green FAB bubble. */
 export function SupportHeadsetGlyph() {
   return (
-    <Svg width={18} height={18} viewBox="0 0 18 18">
+    <Svg width={22} height={22} viewBox="0 0 18 18">
       <Path
         d="M4.5 9.8a4.5 4.5 0 0 1 9 0"
         stroke={legacyColor.primaryOnPrimary}
-        strokeWidth={1.4}
+        strokeWidth={1.5}
         fill="none"
         strokeLinecap="round"
       />
       <Path
         d="M4.5 9.8v2.2A1.2 1.2 0 0 0 5.7 13.2H6.8V8.6H4.5zM13.5 9.8v2.2a1.2 1.2 0 0 1-1.2 1.2H11.2V8.6h2.3z"
         stroke={legacyColor.primaryOnPrimary}
-        strokeWidth={1.4}
+        strokeWidth={1.5}
         fill="none"
         strokeLinejoin="round"
       />
