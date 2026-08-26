@@ -29,6 +29,8 @@ import {
 import { homeCopy, homePromoBanners, homeServicesPreview } from '@/features/legacyHome/copy';
 import { latestHomeHistoryRows } from '@/features/legacyHome/historyPreview';
 import { LegacyTabBar } from '@/features/legacyHome/LegacyTabBar';
+import { SupportContactFab } from '@/features/legacyHome/SupportContactFab';
+import { SupportContactSheet } from '@/features/legacyHome/SupportContactSheet';
 import { WithdrawSelectSheet } from '@/features/legacyHome/WithdrawSelectSheet';
 import { HOME_BRIDGES, type HomeHistoryRow } from '@/features/legacyHome/mockData';
 import { profileHref, navigateHome, useLegacySessionStore } from '@/features/legacyHome/session';
@@ -84,6 +86,7 @@ export function LegacyHomeScreen({
   const [balancesHidden, setBalancesHidden] = useState(isGuest);
   const [withdrawOpen, setWithdrawOpen] = useState(false);
   const [topupOpen, setTopupOpen] = useState(openTopup);
+  const [supportOpen, setSupportOpen] = useState(false);
   const [actionOp, setActionOp] = useState<LegacyHistoryOp | null>(null);
   const operations = useLegacyHistoryStore((s) => s.operations);
   const getById = useLegacyHistoryStore((s) => s.getById);
@@ -246,7 +249,10 @@ export function LegacyHomeScreen({
 
         <ScrollView
           style={styles.scroll}
-          contentContainerStyle={styles.scrollContent}
+          contentContainerStyle={[
+            styles.scrollContent,
+            isGuest ? styles.scrollContentGuest : styles.scrollContentAuthorized,
+          ]}
           showsVerticalScrollIndicator={false}
         >
           <View onLayout={onCarouselViewportLayout} style={styles.carouselViewport}>
@@ -415,7 +421,13 @@ export function LegacyHomeScreen({
         ) : (
           <LegacyTabBar active="home" />
         )}
+
+        <SupportContactFab
+          variant={isGuest ? 'guest' : 'authorized'}
+          onPress={() => setSupportOpen(true)}
+        />
       </SafeAreaView>
+      <SupportContactSheet visible={supportOpen} onClose={() => setSupportOpen(false)} />
       <WithdrawSelectSheet
         visible={withdrawOpen}
         onClose={() => setWithdrawOpen(false)}
@@ -499,6 +511,8 @@ const styles = StyleSheet.create({
   headerActions: { flexDirection: 'row', gap: 15 },
   scroll: { flex: 1, backgroundColor: legacyColor.homeBackground },
   scrollContent: { paddingTop: 15, paddingBottom: 16 },
+  scrollContentGuest: { paddingBottom: 96 },
+  scrollContentAuthorized: { paddingBottom: 88 },
   carouselViewport: { overflow: 'hidden' },
   bannersTrack: {
     paddingHorizontal: legacySpace.screenX,
