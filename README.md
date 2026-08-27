@@ -100,6 +100,9 @@ Start here before editing screens or visual behavior:
 
 - [FIGMA_HANDOFF.md](docs/design/FIGMA_HANDOFF.md) — owner-approved Figma audit, screen/route mapping, component and token reference
 
-## Business process discovery
+## Business and AI handoff
 
-- [AI_HANDOFF_INDEX.md](docs/business/discovery/AI_HANDOFF_INDEX.md) — screen, action, flow, screenshot, and owner-question inventory
+Start here before inferring or implementing business behavior:
+
+- [AI_HANDOFF_INDEX.md](docs/business/AI_HANDOFF_INDEX.md) — canonical entrypoint for the Cashello business handoff package
+- [OWNER_DECISIONS_PENDING.md](docs/business/OWNER_DECISIONS_PENDING.md) — unresolved owner decisions and backend/production gates
