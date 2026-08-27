@@ -1,0 +1,4007 @@
+[
+  {
+    "screen_id": "CAS-AUTH-001",
+    "aliases": ["LGC-SCR", "legacyNodeId 648:16634"],
+    "name": "Авторизация — заставка",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=splash",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "648:16634",
+    "component": "src/features/legacyAuth/screens/OnboardingView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-001__splash.png",
+    "screenshots": [
+      {
+        "state": "SPLASH",
+        "path": "screenshots/annotated/CAS-AUTH-001__splash.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SPLASH", "AUTO_ADVANCE"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-001-01", "ACT-CAS-AUTH-001-02"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-002",
+    "aliases": ["LGC-SCR", "legacyNodeId 829:24292"],
+    "name": "Авторизация — онбординг",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=onboarding",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "829:24292",
+    "component": "src/features/legacyAuth/screens/OnboardingView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-002__onboarding.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/CAS-AUTH-002__onboarding.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-002-01", "ACT-CAS-AUTH-002-02"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-003",
+    "aliases": ["LGC-SCR", "legacyNodeId 770:23233"],
+    "name": "Авторизация — ввод телефона",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=iin",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "770:23233",
+    "component": "src/features/legacyAuth/screens/RegisterIinView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-003__phone-entry.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/CAS-AUTH-003__phone-entry.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/CAS-AUTH-003__phone-entry-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED"],
+    "entry_actions": ["ACT-CAS-AUTH-011-01", "ACT-HOME-001-02", "ACT-HOME-001-12"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-003-01",
+      "ACT-CAS-AUTH-003-02",
+      "ACT-CAS-AUTH-003-03",
+      "ACT-CAS-AUTH-003-04"
+    ],
+    "owner_questions": ["Q-AUTH-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-004",
+    "aliases": ["LGC-SCR", "legacyNodeId 924:24543"],
+    "name": "Авторизация — подтверждение личности",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=identity",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "924:24543",
+    "component": "src/features/legacyAuth/screens/IdentityView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-004__identity-intro.png",
+    "screenshots": [
+      {
+        "state": "QA_ONLY",
+        "path": "screenshots/annotated/CAS-AUTH-004__identity-intro.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": [],
+    "owner_questions": ["Q-AUTH-012", "Q-KYC-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-005",
+    "aliases": ["LGC-SCR", "legacyNodeId 648:17611"],
+    "name": "Авторизация — сканирование лица",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=face",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "648:17611",
+    "component": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-005__face-camera.png",
+    "screenshots": [
+      {
+        "state": "CAMERA_MOCK",
+        "path": "screenshots/annotated/CAS-AUTH-005__face-camera.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-005-01", "ACT-CAS-AUTH-005-02"],
+    "owner_questions": ["Q-KYC-003"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-006",
+    "aliases": ["LGC-SCR", "legacyNodeId 924:24543"],
+    "name": "Авторизация — резервный сценарий лица",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=faceFallback",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "924:24543",
+    "component": "src/features/legacyAuth/screens/FaceFallbackView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-006__face-fallback.png",
+    "screenshots": [
+      {
+        "state": "FALLBACK",
+        "path": "screenshots/annotated/CAS-AUTH-006__face-fallback.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FALLBACK", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-006-01", "ACT-CAS-AUTH-006-02"],
+    "owner_questions": ["Q-KYC-004"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-007",
+    "aliases": ["LGC-SCR", "legacyNodeId 924:24618"],
+    "name": "Авторизация — документ, лицевая сторона",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=documentFront",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "924:24618",
+    "component": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-007__document-front.png",
+    "screenshots": [
+      {
+        "state": "CAMERA_MOCK",
+        "path": "screenshots/annotated/CAS-AUTH-007__document-front.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-007-01", "ACT-CAS-AUTH-007-02"],
+    "owner_questions": ["Q-KYC-003"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-008",
+    "aliases": ["LGC-SCR", "legacyNodeId 930:25629"],
+    "name": "Авторизация — переворот документа",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=documentTurn",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "930:25629",
+    "component": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-008__document-turn.png",
+    "screenshots": [
+      {
+        "state": "CAMERA_MOCK",
+        "path": "screenshots/annotated/CAS-AUTH-008__document-turn.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-008-01", "ACT-CAS-AUTH-008-02"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-009",
+    "aliases": ["LGC-SCR", "legacyNodeId 930:25673"],
+    "name": "Авторизация — документ, обратная сторона",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=documentBack",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "930:25673",
+    "component": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-009__document-back.png",
+    "screenshots": [
+      {
+        "state": "CAMERA_MOCK",
+        "path": "screenshots/annotated/CAS-AUTH-009__document-back.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-009-01", "ACT-CAS-AUTH-009-02"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-010",
+    "aliases": ["LGC-SCR", "legacyNodeId 802:22943"],
+    "name": "Авторизация — телефон после KYC",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=phone",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "802:22943",
+    "component": "src/features/legacyAuth/screens/PhoneView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-010__kyc-phone.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/CAS-AUTH-010__kyc-phone.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-010-01", "ACT-CAS-AUTH-010-02"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-011",
+    "aliases": ["LGC-SCR", "legacyNodeId 648:17063"],
+    "name": "Авторизация — SMS-код",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=verification",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "648:17063",
+    "component": "src/features/legacyAuth/screens/PhoneView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-011__otp.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/CAS-AUTH-011__otp.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/CAS-AUTH-011__otp-filled.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-011-01", "ACT-CAS-AUTH-011-02", "ACT-CAS-AUTH-011-03"],
+    "owner_questions": ["Q-AUTH-002", "Q-AUTH-003", "Q-AUTH-004", "Q-AUTH-005"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-012",
+    "aliases": ["LGC-SCR", "legacyNodeId 648:16740"],
+    "name": "Авторизация — создание PIN",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=pinCreate",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "648:16740",
+    "component": "src/features/legacyAuth/screens/PinView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-012__pin-create.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/CAS-AUTH-012__pin-create.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/CAS-AUTH-012__pin-create-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-012-01", "ACT-CAS-AUTH-012-02", "ACT-CAS-AUTH-012-03"],
+    "owner_questions": ["Q-AUTH-006"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-013",
+    "aliases": ["LGC-SCR", "legacyNodeId 648:16878"],
+    "name": "Авторизация — повтор PIN",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=pinRepeat",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "648:16878",
+    "component": "src/features/legacyAuth/screens/PinView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-013__pin-repeat.png",
+    "screenshots": [
+      {
+        "state": "CONFIRMATION",
+        "path": "screenshots/annotated/CAS-AUTH-013__pin-repeat.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/CAS-AUTH-013__pin-repeat-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CONFIRMATION", "FORM_FILLED"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-013-01", "ACT-CAS-AUTH-013-02", "ACT-CAS-AUTH-013-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-014",
+    "aliases": ["LGC-SCR", "legacyNodeId 648:16930"],
+    "name": "Авторизация — ошибка PIN",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=pinError",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "648:16930",
+    "component": "src/features/legacyAuth/screens/PinView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-014__pin-error.png",
+    "screenshots": [
+      {
+        "state": "FAILED",
+        "path": "screenshots/annotated/CAS-AUTH-014__pin-error.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FAILED",
+        "path": "screenshots/annotated/CAS-AUTH-014__pin-mismatch-runtime.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FAILED", "FORM_FILLED"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-AUTH-014-01", "ACT-CAS-AUTH-014-02", "ACT-CAS-AUTH-014-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-AUTH-015",
+    "aliases": ["LGC-SCR", "legacyNodeId 804:23186"],
+    "name": "Авторизация — вход по PIN",
+    "module": "AUTH",
+    "route": "/legacy/auth?qaStep=pinLogin",
+    "auth_state": "GUEST",
+    "figma_node": null,
+    "legacy_node": "804:23186",
+    "component": "src/features/legacyAuth/screens/PinView.tsx",
+    "screenshot": "screenshots/annotated/CAS-AUTH-015__pin-login.png",
+    "screenshots": [
+      {
+        "state": "RETURNING_USER",
+        "path": "screenshots/annotated/CAS-AUTH-015__pin-login.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["RETURNING_USER", "QA_ONLY"],
+    "entry_actions": [],
+    "exit_actions": [
+      "ACT-CAS-AUTH-015-01",
+      "ACT-CAS-AUTH-015-02",
+      "ACT-CAS-AUTH-015-03",
+      "ACT-CAS-AUTH-015-04",
+      "ACT-CAS-AUTH-015-05"
+    ],
+    "owner_questions": ["Q-AUTH-001", "Q-AUTH-006", "Q-AUTH-007", "Q-AUTH-008", "Q-AUTH-010"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "HOME-001",
+    "aliases": ["Figma frame 7:5"],
+    "name": "Главная для гостя",
+    "module": "HOME",
+    "route": "/legacy/home?guest=1",
+    "auth_state": "GUEST",
+    "figma_node": "7:5",
+    "legacy_node": null,
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "screenshot": "screenshots/annotated/HOME-001__guest-home.png",
+    "screenshots": [
+      {
+        "state": "GUEST",
+        "path": "screenshots/annotated/HOME-001__guest-home.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "FIGMA_AND_CODE",
+    "states": ["GUEST", "BALANCES_HIDDEN"],
+    "entry_actions": [
+      "ACT-CAS-AUTH-003-01",
+      "ACT-CAS-AUTH-003-02",
+      "ACT-CAS-AUTH-012-01",
+      "ACT-CAS-AUTH-013-01",
+      "ACT-CAS-AUTH-014-01",
+      "ACT-CAS-AUTH-015-01",
+      "ACT-HOME-001-01",
+      "ACT-CAS-PROFILE-001-01"
+    ],
+    "exit_actions": [
+      "ACT-HOME-001-01",
+      "ACT-HOME-001-02",
+      "ACT-HOME-001-03",
+      "ACT-HOME-001-04",
+      "ACT-HOME-001-05",
+      "ACT-HOME-001-06",
+      "ACT-HOME-001-07",
+      "ACT-HOME-001-08",
+      "ACT-HOME-001-09",
+      "ACT-HOME-001-10",
+      "ACT-HOME-001-11",
+      "ACT-HOME-001-12",
+      "ACT-HOME-001-13"
+    ],
+    "owner_questions": ["Q-SUPPORT-001", "Q-SUPPORT-002", "Q-SUPPORT-003"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-025",
+    "aliases": ["legacyNodeId 765:22510", "HOME-002"],
+    "name": "Главная авторизованного пользователя",
+    "module": "HOME",
+    "route": "/legacy/home",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "765:22510",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-025__authorized-home.png",
+    "screenshots": [
+      {
+        "state": "AUTHORIZED",
+        "path": "screenshots/annotated/LGC-SCR-025__authorized-home.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "BALANCES_HIDDEN",
+        "path": "screenshots/annotated/LGC-SCR-025__balances-hidden.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["AUTHORIZED", "BALANCES_HIDDEN", "SHEET_OPEN"],
+    "entry_actions": [
+      "ACT-CAS-AUTH-003-01",
+      "ACT-CAS-AUTH-003-02",
+      "ACT-CAS-AUTH-012-01",
+      "ACT-CAS-AUTH-013-01",
+      "ACT-CAS-AUTH-014-01",
+      "ACT-CAS-AUTH-015-01",
+      "ACT-HOME-001-01",
+      "ACT-LGC-SCR-025-01",
+      "ACT-LGC-SCR-025-12",
+      "ACT-LGC-SCR-026-01",
+      "ACT-LGC-SCR-026-12",
+      "ACT-LGC-SCR-029-01",
+      "ACT-LGC-SCR-040-01",
+      "ACT-LGC-SCR-066-01",
+      "ACT-LGC-SCR-066-11",
+      "ACT-CAS-PROFILE-001-01",
+      "ACT-LGC-SCR-068-01",
+      "ACT-LGC-SCR-125-01",
+      "ACT-LGC-SCR-061-02",
+      "ACT-CAS-STUB-001-01",
+      "ACT-CAS-STUB-002-01",
+      "ACT-CAS-STUB-003-01",
+      "ACT-CAS-STUB-004-01",
+      "ACT-CAS-STUB-005-01",
+      "ACT-CAS-STUB-006-01",
+      "ACT-LGC-SCR-069-02",
+      "ACT-LGC-SCR-069-08",
+      "ACT-LGC-SCR-070-02",
+      "ACT-LGC-SCR-070-08",
+      "ACT-LGC-SCR-073-02",
+      "ACT-LGC-SCR-073-08",
+      "ACT-LGC-SCR-085-02",
+      "ACT-LGC-SCR-085-05",
+      "ACT-LGC-SCR-087-03",
+      "ACT-LGC-SCR-041-01",
+      "ACT-WD-002-02",
+      "ACT-LGC-SCR-092-02",
+      "ACT-WD-004-02",
+      "ACT-CAS-WD-005-02",
+      "ACT-LGC-SCR-099-01",
+      "ACT-WD-003-01",
+      "ACT-PAY-001-01",
+      "ACT-PAY-001-19",
+      "ACT-PAY-002-02",
+      "ACT-PAY-002-09",
+      "ACT-LGC-SCR-111-01",
+      "ACT-LGC-SCR-111-05",
+      "ACT-QR-001-01",
+      "ACT-QR-001-06"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-025-01",
+      "ACT-LGC-SCR-025-02",
+      "ACT-LGC-SCR-025-03",
+      "ACT-LGC-SCR-025-04",
+      "ACT-LGC-SCR-025-05",
+      "ACT-LGC-SCR-025-06",
+      "ACT-LGC-SCR-025-07",
+      "ACT-LGC-SCR-025-08",
+      "ACT-LGC-SCR-025-09",
+      "ACT-LGC-SCR-025-10",
+      "ACT-LGC-SCR-025-11",
+      "ACT-LGC-SCR-025-12",
+      "ACT-LGC-SCR-025-13",
+      "ACT-LGC-SCR-025-14",
+      "ACT-LGC-SCR-025-15",
+      "ACT-LGC-SCR-025-16",
+      "ACT-LGC-SCR-025-17"
+    ],
+    "owner_questions": ["Q-AUTH-009"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-026",
+    "aliases": ["legacyNodeId 980:26275"],
+    "name": "Главная — ссылка фильтра истории",
+    "module": "HOME",
+    "route": "/legacy/home?historyLink=filter",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "980:26275",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-026__history-filter-link.png",
+    "screenshots": [
+      {
+        "state": "FILTER_LINK_VARIANT",
+        "path": "screenshots/annotated/LGC-SCR-026__history-filter-link.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["AUTHORIZED", "FILTER_LINK_VARIANT"],
+    "entry_actions": [],
+    "exit_actions": [
+      "ACT-LGC-SCR-026-01",
+      "ACT-LGC-SCR-026-02",
+      "ACT-LGC-SCR-026-03",
+      "ACT-LGC-SCR-026-04",
+      "ACT-LGC-SCR-026-05",
+      "ACT-LGC-SCR-026-06",
+      "ACT-LGC-SCR-026-07",
+      "ACT-LGC-SCR-026-08",
+      "ACT-LGC-SCR-026-09",
+      "ACT-LGC-SCR-026-10",
+      "ACT-LGC-SCR-026-11",
+      "ACT-LGC-SCR-026-12",
+      "ACT-LGC-SCR-026-13",
+      "ACT-LGC-SCR-026-14",
+      "ACT-LGC-SCR-026-15",
+      "ACT-LGC-SCR-026-16"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-HOME-003",
+    "aliases": ["Home TopupSelectSheet", "LGC-SCR-040 component reuse"],
+    "name": "Главная — выбор способа пополнения",
+    "module": "HOME",
+    "route": "/legacy/home (sheet)",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-HOME-003__topup-sheet-guest.png",
+    "screenshots": [
+      {
+        "state": "GUEST",
+        "path": "screenshots/annotated/CAS-HOME-003__topup-sheet-guest.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "AUTHORIZED",
+        "path": "screenshots/annotated/CAS-HOME-003__topup-sheet-authorized.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN", "GUEST", "AUTHORIZED"],
+    "entry_actions": [
+      "ACT-CAS-AUTH-003-01",
+      "ACT-CAS-AUTH-003-02",
+      "ACT-CAS-AUTH-012-01",
+      "ACT-CAS-AUTH-013-01",
+      "ACT-CAS-AUTH-014-01",
+      "ACT-CAS-AUTH-015-01",
+      "ACT-HOME-001-01",
+      "ACT-LGC-SCR-025-01",
+      "ACT-LGC-SCR-025-12",
+      "ACT-LGC-SCR-026-01",
+      "ACT-LGC-SCR-026-12",
+      "ACT-LGC-SCR-029-01",
+      "ACT-LGC-SCR-040-01",
+      "ACT-LGC-SCR-066-01",
+      "ACT-LGC-SCR-066-11",
+      "ACT-CAS-PROFILE-001-01",
+      "ACT-LGC-SCR-068-01",
+      "ACT-LGC-SCR-125-01",
+      "ACT-LGC-SCR-061-02",
+      "ACT-CAS-STUB-001-01",
+      "ACT-CAS-STUB-002-01",
+      "ACT-CAS-STUB-003-01",
+      "ACT-CAS-STUB-004-01",
+      "ACT-CAS-STUB-005-01",
+      "ACT-CAS-STUB-006-01",
+      "ACT-LGC-SCR-069-02",
+      "ACT-LGC-SCR-069-08",
+      "ACT-LGC-SCR-070-02",
+      "ACT-LGC-SCR-070-08",
+      "ACT-LGC-SCR-073-02",
+      "ACT-LGC-SCR-073-08",
+      "ACT-LGC-SCR-085-02",
+      "ACT-LGC-SCR-085-05",
+      "ACT-LGC-SCR-087-03",
+      "ACT-LGC-SCR-041-01",
+      "ACT-WD-002-02",
+      "ACT-LGC-SCR-092-02",
+      "ACT-WD-004-02",
+      "ACT-CAS-WD-005-02",
+      "ACT-LGC-SCR-099-01",
+      "ACT-WD-003-01",
+      "ACT-PAY-001-01",
+      "ACT-PAY-001-19",
+      "ACT-PAY-002-02",
+      "ACT-PAY-002-09",
+      "ACT-LGC-SCR-111-01",
+      "ACT-LGC-SCR-111-05",
+      "ACT-QR-001-01",
+      "ACT-QR-001-06"
+    ],
+    "exit_actions": ["ACT-CAS-HOME-003-01", "ACT-CAS-HOME-003-02", "ACT-CAS-HOME-003-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-HOME-004",
+    "aliases": ["Home WithdrawSelectSheet"],
+    "name": "Главная — выбор способа вывода",
+    "module": "HOME",
+    "route": "/legacy/home (sheet)",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/WithdrawSelectSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-HOME-004__withdraw-sheet-guest.png",
+    "screenshots": [
+      {
+        "state": "GUEST",
+        "path": "screenshots/annotated/CAS-HOME-004__withdraw-sheet-guest.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "AUTHORIZED",
+        "path": "screenshots/annotated/CAS-HOME-004__withdraw-sheet-authorized.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN", "GUEST", "AUTHORIZED"],
+    "entry_actions": [
+      "ACT-CAS-AUTH-003-01",
+      "ACT-CAS-AUTH-003-02",
+      "ACT-CAS-AUTH-012-01",
+      "ACT-CAS-AUTH-013-01",
+      "ACT-CAS-AUTH-014-01",
+      "ACT-CAS-AUTH-015-01",
+      "ACT-HOME-001-01",
+      "ACT-LGC-SCR-025-01",
+      "ACT-LGC-SCR-025-12",
+      "ACT-LGC-SCR-026-01",
+      "ACT-LGC-SCR-026-12",
+      "ACT-LGC-SCR-029-01",
+      "ACT-LGC-SCR-040-01",
+      "ACT-LGC-SCR-066-01",
+      "ACT-LGC-SCR-066-11",
+      "ACT-CAS-PROFILE-001-01",
+      "ACT-LGC-SCR-068-01",
+      "ACT-LGC-SCR-125-01",
+      "ACT-LGC-SCR-061-02",
+      "ACT-CAS-STUB-001-01",
+      "ACT-CAS-STUB-002-01",
+      "ACT-CAS-STUB-003-01",
+      "ACT-CAS-STUB-004-01",
+      "ACT-CAS-STUB-005-01",
+      "ACT-CAS-STUB-006-01",
+      "ACT-LGC-SCR-069-02",
+      "ACT-LGC-SCR-069-08",
+      "ACT-LGC-SCR-070-02",
+      "ACT-LGC-SCR-070-08",
+      "ACT-LGC-SCR-073-02",
+      "ACT-LGC-SCR-073-08",
+      "ACT-LGC-SCR-085-02",
+      "ACT-LGC-SCR-085-05",
+      "ACT-LGC-SCR-087-03",
+      "ACT-LGC-SCR-041-01",
+      "ACT-WD-002-02",
+      "ACT-LGC-SCR-092-02",
+      "ACT-WD-004-02",
+      "ACT-CAS-WD-005-02",
+      "ACT-LGC-SCR-099-01",
+      "ACT-WD-003-01",
+      "ACT-PAY-001-01",
+      "ACT-PAY-001-19",
+      "ACT-PAY-002-02",
+      "ACT-PAY-002-09",
+      "ACT-LGC-SCR-111-01",
+      "ACT-LGC-SCR-111-05",
+      "ACT-QR-001-01",
+      "ACT-QR-001-06"
+    ],
+    "exit_actions": [
+      "ACT-CAS-HOME-004-01",
+      "ACT-CAS-HOME-004-02",
+      "ACT-CAS-HOME-004-03",
+      "ACT-CAS-HOME-004-04"
+    ],
+    "owner_questions": ["Q-WD-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-HOME-005",
+    "aliases": ["Home HistoryActionSheet"],
+    "name": "Главная — действия с операцией",
+    "module": "HOME",
+    "route": "/legacy/home (sheet)",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHistory/HistoryActionSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-HOME-005__history-action-sheet.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-HOME-005__history-action-sheet.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": [
+      "ACT-CAS-AUTH-003-01",
+      "ACT-CAS-AUTH-003-02",
+      "ACT-CAS-AUTH-012-01",
+      "ACT-CAS-AUTH-013-01",
+      "ACT-CAS-AUTH-014-01",
+      "ACT-CAS-AUTH-015-01",
+      "ACT-HOME-001-01",
+      "ACT-LGC-SCR-025-01",
+      "ACT-LGC-SCR-025-12",
+      "ACT-LGC-SCR-026-01",
+      "ACT-LGC-SCR-026-12",
+      "ACT-LGC-SCR-029-01",
+      "ACT-LGC-SCR-040-01",
+      "ACT-LGC-SCR-066-01",
+      "ACT-LGC-SCR-066-11",
+      "ACT-CAS-PROFILE-001-01",
+      "ACT-LGC-SCR-068-01",
+      "ACT-LGC-SCR-125-01",
+      "ACT-LGC-SCR-061-02",
+      "ACT-CAS-STUB-001-01",
+      "ACT-CAS-STUB-002-01",
+      "ACT-CAS-STUB-003-01",
+      "ACT-CAS-STUB-004-01",
+      "ACT-CAS-STUB-005-01",
+      "ACT-CAS-STUB-006-01",
+      "ACT-LGC-SCR-069-02",
+      "ACT-LGC-SCR-069-08",
+      "ACT-LGC-SCR-070-02",
+      "ACT-LGC-SCR-070-08",
+      "ACT-LGC-SCR-073-02",
+      "ACT-LGC-SCR-073-08",
+      "ACT-LGC-SCR-085-02",
+      "ACT-LGC-SCR-085-05",
+      "ACT-LGC-SCR-087-03",
+      "ACT-LGC-SCR-041-01",
+      "ACT-WD-002-02",
+      "ACT-LGC-SCR-092-02",
+      "ACT-WD-004-02",
+      "ACT-CAS-WD-005-02",
+      "ACT-LGC-SCR-099-01",
+      "ACT-WD-003-01",
+      "ACT-PAY-001-01",
+      "ACT-PAY-001-19",
+      "ACT-PAY-002-02",
+      "ACT-PAY-002-09",
+      "ACT-LGC-SCR-111-01",
+      "ACT-LGC-SCR-111-05",
+      "ACT-QR-001-01",
+      "ACT-QR-001-06"
+    ],
+    "exit_actions": ["ACT-CAS-HOME-005-01", "ACT-CAS-HOME-005-02", "ACT-CAS-HOME-005-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-029",
+    "aliases": ["legacyNodeId 648:19007"],
+    "name": "Счета — список",
+    "module": "ACCOUNTS",
+    "route": "/legacy/accounts",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19007",
+    "component": "src/features/legacyAccounts/AccountsListScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-029__accounts-list.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-029__accounts-list.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT"],
+    "entry_actions": [
+      "ACT-LGC-SCR-029-03",
+      "ACT-LGC-SCR-029-04",
+      "ACT-LGC-SCR-029-05",
+      "ACT-LGC-SCR-032-01",
+      "ACT-LGC-SCR-033-01",
+      "ACT-LGC-SCR-035-01",
+      "ACT-LGC-SCR-036-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-029-01",
+      "ACT-LGC-SCR-029-02",
+      "ACT-LGC-SCR-029-03",
+      "ACT-LGC-SCR-029-04",
+      "ACT-LGC-SCR-029-05",
+      "ACT-LGC-SCR-029-06"
+    ],
+    "owner_questions": ["Q-ACC-001", "Q-ACC-003"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-031",
+    "aliases": ["legacyNodeId 648:19059"],
+    "name": "Счета — выбор валюты нового счета",
+    "module": "ACCOUNTS",
+    "route": "/legacy/accounts (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19059",
+    "component": "src/features/legacyAccounts/AccountsListScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-031__open-account-sheet.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/LGC-SCR-031__open-account-sheet.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-031__open-account-request-recorded.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN", "SELECTED"],
+    "entry_actions": [
+      "ACT-LGC-SCR-029-03",
+      "ACT-LGC-SCR-029-04",
+      "ACT-LGC-SCR-029-05",
+      "ACT-LGC-SCR-032-01",
+      "ACT-LGC-SCR-033-01",
+      "ACT-LGC-SCR-035-01",
+      "ACT-LGC-SCR-036-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-031-01",
+      "ACT-LGC-SCR-031-02",
+      "ACT-LGC-SCR-031-03",
+      "ACT-LGC-SCR-031-04"
+    ],
+    "owner_questions": ["Q-ACC-001", "Q-ACC-002"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-032",
+    "aliases": ["legacyNodeId 648:20120", "legacyNodeId 648:20152"],
+    "name": "Счет — реквизиты без карты",
+    "module": "ACCOUNTS",
+    "route": "/legacy/accounts/[id]",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20120",
+    "component": "src/features/legacyAccounts/AccountDetailScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-032__kzt-primary.png",
+    "screenshots": [
+      {
+        "state": "KZT_PRIMARY",
+        "path": "screenshots/annotated/LGC-SCR-032__kzt-primary.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "KZT_SECONDARY",
+        "path": "screenshots/annotated/LGC-SCR-032__kzt-secondary.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["KZT_PRIMARY", "KZT_SECONDARY", "NO_CARD"],
+    "entry_actions": [],
+    "exit_actions": [
+      "ACT-LGC-SCR-032-01",
+      "ACT-LGC-SCR-032-02",
+      "ACT-LGC-SCR-032-03",
+      "ACT-LGC-SCR-032-04",
+      "ACT-LGC-SCR-032-05",
+      "ACT-LGC-SCR-032-06"
+    ],
+    "owner_questions": ["Q-ACC-004", "Q-ACC-005"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-033",
+    "aliases": ["legacyNodeId 648:20196"],
+    "name": "Счет — реквизиты с картой",
+    "module": "ACCOUNTS",
+    "route": "/legacy/accounts/usd",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20196",
+    "component": "src/features/legacyAccounts/AccountDetailScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-033__usd-account.png",
+    "screenshots": [
+      {
+        "state": "HAS_CARD",
+        "path": "screenshots/annotated/LGC-SCR-033__usd-account.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["USD", "HAS_CARD"],
+    "entry_actions": ["ACT-LGC-SCR-029-05"],
+    "exit_actions": [
+      "ACT-LGC-SCR-033-01",
+      "ACT-LGC-SCR-033-02",
+      "ACT-LGC-SCR-033-03",
+      "ACT-LGC-SCR-033-04",
+      "ACT-LGC-SCR-033-05"
+    ],
+    "owner_questions": ["Q-CARD-002"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-034",
+    "aliases": ["legacyNodeId 821:29038"],
+    "name": "Счет — скачать данные",
+    "module": "ACCOUNTS",
+    "route": "/legacy/accounts/[id] (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:29038",
+    "component": "src/features/legacyAccounts/AccountDetailScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-034__download-sheet.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/LGC-SCR-034__download-sheet.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-LGC-SCR-034-01", "ACT-LGC-SCR-034-02", "ACT-LGC-SCR-034-03"],
+    "owner_questions": ["Q-ACC-006"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-040",
+    "aliases": ["legacyNodeId 648:20275", "Account-detail top-up component reuse"],
+    "name": "Пополнение — выбор способа",
+    "module": "TOPUP",
+    "route": "/legacy/topup",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20275",
+    "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-040__method-sheet.png",
+    "screenshots": [
+      {
+        "state": "ROUTE_SHEET",
+        "path": "screenshots/annotated/LGC-SCR-040__method-sheet.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "EMBEDDED_SHEET",
+        "path": "screenshots/annotated/LGC-SCR-040__account-method-sheet.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["ROUTE_SHEET", "EMBEDDED_SHEET"],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-02",
+      "ACT-CAS-HOME-003-03",
+      "ACT-LGC-SCR-040-02",
+      "ACT-LGC-SCR-040-03",
+      "ACT-LGC-SCR-061-03",
+      "ACT-LGC-SCR-061-06",
+      "ACT-LGC-SCR-069-01",
+      "ACT-LGC-SCR-070-01",
+      "ACT-LGC-SCR-073-01",
+      "ACT-LGC-SCR-085-01",
+      "ACT-LGC-SCR-087-01",
+      "ACT-LGC-SCR-074-01",
+      "ACT-LGC-SCR-074-02",
+      "ACT-LGC-SCR-080-01",
+      "ACT-LGC-SCR-081-01",
+      "ACT-LGC-SCR-081-02"
+    ],
+    "exit_actions": ["ACT-LGC-SCR-040-01", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-040-03"],
+    "owner_questions": ["Q-TOPUP-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-035",
+    "aliases": ["legacyNodeId 648:20359"],
+    "name": "Карта — данные скрыты",
+    "module": "CARD",
+    "route": "/legacy/card",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20359",
+    "component": "src/features/legacyCard/CardScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-035__card-hidden.png",
+    "screenshots": [
+      {
+        "state": "CVV_HIDDEN",
+        "path": "screenshots/annotated/LGC-SCR-035__card-hidden.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "CVV_HIDDEN"],
+    "entry_actions": [
+      "ACT-LGC-SCR-032-02",
+      "ACT-LGC-SCR-033-02",
+      "ACT-LGC-SCR-035-04",
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-036-04",
+      "ACT-LGC-SCR-036-05",
+      "ACT-LGC-SCR-038-01",
+      "ACT-LGC-SCR-057-01",
+      "ACT-LGC-SCR-059-01",
+      "ACT-LGC-SCR-060-01",
+      "ACT-LGC-SCR-061-05"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-035-01",
+      "ACT-LGC-SCR-035-02",
+      "ACT-LGC-SCR-035-03",
+      "ACT-LGC-SCR-035-04",
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-035-06",
+      "ACT-LGC-SCR-035-07"
+    ],
+    "owner_questions": ["Q-CARD-001", "Q-CARD-002", "Q-CARD-007", "Q-CARD-008", "Q-CARD-009"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-036",
+    "aliases": ["legacyNodeId 648:20467"],
+    "name": "Карта — CVV показан",
+    "module": "CARD",
+    "route": "/legacy/card",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20467",
+    "component": "src/features/legacyCard/CardScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-036__cvv-visible.png",
+    "screenshots": [
+      {
+        "state": "CVV_VISIBLE",
+        "path": "screenshots/annotated/LGC-SCR-036__cvv-visible.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CVV_VISIBLE"],
+    "entry_actions": [
+      "ACT-LGC-SCR-032-02",
+      "ACT-LGC-SCR-033-02",
+      "ACT-LGC-SCR-035-04",
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-036-04",
+      "ACT-LGC-SCR-036-05",
+      "ACT-LGC-SCR-038-01",
+      "ACT-LGC-SCR-057-01",
+      "ACT-LGC-SCR-059-01",
+      "ACT-LGC-SCR-060-01",
+      "ACT-LGC-SCR-061-05"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-036-01",
+      "ACT-LGC-SCR-036-02",
+      "ACT-LGC-SCR-036-03",
+      "ACT-LGC-SCR-036-04",
+      "ACT-LGC-SCR-036-05",
+      "ACT-LGC-SCR-036-06",
+      "ACT-LGC-SCR-036-07"
+    ],
+    "owner_questions": ["Q-CARD-010"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-037",
+    "aliases": ["legacyNodeId 648:20509"],
+    "name": "Карта — подтверждение блокировки",
+    "module": "CARD",
+    "route": "/legacy/card (modal)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20509",
+    "component": "src/features/legacyCard/CardScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-037__block-confirmation.png",
+    "screenshots": [
+      {
+        "state": "CONFIRMATION",
+        "path": "screenshots/annotated/LGC-SCR-037__block-confirmation.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "BLOCKED_LOCAL",
+        "path": "screenshots/annotated/LGC-SCR-037__after-block.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CONFIRMATION", "BLOCKED_LOCAL"],
+    "entry_actions": [
+      "ACT-LGC-SCR-032-02",
+      "ACT-LGC-SCR-033-02",
+      "ACT-LGC-SCR-035-04",
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-036-04",
+      "ACT-LGC-SCR-036-05",
+      "ACT-LGC-SCR-038-01",
+      "ACT-LGC-SCR-057-01",
+      "ACT-LGC-SCR-059-01",
+      "ACT-LGC-SCR-060-01",
+      "ACT-LGC-SCR-061-05"
+    ],
+    "exit_actions": ["ACT-LGC-SCR-037-01", "ACT-LGC-SCR-037-02"],
+    "owner_questions": ["Q-CARD-003", "Q-CARD-004"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-038",
+    "aliases": ["legacyNodeId 648:20425"],
+    "name": "Карта — лимиты",
+    "module": "CARD",
+    "route": "/legacy/card/limits",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20425",
+    "component": "src/features/legacyCard/LimitsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-038__limits.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-038__limits.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT"],
+    "entry_actions": ["ACT-LGC-SCR-035-04", "ACT-LGC-SCR-036-04"],
+    "exit_actions": ["ACT-LGC-SCR-038-01", "ACT-LGC-SCR-038-02"],
+    "owner_questions": ["Q-CARD-006"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-039",
+    "aliases": ["legacyNodeId 821:29193"],
+    "name": "Карта — выбор лимита",
+    "module": "CARD",
+    "route": "/legacy/card/limits (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:29193",
+    "component": "src/features/legacyCard/LimitsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-039__limit-sheet.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/LGC-SCR-039__limit-sheet.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-039__limit-selected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "APPLIED",
+        "path": "screenshots/annotated/LGC-SCR-039__limit-applied.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN", "SELECTED", "APPLIED"],
+    "entry_actions": ["ACT-LGC-SCR-035-04", "ACT-LGC-SCR-036-04"],
+    "exit_actions": [
+      "ACT-LGC-SCR-039-01",
+      "ACT-LGC-SCR-039-02",
+      "ACT-LGC-SCR-039-03",
+      "ACT-LGC-SCR-039-04",
+      "ACT-LGC-SCR-039-05",
+      "ACT-LGC-SCR-039-06",
+      "ACT-LGC-SCR-039-07",
+      "ACT-LGC-SCR-039-08"
+    ],
+    "owner_questions": ["Q-CARD-006"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-057",
+    "aliases": ["legacyNodeId 821:26267"],
+    "name": "Карта — новый PIN",
+    "module": "CARD",
+    "route": "/legacy/card/pin",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:26267",
+    "component": "src/features/legacyCard/CardPinScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-057__pin-create.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-057__pin-create.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT"],
+    "entry_actions": ["ACT-LGC-SCR-035-05", "ACT-LGC-SCR-036-05"],
+    "exit_actions": ["ACT-LGC-SCR-057-01", "ACT-LGC-SCR-057-02", "ACT-LGC-SCR-057-03"],
+    "owner_questions": ["Q-CARD-005"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-059",
+    "aliases": ["legacyNodeId 821:26507"],
+    "name": "Карта — повтор PIN",
+    "module": "CARD",
+    "route": "/legacy/card/pin",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:26507",
+    "component": "src/features/legacyCard/CardPinScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-059__pin-repeat.png",
+    "screenshots": [
+      {
+        "state": "CONFIRMATION",
+        "path": "screenshots/annotated/LGC-SCR-059__pin-repeat.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CONFIRMATION"],
+    "entry_actions": ["ACT-LGC-SCR-035-05", "ACT-LGC-SCR-036-05"],
+    "exit_actions": ["ACT-LGC-SCR-059-01", "ACT-LGC-SCR-059-02", "ACT-LGC-SCR-059-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-060",
+    "aliases": ["legacyNodeId 821:26587"],
+    "name": "Карта — ошибка PIN",
+    "module": "CARD",
+    "route": "/legacy/card/pin",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:26587",
+    "component": "src/features/legacyCard/CardPinScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-060__pin-error.png",
+    "screenshots": [
+      {
+        "state": "FAILED",
+        "path": "screenshots/annotated/LGC-SCR-060__pin-error.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FAILED"],
+    "entry_actions": ["ACT-LGC-SCR-035-05", "ACT-LGC-SCR-036-05"],
+    "exit_actions": ["ACT-LGC-SCR-060-01", "ACT-LGC-SCR-060-02", "ACT-LGC-SCR-060-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-066",
+    "aliases": ["legacyNodeId 648:19179"],
+    "name": "Профиль",
+    "module": "PROFILE",
+    "route": "/legacy/profile",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19179",
+    "component": "src/features/legacyProfile/ProfileScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-066__profile.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-066__profile.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-066__notification-control-visible.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "PHONE_CHANGED_LOCAL",
+        "path": "screenshots/annotated/LGC-SCR-066__after-phone-change.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "UNIDENTIFIED"],
+    "entry_actions": [
+      "ACT-LGC-SCR-025-02",
+      "ACT-LGC-SCR-025-16",
+      "ACT-LGC-SCR-026-02",
+      "ACT-LGC-SCR-026-16",
+      "ACT-LGC-SCR-066-02",
+      "ACT-LGC-SCR-066-03",
+      "ACT-LGC-SCR-066-07",
+      "ACT-LGC-SCR-066-15",
+      "ACT-LGC-SCR-067-01",
+      "ACT-LGC-SCR-068-02",
+      "ACT-LGC-SCR-068-03",
+      "ACT-LGC-SCR-122-01",
+      "ACT-LGC-SCR-122-03",
+      "ACT-LGC-SCR-123-01",
+      "ACT-LGC-SCR-124-01",
+      "ACT-LGC-SCR-069-03",
+      "ACT-LGC-SCR-070-03",
+      "ACT-LGC-SCR-073-03",
+      "ACT-LGC-SCR-085-03",
+      "ACT-WD-002-03",
+      "ACT-LGC-SCR-092-03",
+      "ACT-WD-004-03",
+      "ACT-CAS-WD-005-03",
+      "ACT-PAY-001-02",
+      "ACT-PAY-001-23",
+      "ACT-PAY-002-03",
+      "ACT-PAY-002-13",
+      "ACT-LGC-SCR-111-02",
+      "ACT-LGC-SCR-111-09",
+      "ACT-QR-001-02",
+      "ACT-QR-001-10"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-066-01",
+      "ACT-LGC-SCR-066-02",
+      "ACT-LGC-SCR-066-03",
+      "ACT-LGC-SCR-066-04",
+      "ACT-LGC-SCR-066-05",
+      "ACT-LGC-SCR-066-06",
+      "ACT-LGC-SCR-066-07",
+      "ACT-LGC-SCR-066-08",
+      "ACT-LGC-SCR-066-09",
+      "ACT-LGC-SCR-066-10",
+      "ACT-LGC-SCR-066-11",
+      "ACT-LGC-SCR-066-12",
+      "ACT-LGC-SCR-066-13",
+      "ACT-LGC-SCR-066-14",
+      "ACT-LGC-SCR-066-15"
+    ],
+    "owner_questions": ["Q-KYC-007", "Q-PROFILE-003", "Q-PROFILE-004"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-PROFILE-001",
+    "aliases": ["ProfileConfirmSheet logout"],
+    "name": "Профиль — подтверждение выхода",
+    "module": "PROFILE",
+    "route": "/legacy/profile (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyProfile/ProfileConfirmSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-PROFILE-001__logout-confirmation.png",
+    "screenshots": [
+      {
+        "state": "CONFIRMATION",
+        "path": "screenshots/annotated/CAS-PROFILE-001__logout-confirmation.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CONFIRMATION"],
+    "entry_actions": [
+      "ACT-LGC-SCR-025-02",
+      "ACT-LGC-SCR-025-16",
+      "ACT-LGC-SCR-026-02",
+      "ACT-LGC-SCR-026-16",
+      "ACT-LGC-SCR-066-02",
+      "ACT-LGC-SCR-066-03",
+      "ACT-LGC-SCR-066-07",
+      "ACT-LGC-SCR-066-15",
+      "ACT-LGC-SCR-067-01",
+      "ACT-LGC-SCR-068-02",
+      "ACT-LGC-SCR-068-03",
+      "ACT-LGC-SCR-122-01",
+      "ACT-LGC-SCR-122-03",
+      "ACT-LGC-SCR-123-01",
+      "ACT-LGC-SCR-124-01",
+      "ACT-LGC-SCR-069-03",
+      "ACT-LGC-SCR-070-03",
+      "ACT-LGC-SCR-073-03",
+      "ACT-LGC-SCR-085-03",
+      "ACT-WD-002-03",
+      "ACT-LGC-SCR-092-03",
+      "ACT-WD-004-03",
+      "ACT-CAS-WD-005-03",
+      "ACT-PAY-001-02",
+      "ACT-PAY-001-23",
+      "ACT-PAY-002-03",
+      "ACT-PAY-002-13",
+      "ACT-LGC-SCR-111-02",
+      "ACT-LGC-SCR-111-09",
+      "ACT-QR-001-02",
+      "ACT-QR-001-10"
+    ],
+    "exit_actions": ["ACT-CAS-PROFILE-001-01", "ACT-CAS-PROFILE-001-02"],
+    "owner_questions": ["Q-AUTH-011"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-PROFILE-002",
+    "aliases": ["ProfileConfirmSheet delete"],
+    "name": "Профиль — подтверждение удаления",
+    "module": "PROFILE",
+    "route": "/legacy/profile (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyProfile/ProfileConfirmSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-PROFILE-002__delete-confirmation.png",
+    "screenshots": [
+      {
+        "state": "CONFIRMATION",
+        "path": "screenshots/annotated/CAS-PROFILE-002__delete-confirmation.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CONFIRMATION"],
+    "entry_actions": [
+      "ACT-LGC-SCR-025-02",
+      "ACT-LGC-SCR-025-16",
+      "ACT-LGC-SCR-026-02",
+      "ACT-LGC-SCR-026-16",
+      "ACT-LGC-SCR-066-02",
+      "ACT-LGC-SCR-066-03",
+      "ACT-LGC-SCR-066-07",
+      "ACT-LGC-SCR-066-15",
+      "ACT-LGC-SCR-067-01",
+      "ACT-LGC-SCR-068-02",
+      "ACT-LGC-SCR-068-03",
+      "ACT-LGC-SCR-122-01",
+      "ACT-LGC-SCR-122-03",
+      "ACT-LGC-SCR-123-01",
+      "ACT-LGC-SCR-124-01",
+      "ACT-LGC-SCR-069-03",
+      "ACT-LGC-SCR-070-03",
+      "ACT-LGC-SCR-073-03",
+      "ACT-LGC-SCR-085-03",
+      "ACT-WD-002-03",
+      "ACT-LGC-SCR-092-03",
+      "ACT-WD-004-03",
+      "ACT-CAS-WD-005-03",
+      "ACT-PAY-001-02",
+      "ACT-PAY-001-23",
+      "ACT-PAY-002-03",
+      "ACT-PAY-002-13",
+      "ACT-LGC-SCR-111-02",
+      "ACT-LGC-SCR-111-09",
+      "ACT-QR-001-02",
+      "ACT-QR-001-10"
+    ],
+    "exit_actions": ["ACT-CAS-PROFILE-002-01", "ACT-CAS-PROFILE-002-02"],
+    "owner_questions": ["Q-PROFILE-005", "Q-PROFILE-006"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-067",
+    "aliases": ["legacyNodeId 648:19230"],
+    "name": "Профиль — персональные данные",
+    "module": "PROFILE",
+    "route": "/legacy/profile/personal",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19230",
+    "component": "src/features/legacyProfile/PersonalDataScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-067__personal-data.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-067__personal-data.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "ORPHAN_ROUTE"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-LGC-SCR-067-01", "ACT-LGC-SCR-067-02"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-068",
+    "aliases": [],
+    "name": "Профиль — статус идентификации",
+    "module": "KYC",
+    "route": "/legacy/profile/status",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyProfile/IdentificationStatusScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-068__identification-status.png",
+    "screenshots": [
+      {
+        "state": "UNIDENTIFIED",
+        "path": "screenshots/annotated/LGC-SCR-068__identification-status.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["UNIDENTIFIED", "STATIC_LIMITS"],
+    "entry_actions": ["ACT-LGC-SCR-066-03"],
+    "exit_actions": [
+      "ACT-LGC-SCR-068-01",
+      "ACT-LGC-SCR-068-02",
+      "ACT-LGC-SCR-068-03",
+      "ACT-LGC-SCR-068-04"
+    ],
+    "owner_questions": [
+      "Q-AUTH-012",
+      "Q-P2P-007",
+      "Q-KYC-001",
+      "Q-KYC-002",
+      "Q-KYC-004",
+      "Q-KYC-005",
+      "Q-KYC-006",
+      "Q-KYC-007",
+      "Q-KYC-008"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-122",
+    "aliases": ["legacyNodeId 648:16714"],
+    "name": "Профиль — новый телефон",
+    "module": "PROFILE",
+    "route": "/legacy/profile/phone",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:16714",
+    "component": "src/features/legacyProfile/ChangePhoneScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-122__phone-change.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-122__phone-change.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/LGC-SCR-122__phone-change-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED"],
+    "entry_actions": ["ACT-LGC-SCR-122-03", "ACT-LGC-SCR-123-01"],
+    "exit_actions": ["ACT-LGC-SCR-122-01", "ACT-LGC-SCR-122-02", "ACT-LGC-SCR-122-03"],
+    "owner_questions": ["Q-PROFILE-001", "Q-PROFILE-002"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-123",
+    "aliases": ["legacyNodeId 821:31991"],
+    "name": "Профиль — проверка нового телефона",
+    "module": "PROFILE",
+    "route": "/legacy/profile/phone/verify",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:31991",
+    "component": "src/features/legacyProfile/ChangePhoneVerifyScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-123__phone-verification.png",
+    "screenshots": [
+      {
+        "state": "VERIFICATION",
+        "path": "screenshots/annotated/LGC-SCR-123__phone-verification.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["VERIFICATION", "SUCCESS_REDIRECT"],
+    "entry_actions": ["ACT-LGC-SCR-122-03"],
+    "exit_actions": ["ACT-LGC-SCR-123-01", "ACT-LGC-SCR-123-02", "ACT-LGC-SCR-123-03"],
+    "owner_questions": ["Q-PROFILE-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-124",
+    "aliases": ["legacyNodeId 648:19215"],
+    "name": "Профиль — изменение PIN входа",
+    "module": "PROFILE",
+    "route": "/legacy/profile/pin",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19215",
+    "component": "src/features/legacyProfile/ChangePinScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-124__pin-change.png",
+    "screenshots": [
+      {
+        "state": "PIN_CREATE",
+        "path": "screenshots/annotated/LGC-SCR-124__pin-change.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "PIN_REPEAT",
+        "path": "screenshots/annotated/LGC-SCR-124__pin-repeat.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FAILED",
+        "path": "screenshots/annotated/LGC-SCR-124__pin-error.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["PIN_CREATE", "PIN_REPEAT", "FAILED"],
+    "entry_actions": ["ACT-LGC-SCR-066-07"],
+    "exit_actions": ["ACT-LGC-SCR-124-01", "ACT-LGC-SCR-124-02", "ACT-LGC-SCR-124-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-125",
+    "aliases": ["legacyNodeId 648:19263"],
+    "name": "Сообщения",
+    "module": "MESSAGES",
+    "route": "/legacy/messages",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19263",
+    "component": "src/features/legacyProfile/MessagesScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-125__messages.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-125__messages.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "ORPHAN_ROUTE"],
+    "entry_actions": ["ACT-LGC-SCR-126-01"],
+    "exit_actions": ["ACT-LGC-SCR-125-01", "ACT-LGC-SCR-125-02", "ACT-LGC-SCR-125-03"],
+    "owner_questions": ["Q-P2P-008", "Q-QR-007"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-126",
+    "aliases": ["legacyNodeId 648:19334"],
+    "name": "Помощь",
+    "module": "SUPPORT",
+    "route": "/legacy/help",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:19334",
+    "component": "src/features/legacyProfile/HelpScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-126__help.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-126__help.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/LGC-SCR-126__help-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED"],
+    "entry_actions": ["ACT-LGC-SCR-125-03"],
+    "exit_actions": ["ACT-LGC-SCR-126-01", "ACT-LGC-SCR-126-02", "ACT-LGC-SCR-126-03"],
+    "owner_questions": ["Q-PROFILE-007", "Q-PROFILE-008"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-061",
+    "aliases": ["legacyNodeId 736:48670"],
+    "name": "Поиск действий",
+    "module": "SEARCH",
+    "route": "/legacy/search",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "736:48670",
+    "component": "src/features/legacySearch/SearchScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-061__search.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-061__search.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "RESULTS",
+        "path": "screenshots/annotated/LGC-SCR-061__deferred-result.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "EMPTY",
+        "path": "screenshots/annotated/LGC-SCR-061__no-results.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "RESULTS", "EMPTY"],
+    "entry_actions": [],
+    "exit_actions": [
+      "ACT-LGC-SCR-061-01",
+      "ACT-LGC-SCR-061-02",
+      "ACT-LGC-SCR-061-03",
+      "ACT-LGC-SCR-061-04",
+      "ACT-LGC-SCR-061-05",
+      "ACT-LGC-SCR-061-06",
+      "ACT-LGC-SCR-061-07",
+      "ACT-LGC-SCR-061-08"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-STUB-001",
+    "aliases": ["GuestStubScreen; no source screenId"],
+    "name": "Заглушка — регистрация",
+    "module": "STUB",
+    "route": "/legacy/stub/registration",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/GuestStubScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-STUB-001__registration.png",
+    "screenshots": [
+      {
+        "state": "STUB",
+        "path": "screenshots/annotated/CAS-STUB-001__registration.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["STUB"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-STUB-001-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-STUB-002",
+    "aliases": ["GuestStubScreen; no source screenId"],
+    "name": "Заглушка — бонус",
+    "module": "STUB",
+    "route": "/legacy/stub/bonus",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/GuestStubScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-STUB-002__bonus.png",
+    "screenshots": [
+      {
+        "state": "STUB",
+        "path": "screenshots/annotated/CAS-STUB-002__bonus.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["STUB"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-STUB-002-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-STUB-003",
+    "aliases": ["GuestStubScreen; no source screenId"],
+    "name": "Заглушка — пользователь Cashhello",
+    "module": "STUB",
+    "route": "/legacy/stub/cashhello-user",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/GuestStubScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-STUB-003__cashhello-user.png",
+    "screenshots": [
+      {
+        "state": "STUB",
+        "path": "screenshots/annotated/CAS-STUB-003__cashhello-user.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["STUB"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-STUB-003-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-STUB-004",
+    "aliases": ["GuestStubScreen; no source screenId"],
+    "name": "Заглушка — привязанные карты",
+    "module": "STUB",
+    "route": "/legacy/stub/linked-cards",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/GuestStubScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-STUB-004__linked-cards.png",
+    "screenshots": [
+      {
+        "state": "STUB",
+        "path": "screenshots/annotated/CAS-STUB-004__linked-cards.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["STUB"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-STUB-004-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-STUB-005",
+    "aliases": ["GuestStubScreen; no source screenId"],
+    "name": "Заглушка — предложить идею",
+    "module": "STUB",
+    "route": "/legacy/stub/suggest-idea",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/GuestStubScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-STUB-005__suggest-idea.png",
+    "screenshots": [
+      {
+        "state": "STUB",
+        "path": "screenshots/annotated/CAS-STUB-005__suggest-idea.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["STUB"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-STUB-005-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-STUB-006",
+    "aliases": ["GuestStubScreen; no source screenId"],
+    "name": "Заглушка — документы",
+    "module": "STUB",
+    "route": "/legacy/stub/documents",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/GuestStubScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-STUB-006__documents.png",
+    "screenshots": [
+      {
+        "state": "STUB",
+        "path": "screenshots/annotated/CAS-STUB-006__documents.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["STUB"],
+    "entry_actions": ["ACT-LGC-SCR-066-08"],
+    "exit_actions": ["ACT-CAS-STUB-006-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-069",
+    "aliases": ["legacyNodeId 648:18900"],
+    "name": "Между своими счетами — пустая форма",
+    "module": "TRANSFER",
+    "route": "/legacy/topup/between",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:18900",
+    "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-069__between-default.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-069__between-default.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "TO_EMPTY"],
+    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "exit_actions": [
+      "ACT-LGC-SCR-069-01",
+      "ACT-LGC-SCR-069-02",
+      "ACT-LGC-SCR-069-03",
+      "ACT-LGC-SCR-069-04",
+      "ACT-LGC-SCR-069-05",
+      "ACT-LGC-SCR-069-06",
+      "ACT-LGC-SCR-069-07",
+      "ACT-LGC-SCR-069-08"
+    ],
+    "owner_questions": ["Q-TRF-008"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-070",
+    "aliases": ["legacyNodeId 648:18928"],
+    "name": "Между своими счетами — счета выбраны",
+    "module": "TRANSFER",
+    "route": "/legacy/topup/between",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:18928",
+    "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-070__accounts-selected-fx.png",
+    "screenshots": [
+      {
+        "state": "ACCOUNTS_SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-070__accounts-selected-fx.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["ACCOUNTS_SELECTED"],
+    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "exit_actions": [
+      "ACT-LGC-SCR-070-01",
+      "ACT-LGC-SCR-070-02",
+      "ACT-LGC-SCR-070-03",
+      "ACT-LGC-SCR-070-04",
+      "ACT-LGC-SCR-070-05",
+      "ACT-LGC-SCR-070-06",
+      "ACT-LGC-SCR-070-07",
+      "ACT-LGC-SCR-070-08"
+    ],
+    "owner_questions": ["Q-TRF-001"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-071",
+    "aliases": ["legacyNodeId 648:18958"],
+    "name": "Между своими счетами — выбор счета",
+    "module": "TRANSFER",
+    "route": "/legacy/topup/between (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:18958",
+    "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-071__account-picker.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/LGC-SCR-071__account-picker.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "exit_actions": ["ACT-LGC-SCR-071-01", "ACT-LGC-SCR-071-02", "ACT-LGC-SCR-071-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-073",
+    "aliases": ["legacyNodeId 833:27842"],
+    "name": "Между своими счетами — сумма введена",
+    "module": "TRANSFER",
+    "route": "/legacy/topup/between",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "833:27842",
+    "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-073__fx-filled.png",
+    "screenshots": [
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/LGC-SCR-073__fx-filled.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "OVER_BALANCE",
+        "path": "screenshots/annotated/LGC-SCR-073__over-balance-enabled.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FORM_FILLED", "OVER_BALANCE"],
+    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "exit_actions": [
+      "ACT-LGC-SCR-073-01",
+      "ACT-LGC-SCR-073-02",
+      "ACT-LGC-SCR-073-03",
+      "ACT-LGC-SCR-073-04",
+      "ACT-LGC-SCR-073-05",
+      "ACT-LGC-SCR-073-06",
+      "ACT-LGC-SCR-073-07",
+      "ACT-LGC-SCR-073-08"
+    ],
+    "owner_questions": [
+      "Q-TRF-002",
+      "Q-TRF-003",
+      "Q-TRF-004",
+      "Q-TRF-005",
+      "Q-TRF-006",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-085",
+    "aliases": ["legacyNodeId 648:20712"],
+    "name": "Пополнение картой — форма",
+    "module": "TOPUP",
+    "route": "/legacy/topup/card",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:20712",
+    "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-085__external-card.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-085__external-card.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "CARD_SYNTHETIC"],
+    "entry_actions": ["ACT-CAS-HOME-003-03", "ACT-LGC-SCR-040-03"],
+    "exit_actions": [
+      "ACT-LGC-SCR-085-01",
+      "ACT-LGC-SCR-085-02",
+      "ACT-LGC-SCR-085-03",
+      "ACT-LGC-SCR-085-04",
+      "ACT-LGC-SCR-085-05"
+    ],
+    "owner_questions": ["Q-TOPUP-002", "Q-TOPUP-003", "Q-TOPUP-004"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-TOPUP-001",
+    "aliases": ["ExternalCardScreen saved card sheet"],
+    "name": "Пополнение картой — сохраненные карты",
+    "module": "TOPUP",
+    "route": "/legacy/topup/card (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-TOPUP-001__saved-card-picker.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-TOPUP-001__saved-card-picker.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": ["ACT-CAS-HOME-003-03", "ACT-LGC-SCR-040-03"],
+    "exit_actions": ["ACT-CAS-TOPUP-001-01", "ACT-CAS-TOPUP-001-02"],
+    "owner_questions": [],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-087",
+    "aliases": ["legacyNodeId 821:30114"],
+    "name": "Пополнение картой — карта выбрана",
+    "module": "TOPUP",
+    "route": "/legacy/topup/card",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:30114",
+    "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-087__saved-card-selected.png",
+    "screenshots": [
+      {
+        "state": "SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-087__saved-card-selected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SELECTED"],
+    "entry_actions": ["ACT-CAS-HOME-003-03", "ACT-LGC-SCR-040-03"],
+    "exit_actions": ["ACT-LGC-SCR-087-01", "ACT-LGC-SCR-087-02", "ACT-LGC-SCR-087-03"],
+    "owner_questions": [
+      "Q-TOPUP-005",
+      "Q-TOPUP-006",
+      "Q-TOPUP-007",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-074",
+    "aliases": ["legacyNodeId 648:17510"],
+    "name": "Пополнение наличными — выбор кассы",
+    "module": "TOPUP",
+    "route": "/legacy/topup/cash",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17510",
+    "component": "src/features/legacyTopup/CashTopupScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-074__cash-picker.png",
+    "screenshots": [
+      {
+        "state": "EMPTY",
+        "path": "screenshots/annotated/LGC-SCR-074__cash-picker.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "DESK_SELECTED_RETURN",
+        "path": "screenshots/annotated/LGC-SCR-074__cash-picker-returned.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["EMPTY", "ORPHAN_ROUTE"],
+    "entry_actions": [
+      "ACT-LGC-SCR-074-02",
+      "ACT-LGC-SCR-080-01",
+      "ACT-LGC-SCR-081-01",
+      "ACT-LGC-SCR-081-02"
+    ],
+    "exit_actions": ["ACT-LGC-SCR-074-01", "ACT-LGC-SCR-074-02", "ACT-LGC-SCR-074-03"],
+    "owner_questions": ["Q-TOPUP-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-080",
+    "aliases": ["legacyNodeId 821:30474"],
+    "name": "Пополнение наличными — карта касс",
+    "module": "TOPUP",
+    "route": "/legacy/topup/cash-map",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:30474",
+    "component": "src/features/legacyTopup/CashMapScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-080__cash-map.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-080__cash-map.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "MOCK_MAP"],
+    "entry_actions": ["ACT-LGC-SCR-074-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-080-01",
+      "ACT-LGC-SCR-080-02",
+      "ACT-LGC-SCR-080-03",
+      "ACT-LGC-SCR-080-04",
+      "ACT-LGC-SCR-080-05",
+      "ACT-LGC-SCR-080-06"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-081",
+    "aliases": ["legacyNodeId 821:30532"],
+    "name": "Пополнение наличными — касса выбрана",
+    "module": "TOPUP",
+    "route": "/legacy/topup/cash-map",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:30532",
+    "component": "src/features/legacyTopup/CashMapScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-081__cash-desk-selected.png",
+    "screenshots": [
+      {
+        "state": "SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-081__cash-desk-selected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SELECTED", "PROCESSING_CREATED"],
+    "entry_actions": ["ACT-LGC-SCR-074-02"],
+    "exit_actions": ["ACT-LGC-SCR-081-01", "ACT-LGC-SCR-081-02"],
+    "owner_questions": [
+      "Q-TOPUP-003",
+      "Q-TOPUP-004",
+      "Q-TOPUP-008",
+      "Q-TOPUP-009",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-041",
+    "aliases": ["legacyNodeId 804:23390", "Figma component only: WD / Method Row node 97:272"],
+    "name": "Вывод — выбор способа",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "804:23390",
+    "component": "src/features/legacyWithdraw/MethodSelectScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-041__method-selection.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-041__method-selection.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT"],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-02",
+      "ACT-CAS-HOME-004-03",
+      "ACT-CAS-HOME-004-04",
+      "ACT-LGC-SCR-061-08",
+      "ACT-LGC-SCR-041-02",
+      "ACT-LGC-SCR-041-03",
+      "ACT-LGC-SCR-041-04",
+      "ACT-WD-002-01",
+      "ACT-WD-002-09",
+      "ACT-LGC-SCR-092-01",
+      "ACT-LGC-SCR-092-09",
+      "ACT-WD-004-01",
+      "ACT-WD-004-08",
+      "ACT-CAS-WD-005-01",
+      "ACT-CAS-WD-005-08",
+      "ACT-LGC-SCR-105-01",
+      "ACT-LGC-SCR-105-02",
+      "ACT-LGC-SCR-106-01",
+      "ACT-LGC-SCR-108-01",
+      "ACT-LGC-SCR-108-02",
+      "ACT-LGC-SCR-093-01",
+      "ACT-LGC-SCR-095-01",
+      "ACT-LGC-SCR-096-01",
+      "ACT-LGC-SCR-109-01",
+      "ACT-LGC-SCR-097-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-041-01",
+      "ACT-LGC-SCR-041-02",
+      "ACT-LGC-SCR-041-03",
+      "ACT-LGC-SCR-041-04",
+      "ACT-LGC-SCR-041-05"
+    ],
+    "owner_questions": ["Q-WD-001"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "WD-002",
+    "aliases": ["legacyNodeId 804:23664"],
+    "name": "Вывод на карту — форма",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/card",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "804:23664",
+    "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/WD-002__card-form.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/WD-002__card-form.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/WD-002__card-form-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "TRANSFER_DELAY",
+        "path": "screenshots/annotated/WD-002__card-transfer-delay.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED", "TRANSFER_DELAY"],
+    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "exit_actions": [
+      "ACT-WD-002-01",
+      "ACT-WD-002-02",
+      "ACT-WD-002-03",
+      "ACT-WD-002-04",
+      "ACT-WD-002-05",
+      "ACT-WD-002-06",
+      "ACT-WD-002-07",
+      "ACT-WD-002-08",
+      "ACT-WD-002-09"
+    ],
+    "owner_questions": [
+      "Q-WD-002",
+      "Q-WD-003",
+      "Q-WD-013",
+      "Q-KYC-008",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-091",
+    "aliases": ["legacyNodeId 648:17578"],
+    "name": "Вывод на карту — сканер",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/card (overlay)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17578",
+    "component": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-091__card-camera.png",
+    "screenshots": [
+      {
+        "state": "CAMERA_MOCK",
+        "path": "screenshots/annotated/LGC-SCR-091__card-camera.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CAMERA_MOCK"],
+    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "exit_actions": ["ACT-LGC-SCR-091-01", "ACT-LGC-SCR-091-02"],
+    "owner_questions": [],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-092",
+    "aliases": ["legacyNodeId 648:17672"],
+    "name": "Вывод на карту — карта выбрана",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/card",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17672",
+    "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-092__card-selected.png",
+    "screenshots": [
+      {
+        "state": "CARD_SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-092__card-selected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CARD_SELECTED"],
+    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-092-01",
+      "ACT-LGC-SCR-092-02",
+      "ACT-LGC-SCR-092-03",
+      "ACT-LGC-SCR-092-04",
+      "ACT-LGC-SCR-092-05",
+      "ACT-LGC-SCR-092-06",
+      "ACT-LGC-SCR-092-07",
+      "ACT-LGC-SCR-092-08",
+      "ACT-LGC-SCR-092-09"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "CAS-WD-001",
+    "aliases": ["CardWithdrawScreen saved card sheet"],
+    "name": "Вывод на карту — сохраненные карты",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/card (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-WD-001__saved-card-picker.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-WD-001__saved-card-picker.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "exit_actions": ["ACT-CAS-WD-001-01", "ACT-CAS-WD-001-02"],
+    "owner_questions": [],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "CAS-WD-002",
+    "aliases": ["CardWithdrawScreen account picker"],
+    "name": "Вывод — выбор счета списания",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/card (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-WD-002__account-picker.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-WD-002__account-picker.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "exit_actions": [
+      "ACT-CAS-WD-002-01",
+      "ACT-CAS-WD-002-02",
+      "ACT-CAS-WD-002-03",
+      "ACT-CAS-WD-002-04",
+      "ACT-CAS-WD-002-05"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "WD-004",
+    "aliases": ["legacyNodeId local-draft"],
+    "name": "Вывод на баланс телефона",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/phone",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "local-draft",
+    "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/WD-004__phone-form.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/WD-004__phone-form.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/WD-004__phone-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "TRANSFER_DELAY",
+        "path": "screenshots/annotated/WD-004__phone-transfer-delay.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED", "SUCCESS"],
+    "entry_actions": ["ACT-CAS-HOME-004-03", "ACT-LGC-SCR-041-03"],
+    "exit_actions": [
+      "ACT-WD-004-01",
+      "ACT-WD-004-02",
+      "ACT-WD-004-03",
+      "ACT-WD-004-04",
+      "ACT-WD-004-05",
+      "ACT-WD-004-06",
+      "ACT-WD-004-07",
+      "ACT-WD-004-08"
+    ],
+    "owner_questions": [
+      "Q-WD-002",
+      "Q-WD-003",
+      "Q-WD-014",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-WD-003",
+    "aliases": ["PhoneFormWithdrawScreen saved phone sheet"],
+    "name": "Вывод на телефон — сохраненные номера",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/phone (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-WD-003__saved-phone-picker.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-WD-003__saved-phone-picker.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": ["ACT-CAS-HOME-004-03", "ACT-LGC-SCR-041-03"],
+    "exit_actions": ["ACT-CAS-WD-003-01", "ACT-CAS-WD-003-02"],
+    "owner_questions": [],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "CAS-WD-005",
+    "aliases": [
+      "source screenId WD-005 (collision with phone-withdraw receipt)",
+      "legacyNodeId local-draft"
+    ],
+    "name": "Перевод пользователю Cashhello",
+    "module": "P2P",
+    "route": "/legacy/withdraw/cashhello-user",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "local-draft",
+    "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-WD-005__cashhello-user.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/CAS-WD-005__cashhello-user.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "USER_NOT_FOUND",
+        "path": "screenshots/annotated/CAS-WD-005__user-not-found.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "USER_NOT_FOUND", "BLOCKED"],
+    "entry_actions": ["ACT-CAS-HOME-004-04"],
+    "exit_actions": [
+      "ACT-CAS-WD-005-01",
+      "ACT-CAS-WD-005-02",
+      "ACT-CAS-WD-005-03",
+      "ACT-CAS-WD-005-04",
+      "ACT-CAS-WD-005-05",
+      "ACT-CAS-WD-005-06",
+      "ACT-CAS-WD-005-07",
+      "ACT-CAS-WD-005-08"
+    ],
+    "owner_questions": [
+      "Q-P2P-001",
+      "Q-P2P-002",
+      "Q-P2P-003",
+      "Q-P2P-004",
+      "Q-P2P-005",
+      "Q-P2P-006",
+      "Q-P2P-007",
+      "Q-P2P-008",
+      "Q-QR-010",
+      "Q-KYC-008",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-105",
+    "aliases": ["legacyNodeId 648:17478"],
+    "name": "Вывод наличными — выбор кассы",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/cash",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17478",
+    "component": "src/features/legacyWithdraw/CashWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-105__cash-picker.png",
+    "screenshots": [
+      {
+        "state": "EMPTY",
+        "path": "screenshots/annotated/LGC-SCR-105__cash-picker.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["EMPTY"],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-04",
+      "ACT-LGC-SCR-041-04",
+      "ACT-LGC-SCR-105-02",
+      "ACT-LGC-SCR-106-01",
+      "ACT-LGC-SCR-108-01",
+      "ACT-LGC-SCR-093-01",
+      "ACT-LGC-SCR-095-01",
+      "ACT-LGC-SCR-096-01",
+      "ACT-LGC-SCR-109-01"
+    ],
+    "exit_actions": ["ACT-LGC-SCR-105-01", "ACT-LGC-SCR-105-02", "ACT-LGC-SCR-105-03"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-106",
+    "aliases": ["legacyNodeId 648:17787"],
+    "name": "Вывод наличными — карта касс",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/cash-map",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17787",
+    "component": "src/features/legacyWithdraw/CashMapWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-106__cash-map.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-106__cash-map.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "MOCK_MAP"],
+    "entry_actions": [
+      "ACT-LGC-SCR-105-02",
+      "ACT-LGC-SCR-093-01",
+      "ACT-LGC-SCR-095-01",
+      "ACT-LGC-SCR-096-01",
+      "ACT-LGC-SCR-109-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-106-01",
+      "ACT-LGC-SCR-106-02",
+      "ACT-LGC-SCR-106-03",
+      "ACT-LGC-SCR-106-04",
+      "ACT-LGC-SCR-106-05",
+      "ACT-LGC-SCR-106-06"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-108",
+    "aliases": ["legacyNodeId 648:18091"],
+    "name": "Вывод наличными — касса выбрана",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/cash-map",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:18091",
+    "component": "src/features/legacyWithdraw/CashMapWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-108__cash-desk-selected.png",
+    "screenshots": [
+      {
+        "state": "SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-108__cash-desk-selected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SELECTED"],
+    "entry_actions": [
+      "ACT-LGC-SCR-105-02",
+      "ACT-LGC-SCR-093-01",
+      "ACT-LGC-SCR-095-01",
+      "ACT-LGC-SCR-096-01",
+      "ACT-LGC-SCR-109-01"
+    ],
+    "exit_actions": ["ACT-LGC-SCR-108-01", "ACT-LGC-SCR-108-02"],
+    "owner_questions": ["Q-WD-010"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-093",
+    "aliases": ["legacyNodeId 648:18324"],
+    "name": "Вывод — ввод суммы",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/amount",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:18324",
+    "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-093__amount-default.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-093__amount-default.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT"],
+    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-093-01",
+      "ACT-LGC-SCR-093-02",
+      "ACT-LGC-SCR-093-03",
+      "ACT-LGC-SCR-093-04",
+      "ACT-LGC-SCR-093-05",
+      "ACT-LGC-SCR-093-06"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-095",
+    "aliases": ["legacyNodeId 804:25789"],
+    "name": "Вывод — сумма выше mock-лимита",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/amount",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "804:25789",
+    "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-095__amount-over-limit.png",
+    "screenshots": [
+      {
+        "state": "OVER_LIMIT",
+        "path": "screenshots/annotated/LGC-SCR-095__amount-over-limit.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FAILED", "OVER_LIMIT"],
+    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-095-01",
+      "ACT-LGC-SCR-095-02",
+      "ACT-LGC-SCR-095-03",
+      "ACT-LGC-SCR-095-04",
+      "ACT-LGC-SCR-095-05",
+      "ACT-LGC-SCR-095-06"
+    ],
+    "owner_questions": ["Q-WD-002"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-096",
+    "aliases": ["legacyNodeId 804:25863"],
+    "name": "Вывод — сумма и комиссия",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/amount",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "804:25863",
+    "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-096__amount-fee.png",
+    "screenshots": [
+      {
+        "state": "FEE_VISIBLE",
+        "path": "screenshots/annotated/LGC-SCR-096__amount-fee.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FORM_FILLED", "FEE_VISIBLE"],
+    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-096-01",
+      "ACT-LGC-SCR-096-02",
+      "ACT-LGC-SCR-096-03",
+      "ACT-LGC-SCR-096-04",
+      "ACT-LGC-SCR-096-05",
+      "ACT-LGC-SCR-096-06"
+    ],
+    "owner_questions": ["Q-WD-003"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-109",
+    "aliases": ["legacyNodeId 821:31425"],
+    "name": "Вывод наличными — сумма",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/amount",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "821:31425",
+    "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-109__cash-amount.png",
+    "screenshots": [
+      {
+        "state": "CASH_LAYOUT",
+        "path": "screenshots/annotated/LGC-SCR-109__cash-amount.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CASH_LAYOUT"],
+    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-109-01",
+      "ACT-LGC-SCR-109-02",
+      "ACT-LGC-SCR-109-03",
+      "ACT-LGC-SCR-109-04",
+      "ACT-LGC-SCR-109-05",
+      "ACT-LGC-SCR-109-06"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-097",
+    "aliases": ["legacyNodeId 648:18857"],
+    "name": "Вывод — подтверждение",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/amount (modal)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:18857",
+    "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-097__confirmation.png",
+    "screenshots": [
+      {
+        "state": "CONFIRMATION",
+        "path": "screenshots/annotated/LGC-SCR-097__confirmation.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["CONFIRMATION"],
+    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "exit_actions": ["ACT-LGC-SCR-097-01", "ACT-LGC-SCR-097-02"],
+    "owner_questions": [
+      "Q-WD-004",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "LGC-SCR-098",
+    "aliases": ["legacyNodeId 648:17221"],
+    "name": "Вывод — обработка",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/loading",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17221",
+    "component": "src/features/legacyWithdraw/LoadingWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-098__loading.png",
+    "screenshots": [
+      {
+        "state": "LOADING",
+        "path": "screenshots/annotated/LGC-SCR-098__loading.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "LOADING",
+        "path": "screenshots/annotated/LGC-SCR-098__cash-loading.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "LOADING_ERROR_SCENARIO",
+        "path": "screenshots/annotated/LGC-SCR-098__error-loading.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "LOADING_PROCESSING_SCENARIO",
+        "path": "screenshots/annotated/LGC-SCR-098__processing-loading.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["LOADING"],
+    "entry_actions": [
+      "ACT-WD-002-09",
+      "ACT-LGC-SCR-092-09",
+      "ACT-WD-004-08",
+      "ACT-CAS-WD-005-08",
+      "ACT-LGC-SCR-097-01"
+    ],
+    "exit_actions": [],
+    "owner_questions": ["Q-WD-004"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-099",
+    "aliases": ["legacyNodeId 648:17246"],
+    "name": "Вывод — ошибка",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/loading?scenario=error",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17246",
+    "component": "src/features/legacyWithdraw/LoadingWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-099__error.png",
+    "screenshots": [
+      {
+        "state": "FAILED",
+        "path": "screenshots/annotated/LGC-SCR-099__error.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["FAILED"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-LGC-SCR-099-01", "ACT-LGC-SCR-099-02"],
+    "owner_questions": ["Q-WD-005", "Q-WD-006"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "WD-003",
+    "aliases": ["legacyNodeId 648:17298", "history detail alias legacyNodeId 107:144"],
+    "name": "Вывод — квитанция / результат",
+    "module": "WITHDRAW",
+    "route": "/legacy/withdraw/loading; /legacy/history/[id]",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "648:17298",
+    "component": "src/features/legacyWithdraw/LoadingWithdrawScreen.tsx",
+    "screenshot": "screenshots/annotated/WD-003__success.png",
+    "screenshots": [
+      {
+        "state": "SUCCESS",
+        "path": "screenshots/annotated/WD-003__success.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "SUCCESS",
+        "path": "screenshots/annotated/WD-003__card-success.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "SUCCESS",
+        "path": "screenshots/annotated/WD-003__phone-success.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "READY_FOR_PICKUP",
+        "path": "screenshots/annotated/WD-003__cash-ready.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "PROCESSING",
+        "path": "screenshots/annotated/WD-003__processing.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "HISTORY_RECEIPT",
+        "path": "screenshots/annotated/WD-003__history-card-receipt.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SUCCESS", "READY_FOR_PICKUP", "PROCESSING"],
+    "entry_actions": [
+      "ACT-WD-002-09",
+      "ACT-LGC-SCR-092-09",
+      "ACT-WD-004-08",
+      "ACT-CAS-WD-005-08",
+      "ACT-LGC-SCR-097-01"
+    ],
+    "exit_actions": ["ACT-WD-003-01", "ACT-WD-003-02"],
+    "owner_questions": [
+      "Q-WD-004",
+      "Q-WD-005",
+      "Q-WD-007",
+      "Q-WD-008",
+      "Q-WD-009",
+      "Q-WD-010",
+      "Q-WD-011",
+      "Q-WD-012",
+      "Q-WD-015",
+      "Q-HIST-002",
+      "Q-HIST-007"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-HIST-005",
+    "aliases": [
+      "source screenId WD-005 (collision with Cashhello-user form)",
+      "legacyNodeId 118:226"
+    ],
+    "name": "История — квитанция вывода на телефон",
+    "module": "HISTORY",
+    "route": "/legacy/history/wd-phone",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "118:226",
+    "component": "src/features/legacyHistory/OperationDetailsScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-HIST-005__phone-withdraw-receipt.png",
+    "screenshots": [
+      {
+        "state": "HISTORY_RECEIPT",
+        "path": "screenshots/annotated/CAS-HIST-005__phone-withdraw-receipt.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["HISTORY_RECEIPT"],
+    "entry_actions": [],
+    "exit_actions": ["ACT-CAS-HIST-005-01"],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "PAY-001",
+    "aliases": [],
+    "name": "Оплата — каталог услуг",
+    "module": "PAYMENT",
+    "route": "/legacy/payment",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyPayment/PaymentScreen.tsx",
+    "screenshot": "screenshots/annotated/PAY-001__catalog.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/PAY-001__catalog.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "CATEGORY_SELECTED",
+        "path": "screenshots/annotated/PAY-001__category-mfo.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FAVORITES_EMPTY",
+        "path": "screenshots/annotated/PAY-001__favorites-empty.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "SEARCH_RESULTS",
+        "path": "screenshots/annotated/PAY-001__search-result.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "EMPTY",
+        "path": "screenshots/annotated/PAY-001__search-empty.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "GUEST",
+        "path": "screenshots/annotated/PAY-001__guest-browse.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "CATEGORY_SELECTED", "FAVORITES_EMPTY", "SEARCH_RESULTS", "EMPTY"],
+    "entry_actions": [
+      "ACT-HOME-001-06",
+      "ACT-HOME-001-07",
+      "ACT-HOME-001-08",
+      "ACT-HOME-001-09",
+      "ACT-LGC-SCR-025-06",
+      "ACT-LGC-SCR-025-07",
+      "ACT-LGC-SCR-025-08",
+      "ACT-LGC-SCR-025-09",
+      "ACT-LGC-SCR-025-13",
+      "ACT-LGC-SCR-026-06",
+      "ACT-LGC-SCR-026-07",
+      "ACT-LGC-SCR-026-08",
+      "ACT-LGC-SCR-026-09",
+      "ACT-LGC-SCR-026-13",
+      "ACT-LGC-SCR-066-12",
+      "ACT-PAY-001-10",
+      "ACT-PAY-001-11",
+      "ACT-PAY-001-12",
+      "ACT-PAY-001-13",
+      "ACT-PAY-001-14",
+      "ACT-PAY-001-15",
+      "ACT-PAY-001-16",
+      "ACT-PAY-001-17",
+      "ACT-PAY-001-20",
+      "ACT-PAY-002-01",
+      "ACT-PAY-002-10",
+      "ACT-PAY-002-14",
+      "ACT-LGC-SCR-111-06",
+      "ACT-QR-001-07"
+    ],
+    "exit_actions": [
+      "ACT-PAY-001-01",
+      "ACT-PAY-001-02",
+      "ACT-PAY-001-03",
+      "ACT-PAY-001-04",
+      "ACT-PAY-001-05",
+      "ACT-PAY-001-06",
+      "ACT-PAY-001-07",
+      "ACT-PAY-001-08",
+      "ACT-PAY-001-09",
+      "ACT-PAY-001-10",
+      "ACT-PAY-001-11",
+      "ACT-PAY-001-12",
+      "ACT-PAY-001-13",
+      "ACT-PAY-001-14",
+      "ACT-PAY-001-15",
+      "ACT-PAY-001-16",
+      "ACT-PAY-001-17",
+      "ACT-PAY-001-18",
+      "ACT-PAY-001-19",
+      "ACT-PAY-001-20",
+      "ACT-PAY-001-21",
+      "ACT-PAY-001-22",
+      "ACT-PAY-001-23"
+    ],
+    "owner_questions": ["Q-PAY-001", "Q-PAY-004", "Q-PAY-006", "Q-PAY-011"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-PAY-001",
+    "aliases": ["PaymentCategorySheet"],
+    "name": "Оплата — выбор категории",
+    "module": "PAYMENT",
+    "route": "/legacy/payment (sheet)",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyPayment/PaymentCategorySheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-PAY-001__category-sheet.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-PAY-001__category-sheet.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": [
+      "ACT-HOME-001-06",
+      "ACT-HOME-001-07",
+      "ACT-HOME-001-08",
+      "ACT-HOME-001-09",
+      "ACT-LGC-SCR-025-06",
+      "ACT-LGC-SCR-025-07",
+      "ACT-LGC-SCR-025-08",
+      "ACT-LGC-SCR-025-09",
+      "ACT-LGC-SCR-025-13",
+      "ACT-LGC-SCR-026-06",
+      "ACT-LGC-SCR-026-07",
+      "ACT-LGC-SCR-026-08",
+      "ACT-LGC-SCR-026-09",
+      "ACT-LGC-SCR-026-13",
+      "ACT-LGC-SCR-066-12",
+      "ACT-PAY-001-10",
+      "ACT-PAY-001-11",
+      "ACT-PAY-001-12",
+      "ACT-PAY-001-13",
+      "ACT-PAY-001-14",
+      "ACT-PAY-001-15",
+      "ACT-PAY-001-16",
+      "ACT-PAY-001-17",
+      "ACT-PAY-001-20",
+      "ACT-PAY-002-01",
+      "ACT-PAY-002-10",
+      "ACT-PAY-002-14",
+      "ACT-LGC-SCR-111-06",
+      "ACT-QR-001-07"
+    ],
+    "exit_actions": [
+      "ACT-CAS-PAY-001-01",
+      "ACT-CAS-PAY-001-02",
+      "ACT-CAS-PAY-001-03",
+      "ACT-CAS-PAY-001-04",
+      "ACT-CAS-PAY-001-05"
+    ],
+    "owner_questions": [],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "PAY-002",
+    "aliases": [],
+    "name": "Оплата — услуга",
+    "module": "PAYMENT",
+    "route": "/legacy/payment/[id]",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
+    "screenshot": "screenshots/annotated/PAY-002__ubet.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/PAY-002__ubet.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "DEFAULT_MFO",
+        "path": "screenshots/annotated/PAY-002__zaimer.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "UNAVAILABLE_DEEP_LINK",
+        "path": "screenshots/annotated/PAY-002__unavailable.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "NOT_FOUND",
+        "path": "screenshots/annotated/PAY-002__not-found.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "GUEST_FORM_FILLED",
+        "path": "screenshots/annotated/PAY-002__guest-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/PAY-002__filled-bonus.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "LOADING",
+        "path": "screenshots/annotated/PAY-002__loading.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "AFTER_ALERT",
+        "path": "screenshots/annotated/PAY-002__after-success-alert.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED", "LOADING", "SERVICE_UNAVAILABLE", "NOT_FOUND"],
+    "entry_actions": [],
+    "exit_actions": [
+      "ACT-PAY-002-01",
+      "ACT-PAY-002-02",
+      "ACT-PAY-002-03",
+      "ACT-PAY-002-04",
+      "ACT-PAY-002-05",
+      "ACT-PAY-002-06",
+      "ACT-PAY-002-07",
+      "ACT-PAY-002-08",
+      "ACT-PAY-002-09",
+      "ACT-PAY-002-10",
+      "ACT-PAY-002-11",
+      "ACT-PAY-002-12",
+      "ACT-PAY-002-13",
+      "ACT-PAY-002-14"
+    ],
+    "owner_questions": [
+      "Q-PAY-002",
+      "Q-PAY-004",
+      "Q-PAY-005",
+      "Q-PAY-006",
+      "Q-PAY-007",
+      "Q-PAY-008",
+      "Q-PAY-009",
+      "Q-PAY-010",
+      "Q-PAY-011",
+      "Q-PAY-012",
+      "Q-KYC-008",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-PAY-002",
+    "aliases": ["PaymentServiceScreen account picker"],
+    "name": "Оплата — выбор счета",
+    "module": "PAYMENT",
+    "route": "/legacy/payment/[id] (sheet)",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
+    "screenshot": "screenshots/annotated/CAS-PAY-002__account-picker.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-PAY-002__account-picker.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN"],
+    "entry_actions": [],
+    "exit_actions": [
+      "ACT-CAS-PAY-002-01",
+      "ACT-CAS-PAY-002-02",
+      "ACT-CAS-PAY-002-03",
+      "ACT-CAS-PAY-002-04",
+      "ACT-CAS-PAY-002-05"
+    ],
+    "owner_questions": ["Q-PAY-003"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-111",
+    "aliases": ["legacyNodeId 980:26609"],
+    "name": "История операций",
+    "module": "HISTORY",
+    "route": "/legacy/history",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": "980:26609",
+    "component": "src/features/legacyHistory/HistoryScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-111__history-list.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-111__history-list.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "GUEST",
+        "path": "screenshots/annotated/LGC-SCR-111__guest-history.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "DATE_FILTERED",
+        "path": "screenshots/annotated/LGC-SCR-111__date-filtered.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "DATE_FILTERED", "EMPTY", "GUEST"],
+    "entry_actions": [
+      "ACT-HOME-001-10",
+      "ACT-LGC-SCR-025-10",
+      "ACT-LGC-SCR-025-15",
+      "ACT-LGC-SCR-026-10",
+      "ACT-LGC-SCR-026-15",
+      "ACT-CAS-HOME-005-03",
+      "ACT-LGC-SCR-032-05",
+      "ACT-LGC-SCR-032-06",
+      "ACT-LGC-SCR-033-05",
+      "ACT-LGC-SCR-066-14",
+      "ACT-WD-003-01",
+      "ACT-CAS-HIST-005-01",
+      "ACT-PAY-001-22",
+      "ACT-PAY-002-12",
+      "ACT-LGC-SCR-111-08",
+      "ACT-CAS-HIST-002-03",
+      "ACT-LGC-SCR-113-01",
+      "ACT-LGC-SCR-113-06",
+      "ACT-LGC-SCR-115-01",
+      "ACT-LGC-SCR-115-05",
+      "ACT-LGC-SCR-120-01",
+      "ACT-QR-001-09"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-111-01",
+      "ACT-LGC-SCR-111-02",
+      "ACT-LGC-SCR-111-03",
+      "ACT-LGC-SCR-111-04",
+      "ACT-LGC-SCR-111-05",
+      "ACT-LGC-SCR-111-06",
+      "ACT-LGC-SCR-111-07",
+      "ACT-LGC-SCR-111-08",
+      "ACT-LGC-SCR-111-09"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-007",
+      "Q-TRF-007",
+      "Q-PAY-008",
+      "Q-PAY-012",
+      "Q-HIST-001",
+      "Q-HIST-002",
+      "Q-HIST-006",
+      "Q-HIST-008",
+      "Q-HIST-010"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-HIST-001",
+    "aliases": ["HistoryDateSheet"],
+    "name": "История — выбор дат",
+    "module": "HISTORY",
+    "route": "/legacy/history (sheet)",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHistory/HistoryDateSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-HIST-001__calendar.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-HIST-001__calendar.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "DATE_SELECTED",
+        "path": "screenshots/annotated/CAS-HIST-001__calendar-selected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN", "DATE_SELECTED"],
+    "entry_actions": [
+      "ACT-HOME-001-10",
+      "ACT-LGC-SCR-025-10",
+      "ACT-LGC-SCR-025-15",
+      "ACT-LGC-SCR-026-10",
+      "ACT-LGC-SCR-026-15",
+      "ACT-CAS-HOME-005-03",
+      "ACT-LGC-SCR-032-05",
+      "ACT-LGC-SCR-032-06",
+      "ACT-LGC-SCR-033-05",
+      "ACT-LGC-SCR-066-14",
+      "ACT-WD-003-01",
+      "ACT-CAS-HIST-005-01",
+      "ACT-PAY-001-22",
+      "ACT-PAY-002-12",
+      "ACT-LGC-SCR-111-08",
+      "ACT-CAS-HIST-002-03",
+      "ACT-LGC-SCR-113-01",
+      "ACT-LGC-SCR-113-06",
+      "ACT-LGC-SCR-115-01",
+      "ACT-LGC-SCR-115-05",
+      "ACT-LGC-SCR-120-01",
+      "ACT-QR-001-09"
+    ],
+    "exit_actions": [
+      "ACT-CAS-HIST-001-01",
+      "ACT-CAS-HIST-001-02",
+      "ACT-CAS-HIST-001-03",
+      "ACT-CAS-HIST-001-04",
+      "ACT-CAS-HIST-001-05",
+      "ACT-CAS-HIST-001-06"
+    ],
+    "owner_questions": ["Q-HIST-009"],
+    "screenshot_qa": "CAPTURE_GAP",
+    "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
+  },
+  {
+    "screen_id": "CAS-HIST-002",
+    "aliases": ["HistoryActionSheet"],
+    "name": "История — действия с операцией",
+    "module": "HISTORY",
+    "route": "/legacy/history (sheet)",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHistory/HistoryActionSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-HIST-002__action-sheet.png",
+    "screenshots": [
+      {
+        "state": "SHEET_OPEN",
+        "path": "screenshots/annotated/CAS-HIST-002__action-sheet.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "GUEST",
+        "path": "screenshots/annotated/CAS-HIST-002__action-sheet-guest.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["SHEET_OPEN", "GUEST"],
+    "entry_actions": [
+      "ACT-HOME-001-10",
+      "ACT-LGC-SCR-025-10",
+      "ACT-LGC-SCR-025-15",
+      "ACT-LGC-SCR-026-10",
+      "ACT-LGC-SCR-026-15",
+      "ACT-CAS-HOME-005-03",
+      "ACT-LGC-SCR-032-05",
+      "ACT-LGC-SCR-032-06",
+      "ACT-LGC-SCR-033-05",
+      "ACT-LGC-SCR-066-14",
+      "ACT-WD-003-01",
+      "ACT-CAS-HIST-005-01",
+      "ACT-PAY-001-22",
+      "ACT-PAY-002-12",
+      "ACT-LGC-SCR-111-08",
+      "ACT-CAS-HIST-002-03",
+      "ACT-LGC-SCR-113-01",
+      "ACT-LGC-SCR-113-06",
+      "ACT-LGC-SCR-115-01",
+      "ACT-LGC-SCR-115-05",
+      "ACT-LGC-SCR-120-01",
+      "ACT-QR-001-09"
+    ],
+    "exit_actions": ["ACT-CAS-HIST-002-01", "ACT-CAS-HIST-002-02", "ACT-CAS-HIST-002-03"],
+    "owner_questions": ["Q-HIST-004"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-113",
+    "aliases": ["legacyNodeId 925:24765"],
+    "name": "История — фильтр",
+    "module": "HISTORY",
+    "route": "/legacy/history/filter",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": "925:24765",
+    "component": "src/features/legacyHistory/FilterScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-113__filter.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/LGC-SCR-113__filter.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "SELECTED",
+        "path": "screenshots/annotated/LGC-SCR-113__filter-selected.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "EMPTY_RESULT",
+        "path": "screenshots/annotated/LGC-SCR-113__filter-empty-result.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "SELECTED", "EMPTY_RESULT"],
+    "entry_actions": ["ACT-LGC-SCR-026-10"],
+    "exit_actions": [
+      "ACT-LGC-SCR-113-01",
+      "ACT-LGC-SCR-113-02",
+      "ACT-LGC-SCR-113-03",
+      "ACT-LGC-SCR-113-04",
+      "ACT-LGC-SCR-113-05",
+      "ACT-LGC-SCR-113-06"
+    ],
+    "owner_questions": ["Q-HIST-009"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-115",
+    "aliases": ["legacyNodeId varies by status"],
+    "name": "История — детали операции",
+    "module": "HISTORY",
+    "route": "/legacy/history/[id]",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHistory/OperationDetailsScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-115__processing-detail.png",
+    "screenshots": [
+      {
+        "state": "PROCESSING",
+        "path": "screenshots/annotated/LGC-SCR-115__processing-detail.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "CANCEL_CONFIRMATION",
+        "path": "screenshots/annotated/LGC-SCR-115__cancel-confirmation.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "REJECTED",
+        "path": "screenshots/annotated/LGC-SCR-115__cancelled-rejected.png",
+        "note": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state.",
+        "capture_status": "CAPTURE_GAP"
+      },
+      {
+        "state": "SUCCESS",
+        "path": "screenshots/annotated/LGC-SCR-115__success-detail.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["PROCESSING", "CANCEL_CONFIRMATION", "REJECTED", "SUCCESS"],
+    "entry_actions": [
+      "ACT-CAS-HOME-005-03",
+      "ACT-LGC-SCR-032-06",
+      "ACT-CAS-HIST-002-03",
+      "ACT-LGC-SCR-115-05",
+      "ACT-LGC-SCR-120-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-115-01",
+      "ACT-LGC-SCR-115-02",
+      "ACT-LGC-SCR-115-03",
+      "ACT-LGC-SCR-115-04",
+      "ACT-LGC-SCR-115-05",
+      "ACT-LGC-SCR-115-06"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-009",
+      "Q-WD-007",
+      "Q-WD-012",
+      "Q-PAY-010",
+      "Q-HIST-002",
+      "Q-HIST-003",
+      "Q-HIST-005"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "LGC-SCR-120",
+    "aliases": ["legacyNodeId 933:25268"],
+    "name": "История — чек",
+    "module": "HISTORY",
+    "route": "/legacy/history/[id]/receipt",
+    "auth_state": "AUTHORIZED",
+    "figma_node": null,
+    "legacy_node": "933:25268",
+    "component": "src/features/legacyHistory/ReceiptScreen.tsx",
+    "screenshot": "screenshots/annotated/LGC-SCR-120__receipt.png",
+    "screenshots": [
+      {
+        "state": "RECEIPT",
+        "path": "screenshots/annotated/LGC-SCR-120__receipt.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "RECEIPT",
+        "path": "screenshots/annotated/LGC-SCR-120__receipt-out.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["RECEIPT"],
+    "entry_actions": ["ACT-LGC-SCR-115-05"],
+    "exit_actions": ["ACT-LGC-SCR-120-01", "ACT-LGC-SCR-120-02", "ACT-LGC-SCR-120-03"],
+    "owner_questions": ["Q-TOPUP-010", "Q-WD-015", "Q-HIST-005", "Q-HIST-006", "Q-HIST-007"],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "QR-001",
+    "aliases": [],
+    "name": "Получить по QR",
+    "module": "QR",
+    "route": "/legacy/qr",
+    "auth_state": "MIXED",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
+    "screenshot": "screenshots/annotated/QR-001__qr-entry.png",
+    "screenshots": [
+      {
+        "state": "DEFAULT",
+        "path": "screenshots/annotated/QR-001__qr-entry.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "FORM_FILLED",
+        "path": "screenshots/annotated/QR-001__amount-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "GENERATED",
+        "path": "screenshots/annotated/QR-001__generated.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "DEFAULT_AFTER_RESET",
+        "path": "screenshots/annotated/QR-001__reset.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "GUEST_FORM_FILLED",
+        "path": "screenshots/annotated/QR-001__guest-filled.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["DEFAULT", "FORM_FILLED", "GENERATED", "GUEST"],
+    "entry_actions": [
+      "ACT-LGC-SCR-025-14",
+      "ACT-LGC-SCR-026-14",
+      "ACT-LGC-SCR-066-13",
+      "ACT-PAY-001-21",
+      "ACT-PAY-002-11",
+      "ACT-LGC-SCR-111-07",
+      "ACT-QR-001-08"
+    ],
+    "exit_actions": [
+      "ACT-QR-001-01",
+      "ACT-QR-001-02",
+      "ACT-QR-001-03",
+      "ACT-QR-001-04",
+      "ACT-QR-001-05",
+      "ACT-QR-001-06",
+      "ACT-QR-001-07",
+      "ACT-QR-001-08",
+      "ACT-QR-001-09",
+      "ACT-QR-001-10"
+    ],
+    "owner_questions": [
+      "Q-QR-001",
+      "Q-QR-002",
+      "Q-QR-003",
+      "Q-QR-004",
+      "Q-QR-005",
+      "Q-QR-006",
+      "Q-QR-007",
+      "Q-QR-008",
+      "Q-QR-009",
+      "Q-QR-010",
+      "Q-KYC-008",
+      "Q-ERR-001",
+      "Q-ERR-002",
+      "Q-ERR-003",
+      "Q-ERR-004",
+      "Q-ERR-005",
+      "Q-ERR-006",
+      "Q-ERR-007",
+      "Q-ERR-008"
+    ],
+    "screenshot_qa": "VALIDATED"
+  },
+  {
+    "screen_id": "CAS-SUPPORT-002",
+    "aliases": ["GLOBAL_SUPPORT_SHEET"],
+    "name": "Служба поддержки",
+    "module": "SUPPORT",
+    "route": "overlay on /legacy/*",
+    "auth_state": "ANY",
+    "figma_node": null,
+    "legacy_node": null,
+    "component": "src/features/legacyHome/SupportContactSheet.tsx",
+    "screenshot": "screenshots/annotated/CAS-SUPPORT-002__sheet-authorized.png",
+    "screenshots": [
+      {
+        "state": "GUEST_SHEET",
+        "path": "screenshots/annotated/CAS-SUPPORT-002__sheet-guest.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      },
+      {
+        "state": "AUTHORIZED_SHEET",
+        "path": "screenshots/annotated/CAS-SUPPORT-002__sheet-authorized.png",
+        "note": null,
+        "capture_status": "CAPTURED"
+      }
+    ],
+    "source_status": "CODE_ONLY",
+    "states": ["GUEST_SHEET", "AUTHORIZED_SHEET", "LINK_UNAVAILABLE"],
+    "entry_actions": ["ACT-GLOBAL-SUPPORT-01", "ACT-HOME-001-13", "ACT-LGC-SCR-025-17"],
+    "exit_actions": [
+      "ACT-CAS-SUPPORT-002-01",
+      "ACT-CAS-SUPPORT-002-02",
+      "ACT-CAS-SUPPORT-002-03",
+      "ACT-CAS-SUPPORT-002-04"
+    ],
+    "owner_questions": [
+      "Q-SUPPORT-001",
+      "Q-SUPPORT-002",
+      "Q-SUPPORT-003",
+      "Q-SUPPORT-004",
+      "Q-SUPPORT-005"
+    ],
+    "screenshot_qa": "VALIDATED"
+  }
+]

@@ -99,3 +99,7 @@ Start here before implementing backend APIs:
 Start here before editing screens or visual behavior:
 
 - [FIGMA_HANDOFF.md](docs/design/FIGMA_HANDOFF.md) — owner-approved Figma audit, screen/route mapping, component and token reference
+
+## Business process discovery
+
+- [AI_HANDOFF_INDEX.md](docs/business/discovery/AI_HANDOFF_INDEX.md) — screen, action, flow, screenshot, and owner-question inventory
