@@ -85,7 +85,7 @@ npm run reset-demo   # reset persisted mock state
 npm test -- --runInBand
 ```
 
-Current baseline: **18 test suites**, **125 tests** (`src/**/*.test.ts`).
+Current baseline: **22 test suites**, **136 tests** (`src/**/*.test.ts`).
 
 ## Backend handoff
 
