@@ -372,9 +372,12 @@ export function LegacyHomeScreen({
                         </Text>
                         <Text style={styles.recentAmount}>{row.amount}</Text>
                       </View>
-                      <Text style={styles.recentPhone} numberOfLines={1}>
-                        {row.phone}
-                      </Text>
+                      <View style={styles.recentSubtitleRow}>
+                        <Text style={styles.recentPhone} numberOfLines={1}>
+                          {row.phone}
+                        </Text>
+                        <Text style={styles.recentBonus}>{row.bonus}</Text>
+                      </View>
                     </View>
                   </Pressable>
                 </View>
@@ -682,8 +685,15 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   recentName: { ...legacyType.field, color: legacyColor.textPrimary, flex: 1 },
-  recentPhone: { ...legacyType.body, color: legacyColor.textSecondary },
+  recentSubtitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8,
+  },
+  recentPhone: { ...legacyType.body, color: legacyColor.textSecondary, flex: 1 },
   recentAmount: { ...legacyType.field, color: legacyColor.textPrimary },
+  recentBonus: { ...legacyType.caption, color: legacyColor.logoGreen },
   recentAmountBonus: { color: legacyColor.logoGreen },
   jumps: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 8 },
   jump: {

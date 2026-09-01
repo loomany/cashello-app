@@ -1,6 +1,11 @@
 import { homeAccounts, homeCopy, homePromoBanners, homeServicesPreview } from '@/features/legacyHome/copy';
 import { HOME_BRIDGES, HOME_HISTORY } from '@/features/legacyHome/mockData';
-import { GUEST_RECENT_OPERATION, homeRecentOperationsPreview } from '@/features/legacyHome/recentOperationsPreview';
+import {
+  GUEST_RECENT_OPERATION,
+  formatRecentOperationBonus,
+  homeRecentOperationsPreview,
+  recentOperationBonusPoints,
+} from '@/features/legacyHome/recentOperationsPreview';
 import { homeHref, profileHref, guestBalanceLabel } from '@/features/legacyHome/session';
 import { reduceLegacyAuth } from '@/features/legacyAuth/machine';
 import { INITIAL_LEGACY_AUTH } from '@/features/legacyAuth/types';
@@ -56,6 +61,15 @@ describe('legacy Home reconstruction (RECON-002)', () => {
     expect(GUEST_RECENT_OPERATION.amount).toBe('+500 Б');
   });
 
+  it('calculates recent-operation bonus at 2% of amount', () => {
+    expect(recentOperationBonusPoints(5000)).toBe(100);
+    expect(recentOperationBonusPoints(20000)).toBe(400);
+    expect(recentOperationBonusPoints(1500)).toBe(30);
+    expect(formatRecentOperationBonus(5000)).toBe('+100 Б');
+    expect(formatRecentOperationBonus(20000)).toBe('+400 Б');
+    expect(formatRecentOperationBonus(1500)).toBe('+30 Б');
+  });
+
   it('builds recent operations preview from payment catalog', () => {
     const rows = homeRecentOperationsPreview(8);
     expect(rows).toHaveLength(8);
@@ -64,6 +78,11 @@ describe('legacy Home reconstruction (RECON-002)', () => {
     expect(rows[0]?.phoneDigits).toBe('7078789911');
     expect(rows[0]?.amountKzt).toBe(5000);
     expect(rows[0]?.amount).toBe('−5 000 ₸');
+    expect(rows[0]?.bonus).toBe('+100 Б');
+    expect(rows[1]?.bonus).toBe('+400 Б');
+    expect(rows[2]?.bonus).toBe('+30 Б');
+    expect(rows.every((row) => row.amount.startsWith('−'))).toBe(true);
+    expect(rows.every((row) => row.bonus.startsWith('+') && row.bonus.endsWith(' Б'))).toBe(true);
     expect(rows.map((row) => row.serviceId)).toEqual([
       'ubet',
       'oinabet',

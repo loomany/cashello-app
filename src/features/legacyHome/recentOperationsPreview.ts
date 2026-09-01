@@ -28,6 +28,7 @@ export type RecentOperationPreview = {
   phoneDigits: string;
   amount: string;
   amountKzt: number;
+  bonus: string;
 };
 
 function kzPhoneToDigits(phone: string): string {
@@ -48,6 +49,18 @@ const RECENT_PHONES = [
 ] as const;
 
 const RECENT_AMOUNTS_KZT = [5_000, 20_000, 1_500, 10_000, 3_500, 7_500, 12_000, 2_500] as const;
+
+/** Prototype display rate for authorized Home recent-operation bonus chips. */
+export const RECENT_OPERATION_BONUS_RATE = 0.02;
+
+export function recentOperationBonusPoints(amountKzt: number): number {
+  return Math.round(amountKzt * RECENT_OPERATION_BONUS_RATE);
+}
+
+export function formatRecentOperationBonus(amountKzt: number): string {
+  const grouped = String(recentOperationBonusPoints(amountKzt)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return `+${grouped} Б`;
+}
 
 function availablePaymentServices(): PaymentService[] {
   const services: PaymentService[] = [];
@@ -71,5 +84,6 @@ export function homeRecentOperationsPreview(limit = 8): RecentOperationPreview[]
     phoneDigits: kzPhoneToDigits(RECENT_PHONES[index] ?? '+77070000000'),
     amountKzt: RECENT_AMOUNTS_KZT[index] ?? 1_000,
     amount: `−${formatLegacyBalance(RECENT_AMOUNTS_KZT[index] ?? 1_000, 'KZT')}`,
+    bonus: formatRecentOperationBonus(RECENT_AMOUNTS_KZT[index] ?? 1_000),
   }));
 }
