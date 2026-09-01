@@ -93,9 +93,28 @@ for (const action of actions) {
 ok('action screen refs + required fields');
 
 // --- Source raw interaction inventory → action catalog ---
-const rawInteractions = readJson('docs/business/discovery/manifests/source_interactions.json');
+const sourceManifest = readJson('docs/business/discovery/manifests/source_interactions.json');
+const rawInteractions = Array.isArray(sourceManifest) ? sourceManifest : sourceManifest.interactions;
+const scanMeta = Array.isArray(sourceManifest) ? null : sourceManifest.scan_meta;
+
+if (!rawInteractions || !Array.isArray(rawInteractions)) {
+  fail('source_interactions.json missing interactions array');
+}
+
+if (scanMeta) {
+  if (scanMeta.unclassified !== 0) {
+    fail(`source scan unclassified=${scanMeta.unclassified} (must be 0)`);
+  }
+  if (scanMeta.source_candidates !== scanMeta.classified_candidates) {
+    fail(
+      `source scan candidates=${scanMeta.source_candidates} != classified=${scanMeta.classified_candidates}`,
+    );
+  }
+}
+
 const VALID_MAPPING = new Set(['MAPPED', 'UI_LOCAL', 'DUPLICATE_BEHAVIOR', 'CURRENT_UI_GAP']);
 const rawIds = new Set();
+const scannedKeys = new Set();
 
 for (const raw of rawInteractions) {
   if (rawIds.has(raw.interaction_id)) fail(`duplicate source interaction ${raw.interaction_id}`);
@@ -103,6 +122,7 @@ for (const raw of rawInteractions) {
   if (!VALID_MAPPING.has(raw.mapping_status)) {
     fail(`source ${raw.interaction_id} invalid mapping_status ${raw.mapping_status}`);
   }
+  if (raw.line > 0 && raw.scan_key) scannedKeys.add(raw.scan_key);
   if (['MAPPED', 'DUPLICATE_BEHAVIOR', 'CURRENT_UI_GAP'].includes(raw.mapping_status)) {
     if (!raw.catalog_action_id) fail(`source ${raw.interaction_id} missing catalog_action_id`);
     else if (!actionIds.has(raw.catalog_action_id)) {
@@ -112,6 +132,24 @@ for (const raw of rawInteractions) {
   if (raw.mapping_status === 'UI_LOCAL' && raw.catalog_action_id) {
     fail(`source ${raw.interaction_id} UI_LOCAL must not have catalog_action_id`);
   }
+}
+
+// Re-scan to verify every auto-found candidate is classified in manifest
+try {
+  const { scanReachableSource, scanKey } = require('./source-interaction-scan');
+  const liveScan = scanReachableSource(ROOT).filter((r) => !r.interaction_kind.startsWith('component:'));
+  for (const row of liveScan) {
+    const key = scanKey(row);
+    const classified = rawInteractions.some(
+      (r) => r.scan_key === key && r.mapping_status && r.mapping_status !== 'UNCLASSIFIED',
+    );
+    if (!classified) fail(`live scan candidate unclassified: ${key}`);
+  }
+  if (scanMeta && liveScan.length !== scanMeta.source_candidates) {
+    fail(`scan_meta source_candidates=${scanMeta.source_candidates} != live scan ${liveScan.length}`);
+  }
+} catch (error) {
+  fail(`source scan verification failed: ${error.message}`);
 }
 
 const mappedFromSource = new Set(
@@ -129,7 +167,10 @@ for (const action of actions) {
   if (mappedFromSource.has(action.action_id) || gapFromSource.has(action.action_id)) continue;
   fail(`MVP action ${action.action_id} has no source interaction mapping`);
 }
-ok(`source interaction inventory → catalog (${rawInteractions.length} raw, ${mappedFromSource.size} mapped actions)`);
+const candidateCount = scanMeta?.source_candidates ?? rawInteractions.filter((r) => r.line > 0).length;
+ok(
+  `source interaction inventory → catalog (candidates=${candidateCount}, classified=${scanMeta?.classified_candidates ?? candidateCount}, unclassified=0, manifest=${rawInteractions.length})`,
+);
 
 // Matrix ↔ action catalog alignment
 if (matrix.length !== actions.length) {
@@ -231,6 +272,8 @@ if (!talgat.includes('screenshot') && !talgat.includes('deprecated')) {
   // should mention deprecated screenshots
 }
 if (!/deprecated/i.test(talgat)) fail('TALGAT_HANDOFF must mention deprecated old screenshots');
+if (!talgat.includes('SOURCE_BASELINE_SHA')) fail('TALGAT_HANDOFF must declare SOURCE_BASELINE_SHA');
+if (talgat.match(/\*\*HEAD:\*\*/)) fail('TALGAT_HANDOFF must not use self-referential review HEAD');
 ok('TALGAT_HANDOFF new-app policy');
 
 // Screenshot manifest deprecated
@@ -265,6 +308,7 @@ console.log(
       actions: actions.length,
       processes: processes.length,
       matrix: matrix.length,
+      source_candidates: scanMeta?.source_candidates ?? null,
       source_interactions: rawInteractions.length,
       screenshot_ref: shotRefs,
     },

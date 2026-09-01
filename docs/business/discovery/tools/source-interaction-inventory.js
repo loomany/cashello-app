@@ -1,127 +1,109 @@
 /**
- * Source-derived raw interaction inventory for current reachable Cashello app.
- * Independent of NEW_APP_ACTION_CATALOG — used for completeness validation.
- *
- * Each row: mapped to catalog_action_id OR explicit UI_LOCAL / DUPLICATE_BEHAVIOR / CURRENT_UI_GAP.
+ * Merge AST scan + manual classification into source interaction manifest.
  */
-const REACHABLE_SOURCE_GLOBS = [
-  'src/features/legacyHome',
-  'src/features/legacyAuth',
-  'src/features/legacyPayment',
-  'src/features/legacyQr',
-  'src/features/legacyHistory',
-  'src/features/legacyProfile',
-  'src/features/legacyTopup',
-  'src/features/legacyWithdraw',
-  'src/features/legacyNavigation',
-];
+const fs = require('fs');
+const path = require('path');
+const { scanReachableSource, scanKey, REACHABLE_SOURCE_GLOBS } = require('./source-interaction-scan');
+const { classifyInteraction, SYNTHETIC_GAPS, RUNTIME_DUPLICATE_MAPPINGS } = require('./source-interaction-classifications');
 
-/** @type {Array<object>} */
-const RAW_INTERACTIONS = [
-  // --- Global tab bar ---
-  { interaction_id: 'SRC-TAB-01', source_file: 'src/features/legacyHome/LegacyTabBar.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Tab Главная', control_type: 'tab', handler: 'router.replace(homeHref)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TAB-01' },
-  { interaction_id: 'SRC-TAB-02', source_file: 'src/features/legacyHome/LegacyTabBar.tsx', screen_hint: 'NEW-PAY-001', control_label: 'Tab Оплата', control_type: 'tab', handler: 'router.replace(/legacy/payment)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TAB-02' },
-  { interaction_id: 'SRC-TAB-03', source_file: 'src/features/legacyHome/LegacyTabBar.tsx', screen_hint: 'NEW-QR-001', control_label: 'Tab QR', control_type: 'tab', handler: 'router.replace(/legacy/qr)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TAB-03' },
-  { interaction_id: 'SRC-TAB-04', source_file: 'src/features/legacyHome/LegacyTabBar.tsx', screen_hint: 'NEW-HIST-001', control_label: 'Tab История', control_type: 'tab', handler: 'router.replace(/legacy/history)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TAB-04' },
-  { interaction_id: 'SRC-TAB-05', source_file: 'src/features/legacyHome/LegacyTabBar.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Tab Профиль', control_type: 'tab', handler: 'router.replace(/legacy/profile)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TAB-05' },
-  // --- Support FAB / sheet ---
-  { interaction_id: 'SRC-SUP-01', source_file: 'src/features/legacyHome/SupportContactFab.tsx', screen_hint: 'GLOBAL', control_label: 'Support FAB', control_type: 'fab', handler: 'setSupportOpen(true)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-SUP-01' },
-  { interaction_id: 'SRC-SUP-02', source_file: 'src/features/legacyHome/SupportContactSheet.tsx', screen_hint: 'NEW-SUPPORT-001', control_label: 'Telegram', control_type: 'sheet_option', handler: 'Linking.openURL(telegram)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-SUP-02' },
-  { interaction_id: 'SRC-SUP-03', source_file: 'src/features/legacyHome/SupportContactSheet.tsx', screen_hint: 'NEW-SUPPORT-001', control_label: 'WhatsApp', control_type: 'sheet_option', handler: 'Linking.openURL(whatsapp)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-SUP-03' },
-  { interaction_id: 'SRC-SUP-04', source_file: 'src/features/legacyHome/SupportContactSheet.tsx', screen_hint: 'NEW-SUPPORT-001', control_label: 'Закрыть (X)', control_type: 'icon_button', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-SUP-04' },
-  { interaction_id: 'SRC-SUP-05', source_file: 'src/features/legacyHome/SupportContactSheet.tsx', screen_hint: 'NEW-SUPPORT-001', control_label: 'Backdrop dismiss', control_type: 'backdrop', handler: 'onClose()', mapping_status: 'DUPLICATE_BEHAVIOR', catalog_action_id: 'NEW-ACT-SUP-04', notes: 'Same as close' },
-  { interaction_id: 'SRC-SUP-GAP-01', source_file: 'src/features/legacyHome/SupportContactSheet.tsx', screen_hint: 'NEW-SUPPORT-001', control_label: 'Phone support CTA', control_type: 'sheet_option', handler: 'NOT_IN_SOURCE', mapping_status: 'CURRENT_UI_GAP', catalog_action_id: 'NEW-ACT-SUP-GAP-01', notes: 'Owner target Q-SUPPORT-001 WA+TG+phone; phone row absent in current UI' },
-  // --- Guest home ---
-  { interaction_id: 'SRC-HOME-G01', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Cashhello brand', control_type: 'button', handler: 'navigateHome()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G01' },
-  { interaction_id: 'SRC-HOME-G02', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Profile avatar', control_type: 'icon_button', handler: 'router.push(login)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G02' },
-  { interaction_id: 'SRC-HOME-G03', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Show/hide balance', control_type: 'toggle', handler: 'setBalancesHidden', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G03' },
-  { interaction_id: 'SRC-HOME-G04', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Пополнить', control_type: 'button', handler: 'setTopupOpen(true)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G04' },
-  { interaction_id: 'SRC-HOME-G05', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Вывести', control_type: 'button', handler: 'setWithdrawOpen(true)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G05' },
-  { interaction_id: 'SRC-HOME-G06', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Payments Последние', control_type: 'tab', handler: 'setPaymentsTab(recent)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G06' },
-  { interaction_id: 'SRC-HOME-G07', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Payments Все', control_type: 'tab', handler: 'router.push(login)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G07' },
-  { interaction_id: 'SRC-HOME-G08', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Payments История', control_type: 'tab', handler: 'router.push(login)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G08' },
-  { interaction_id: 'SRC-HOME-G09', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Guest recent row', control_type: 'list_row', handler: 'router.push(login)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G09' },
-  { interaction_id: 'SRC-HOME-G10', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Войти CTA', control_type: 'cta', handler: 'router.push(login)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-G10' },
-  { interaction_id: 'SRC-HOME-G11', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'Promo banner scroll', control_type: 'scroll', handler: 'local carousel', mapping_status: 'UI_LOCAL', notes: 'Horizontal scroll only' },
-  { interaction_id: 'SRC-HOME-DEBUG', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-001', control_label: 'DebugMeta jumps', control_type: 'button', handler: 'router debug', mapping_status: 'UI_LOCAL', notes: 'DEV_ONLY prototype jumps' },
-  // --- Authorized home (duplicate controls) ---
-  { interaction_id: 'SRC-HOME-A01', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Пополнить', control_type: 'button', handler: 'setTopupOpen(true)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-A01' },
-  { interaction_id: 'SRC-HOME-A02', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Вывести', control_type: 'button', handler: 'setWithdrawOpen(true)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-A02' },
-  { interaction_id: 'SRC-HOME-A03', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Payments Все', control_type: 'tab', handler: 'router.push(payment)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-A03' },
-  { interaction_id: 'SRC-HOME-A04', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Payments История', control_type: 'tab', handler: 'router.push(history)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-A04' },
-  { interaction_id: 'SRC-HOME-A05', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Recent operation row', control_type: 'list_row', handler: 'router.push(payment/[id])', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HOME-A05' },
-  { interaction_id: 'SRC-HOME-A06', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Show/hide balance', control_type: 'toggle', handler: 'setBalancesHidden', mapping_status: 'DUPLICATE_BEHAVIOR', catalog_action_id: 'NEW-ACT-HOME-G03', notes: 'Same toggle as guest home' },
-  { interaction_id: 'SRC-HOME-A07', source_file: 'src/features/legacyHome/HomeScreen.tsx', screen_hint: 'NEW-HOME-002', control_label: 'Payments Последние', control_type: 'tab', handler: 'setPaymentsTab(recent)', mapping_status: 'DUPLICATE_BEHAVIOR', catalog_action_id: 'NEW-ACT-HOME-G06' },
-  // --- Topup sheet ---
-  { interaction_id: 'SRC-TOP-S01', source_file: 'src/features/legacyTopup/MethodSheetScreen.tsx', screen_hint: 'NEW-SHEET-TOPUP-001', control_label: 'Между счетами', control_type: 'sheet_option', handler: 'router.push(topup/between)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TOP-S01' },
-  { interaction_id: 'SRC-TOP-S02', source_file: 'src/features/legacyTopup/MethodSheetScreen.tsx', screen_hint: 'NEW-SHEET-TOPUP-001', control_label: 'Карта другого банка', control_type: 'sheet_option', handler: 'router.push(topup/card)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TOP-S02' },
-  { interaction_id: 'SRC-TOP-S03', source_file: 'src/features/legacyTopup/MethodSheetScreen.tsx', screen_hint: 'NEW-SHEET-TOPUP-001', control_label: 'Закрыть (X)', control_type: 'icon_button', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TOP-S03' },
-  { interaction_id: 'SRC-TOP-S04', source_file: 'src/features/legacyTopup/MethodSheetScreen.tsx', screen_hint: 'NEW-SHEET-TOPUP-001', control_label: 'Backdrop dismiss', control_type: 'backdrop', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TOP-S04' },
-  // --- Withdraw sheet ---
-  { interaction_id: 'SRC-WD-S01', source_file: 'src/features/legacyHome/WithdrawSelectSheet.tsx', screen_hint: 'NEW-SHEET-WD-001', control_label: 'На карту', control_type: 'sheet_option', handler: 'router.push(withdraw/card)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-S01' },
-  { interaction_id: 'SRC-WD-S02', source_file: 'src/features/legacyHome/WithdrawSelectSheet.tsx', screen_hint: 'NEW-SHEET-WD-001', control_label: 'На телефон', control_type: 'sheet_option', handler: 'router.push(withdraw/phone)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-S02' },
-  { interaction_id: 'SRC-WD-S03', source_file: 'src/features/legacyHome/WithdrawSelectSheet.tsx', screen_hint: 'NEW-SHEET-WD-001', control_label: 'Пользователю Cashhello', control_type: 'sheet_option', handler: 'router.push(cashhello-user)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-S03' },
-  { interaction_id: 'SRC-WD-S04', source_file: 'src/features/legacyHome/WithdrawSelectSheet.tsx', screen_hint: 'NEW-SHEET-WD-001', control_label: 'Закрыть (X)', control_type: 'icon_button', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-S04' },
-  { interaction_id: 'SRC-WD-S05', source_file: 'src/features/legacyHome/WithdrawSelectSheet.tsx', screen_hint: 'NEW-SHEET-WD-001', control_label: 'Backdrop dismiss', control_type: 'backdrop', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-S05' },
-  // --- Payment catalog + category sheet ---
-  { interaction_id: 'SRC-PAY-01', source_file: 'src/features/legacyPayment/PaymentScreen.tsx', screen_hint: 'NEW-PAY-001', control_label: 'Category row', control_type: 'list_row', handler: 'open category sheet', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-01' },
-  { interaction_id: 'SRC-PAY-02', source_file: 'src/features/legacyPayment/PaymentScreen.tsx', screen_hint: 'NEW-PAY-001', control_label: 'Service row', control_type: 'list_row', handler: 'router.push(payment/[id])', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-02' },
-  { interaction_id: 'SRC-PAY-03', source_file: 'src/features/legacyPayment/PaymentScreen.tsx', screen_hint: 'NEW-PAY-001', control_label: 'Search input', control_type: 'input', handler: 'local filter', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-03' },
-  { interaction_id: 'SRC-PAY-04', source_file: 'src/features/legacyPayment/PaymentScreen.tsx', screen_hint: 'NEW-PAY-001', control_label: 'Favorites tab', control_type: 'tab', handler: 'tab switch / login gate', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-04' },
-  { interaction_id: 'SRC-PAY-08', source_file: 'src/features/legacyPayment/PaymentCategorySheet.tsx', screen_hint: 'NEW-PAY-SHEET-001', control_label: 'Category select row', control_type: 'sheet_option', handler: 'onSelect(id); onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-08' },
-  { interaction_id: 'SRC-PAY-09', source_file: 'src/features/legacyPayment/PaymentCategorySheet.tsx', screen_hint: 'NEW-PAY-SHEET-001', control_label: 'Закрыть (X)', control_type: 'icon_button', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-09' },
-  { interaction_id: 'SRC-PAY-10', source_file: 'src/features/legacyPayment/PaymentCategorySheet.tsx', screen_hint: 'NEW-PAY-SHEET-001', control_label: 'Backdrop dismiss', control_type: 'backdrop', handler: 'onClose()', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-10' },
-  // --- Payment service ---
-  { interaction_id: 'SRC-PAY-05', source_file: 'src/features/legacyPayment/PaymentServiceScreen.tsx', screen_hint: 'NEW-PAY-002', control_label: 'Оплатить', control_type: 'cta', handler: 'mock pay / login gate', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-05' },
-  { interaction_id: 'SRC-PAY-06', source_file: 'src/features/legacyPayment/PaymentServiceScreen.tsx', screen_hint: 'NEW-PAY-002', control_label: 'Favorite heart', control_type: 'toggle', handler: 'toggle favorite', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-06' },
-  { interaction_id: 'SRC-PAY-07', source_file: 'src/features/legacyPayment/PaymentServiceScreen.tsx', screen_hint: 'NEW-PAY-002', control_label: 'Account picker', control_type: 'picker', handler: 'open account sheet', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PAY-07' },
-  // --- Profile + confirm sheets ---
-  { interaction_id: 'SRC-PROF-01', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Status подробнее', control_type: 'link', handler: 'router.push(status)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-01' },
-  { interaction_id: 'SRC-PROF-02', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Push toggle', control_type: 'toggle', handler: 'togglePush', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-02' },
-  { interaction_id: 'SRC-PROF-03', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Сменить PIN', control_type: 'list_row', handler: 'router.push(pin)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-03' },
-  { interaction_id: 'SRC-PROF-04', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Документы', control_type: 'list_row', handler: 'router.push(documents stub)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-04' },
-  { interaction_id: 'SRC-PROF-05', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Выйти', control_type: 'list_row', handler: 'setConfirmKind(logout)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-05' },
-  { interaction_id: 'SRC-PROF-06', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Удалить аккаунт', control_type: 'list_row', handler: 'setConfirmKind(delete)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-06' },
-  { interaction_id: 'SRC-PROF-GAP-01', source_file: 'src/features/legacyProfile/ProfileScreen.tsx', screen_hint: 'NEW-PROF-001', control_label: 'Change phone link', control_type: 'list_row', handler: 'NOT_IN_SOURCE', mapping_status: 'CURRENT_UI_GAP', catalog_action_id: 'NEW-ACT-PROF-GAP-01', notes: 'Phone read-only; /legacy/profile/phone routes exist but unlinked' },
-  { interaction_id: 'SRC-PROF-07', source_file: 'src/features/legacyProfile/ProfileConfirmSheet.tsx', screen_hint: 'NEW-PROF-SHEET-001', control_label: 'Logout confirm', control_type: 'modal_action', handler: 'onConfirm → guest home', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-07' },
-  { interaction_id: 'SRC-PROF-09', source_file: 'src/features/legacyProfile/ProfileConfirmSheet.tsx', screen_hint: 'NEW-PROF-SHEET-002', control_label: 'Delete confirm', control_type: 'modal_action', handler: 'onConfirm → auth reset', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-09' },
-  { interaction_id: 'SRC-PROF-10', source_file: 'src/features/legacyProfile/ProfileConfirmSheet.tsx', screen_hint: 'NEW-PROF-SHEET-001', control_label: 'Logout cancel', control_type: 'modal_action', handler: 'onCancel', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-10' },
-  { interaction_id: 'SRC-PROF-11', source_file: 'src/features/legacyProfile/ProfileConfirmSheet.tsx', screen_hint: 'NEW-PROF-SHEET-002', control_label: 'Delete cancel', control_type: 'modal_action', handler: 'onCancel', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-11' },
-  { interaction_id: 'SRC-PROF-12', source_file: 'src/features/legacyProfile/ProfileConfirmSheet.tsx', screen_hint: 'NEW-PROF-SHEET-001', control_label: 'Logout backdrop', control_type: 'backdrop', handler: 'onCancel', mapping_status: 'DUPLICATE_BEHAVIOR', catalog_action_id: 'NEW-ACT-PROF-10' },
-  { interaction_id: 'SRC-PROF-13', source_file: 'src/features/legacyProfile/ProfileConfirmSheet.tsx', screen_hint: 'NEW-PROF-SHEET-002', control_label: 'Delete backdrop', control_type: 'backdrop', handler: 'onCancel', mapping_status: 'DUPLICATE_BEHAVIOR', catalog_action_id: 'NEW-ACT-PROF-11' },
-  // --- Auth (normal path from qaStep=iin) ---
-  { interaction_id: 'SRC-AUTH-01', source_file: 'src/features/legacyAuth/screens/RegisterIinView.tsx', screen_hint: 'NEW-AUTH-003', control_label: 'Submit phone (loginAction)', control_type: 'submit', handler: 'dispatch SUBMIT_IIN → verification', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-AUTH-01' },
-  { interaction_id: 'SRC-AUTH-02', source_file: 'src/features/legacyAuth/screens/PhoneView.tsx', screen_hint: 'NEW-AUTH-011', control_label: 'Verify OTP', control_type: 'submit', handler: 'SET_SMS auto-advance', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-AUTH-02' },
-  { interaction_id: 'SRC-AUTH-03', source_file: 'src/features/legacyAuth/screens/PinView.tsx', screen_hint: 'NEW-AUTH-012', control_label: 'PIN create digits', control_type: 'picker', handler: 'PIN_DIGIT', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-AUTH-03' },
-  { interaction_id: 'SRC-AUTH-04', source_file: 'src/features/legacyAuth/screens/PinView.tsx', screen_hint: 'NEW-AUTH-015', control_label: 'PIN login digits', control_type: 'picker', handler: 'PIN_DIGIT → complete', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-AUTH-04' },
-  { interaction_id: 'SRC-AUTH-05', source_file: 'src/features/legacyAuth/screens/RegisterIinView.tsx', screen_hint: 'NEW-AUTH-003', control_label: 'Back/close/home brand', control_type: 'back', handler: 'exitAuthToGuestHome', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-AUTH-05' },
-  // --- Withdraw / topup flows (reachable) ---
-  { interaction_id: 'SRC-TOP-01', source_file: 'src/features/legacyTopup/BetweenAccountsScreen.tsx', screen_hint: 'NEW-TOPUP-001', control_label: 'Confirm transfer', control_type: 'submit', handler: 'mock confirm → home', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TOP-01' },
-  { interaction_id: 'SRC-TOP-02', source_file: 'src/features/legacyTopup/ExternalCardScreen.tsx', screen_hint: 'NEW-TOPUP-002', control_label: 'Topup submit', control_type: 'submit', handler: 'mock → home', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-TOP-02' },
-  { interaction_id: 'SRC-WD-01', source_file: 'src/features/legacyWithdraw/CardWithdrawScreen.tsx', screen_hint: 'NEW-WD-001', control_label: 'Submit card withdraw', control_type: 'submit', handler: 'router.push(loading)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-01' },
-  { interaction_id: 'SRC-WD-02', source_file: 'src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx', screen_hint: 'NEW-WD-002', control_label: 'Submit phone withdraw', control_type: 'submit', handler: 'router.push(loading)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-02' },
-  { interaction_id: 'SRC-WD-03', source_file: 'src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx', screen_hint: 'NEW-WD-003', control_label: 'Find recipient', control_type: 'submit', handler: 'mock lookup', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-03' },
-  { interaction_id: 'SRC-WD-04', source_file: 'src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx', screen_hint: 'NEW-WD-003', control_label: 'Send P2P', control_type: 'submit', handler: 'router.push(loading)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-04' },
-  { interaction_id: 'SRC-WD-05', source_file: 'src/features/legacyWithdraw/LoadingWithdrawScreen.tsx', screen_hint: 'NEW-WD-004', control_label: 'Done/close', control_type: 'button', handler: 'router.replace(home)', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-WD-05' },
-  // --- History ---
-  { interaction_id: 'SRC-HIST-01', source_file: 'src/features/legacyHistory/HistoryScreen.tsx', screen_hint: 'NEW-HIST-001', control_label: 'Date filter', control_type: 'button', handler: 'open date sheet', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HIST-01' },
-  { interaction_id: 'SRC-HIST-02', source_file: 'src/features/legacyHistory/HistoryScreen.tsx', screen_hint: 'NEW-HIST-001', control_label: 'Debit row', control_type: 'list_row', handler: 'open action sheet', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HIST-02' },
-  { interaction_id: 'SRC-HIST-03', source_file: 'src/features/legacyHistory/HistoryActionSheet.tsx', screen_hint: 'NEW-HIST-SHEET-002', control_label: 'Repeat', control_type: 'sheet_option', handler: 'navigate repeat', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HIST-03' },
-  { interaction_id: 'SRC-HIST-04', source_file: 'src/features/legacyHistory/HistoryActionSheet.tsx', screen_hint: 'NEW-HIST-SHEET-002', control_label: 'Share receipt', control_type: 'sheet_option', handler: 'router.push detail', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HIST-04' },
-  { interaction_id: 'SRC-HIST-05', source_file: 'src/features/legacyHistory/OperationDetailsScreen.tsx', screen_hint: 'NEW-HIST-002', control_label: 'Receipt link', control_type: 'link', handler: 'router.push receipt', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-HIST-05' },
-  // --- QR ---
-  { interaction_id: 'SRC-QR-01', source_file: 'src/features/legacyQr/ReceiveQrScreen.tsx', screen_hint: 'NEW-QR-001', control_label: 'Generate QR', control_type: 'cta', handler: 'show QR / login gate', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-QR-01' },
-  { interaction_id: 'SRC-QR-02', source_file: 'src/features/legacyQr/ReceiveQrScreen.tsx', screen_hint: 'NEW-QR-001', control_label: 'Reset', control_type: 'button', handler: 'reset form', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-QR-02' },
-  // --- Profile PIN ---
-  { interaction_id: 'SRC-PROF-PIN', source_file: 'src/features/legacyProfile/ChangePinScreen.tsx', screen_hint: 'NEW-PROF-003', control_label: 'PIN keypad', control_type: 'picker', handler: 'PIN state machine', mapping_status: 'MAPPED', catalog_action_id: 'NEW-ACT-PROF-08' },
-];
+let interactionSeq = 0;
 
-function writeManifest(root) {
-  const fs = require('fs');
-  const path = require('path');
-  const out = path.join(root, 'docs/business/discovery/manifests/source_interactions.json');
-  fs.writeFileSync(out, JSON.stringify(RAW_INTERACTIONS, null, 2) + '\n');
-  return RAW_INTERACTIONS.length;
+/** @param {{ source_file: string, line: number, interaction_kind: string, handler: string }} row */
+function makeInteractionId(row) {
+  interactionSeq += 1;
+  const slug = row.source_file.split('/').pop()?.replace(/\.\w+$/, '') ?? 'src';
+  return `SRC-${slug}-${String(interactionSeq).padStart(4, '0')}`;
 }
 
-module.exports = { RAW_INTERACTIONS, REACHABLE_SOURCE_GLOBS, writeManifest };
+/** @param {string} root */
+function buildInventory(root) {
+  interactionSeq = 0;
+  const candidates = scanReachableSource(root).filter((row) => !row.interaction_kind.startsWith('component:'));
+
+  /** @type {Array<object>} */
+  const classified = [];
+  /** @type {typeof candidates} */
+  const unclassified = [];
+
+  for (const row of candidates) {
+    const classification = classifyInteraction(row, candidates);
+    if (!classification?.mapping_status) {
+      unclassified.push(row);
+      continue;
+    }
+    classified.push({
+      interaction_id: makeInteractionId(row),
+      source_file: row.source_file,
+      line: row.line,
+      interaction_kind: row.interaction_kind,
+      handler: row.handler,
+      scan_key: scanKey(row),
+      mapping_status: classification.mapping_status,
+      catalog_action_id: classification.catalog_action_id ?? null,
+      notes: classification.notes ?? null,
+    });
+  }
+
+  for (const dup of RUNTIME_DUPLICATE_MAPPINGS) {
+    const sourceRow = candidates.find((r) => scanKey(r) === dup.scan_key);
+    if (!sourceRow) continue;
+    classified.push({
+      interaction_id: `${makeInteractionId(sourceRow)}-dup-${dup.catalog_action_id}`,
+      source_file: sourceRow.source_file,
+      line: sourceRow.line,
+      interaction_kind: sourceRow.interaction_kind,
+      handler: sourceRow.handler,
+      scan_key: dup.scan_key,
+      mapping_status: dup.mapping_status,
+      catalog_action_id: dup.catalog_action_id,
+      notes: dup.notes,
+    });
+  }
+
+  const merged = [...classified, ...SYNTHETIC_GAPS];
+
+  return {
+    candidates,
+    classified: merged,
+    unclassified,
+    stats: {
+      source_candidates: candidates.length,
+      classified_candidates: candidates.length,
+      runtime_duplicates: RUNTIME_DUPLICATE_MAPPINGS.length,
+      synthetic_gaps: SYNTHETIC_GAPS.length,
+      unclassified: unclassified.length,
+      manifest_total: merged.length,
+    },
+  };
+}
+
+/** @param {string} root */
+function writeManifest(root) {
+  const { classified, unclassified, stats } = buildInventory(root);
+  if (unclassified.length > 0) {
+    const sample = unclassified.slice(0, 20).map((r) => `${scanKey(r)} :: ${r.handler}`);
+    throw new Error(
+      `Unclassified source interactions: ${unclassified.length}\n${sample.join('\n')}`,
+    );
+  }
+  const out = path.join(root, 'docs/business/discovery/manifests/source_interactions.json');
+  const payload = {
+    scan_meta: {
+      scanned_at: new Date().toISOString().slice(0, 10),
+      source_candidates: stats.source_candidates,
+      classified_candidates: stats.classified_candidates,
+      synthetic_gaps: stats.synthetic_gaps,
+      unclassified: stats.unclassified,
+      manifest_total: stats.manifest_total,
+    },
+    interactions: classified,
+  };
+  fs.writeFileSync(out, JSON.stringify(payload, null, 2) + '\n');
+  return stats;
+}
+
+module.exports = {
+  REACHABLE_SOURCE_GLOBS,
+  buildInventory,
+  writeManifest,
+};

@@ -412,7 +412,7 @@
     "backend_owned": "auth.logout, users.delete",
     "frontend_owned": "NEW-PROF-001 sheets",
     "screens": "NEW-PROF-001,NEW-PROF-SHEET-001,NEW-PROF-SHEET-002",
-    "actions": "NEW-ACT-PROF-05..07",
+    "actions": "NEW-ACT-PROF-05,NEW-ACT-PROF-06,NEW-ACT-PROF-07,NEW-ACT-PROF-09,NEW-ACT-PROF-10,NEW-ACT-PROF-11",
     "history_effect": "None",
     "notifications": "N/A",
     "owner_decisions": "Q-AUTH-010",

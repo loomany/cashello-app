@@ -9,13 +9,12 @@
 
 | Field | Value |
 | --- | --- |
-| START_HEAD | `4379c6ba172e23e2392b27a40ecc1e4879a3daf4` |
-| END_HEAD | `4379c6ba172e23e2392b27a40ecc1e4879a3daf4` |
-| origin/main | `4379c6ba172e23e2392b27a40ecc1e4879a3daf4` |
-| Working tree | **dirty** (docs-only changes + deleted screenshots) |
-| app source changed | **NO** |
+| SOURCE_BASELINE_SHA | `4379c6ba172e23e2392b27a40ecc1e4879a3daf4` |
+| Review branch | `audit/cashello-new-app-handoff-review` (committed + pushed) |
+| origin/main | `4379c6ba172e23e2392b27a40ecc1e4879a3daf4` (unchanged) |
+| app source changed | **NO** (src/** frozen at SOURCE_BASELINE_SHA) |
 | Figma changed | **NO** |
-| commit / push | **NO** |
+| Handoff docs | **YES** — docs-only on review branch |
 
 ---
 
@@ -42,9 +41,15 @@
 | CURRENT_NEW_APP routes | 19 |
 | OLD_APP_ONLY / ORPHANED / DEAD_CODE routes | 21 |
 | NEW app screens (incl. overlays) | 49 |
-| NEW app actions (reachable product) | 64 |
+| NEW app actions (reachable product) | 76 |
 | Business processes | 22 |
-| SCREEN_API_MATRIX rows | 64 |
+| SCREEN_API_MATRIX rows | 76 |
+| Auto-scanned source interactions | 366 |
+| Classified source interactions | 366 |
+| Unclassified source interactions | 0 |
+| Source interaction manifest rows | 382 (incl. runtime duplicates + UI gaps) |
+
+Source interactions are **AST-scanned** from reachable `src/features/legacy*` trees (`source-interaction-scan.js`) and classified via manual rules (`source-interaction-classifications.js`). Validator re-runs live scan and fails on any unclassified candidate.
 
 ---
 
@@ -76,6 +81,7 @@
 | P2P confused with cash (`cashhello-user` vs `/cash`) | **PASS** — classified separately |
 | internal support vs external FAB | **PASS** — BP-SUPPORT-001 LATER, BP-SUPPORT-002 MVP config_only |
 | unmapped current actions (in catalog, not in matrix) | **0** |
+| unclassified auto-scanned source interactions | **0** |
 | owner decisions preserved (15 ANSWERED) | **PASS** |
 | screen → action → process → backend mapping | **PASS** |
 
@@ -87,7 +93,7 @@
 | --- | --- |
 | URL | https://cashello.scholarshiptop.com/legacy/home?guest=1 |
 | Fetch during audit | Timeout (network) — not used as source of truth |
-| Classification | **CURRENT_SOURCE_BUILD** (per prior LIVE_SITE_PARITY_REPORT — bundle tracks repo HEAD) |
+| Classification | **CURRENT_SOURCE_BUILD** (per prior LIVE_SITE_PARITY_REPORT — bundle tracks SOURCE_BASELINE_SHA) |
 | Policy | Source code remains authority; live drift would be recorded separately, not rewrite docs |
 
 ---
@@ -141,6 +147,7 @@ src/features/legacyPayment/PaymentServiceScreen.tsx:129:7
 | 6 | [SCREEN_API_MATRIX.md](./SCREEN_API_MATRIX.md) |
 | 7 | [TALGAT_HANDOFF.md](./TALGAT_HANDOFF.md) |
 | 8 | [OLD_CASHHELLO_PURGE_REPORT.md](../business/OLD_CASHHELLO_PURGE_REPORT.md) |
+| 9 | [source_interactions.json](../business/discovery/manifests/source_interactions.json) — AST scan + classification |
 
 Regenerate command: `node docs/business/discovery/tools/build-new-app-handoff.js`
 
@@ -153,10 +160,11 @@ Regenerate command: `node docs/business/discovery/tools/build-new-app-handoff.js
 Rationale:
 
 - New handoff built from current source entry + reachability
+- Source interactions auto-scanned (TypeScript AST) with 0 unclassified candidates
 - Zero screenshot evidence in implementable handoff
 - Old/new app separated with explicit purge report
 - Owner decisions preserved and remapped to NEW-* IDs
 - Validator passes; tests and typecheck pass
-- Known pre-existing lint failure documented; src/** unchanged
+- Known pre-existing lint failure documented; src/** unchanged at SOURCE_BASELINE_SHA
 
 **NOT** marked READY_FOR_TALGAT — requires final ChatGPT review per acceptance protocol.

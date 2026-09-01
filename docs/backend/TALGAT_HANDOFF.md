@@ -5,7 +5,7 @@
 Previous Cashhello screenshot/UI generation is **deprecated** and **must not** be used for backend implementation. Deleted screenshot files are not backend requirements.
 
 **Audit date:** 2026-09-01  
-**HEAD:** `dcda86d80c4deb10b4e228236f3a062b19b5cf5b`  
+**SOURCE_BASELINE_SHA:** `4379c6ba172e23e2392b27a40ecc1e4879a3daf4` (src/** unchanged on this baseline; handoff docs on review branch)  
 **Live:** https://cashello.scholarshiptop.com/legacy/home?guest=1  
 **Live vs source:** CURRENT_SOURCE_BUILD (see LIVE_SITE_PARITY_REPORT — bundle tracks repo; screenshots removed intentionally)
 

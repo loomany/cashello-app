@@ -142,7 +142,7 @@ const PROCESSES = [
   { process_id: 'BP-CARD-001', name: 'Карта PayDala', mvp_status: 'PARKED_ILYA', actors: 'AUTHORIZED', preconditions: 'Q-CARD-001', trigger: 'Orphaned card routes', happy_path: 'N/A current app', alternate_paths: 'N/A', error_paths: 'N/A', money_effect: 'N/A', backend_owned: 'DO_NOT_IMPLEMENT', frontend_owned: 'NEW-OLD-CARD-001', screens: 'NEW-OLD-CARD-001', actions: 'NONE_IN_CURRENT_APP', history_effect: 'N/A', notifications: 'N/A', owner_decisions: 'Q-CARD-001', open_questions: 'All card', stop_conditions: 'Not in current nav' },
   { process_id: 'BP-CARD-002', name: 'PIN карты', mvp_status: 'PARKED_ILYA', actors: 'AUTHORIZED', preconditions: 'Q-CARD-001', trigger: 'Orphaned /legacy/card/pin', happy_path: 'N/A current app', alternate_paths: 'N/A', error_paths: 'N/A', money_effect: 'N/A', backend_owned: 'DO_NOT_IMPLEMENT', frontend_owned: 'Orphaned card/pin route', screens: 'NEW-OLD-CARD-001', actions: 'NONE_IN_CURRENT_APP', history_effect: 'N/A', notifications: 'N/A', owner_decisions: 'Q-CARD-001', open_questions: 'Card PIN policy', stop_conditions: 'PARKED with card product' },
   { process_id: 'BP-PROFILE-001', name: 'Смена телефона', mvp_status: 'MVP_TARGET', actors: 'AUTHORIZED', preconditions: 'Phone change routes exist in source', trigger: 'NOT_LINKED — Profile shows phone read-only', happy_path: 'Profile → change phone → OTP verify → updated phone', alternate_paths: 'N/A', error_paths: 'OTP fail', money_effect: 'None', backend_owned: 'users.changePhone', frontend_owned: 'CURRENT_UI_GAP — /legacy/profile/phone routes orphaned', screens: 'NEW-PROF-001,NEW-ORPH phone routes', actions: 'NEW-ACT-PROF-GAP-01', history_effect: 'None', notifications: 'UNKNOWN', owner_decisions: 'Q-AUTH-002', open_questions: 'Add change-phone link to Profile UI', stop_conditions: 'CURRENT_UI_GAP — backend may prepare API but UI entry missing' },
-  { process_id: 'BP-PROFILE-002', name: 'Выход и удаление аккаунта', mvp_status: 'MVP', actors: 'AUTHORIZED', preconditions: 'Session', trigger: 'Profile logout/delete', happy_path: 'Confirm → revoke session → guest home or auth', alternate_paths: 'Cancel sheet', error_paths: 'UNKNOWN', money_effect: 'None', backend_owned: 'auth.logout, users.delete', frontend_owned: 'NEW-PROF-001 sheets', screens: 'NEW-PROF-001,NEW-PROF-SHEET-001,NEW-PROF-SHEET-002', actions: 'NEW-ACT-PROF-05..07', history_effect: 'None', notifications: 'N/A', owner_decisions: 'Q-AUTH-010', open_questions: 'Delete cooling-off', stop_conditions: null },
+  { process_id: 'BP-PROFILE-002', name: 'Выход и удаление аккаунта', mvp_status: 'MVP', actors: 'AUTHORIZED', preconditions: 'Session', trigger: 'Profile logout/delete', happy_path: 'Confirm → revoke session → guest home or auth', alternate_paths: 'Cancel sheet', error_paths: 'UNKNOWN', money_effect: 'None', backend_owned: 'auth.logout, users.delete', frontend_owned: 'NEW-PROF-001 sheets', screens: 'NEW-PROF-001,NEW-PROF-SHEET-001,NEW-PROF-SHEET-002', actions: 'NEW-ACT-PROF-05,NEW-ACT-PROF-06,NEW-ACT-PROF-07,NEW-ACT-PROF-09,NEW-ACT-PROF-10,NEW-ACT-PROF-11', history_effect: 'None', notifications: 'N/A', owner_decisions: 'Q-AUTH-010', open_questions: 'Delete cooling-off', stop_conditions: null },
   { process_id: 'BP-SUPPORT-001', name: 'Internal help form', mvp_status: 'LATER', actors: 'AUTHORIZED', preconditions: 'Q-PROFILE-007', trigger: 'Orphaned messages/help', happy_path: 'DO NOT IMPLEMENT MVP', alternate_paths: 'N/A', error_paths: 'N/A', money_effect: 'None', backend_owned: 'LATER', frontend_owned: 'NEW-OLD-MSG-001', screens: 'NEW-OLD-MSG-001', actions: 'NONE', history_effect: 'N/A', notifications: 'N/A', owner_decisions: 'Q-PROFILE-007', open_questions: 'Internal chat', stop_conditions: 'Use external support instead' },
   { process_id: 'BP-SUPPORT-002', name: 'External support FAB', mvp_status: 'MVP', actors: 'ANY', preconditions: 'Config URLs', trigger: 'Support FAB any screen', happy_path: 'Open sheet → WA or TG deep link', alternate_paths: 'Link unavailable alert', error_paths: 'Linking failure', money_effect: 'None', backend_owned: 'support.contactConfig only', frontend_owned: 'NEW-SUPPORT-001', screens: 'NEW-SUPPORT-001', actions: 'NEW-ACT-SUP-01..04,NEW-ACT-SUP-GAP-01', history_effect: 'None', notifications: 'N/A', owner_decisions: 'Q-SUPPORT-001,Q-SUPPORT-002', open_questions: 'CURRENT_UI_GAP — phone CTA absent; owner target remains WA+TG+phone per Q-SUPPORT-001', stop_conditions: 'Not ticket system' },
 ];
@@ -330,7 +330,7 @@ const talgatMd = `# Talgat backend handoff — CURRENT NEW CASHELLO ONLY
 Previous Cashhello screenshot/UI generation is **deprecated** and **must not** be used for backend implementation. Deleted screenshot files are not backend requirements.
 
 **Audit date:** ${AUDIT_DATE}  
-**HEAD:** \`${endHead()}\`  
+**SOURCE_BASELINE_SHA:** \`${START_HEAD}\` (src/** unchanged on this baseline; handoff docs on review branch)  
 **Live:** https://cashello.scholarshiptop.com/legacy/home?guest=1  
 **Live vs source:** CURRENT_SOURCE_BUILD (see LIVE_SITE_PARITY_REPORT — bundle tracks repo; screenshots removed intentionally)
 
@@ -515,8 +515,11 @@ writeJson('docs/business/discovery/SCREENSHOT_SCOPE_MANIFEST.json', [
   { status: 'DEPRECATED', reason: 'Screenshots deleted; use NEW_APP_* catalogs', audit_date: AUDIT_DATE },
 ]);
 
-const sourceInteractionCount = writeSourceInteractions(ROOT);
-console.log('WROTE source_interactions.json', `(${sourceInteractionCount} rows)`);
+const sourceInteractionStats = writeSourceInteractions(ROOT);
+console.log(
+  'WROTE source_interactions.json',
+  `(candidates=${sourceInteractionStats.source_candidates}, classified=${sourceInteractionStats.classified_candidates}, unclassified=${sourceInteractionStats.unclassified}, manifest=${sourceInteractionStats.manifest_total})`,
+);
 
 console.log('BUILD COMPLETE');
 console.log(

@@ -300,7 +300,7 @@
 | Money effect | None |
 | Backend-owned | auth.logout, users.delete |
 | Screens (NEW-*) | NEW-PROF-001,NEW-PROF-SHEET-001,NEW-PROF-SHEET-002 |
-| Actions | NEW-ACT-PROF-05..07 |
+| Actions | NEW-ACT-PROF-05,NEW-ACT-PROF-06,NEW-ACT-PROF-07,NEW-ACT-PROF-09,NEW-ACT-PROF-10,NEW-ACT-PROF-11 |
 | Owner decisions | Q-AUTH-010 |
 | Stop conditions | — |
 
