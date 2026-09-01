@@ -69,17 +69,19 @@ module.exports = {
     waitText: 'Введите код доступа',
   },
 
-  'HOME-001__guest-home.png': { url: '/legacy/home?guest=1', waitText: 'Войти' },
-  'LGC-SCR-025__authorized-home.png': { url: '/legacy/home', waitText: 'Вывести' },
+  'HOME-001__guest-home.png': { url: '/legacy/home?guest=1', waitText: 'Последние операции' },
+  'LGC-SCR-025__authorized-home.png': { url: '/legacy/home', waitText: 'Последние операции' },
+  'LGC-SCR-025__recent-ops-scrolled.png': {
+    url: '/legacy/home',
+    waitText: 'Последние операции',
+    steps: [{ scrollY: 280 }],
+  },
   'LGC-SCR-025__balances-hidden.png': {
     url: '/legacy/home',
     waitText: 'Вывести',
     steps: [{ clickAria: 'Скрыть' }],
   },
-  'LGC-SCR-026__history-filter-link.png': {
-    url: '/legacy/home?historyLink=filter',
-    waitText: 'Фильтр',
-  },
+  'LGC-SCR-026__history-filter-link.png': { url: '/legacy/home?historyLink=filter', waitText: 'Последние операции' },
   'CAS-HOME-003__topup-sheet-guest.png': {
     url: '/legacy/home?guest=1',
     waitText: 'Войти',
@@ -98,11 +100,6 @@ module.exports = {
     url: '/legacy/home',
     waitText: 'Вывести',
     steps: [{ clickAria: 'Вывести' }],
-  },
-  'CAS-HOME-005__history-action-sheet.png': {
-    url: '/legacy/home',
-    waitText: 'История',
-    steps: [{ clickText: 'Вывод на карту' }],
   },
   'CAS-SUPPORT-002__sheet-guest.png': {
     url: '/legacy/home?guest=1',
@@ -439,6 +436,11 @@ module.exports = {
     url: '/legacy/payment',
     waitText: 'Оплата',
     steps: [{ clickText: 'Категор' }],
+  },
+  'PAY-002__prefilled-from-home.png': {
+    url: '/legacy/home',
+    waitText: 'Последние операции',
+    steps: [{ clickAria: 'Ubet' }, { wait: 600 }],
   },
   'PAY-002__ubet.png': { url: '/legacy/payment/ubet', waitText: 'Ubet' },
   'PAY-002__zaimer.png': { url: '/legacy/payment/zaimer', waitText: 'Zaimer' },

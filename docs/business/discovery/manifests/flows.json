@@ -5,6 +5,7 @@
     "actor": "GUEST",
     "entry_screen": "CAS-AUTH-003",
     "screens": [
+      "HOME-001",
       "CAS-AUTH-003",
       "CAS-AUTH-011",
       "CAS-AUTH-012",
@@ -12,8 +13,16 @@
       "CAS-AUTH-014",
       "LGC-SCR-025"
     ],
-    "actions": ["ACT-CAS-AUTH-003-04", "ACT-CAS-AUTH-011-02", "ACT-CAS-AUTH-012-02"],
-    "exit_states": ["AUTHORIZED_HOME", "PIN_MISMATCH"],
+    "actions": [
+      "ACT-HOME-001-14",
+      "ACT-CAS-AUTH-003-04",
+      "ACT-CAS-AUTH-011-02",
+      "ACT-CAS-AUTH-012-02"
+    ],
+    "exit_states": [
+      "AUTHORIZED_HOME",
+      "PIN_MISMATCH"
+    ],
     "owner_questions": [
       "Q-AUTH-001",
       "Q-AUTH-002",
@@ -29,9 +38,16 @@
     "name": "Вход возвращающегося пользователя",
     "actor": "GUEST",
     "entry_screen": "CAS-AUTH-015",
-    "screens": ["CAS-AUTH-015", "LGC-SCR-025"],
-    "actions": ["ACT-CAS-AUTH-015-02"],
-    "exit_states": ["AUTHORIZED_HOME"],
+    "screens": [
+      "CAS-AUTH-015",
+      "LGC-SCR-025"
+    ],
+    "actions": [
+      "ACT-CAS-AUTH-015-02"
+    ],
+    "exit_states": [
+      "AUTHORIZED_HOME"
+    ],
     "owner_questions": [
       "Q-AUTH-001",
       "Q-AUTH-006",
@@ -55,8 +71,15 @@
       "CAS-AUTH-009",
       "LGC-SCR-068"
     ],
-    "actions": ["ACT-CAS-AUTH-005-01", "ACT-CAS-AUTH-007-02", "ACT-LGC-SCR-068-04"],
-    "exit_states": ["LOCAL_CAPTURE_COMPLETE", "CANCELLED"],
+    "actions": [
+      "ACT-CAS-AUTH-005-01",
+      "ACT-CAS-AUTH-007-02",
+      "ACT-LGC-SCR-068-04"
+    ],
+    "exit_states": [
+      "LOCAL_CAPTURE_COMPLETE",
+      "CANCELLED"
+    ],
     "owner_questions": [
       "Q-AUTH-012",
       "Q-P2P-007",
@@ -75,29 +98,67 @@
     "name": "Просмотр и выбор счетов",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-029",
-    "screens": ["LGC-SCR-029", "LGC-SCR-032", "LGC-SCR-033"],
-    "actions": ["ACT-LGC-SCR-029-03", "ACT-LGC-SCR-029-06"],
-    "exit_states": ["ACCOUNT_DETAIL", "PRIMARY_CHANGED_LOCAL"],
-    "owner_questions": ["Q-ACC-001", "Q-ACC-003", "Q-ACC-004", "Q-ACC-005", "Q-ACC-006"]
+    "screens": [
+      "LGC-SCR-029",
+      "LGC-SCR-032",
+      "LGC-SCR-033"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-029-03",
+      "ACT-LGC-SCR-029-06"
+    ],
+    "exit_states": [
+      "ACCOUNT_DETAIL",
+      "PRIMARY_CHANGED_LOCAL"
+    ],
+    "owner_questions": [
+      "Q-ACC-001",
+      "Q-ACC-003",
+      "Q-ACC-004",
+      "Q-ACC-005",
+      "Q-ACC-006"
+    ]
   },
   {
     "flow_id": "BP-ACC-002",
     "name": "Открытие счета",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-029",
-    "screens": ["LGC-SCR-029", "LGC-SCR-031"],
-    "actions": ["ACT-LGC-SCR-029-02", "ACT-LGC-SCR-031-02"],
-    "exit_states": ["REQUEST_RECORDED_LOCAL"],
-    "owner_questions": ["Q-ACC-001", "Q-ACC-002"]
+    "screens": [
+      "LGC-SCR-029",
+      "LGC-SCR-031"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-029-02",
+      "ACT-LGC-SCR-031-02"
+    ],
+    "exit_states": [
+      "REQUEST_RECORDED_LOCAL"
+    ],
+    "owner_questions": [
+      "Q-ACC-001",
+      "Q-ACC-002"
+    ]
   },
   {
     "flow_id": "BP-TOPUP-001",
     "name": "Пополнение внешней картой",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-040",
-    "screens": ["LGC-SCR-040", "LGC-SCR-085", "CAS-TOPUP-001", "LGC-SCR-087", "LGC-SCR-025"],
-    "actions": ["ACT-LGC-SCR-040-03", "ACT-LGC-SCR-085-04"],
-    "exit_states": ["MOCK_SUCCESS_HOME"],
+    "screens": [
+      "LGC-SCR-040",
+      "LGC-SCR-085",
+      "CAS-TOPUP-001",
+      "LGC-SCR-087",
+      "LGC-SCR-025"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-040-03",
+      "ACT-LGC-SCR-085-04"
+    ],
+    "exit_states": [
+      "MOCK_SUCCESS_HOME"
+    ],
     "owner_questions": [
       "Q-TOPUP-002",
       "Q-TOPUP-003",
@@ -121,9 +182,18 @@
     "name": "Пополнение наличными",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-074",
-    "screens": ["LGC-SCR-074", "LGC-SCR-080", "LGC-SCR-081"],
-    "actions": ["ACT-LGC-SCR-074-02", "ACT-LGC-SCR-081-02"],
-    "exit_states": ["MOCK_PROCESSING_HISTORY"],
+    "screens": [
+      "LGC-SCR-074",
+      "LGC-SCR-080",
+      "LGC-SCR-081"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-074-02",
+      "ACT-LGC-SCR-081-02"
+    ],
+    "exit_states": [
+      "MOCK_PROCESSING_HISTORY"
+    ],
     "owner_questions": [
       "Q-TOPUP-001",
       "Q-TOPUP-003",
@@ -146,9 +216,20 @@
     "name": "Перевод между своими счетами",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-069",
-    "screens": ["LGC-SCR-069", "LGC-SCR-070", "LGC-SCR-071", "LGC-SCR-073", "LGC-SCR-025"],
-    "actions": ["ACT-LGC-SCR-069-04", "ACT-LGC-SCR-073-08"],
-    "exit_states": ["MOCK_SUCCESS_HOME"],
+    "screens": [
+      "LGC-SCR-069",
+      "LGC-SCR-070",
+      "LGC-SCR-071",
+      "LGC-SCR-073",
+      "LGC-SCR-025"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-069-04",
+      "ACT-LGC-SCR-073-08"
+    ],
+    "exit_states": [
+      "MOCK_SUCCESS_HOME"
+    ],
     "owner_questions": [
       "Q-TRF-001",
       "Q-TRF-002",
@@ -173,9 +254,16 @@
     "name": "Перевод пользователю Cashhello",
     "actor": "AUTHORIZED",
     "entry_screen": "CAS-WD-005",
-    "screens": ["CAS-WD-005"],
-    "actions": ["ACT-CAS-WD-005-04", "ACT-CAS-WD-005-07"],
-    "exit_states": ["BLOCKED_USER_NOT_FOUND"],
+    "screens": [
+      "CAS-WD-005"
+    ],
+    "actions": [
+      "ACT-CAS-WD-005-04",
+      "ACT-CAS-WD-005-07"
+    ],
+    "exit_states": [
+      "BLOCKED_USER_NOT_FOUND"
+    ],
     "owner_questions": [
       "Q-P2P-001",
       "Q-P2P-002",
@@ -213,8 +301,15 @@
       "WD-003",
       "LGC-SCR-099"
     ],
-    "actions": ["ACT-LGC-SCR-041-02", "ACT-WD-002-08"],
-    "exit_states": ["SUCCESS", "FAILED", "PROCESSING"],
+    "actions": [
+      "ACT-LGC-SCR-041-02",
+      "ACT-WD-002-08"
+    ],
+    "exit_states": [
+      "SUCCESS",
+      "FAILED",
+      "PROCESSING"
+    ],
     "owner_questions": [
       "Q-WD-001",
       "Q-WD-002",
@@ -242,9 +337,20 @@
     "name": "Вывод на баланс телефона",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-041",
-    "screens": ["LGC-SCR-041", "WD-004", "CAS-WD-003", "LGC-SCR-098", "WD-003"],
-    "actions": ["ACT-LGC-SCR-041-03", "ACT-WD-004-07"],
-    "exit_states": ["SUCCESS"],
+    "screens": [
+      "LGC-SCR-041",
+      "WD-004",
+      "CAS-WD-003",
+      "LGC-SCR-098",
+      "WD-003"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-041-03",
+      "ACT-WD-004-07"
+    ],
+    "exit_states": [
+      "SUCCESS"
+    ],
     "owner_questions": [
       "Q-WD-001",
       "Q-WD-002",
@@ -281,8 +387,14 @@
       "LGC-SCR-098",
       "WD-003"
     ],
-    "actions": ["ACT-LGC-SCR-041-04", "ACT-LGC-SCR-108-02", "ACT-LGC-SCR-097-01"],
-    "exit_states": ["READY_FOR_PICKUP"],
+    "actions": [
+      "ACT-LGC-SCR-041-04",
+      "ACT-LGC-SCR-108-02",
+      "ACT-LGC-SCR-097-01"
+    ],
+    "exit_states": [
+      "READY_FOR_PICKUP"
+    ],
     "owner_questions": [
       "Q-WD-001",
       "Q-WD-002",
@@ -310,9 +422,39 @@
     "name": "Оплата услуги",
     "actor": "GUEST_OR_AUTHORIZED",
     "entry_screen": "PAY-001",
-    "screens": ["PAY-001", "CAS-PAY-001", "PAY-002", "CAS-PAY-002"],
-    "actions": ["ACT-PAY-001-10", "ACT-PAY-002-07"],
-    "exit_states": ["AUTH_GATE", "MOCK_ALERT_SUCCESS"],
+    "screens": [
+      "LGC-SCR-025",
+      "LGC-SCR-026",
+      "PAY-001",
+      "CAS-PAY-001",
+      "PAY-002",
+      "CAS-PAY-002"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-025-18",
+      "ACT-LGC-SCR-025-19",
+      "ACT-LGC-SCR-025-20",
+      "ACT-LGC-SCR-025-21",
+      "ACT-LGC-SCR-025-22",
+      "ACT-LGC-SCR-025-23",
+      "ACT-LGC-SCR-025-24",
+      "ACT-LGC-SCR-025-25",
+      "ACT-LGC-SCR-026-17",
+      "ACT-LGC-SCR-026-18",
+      "ACT-LGC-SCR-026-19",
+      "ACT-LGC-SCR-026-20",
+      "ACT-LGC-SCR-026-21",
+      "ACT-LGC-SCR-026-22",
+      "ACT-LGC-SCR-026-23",
+      "ACT-LGC-SCR-026-24",
+      "ACT-PAY-001-10",
+      "ACT-PAY-002-07",
+      "ACT-PAY-002-15"
+    ],
+    "exit_states": [
+      "AUTH_GATE",
+      "MOCK_ALERT_SUCCESS"
+    ],
     "owner_questions": [
       "Q-PAY-001",
       "Q-PAY-002",
@@ -342,9 +484,17 @@
     "name": "Получение по QR",
     "actor": "GUEST_OR_AUTHORIZED",
     "entry_screen": "QR-001",
-    "screens": ["QR-001"],
-    "actions": ["ACT-QR-001-04", "ACT-QR-001-05"],
-    "exit_states": ["AUTH_GATE", "QR_GENERATED_LOCAL"],
+    "screens": [
+      "QR-001"
+    ],
+    "actions": [
+      "ACT-QR-001-04",
+      "ACT-QR-001-05"
+    ],
+    "exit_states": [
+      "AUTH_GATE",
+      "QR_GENERATED_LOCAL"
+    ],
     "owner_questions": [
       "Q-QR-001",
       "Q-QR-002",
@@ -381,8 +531,16 @@
       "WD-003",
       "CAS-HIST-005"
     ],
-    "actions": ["ACT-LGC-SCR-111-03", "ACT-CAS-HIST-002-03", "ACT-LGC-SCR-115-05"],
-    "exit_states": ["DETAIL", "RECEIPT", "AUTH_GATE"],
+    "actions": [
+      "ACT-LGC-SCR-111-03",
+      "ACT-CAS-HIST-002-03",
+      "ACT-LGC-SCR-115-05"
+    ],
+    "exit_states": [
+      "DETAIL",
+      "RECEIPT",
+      "AUTH_GATE"
+    ],
     "owner_questions": [
       "Q-PAY-012",
       "Q-HIST-001",
@@ -400,19 +558,46 @@
     "name": "Повтор и отмена операции",
     "actor": "AUTHORIZED",
     "entry_screen": "CAS-HIST-002",
-    "screens": ["CAS-HIST-002", "LGC-SCR-115"],
-    "actions": ["ACT-CAS-HIST-002-02", "ACT-LGC-SCR-115-03", "ACT-LGC-SCR-115-04"],
-    "exit_states": ["REPEAT_ROUTE", "REJECTED_LOCAL"],
-    "owner_questions": ["Q-TOPUP-009", "Q-WD-007", "Q-HIST-003", "Q-HIST-004"]
+    "screens": [
+      "CAS-HIST-002",
+      "LGC-SCR-115"
+    ],
+    "actions": [
+      "ACT-CAS-HIST-002-02",
+      "ACT-LGC-SCR-115-03",
+      "ACT-LGC-SCR-115-04"
+    ],
+    "exit_states": [
+      "REPEAT_ROUTE",
+      "REJECTED_LOCAL"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-009",
+      "Q-WD-007",
+      "Q-HIST-003",
+      "Q-HIST-004"
+    ]
   },
   {
     "flow_id": "BP-CARD-001",
     "name": "Управление картой",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-035",
-    "screens": ["LGC-SCR-035", "LGC-SCR-036", "LGC-SCR-037", "LGC-SCR-038", "LGC-SCR-039"],
-    "actions": ["ACT-LGC-SCR-035-02", "ACT-LGC-SCR-035-03", "ACT-LGC-SCR-038-02"],
-    "exit_states": ["LOCAL_STATE_CHANGED"],
+    "screens": [
+      "LGC-SCR-035",
+      "LGC-SCR-036",
+      "LGC-SCR-037",
+      "LGC-SCR-038",
+      "LGC-SCR-039"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-035-02",
+      "ACT-LGC-SCR-035-03",
+      "ACT-LGC-SCR-038-02"
+    ],
+    "exit_states": [
+      "LOCAL_STATE_CHANGED"
+    ],
     "owner_questions": [
       "Q-CARD-001",
       "Q-CARD-002",
@@ -430,29 +615,65 @@
     "name": "Изменение PIN карты",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-057",
-    "screens": ["LGC-SCR-057", "LGC-SCR-059", "LGC-SCR-060"],
-    "actions": ["ACT-LGC-SCR-057-02"],
-    "exit_states": ["LOCAL_SUCCESS", "PIN_MISMATCH"],
-    "owner_questions": ["Q-CARD-005"]
+    "screens": [
+      "LGC-SCR-057",
+      "LGC-SCR-059",
+      "LGC-SCR-060"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-057-02"
+    ],
+    "exit_states": [
+      "LOCAL_SUCCESS",
+      "PIN_MISMATCH"
+    ],
+    "owner_questions": [
+      "Q-CARD-005"
+    ]
   },
   {
     "flow_id": "BP-PROFILE-001",
     "name": "Изменение телефона",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-122",
-    "screens": ["LGC-SCR-122", "LGC-SCR-123", "LGC-SCR-066"],
-    "actions": ["ACT-LGC-SCR-122-03", "ACT-LGC-SCR-123-02"],
-    "exit_states": ["PROFILE_LOCAL_UPDATED"],
-    "owner_questions": ["Q-PROFILE-001", "Q-PROFILE-002"]
+    "screens": [
+      "LGC-SCR-122",
+      "LGC-SCR-123",
+      "LGC-SCR-066"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-122-03",
+      "ACT-LGC-SCR-123-02"
+    ],
+    "exit_states": [
+      "PROFILE_LOCAL_UPDATED"
+    ],
+    "owner_questions": [
+      "Q-PROFILE-001",
+      "Q-PROFILE-002"
+    ]
   },
   {
     "flow_id": "BP-PROFILE-002",
     "name": "Выход и удаление профиля",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-066",
-    "screens": ["LGC-SCR-066", "CAS-PROFILE-001", "CAS-PROFILE-002", "HOME-001", "CAS-AUTH-003"],
-    "actions": ["ACT-LGC-SCR-066-09", "ACT-LGC-SCR-066-10", "ACT-CAS-PROFILE-002-01"],
-    "exit_states": ["GUEST_HOME", "AUTH_ENTRY"],
+    "screens": [
+      "LGC-SCR-066",
+      "CAS-PROFILE-001",
+      "CAS-PROFILE-002",
+      "HOME-001",
+      "CAS-AUTH-003"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-066-09",
+      "ACT-LGC-SCR-066-10",
+      "ACT-CAS-PROFILE-002-01"
+    ],
+    "exit_states": [
+      "GUEST_HOME",
+      "AUTH_ENTRY"
+    ],
     "owner_questions": [
       "Q-AUTH-011",
       "Q-PROFILE-003",
@@ -466,19 +687,41 @@
     "name": "Обращение в поддержку",
     "actor": "AUTHORIZED",
     "entry_screen": "LGC-SCR-125",
-    "screens": ["LGC-SCR-125", "LGC-SCR-126"],
-    "actions": ["ACT-LGC-SCR-125-03", "ACT-LGC-SCR-126-02"],
-    "exit_states": ["FORM_FILLED_NO_SUBMIT"],
-    "owner_questions": ["Q-PROFILE-007", "Q-PROFILE-008"]
+    "screens": [
+      "LGC-SCR-125",
+      "LGC-SCR-126"
+    ],
+    "actions": [
+      "ACT-LGC-SCR-125-03",
+      "ACT-LGC-SCR-126-02"
+    ],
+    "exit_states": [
+      "FORM_FILLED_NO_SUBMIT"
+    ],
+    "owner_questions": [
+      "Q-PROFILE-007",
+      "Q-PROFILE-008"
+    ]
   },
   {
     "flow_id": "BP-SUPPORT-002",
     "name": "Контакт поддержки через глобальный FAB",
     "actor": "ANY",
     "entry_screen": "HOME-001",
-    "screens": ["HOME-001", "LGC-SCR-025", "CAS-SUPPORT-002"],
-    "actions": ["ACT-GLOBAL-SUPPORT-01", "ACT-CAS-SUPPORT-002-02", "ACT-CAS-SUPPORT-002-03"],
-    "exit_states": ["SHEET_OPEN", "ALERT_LINK_UNAVAILABLE"],
+    "screens": [
+      "HOME-001",
+      "LGC-SCR-025",
+      "CAS-SUPPORT-002"
+    ],
+    "actions": [
+      "ACT-GLOBAL-SUPPORT-01",
+      "ACT-CAS-SUPPORT-002-02",
+      "ACT-CAS-SUPPORT-002-03"
+    ],
+    "exit_states": [
+      "SHEET_OPEN",
+      "ALERT_LINK_UNAVAILABLE"
+    ],
     "owner_questions": [
       "Q-SUPPORT-001",
       "Q-SUPPORT-002",

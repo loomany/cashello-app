@@ -69,3 +69,12 @@ node docs/business/discovery/tools/validate-discovery.js
 ```
 
 It validates JSON parsing, stable-ID uniqueness and cross-references, screenshot references, and relative links in the discovery package.
+
+## Reconciled product baseline
+
+- **Product SHA:** `597754364ada9dc1f51f62fe86b41a2bc0b24e4b` (director visual pass)
+- **Pre-design SHA:** `2359692f3ded08fdea66b5ea260f485e894dfd7b`
+- Home changed after original discovery; manifests/screenshots reconciled against current code.
+- Figma HOME-001 frame unchanged; runtime Home sections may differ (see FIGMA_HANDOFF.md).
+- Bonus +500 Б UI is prototype evidence only — owner questions remain UNANSWERED unless explicitly decided.
+- Delta record: [2026-09-01 director visual delta](../changes/2026-09-01-director-visual-delta.md)

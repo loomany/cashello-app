@@ -1,7 +1,10 @@
 [
   {
     "screen_id": "CAS-AUTH-001",
-    "aliases": ["LGC-SCR", "legacyNodeId 648:16634"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 648:16634"
+    ],
     "name": "Авторизация — заставка",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=splash",
@@ -19,15 +22,24 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SPLASH", "AUTO_ADVANCE"],
+    "states": [
+      "SPLASH",
+      "AUTO_ADVANCE"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-001-01", "ACT-CAS-AUTH-001-02"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-001-01",
+      "ACT-CAS-AUTH-001-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-002",
-    "aliases": ["LGC-SCR", "legacyNodeId 829:24292"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 829:24292"
+    ],
     "name": "Авторизация — онбординг",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=onboarding",
@@ -45,15 +57,24 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "QA_ONLY"],
+    "states": [
+      "DEFAULT",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-002-01", "ACT-CAS-AUTH-002-02"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-002-01",
+      "ACT-CAS-AUTH-002-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-003",
-    "aliases": ["LGC-SCR", "legacyNodeId 770:23233"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 770:23233"
+    ],
     "name": "Авторизация — ввод телефона",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=iin",
@@ -77,20 +98,32 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED"],
-    "entry_actions": ["ACT-CAS-AUTH-011-01", "ACT-HOME-001-02", "ACT-HOME-001-12"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED"
+    ],
+    "entry_actions": [
+      "ACT-CAS-AUTH-011-01",
+      "ACT-HOME-001-02",
+      "ACT-HOME-001-12"
+    ],
     "exit_actions": [
       "ACT-CAS-AUTH-003-01",
       "ACT-CAS-AUTH-003-02",
       "ACT-CAS-AUTH-003-03",
       "ACT-CAS-AUTH-003-04"
     ],
-    "owner_questions": ["Q-AUTH-001"],
+    "owner_questions": [
+      "Q-AUTH-001"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-004",
-    "aliases": ["LGC-SCR", "legacyNodeId 924:24543"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 924:24543"
+    ],
     "name": "Авторизация — подтверждение личности",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=identity",
@@ -108,15 +141,23 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["QA_ONLY"],
+    "states": [
+      "QA_ONLY"
+    ],
     "entry_actions": [],
     "exit_actions": [],
-    "owner_questions": ["Q-AUTH-012", "Q-KYC-001"],
+    "owner_questions": [
+      "Q-AUTH-012",
+      "Q-KYC-001"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-005",
-    "aliases": ["LGC-SCR", "legacyNodeId 648:17611"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 648:17611"
+    ],
     "name": "Авторизация — сканирование лица",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=face",
@@ -134,15 +175,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "states": [
+      "CAMERA_MOCK",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-005-01", "ACT-CAS-AUTH-005-02"],
-    "owner_questions": ["Q-KYC-003"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-005-01",
+      "ACT-CAS-AUTH-005-02"
+    ],
+    "owner_questions": [
+      "Q-KYC-003"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-006",
-    "aliases": ["LGC-SCR", "legacyNodeId 924:24543"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 924:24543"
+    ],
     "name": "Авторизация — резервный сценарий лица",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=faceFallback",
@@ -160,15 +212,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FALLBACK", "QA_ONLY"],
+    "states": [
+      "FALLBACK",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-006-01", "ACT-CAS-AUTH-006-02"],
-    "owner_questions": ["Q-KYC-004"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-006-01",
+      "ACT-CAS-AUTH-006-02"
+    ],
+    "owner_questions": [
+      "Q-KYC-004"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-007",
-    "aliases": ["LGC-SCR", "legacyNodeId 924:24618"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 924:24618"
+    ],
     "name": "Авторизация — документ, лицевая сторона",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=documentFront",
@@ -186,15 +249,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "states": [
+      "CAMERA_MOCK",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-007-01", "ACT-CAS-AUTH-007-02"],
-    "owner_questions": ["Q-KYC-003"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-007-01",
+      "ACT-CAS-AUTH-007-02"
+    ],
+    "owner_questions": [
+      "Q-KYC-003"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-008",
-    "aliases": ["LGC-SCR", "legacyNodeId 930:25629"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 930:25629"
+    ],
     "name": "Авторизация — переворот документа",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=documentTurn",
@@ -212,15 +286,24 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "states": [
+      "CAMERA_MOCK",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-008-01", "ACT-CAS-AUTH-008-02"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-008-01",
+      "ACT-CAS-AUTH-008-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-009",
-    "aliases": ["LGC-SCR", "legacyNodeId 930:25673"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 930:25673"
+    ],
     "name": "Авторизация — документ, обратная сторона",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=documentBack",
@@ -238,15 +321,24 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CAMERA_MOCK", "QA_ONLY"],
+    "states": [
+      "CAMERA_MOCK",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-009-01", "ACT-CAS-AUTH-009-02"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-009-01",
+      "ACT-CAS-AUTH-009-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-010",
-    "aliases": ["LGC-SCR", "legacyNodeId 802:22943"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 802:22943"
+    ],
     "name": "Авторизация — телефон после KYC",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=phone",
@@ -264,15 +356,24 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "QA_ONLY"],
+    "states": [
+      "DEFAULT",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-010-01", "ACT-CAS-AUTH-010-02"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-010-01",
+      "ACT-CAS-AUTH-010-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-011",
-    "aliases": ["LGC-SCR", "legacyNodeId 648:17063"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 648:17063"
+    ],
     "name": "Авторизация — SMS-код",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=verification",
@@ -296,15 +397,30 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-011-01", "ACT-CAS-AUTH-011-02", "ACT-CAS-AUTH-011-03"],
-    "owner_questions": ["Q-AUTH-002", "Q-AUTH-003", "Q-AUTH-004", "Q-AUTH-005"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-011-01",
+      "ACT-CAS-AUTH-011-02",
+      "ACT-CAS-AUTH-011-03"
+    ],
+    "owner_questions": [
+      "Q-AUTH-002",
+      "Q-AUTH-003",
+      "Q-AUTH-004",
+      "Q-AUTH-005"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-012",
-    "aliases": ["LGC-SCR", "legacyNodeId 648:16740"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 648:16740"
+    ],
     "name": "Авторизация — создание PIN",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=pinCreate",
@@ -328,15 +444,27 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-012-01", "ACT-CAS-AUTH-012-02", "ACT-CAS-AUTH-012-03"],
-    "owner_questions": ["Q-AUTH-006"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-012-01",
+      "ACT-CAS-AUTH-012-02",
+      "ACT-CAS-AUTH-012-03"
+    ],
+    "owner_questions": [
+      "Q-AUTH-006"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-013",
-    "aliases": ["LGC-SCR", "legacyNodeId 648:16878"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 648:16878"
+    ],
     "name": "Авторизация — повтор PIN",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=pinRepeat",
@@ -360,15 +488,25 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CONFIRMATION", "FORM_FILLED"],
+    "states": [
+      "CONFIRMATION",
+      "FORM_FILLED"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-013-01", "ACT-CAS-AUTH-013-02", "ACT-CAS-AUTH-013-03"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-013-01",
+      "ACT-CAS-AUTH-013-02",
+      "ACT-CAS-AUTH-013-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-014",
-    "aliases": ["LGC-SCR", "legacyNodeId 648:16930"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 648:16930"
+    ],
     "name": "Авторизация — ошибка PIN",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=pinError",
@@ -392,15 +530,25 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FAILED", "FORM_FILLED"],
+    "states": [
+      "FAILED",
+      "FORM_FILLED"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-AUTH-014-01", "ACT-CAS-AUTH-014-02", "ACT-CAS-AUTH-014-03"],
+    "exit_actions": [
+      "ACT-CAS-AUTH-014-01",
+      "ACT-CAS-AUTH-014-02",
+      "ACT-CAS-AUTH-014-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-AUTH-015",
-    "aliases": ["LGC-SCR", "legacyNodeId 804:23186"],
+    "aliases": [
+      "LGC-SCR",
+      "legacyNodeId 804:23186"
+    ],
     "name": "Авторизация — вход по PIN",
     "module": "AUTH",
     "route": "/legacy/auth?qaStep=pinLogin",
@@ -418,7 +566,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["RETURNING_USER", "QA_ONLY"],
+    "states": [
+      "RETURNING_USER",
+      "QA_ONLY"
+    ],
     "entry_actions": [],
     "exit_actions": [
       "ACT-CAS-AUTH-015-01",
@@ -427,12 +578,20 @@
       "ACT-CAS-AUTH-015-04",
       "ACT-CAS-AUTH-015-05"
     ],
-    "owner_questions": ["Q-AUTH-001", "Q-AUTH-006", "Q-AUTH-007", "Q-AUTH-008", "Q-AUTH-010"],
+    "owner_questions": [
+      "Q-AUTH-001",
+      "Q-AUTH-006",
+      "Q-AUTH-007",
+      "Q-AUTH-008",
+      "Q-AUTH-010"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "HOME-001",
-    "aliases": ["Figma frame 7:5"],
+    "aliases": [
+      "Figma frame 7:5"
+    ],
     "name": "Главная для гостя",
     "module": "HOME",
     "route": "/legacy/home?guest=1",
@@ -450,7 +609,11 @@
       }
     ],
     "source_status": "FIGMA_AND_CODE",
-    "states": ["GUEST", "BALANCES_HIDDEN"],
+    "states": [
+      "GUEST",
+      "BALANCES_HIDDEN",
+      "RECENT_OPERATIONS_PREVIEW"
+    ],
     "entry_actions": [
       "ACT-CAS-AUTH-003-01",
       "ACT-CAS-AUTH-003-02",
@@ -467,21 +630,23 @@
       "ACT-HOME-001-03",
       "ACT-HOME-001-04",
       "ACT-HOME-001-05",
-      "ACT-HOME-001-06",
-      "ACT-HOME-001-07",
-      "ACT-HOME-001-08",
-      "ACT-HOME-001-09",
-      "ACT-HOME-001-10",
-      "ACT-HOME-001-11",
       "ACT-HOME-001-12",
-      "ACT-HOME-001-13"
+      "ACT-HOME-001-13",
+      "ACT-HOME-001-14"
     ],
-    "owner_questions": ["Q-SUPPORT-001", "Q-SUPPORT-002", "Q-SUPPORT-003"],
+    "owner_questions": [
+      "Q-SUPPORT-001",
+      "Q-SUPPORT-002",
+      "Q-SUPPORT-003"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-025",
-    "aliases": ["legacyNodeId 765:22510", "HOME-002"],
+    "aliases": [
+      "legacyNodeId 765:22510",
+      "HOME-002"
+    ],
     "name": "Главная авторизованного пользователя",
     "module": "HOME",
     "route": "/legacy/home",
@@ -502,10 +667,21 @@
         "path": "screenshots/annotated/LGC-SCR-025__balances-hidden.png",
         "note": null,
         "capture_status": "CAPTURED"
+      },
+      {
+        "state": "RECENT_OPS_SCROLLED",
+        "path": "screenshots/annotated/LGC-SCR-025__recent-ops-scrolled.png",
+        "note": "Lower recent-operation rows visible after scroll",
+        "capture_status": "CAPTURED"
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["AUTHORIZED", "BALANCES_HIDDEN", "SHEET_OPEN"],
+    "states": [
+      "AUTHORIZED",
+      "BALANCES_HIDDEN",
+      "SHEET_OPEN",
+      "RECENT_OPERATIONS_PREVIEW"
+    ],
     "entry_actions": [
       "ACT-CAS-AUTH-003-01",
       "ACT-CAS-AUTH-003-02",
@@ -563,25 +739,32 @@
       "ACT-LGC-SCR-025-03",
       "ACT-LGC-SCR-025-04",
       "ACT-LGC-SCR-025-05",
-      "ACT-LGC-SCR-025-06",
-      "ACT-LGC-SCR-025-07",
-      "ACT-LGC-SCR-025-08",
-      "ACT-LGC-SCR-025-09",
       "ACT-LGC-SCR-025-10",
-      "ACT-LGC-SCR-025-11",
       "ACT-LGC-SCR-025-12",
       "ACT-LGC-SCR-025-13",
       "ACT-LGC-SCR-025-14",
       "ACT-LGC-SCR-025-15",
       "ACT-LGC-SCR-025-16",
-      "ACT-LGC-SCR-025-17"
+      "ACT-LGC-SCR-025-17",
+      "ACT-LGC-SCR-025-18",
+      "ACT-LGC-SCR-025-19",
+      "ACT-LGC-SCR-025-20",
+      "ACT-LGC-SCR-025-21",
+      "ACT-LGC-SCR-025-22",
+      "ACT-LGC-SCR-025-23",
+      "ACT-LGC-SCR-025-24",
+      "ACT-LGC-SCR-025-25"
     ],
-    "owner_questions": ["Q-AUTH-009"],
+    "owner_questions": [
+      "Q-AUTH-009"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-026",
-    "aliases": ["legacyNodeId 980:26275"],
+    "aliases": [
+      "legacyNodeId 980:26275"
+    ],
     "name": "Главная — ссылка фильтра истории",
     "module": "HOME",
     "route": "/legacy/home?historyLink=filter",
@@ -599,7 +782,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["AUTHORIZED", "FILTER_LINK_VARIANT"],
+    "states": [
+      "AUTHORIZED",
+      "FILTER_LINK_VARIANT",
+      "RECENT_OPERATIONS_PREVIEW"
+    ],
     "entry_actions": [],
     "exit_actions": [
       "ACT-LGC-SCR-026-01",
@@ -607,24 +794,30 @@
       "ACT-LGC-SCR-026-03",
       "ACT-LGC-SCR-026-04",
       "ACT-LGC-SCR-026-05",
-      "ACT-LGC-SCR-026-06",
-      "ACT-LGC-SCR-026-07",
-      "ACT-LGC-SCR-026-08",
-      "ACT-LGC-SCR-026-09",
       "ACT-LGC-SCR-026-10",
-      "ACT-LGC-SCR-026-11",
       "ACT-LGC-SCR-026-12",
       "ACT-LGC-SCR-026-13",
       "ACT-LGC-SCR-026-14",
       "ACT-LGC-SCR-026-15",
-      "ACT-LGC-SCR-026-16"
+      "ACT-LGC-SCR-026-16",
+      "ACT-LGC-SCR-026-17",
+      "ACT-LGC-SCR-026-18",
+      "ACT-LGC-SCR-026-19",
+      "ACT-LGC-SCR-026-20",
+      "ACT-LGC-SCR-026-21",
+      "ACT-LGC-SCR-026-22",
+      "ACT-LGC-SCR-026-23",
+      "ACT-LGC-SCR-026-24"
     ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-HOME-003",
-    "aliases": ["Home TopupSelectSheet", "LGC-SCR-040 component reuse"],
+    "aliases": [
+      "Home TopupSelectSheet",
+      "LGC-SCR-040 component reuse"
+    ],
     "name": "Главная — выбор способа пополнения",
     "module": "HOME",
     "route": "/legacy/home (sheet)",
@@ -648,7 +841,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN", "GUEST", "AUTHORIZED"],
+    "states": [
+      "SHEET_OPEN",
+      "GUEST",
+      "AUTHORIZED"
+    ],
     "entry_actions": [
       "ACT-CAS-AUTH-003-01",
       "ACT-CAS-AUTH-003-02",
@@ -700,13 +897,19 @@
       "ACT-QR-001-01",
       "ACT-QR-001-06"
     ],
-    "exit_actions": ["ACT-CAS-HOME-003-01", "ACT-CAS-HOME-003-02", "ACT-CAS-HOME-003-03"],
+    "exit_actions": [
+      "ACT-CAS-HOME-003-01",
+      "ACT-CAS-HOME-003-02",
+      "ACT-CAS-HOME-003-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-HOME-004",
-    "aliases": ["Home WithdrawSelectSheet"],
+    "aliases": [
+      "Home WithdrawSelectSheet"
+    ],
     "name": "Главная — выбор способа вывода",
     "module": "HOME",
     "route": "/legacy/home (sheet)",
@@ -730,7 +933,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN", "GUEST", "AUTHORIZED"],
+    "states": [
+      "SHEET_OPEN",
+      "GUEST",
+      "AUTHORIZED"
+    ],
     "entry_actions": [
       "ACT-CAS-AUTH-003-01",
       "ACT-CAS-AUTH-003-02",
@@ -788,88 +995,16 @@
       "ACT-CAS-HOME-004-03",
       "ACT-CAS-HOME-004-04"
     ],
-    "owner_questions": ["Q-WD-001"],
-    "screenshot_qa": "VALIDATED"
-  },
-  {
-    "screen_id": "CAS-HOME-005",
-    "aliases": ["Home HistoryActionSheet"],
-    "name": "Главная — действия с операцией",
-    "module": "HOME",
-    "route": "/legacy/home (sheet)",
-    "auth_state": "MIXED",
-    "figma_node": null,
-    "legacy_node": null,
-    "component": "src/features/legacyHistory/HistoryActionSheet.tsx",
-    "screenshot": "screenshots/annotated/CAS-HOME-005__history-action-sheet.png",
-    "screenshots": [
-      {
-        "state": "SHEET_OPEN",
-        "path": "screenshots/annotated/CAS-HOME-005__history-action-sheet.png",
-        "note": null,
-        "capture_status": "CAPTURED"
-      }
+    "owner_questions": [
+      "Q-WD-001"
     ],
-    "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
-    "entry_actions": [
-      "ACT-CAS-AUTH-003-01",
-      "ACT-CAS-AUTH-003-02",
-      "ACT-CAS-AUTH-012-01",
-      "ACT-CAS-AUTH-013-01",
-      "ACT-CAS-AUTH-014-01",
-      "ACT-CAS-AUTH-015-01",
-      "ACT-HOME-001-01",
-      "ACT-LGC-SCR-025-01",
-      "ACT-LGC-SCR-025-12",
-      "ACT-LGC-SCR-026-01",
-      "ACT-LGC-SCR-026-12",
-      "ACT-LGC-SCR-029-01",
-      "ACT-LGC-SCR-040-01",
-      "ACT-LGC-SCR-066-01",
-      "ACT-LGC-SCR-066-11",
-      "ACT-CAS-PROFILE-001-01",
-      "ACT-LGC-SCR-068-01",
-      "ACT-LGC-SCR-125-01",
-      "ACT-LGC-SCR-061-02",
-      "ACT-CAS-STUB-001-01",
-      "ACT-CAS-STUB-002-01",
-      "ACT-CAS-STUB-003-01",
-      "ACT-CAS-STUB-004-01",
-      "ACT-CAS-STUB-005-01",
-      "ACT-CAS-STUB-006-01",
-      "ACT-LGC-SCR-069-02",
-      "ACT-LGC-SCR-069-08",
-      "ACT-LGC-SCR-070-02",
-      "ACT-LGC-SCR-070-08",
-      "ACT-LGC-SCR-073-02",
-      "ACT-LGC-SCR-073-08",
-      "ACT-LGC-SCR-085-02",
-      "ACT-LGC-SCR-085-05",
-      "ACT-LGC-SCR-087-03",
-      "ACT-LGC-SCR-041-01",
-      "ACT-WD-002-02",
-      "ACT-LGC-SCR-092-02",
-      "ACT-WD-004-02",
-      "ACT-CAS-WD-005-02",
-      "ACT-LGC-SCR-099-01",
-      "ACT-WD-003-01",
-      "ACT-PAY-001-01",
-      "ACT-PAY-001-19",
-      "ACT-PAY-002-02",
-      "ACT-PAY-002-09",
-      "ACT-LGC-SCR-111-01",
-      "ACT-LGC-SCR-111-05",
-      "ACT-QR-001-01",
-      "ACT-QR-001-06"
-    ],
-    "exit_actions": ["ACT-CAS-HOME-005-01", "ACT-CAS-HOME-005-02", "ACT-CAS-HOME-005-03"],
-    "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-029",
-    "aliases": ["legacyNodeId 648:19007"],
+    "aliases": [
+      "legacyNodeId 648:19007"
+    ],
     "name": "Счета — список",
     "module": "ACCOUNTS",
     "route": "/legacy/accounts",
@@ -887,7 +1022,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT"],
+    "states": [
+      "DEFAULT"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-029-03",
       "ACT-LGC-SCR-029-04",
@@ -905,12 +1042,17 @@
       "ACT-LGC-SCR-029-05",
       "ACT-LGC-SCR-029-06"
     ],
-    "owner_questions": ["Q-ACC-001", "Q-ACC-003"],
+    "owner_questions": [
+      "Q-ACC-001",
+      "Q-ACC-003"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-031",
-    "aliases": ["legacyNodeId 648:19059"],
+    "aliases": [
+      "legacyNodeId 648:19059"
+    ],
     "name": "Счета — выбор валюты нового счета",
     "module": "ACCOUNTS",
     "route": "/legacy/accounts (sheet)",
@@ -934,7 +1076,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN", "SELECTED"],
+    "states": [
+      "SHEET_OPEN",
+      "SELECTED"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-029-03",
       "ACT-LGC-SCR-029-04",
@@ -950,13 +1095,19 @@
       "ACT-LGC-SCR-031-03",
       "ACT-LGC-SCR-031-04"
     ],
-    "owner_questions": ["Q-ACC-001", "Q-ACC-002"],
+    "owner_questions": [
+      "Q-ACC-001",
+      "Q-ACC-002"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-032",
-    "aliases": ["legacyNodeId 648:20120", "legacyNodeId 648:20152"],
+    "aliases": [
+      "legacyNodeId 648:20120",
+      "legacyNodeId 648:20152"
+    ],
     "name": "Счет — реквизиты без карты",
     "module": "ACCOUNTS",
     "route": "/legacy/accounts/[id]",
@@ -980,7 +1131,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["KZT_PRIMARY", "KZT_SECONDARY", "NO_CARD"],
+    "states": [
+      "KZT_PRIMARY",
+      "KZT_SECONDARY",
+      "NO_CARD"
+    ],
     "entry_actions": [],
     "exit_actions": [
       "ACT-LGC-SCR-032-01",
@@ -990,12 +1145,17 @@
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06"
     ],
-    "owner_questions": ["Q-ACC-004", "Q-ACC-005"],
+    "owner_questions": [
+      "Q-ACC-004",
+      "Q-ACC-005"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-033",
-    "aliases": ["legacyNodeId 648:20196"],
+    "aliases": [
+      "legacyNodeId 648:20196"
+    ],
     "name": "Счет — реквизиты с картой",
     "module": "ACCOUNTS",
     "route": "/legacy/accounts/usd",
@@ -1013,8 +1173,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["USD", "HAS_CARD"],
-    "entry_actions": ["ACT-LGC-SCR-029-05"],
+    "states": [
+      "USD",
+      "HAS_CARD"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-029-05"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-033-01",
       "ACT-LGC-SCR-033-02",
@@ -1022,12 +1187,16 @@
       "ACT-LGC-SCR-033-04",
       "ACT-LGC-SCR-033-05"
     ],
-    "owner_questions": ["Q-CARD-002"],
+    "owner_questions": [
+      "Q-CARD-002"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-034",
-    "aliases": ["legacyNodeId 821:29038"],
+    "aliases": [
+      "legacyNodeId 821:29038"
+    ],
     "name": "Счет — скачать данные",
     "module": "ACCOUNTS",
     "route": "/legacy/accounts/[id] (sheet)",
@@ -1045,16 +1214,27 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
+    "states": [
+      "SHEET_OPEN"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-LGC-SCR-034-01", "ACT-LGC-SCR-034-02", "ACT-LGC-SCR-034-03"],
-    "owner_questions": ["Q-ACC-006"],
+    "exit_actions": [
+      "ACT-LGC-SCR-034-01",
+      "ACT-LGC-SCR-034-02",
+      "ACT-LGC-SCR-034-03"
+    ],
+    "owner_questions": [
+      "Q-ACC-006"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-040",
-    "aliases": ["legacyNodeId 648:20275", "Account-detail top-up component reuse"],
+    "aliases": [
+      "legacyNodeId 648:20275",
+      "Account-detail top-up component reuse"
+    ],
     "name": "Пополнение — выбор способа",
     "module": "TOPUP",
     "route": "/legacy/topup",
@@ -1078,7 +1258,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["ROUTE_SHEET", "EMBEDDED_SHEET"],
+    "states": [
+      "ROUTE_SHEET",
+      "EMBEDDED_SHEET"
+    ],
     "entry_actions": [
       "ACT-CAS-HOME-003-02",
       "ACT-CAS-HOME-003-03",
@@ -1097,13 +1280,21 @@
       "ACT-LGC-SCR-081-01",
       "ACT-LGC-SCR-081-02"
     ],
-    "exit_actions": ["ACT-LGC-SCR-040-01", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-040-03"],
-    "owner_questions": ["Q-TOPUP-001"],
+    "exit_actions": [
+      "ACT-LGC-SCR-040-01",
+      "ACT-LGC-SCR-040-02",
+      "ACT-LGC-SCR-040-03"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-001"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-035",
-    "aliases": ["legacyNodeId 648:20359"],
+    "aliases": [
+      "legacyNodeId 648:20359"
+    ],
     "name": "Карта — данные скрыты",
     "module": "CARD",
     "route": "/legacy/card",
@@ -1121,7 +1312,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "CVV_HIDDEN"],
+    "states": [
+      "DEFAULT",
+      "CVV_HIDDEN"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-032-02",
       "ACT-LGC-SCR-033-02",
@@ -1144,12 +1338,20 @@
       "ACT-LGC-SCR-035-06",
       "ACT-LGC-SCR-035-07"
     ],
-    "owner_questions": ["Q-CARD-001", "Q-CARD-002", "Q-CARD-007", "Q-CARD-008", "Q-CARD-009"],
+    "owner_questions": [
+      "Q-CARD-001",
+      "Q-CARD-002",
+      "Q-CARD-007",
+      "Q-CARD-008",
+      "Q-CARD-009"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-036",
-    "aliases": ["legacyNodeId 648:20467"],
+    "aliases": [
+      "legacyNodeId 648:20467"
+    ],
     "name": "Карта — CVV показан",
     "module": "CARD",
     "route": "/legacy/card",
@@ -1167,7 +1369,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CVV_VISIBLE"],
+    "states": [
+      "CVV_VISIBLE"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-032-02",
       "ACT-LGC-SCR-033-02",
@@ -1190,13 +1394,17 @@
       "ACT-LGC-SCR-036-06",
       "ACT-LGC-SCR-036-07"
     ],
-    "owner_questions": ["Q-CARD-010"],
+    "owner_questions": [
+      "Q-CARD-010"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-037",
-    "aliases": ["legacyNodeId 648:20509"],
+    "aliases": [
+      "legacyNodeId 648:20509"
+    ],
     "name": "Карта — подтверждение блокировки",
     "module": "CARD",
     "route": "/legacy/card (modal)",
@@ -1220,7 +1428,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CONFIRMATION", "BLOCKED_LOCAL"],
+    "states": [
+      "CONFIRMATION",
+      "BLOCKED_LOCAL"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-032-02",
       "ACT-LGC-SCR-033-02",
@@ -1234,13 +1445,21 @@
       "ACT-LGC-SCR-060-01",
       "ACT-LGC-SCR-061-05"
     ],
-    "exit_actions": ["ACT-LGC-SCR-037-01", "ACT-LGC-SCR-037-02"],
-    "owner_questions": ["Q-CARD-003", "Q-CARD-004"],
+    "exit_actions": [
+      "ACT-LGC-SCR-037-01",
+      "ACT-LGC-SCR-037-02"
+    ],
+    "owner_questions": [
+      "Q-CARD-003",
+      "Q-CARD-004"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-038",
-    "aliases": ["legacyNodeId 648:20425"],
+    "aliases": [
+      "legacyNodeId 648:20425"
+    ],
     "name": "Карта — лимиты",
     "module": "CARD",
     "route": "/legacy/card/limits",
@@ -1258,15 +1477,27 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT"],
-    "entry_actions": ["ACT-LGC-SCR-035-04", "ACT-LGC-SCR-036-04"],
-    "exit_actions": ["ACT-LGC-SCR-038-01", "ACT-LGC-SCR-038-02"],
-    "owner_questions": ["Q-CARD-006"],
+    "states": [
+      "DEFAULT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-035-04",
+      "ACT-LGC-SCR-036-04"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-038-01",
+      "ACT-LGC-SCR-038-02"
+    ],
+    "owner_questions": [
+      "Q-CARD-006"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-039",
-    "aliases": ["legacyNodeId 821:29193"],
+    "aliases": [
+      "legacyNodeId 821:29193"
+    ],
     "name": "Карта — выбор лимита",
     "module": "CARD",
     "route": "/legacy/card/limits (sheet)",
@@ -1296,8 +1527,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN", "SELECTED", "APPLIED"],
-    "entry_actions": ["ACT-LGC-SCR-035-04", "ACT-LGC-SCR-036-04"],
+    "states": [
+      "SHEET_OPEN",
+      "SELECTED",
+      "APPLIED"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-035-04",
+      "ACT-LGC-SCR-036-04"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-039-01",
       "ACT-LGC-SCR-039-02",
@@ -1308,13 +1546,17 @@
       "ACT-LGC-SCR-039-07",
       "ACT-LGC-SCR-039-08"
     ],
-    "owner_questions": ["Q-CARD-006"],
+    "owner_questions": [
+      "Q-CARD-006"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-057",
-    "aliases": ["legacyNodeId 821:26267"],
+    "aliases": [
+      "legacyNodeId 821:26267"
+    ],
     "name": "Карта — новый PIN",
     "module": "CARD",
     "route": "/legacy/card/pin",
@@ -1332,15 +1574,28 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT"],
-    "entry_actions": ["ACT-LGC-SCR-035-05", "ACT-LGC-SCR-036-05"],
-    "exit_actions": ["ACT-LGC-SCR-057-01", "ACT-LGC-SCR-057-02", "ACT-LGC-SCR-057-03"],
-    "owner_questions": ["Q-CARD-005"],
+    "states": [
+      "DEFAULT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-036-05"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-057-01",
+      "ACT-LGC-SCR-057-02",
+      "ACT-LGC-SCR-057-03"
+    ],
+    "owner_questions": [
+      "Q-CARD-005"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-059",
-    "aliases": ["legacyNodeId 821:26507"],
+    "aliases": [
+      "legacyNodeId 821:26507"
+    ],
     "name": "Карта — повтор PIN",
     "module": "CARD",
     "route": "/legacy/card/pin",
@@ -1358,15 +1613,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CONFIRMATION"],
-    "entry_actions": ["ACT-LGC-SCR-035-05", "ACT-LGC-SCR-036-05"],
-    "exit_actions": ["ACT-LGC-SCR-059-01", "ACT-LGC-SCR-059-02", "ACT-LGC-SCR-059-03"],
+    "states": [
+      "CONFIRMATION"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-036-05"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-059-01",
+      "ACT-LGC-SCR-059-02",
+      "ACT-LGC-SCR-059-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-060",
-    "aliases": ["legacyNodeId 821:26587"],
+    "aliases": [
+      "legacyNodeId 821:26587"
+    ],
     "name": "Карта — ошибка PIN",
     "module": "CARD",
     "route": "/legacy/card/pin",
@@ -1384,15 +1650,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FAILED"],
-    "entry_actions": ["ACT-LGC-SCR-035-05", "ACT-LGC-SCR-036-05"],
-    "exit_actions": ["ACT-LGC-SCR-060-01", "ACT-LGC-SCR-060-02", "ACT-LGC-SCR-060-03"],
+    "states": [
+      "FAILED"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-035-05",
+      "ACT-LGC-SCR-036-05"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-060-01",
+      "ACT-LGC-SCR-060-02",
+      "ACT-LGC-SCR-060-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-066",
-    "aliases": ["legacyNodeId 648:19179"],
+    "aliases": [
+      "legacyNodeId 648:19179"
+    ],
     "name": "Профиль",
     "module": "PROFILE",
     "route": "/legacy/profile",
@@ -1422,7 +1699,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "UNIDENTIFIED"],
+    "states": [
+      "DEFAULT",
+      "UNIDENTIFIED"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-025-02",
       "ACT-LGC-SCR-025-16",
@@ -1473,12 +1753,18 @@
       "ACT-LGC-SCR-066-14",
       "ACT-LGC-SCR-066-15"
     ],
-    "owner_questions": ["Q-KYC-007", "Q-PROFILE-003", "Q-PROFILE-004"],
+    "owner_questions": [
+      "Q-KYC-007",
+      "Q-PROFILE-003",
+      "Q-PROFILE-004"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-PROFILE-001",
-    "aliases": ["ProfileConfirmSheet logout"],
+    "aliases": [
+      "ProfileConfirmSheet logout"
+    ],
     "name": "Профиль — подтверждение выхода",
     "module": "PROFILE",
     "route": "/legacy/profile (sheet)",
@@ -1496,7 +1782,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CONFIRMATION"],
+    "states": [
+      "CONFIRMATION"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-025-02",
       "ACT-LGC-SCR-025-16",
@@ -1530,13 +1818,20 @@
       "ACT-QR-001-02",
       "ACT-QR-001-10"
     ],
-    "exit_actions": ["ACT-CAS-PROFILE-001-01", "ACT-CAS-PROFILE-001-02"],
-    "owner_questions": ["Q-AUTH-011"],
+    "exit_actions": [
+      "ACT-CAS-PROFILE-001-01",
+      "ACT-CAS-PROFILE-001-02"
+    ],
+    "owner_questions": [
+      "Q-AUTH-011"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-PROFILE-002",
-    "aliases": ["ProfileConfirmSheet delete"],
+    "aliases": [
+      "ProfileConfirmSheet delete"
+    ],
     "name": "Профиль — подтверждение удаления",
     "module": "PROFILE",
     "route": "/legacy/profile (sheet)",
@@ -1554,7 +1849,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CONFIRMATION"],
+    "states": [
+      "CONFIRMATION"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-025-02",
       "ACT-LGC-SCR-025-16",
@@ -1588,13 +1885,21 @@
       "ACT-QR-001-02",
       "ACT-QR-001-10"
     ],
-    "exit_actions": ["ACT-CAS-PROFILE-002-01", "ACT-CAS-PROFILE-002-02"],
-    "owner_questions": ["Q-PROFILE-005", "Q-PROFILE-006"],
+    "exit_actions": [
+      "ACT-CAS-PROFILE-002-01",
+      "ACT-CAS-PROFILE-002-02"
+    ],
+    "owner_questions": [
+      "Q-PROFILE-005",
+      "Q-PROFILE-006"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-067",
-    "aliases": ["legacyNodeId 648:19230"],
+    "aliases": [
+      "legacyNodeId 648:19230"
+    ],
     "name": "Профиль — персональные данные",
     "module": "PROFILE",
     "route": "/legacy/profile/personal",
@@ -1612,9 +1917,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "ORPHAN_ROUTE"],
+    "states": [
+      "DEFAULT",
+      "ORPHAN_ROUTE"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-LGC-SCR-067-01", "ACT-LGC-SCR-067-02"],
+    "exit_actions": [
+      "ACT-LGC-SCR-067-01",
+      "ACT-LGC-SCR-067-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
@@ -1638,8 +1949,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["UNIDENTIFIED", "STATIC_LIMITS"],
-    "entry_actions": ["ACT-LGC-SCR-066-03"],
+    "states": [
+      "UNIDENTIFIED",
+      "STATIC_LIMITS"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-066-03"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-068-01",
       "ACT-LGC-SCR-068-02",
@@ -1661,7 +1977,9 @@
   },
   {
     "screen_id": "LGC-SCR-122",
-    "aliases": ["legacyNodeId 648:16714"],
+    "aliases": [
+      "legacyNodeId 648:16714"
+    ],
     "name": "Профиль — новый телефон",
     "module": "PROFILE",
     "route": "/legacy/profile/phone",
@@ -1685,15 +2003,30 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED"],
-    "entry_actions": ["ACT-LGC-SCR-122-03", "ACT-LGC-SCR-123-01"],
-    "exit_actions": ["ACT-LGC-SCR-122-01", "ACT-LGC-SCR-122-02", "ACT-LGC-SCR-122-03"],
-    "owner_questions": ["Q-PROFILE-001", "Q-PROFILE-002"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-122-03",
+      "ACT-LGC-SCR-123-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-122-01",
+      "ACT-LGC-SCR-122-02",
+      "ACT-LGC-SCR-122-03"
+    ],
+    "owner_questions": [
+      "Q-PROFILE-001",
+      "Q-PROFILE-002"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-123",
-    "aliases": ["legacyNodeId 821:31991"],
+    "aliases": [
+      "legacyNodeId 821:31991"
+    ],
     "name": "Профиль — проверка нового телефона",
     "module": "PROFILE",
     "route": "/legacy/profile/phone/verify",
@@ -1711,15 +2044,28 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["VERIFICATION", "SUCCESS_REDIRECT"],
-    "entry_actions": ["ACT-LGC-SCR-122-03"],
-    "exit_actions": ["ACT-LGC-SCR-123-01", "ACT-LGC-SCR-123-02", "ACT-LGC-SCR-123-03"],
-    "owner_questions": ["Q-PROFILE-001"],
+    "states": [
+      "VERIFICATION",
+      "SUCCESS_REDIRECT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-122-03"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-123-01",
+      "ACT-LGC-SCR-123-02",
+      "ACT-LGC-SCR-123-03"
+    ],
+    "owner_questions": [
+      "Q-PROFILE-001"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-124",
-    "aliases": ["legacyNodeId 648:19215"],
+    "aliases": [
+      "legacyNodeId 648:19215"
+    ],
     "name": "Профиль — изменение PIN входа",
     "module": "PROFILE",
     "route": "/legacy/profile/pin",
@@ -1749,15 +2095,27 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["PIN_CREATE", "PIN_REPEAT", "FAILED"],
-    "entry_actions": ["ACT-LGC-SCR-066-07"],
-    "exit_actions": ["ACT-LGC-SCR-124-01", "ACT-LGC-SCR-124-02", "ACT-LGC-SCR-124-03"],
+    "states": [
+      "PIN_CREATE",
+      "PIN_REPEAT",
+      "FAILED"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-066-07"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-124-01",
+      "ACT-LGC-SCR-124-02",
+      "ACT-LGC-SCR-124-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-125",
-    "aliases": ["legacyNodeId 648:19263"],
+    "aliases": [
+      "legacyNodeId 648:19263"
+    ],
     "name": "Сообщения",
     "module": "MESSAGES",
     "route": "/legacy/messages",
@@ -1775,15 +2133,29 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "ORPHAN_ROUTE"],
-    "entry_actions": ["ACT-LGC-SCR-126-01"],
-    "exit_actions": ["ACT-LGC-SCR-125-01", "ACT-LGC-SCR-125-02", "ACT-LGC-SCR-125-03"],
-    "owner_questions": ["Q-P2P-008", "Q-QR-007"],
+    "states": [
+      "DEFAULT",
+      "ORPHAN_ROUTE"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-126-01"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-125-01",
+      "ACT-LGC-SCR-125-02",
+      "ACT-LGC-SCR-125-03"
+    ],
+    "owner_questions": [
+      "Q-P2P-008",
+      "Q-QR-007"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-126",
-    "aliases": ["legacyNodeId 648:19334"],
+    "aliases": [
+      "legacyNodeId 648:19334"
+    ],
     "name": "Помощь",
     "module": "SUPPORT",
     "route": "/legacy/help",
@@ -1807,15 +2179,29 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED"],
-    "entry_actions": ["ACT-LGC-SCR-125-03"],
-    "exit_actions": ["ACT-LGC-SCR-126-01", "ACT-LGC-SCR-126-02", "ACT-LGC-SCR-126-03"],
-    "owner_questions": ["Q-PROFILE-007", "Q-PROFILE-008"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-125-03"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-126-01",
+      "ACT-LGC-SCR-126-02",
+      "ACT-LGC-SCR-126-03"
+    ],
+    "owner_questions": [
+      "Q-PROFILE-007",
+      "Q-PROFILE-008"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-061",
-    "aliases": ["legacyNodeId 736:48670"],
+    "aliases": [
+      "legacyNodeId 736:48670"
+    ],
     "name": "Поиск действий",
     "module": "SEARCH",
     "route": "/legacy/search",
@@ -1845,7 +2231,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "RESULTS", "EMPTY"],
+    "states": [
+      "DEFAULT",
+      "RESULTS",
+      "EMPTY"
+    ],
     "entry_actions": [],
     "exit_actions": [
       "ACT-LGC-SCR-061-01",
@@ -1862,7 +2252,9 @@
   },
   {
     "screen_id": "CAS-STUB-001",
-    "aliases": ["GuestStubScreen; no source screenId"],
+    "aliases": [
+      "GuestStubScreen; no source screenId"
+    ],
     "name": "Заглушка — регистрация",
     "module": "STUB",
     "route": "/legacy/stub/registration",
@@ -1880,15 +2272,21 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["STUB"],
+    "states": [
+      "STUB"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-STUB-001-01"],
+    "exit_actions": [
+      "ACT-CAS-STUB-001-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-STUB-002",
-    "aliases": ["GuestStubScreen; no source screenId"],
+    "aliases": [
+      "GuestStubScreen; no source screenId"
+    ],
     "name": "Заглушка — бонус",
     "module": "STUB",
     "route": "/legacy/stub/bonus",
@@ -1906,15 +2304,21 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["STUB"],
+    "states": [
+      "STUB"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-STUB-002-01"],
+    "exit_actions": [
+      "ACT-CAS-STUB-002-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-STUB-003",
-    "aliases": ["GuestStubScreen; no source screenId"],
+    "aliases": [
+      "GuestStubScreen; no source screenId"
+    ],
     "name": "Заглушка — пользователь Cashhello",
     "module": "STUB",
     "route": "/legacy/stub/cashhello-user",
@@ -1932,15 +2336,21 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["STUB"],
+    "states": [
+      "STUB"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-STUB-003-01"],
+    "exit_actions": [
+      "ACT-CAS-STUB-003-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-STUB-004",
-    "aliases": ["GuestStubScreen; no source screenId"],
+    "aliases": [
+      "GuestStubScreen; no source screenId"
+    ],
     "name": "Заглушка — привязанные карты",
     "module": "STUB",
     "route": "/legacy/stub/linked-cards",
@@ -1958,15 +2368,21 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["STUB"],
+    "states": [
+      "STUB"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-STUB-004-01"],
+    "exit_actions": [
+      "ACT-CAS-STUB-004-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-STUB-005",
-    "aliases": ["GuestStubScreen; no source screenId"],
+    "aliases": [
+      "GuestStubScreen; no source screenId"
+    ],
     "name": "Заглушка — предложить идею",
     "module": "STUB",
     "route": "/legacy/stub/suggest-idea",
@@ -1984,15 +2400,21 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["STUB"],
+    "states": [
+      "STUB"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-STUB-005-01"],
+    "exit_actions": [
+      "ACT-CAS-STUB-005-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-STUB-006",
-    "aliases": ["GuestStubScreen; no source screenId"],
+    "aliases": [
+      "GuestStubScreen; no source screenId"
+    ],
     "name": "Заглушка — документы",
     "module": "STUB",
     "route": "/legacy/stub/documents",
@@ -2010,15 +2432,23 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["STUB"],
-    "entry_actions": ["ACT-LGC-SCR-066-08"],
-    "exit_actions": ["ACT-CAS-STUB-006-01"],
+    "states": [
+      "STUB"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-066-08"
+    ],
+    "exit_actions": [
+      "ACT-CAS-STUB-006-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-069",
-    "aliases": ["legacyNodeId 648:18900"],
+    "aliases": [
+      "legacyNodeId 648:18900"
+    ],
     "name": "Между своими счетами — пустая форма",
     "module": "TRANSFER",
     "route": "/legacy/topup/between",
@@ -2036,8 +2466,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "TO_EMPTY"],
-    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "states": [
+      "DEFAULT",
+      "TO_EMPTY"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-02",
+      "ACT-LGC-SCR-040-02",
+      "ACT-LGC-SCR-061-06"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-069-01",
       "ACT-LGC-SCR-069-02",
@@ -2048,12 +2485,16 @@
       "ACT-LGC-SCR-069-07",
       "ACT-LGC-SCR-069-08"
     ],
-    "owner_questions": ["Q-TRF-008"],
+    "owner_questions": [
+      "Q-TRF-008"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-070",
-    "aliases": ["legacyNodeId 648:18928"],
+    "aliases": [
+      "legacyNodeId 648:18928"
+    ],
     "name": "Между своими счетами — счета выбраны",
     "module": "TRANSFER",
     "route": "/legacy/topup/between",
@@ -2071,8 +2512,14 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["ACCOUNTS_SELECTED"],
-    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "states": [
+      "ACCOUNTS_SELECTED"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-02",
+      "ACT-LGC-SCR-040-02",
+      "ACT-LGC-SCR-061-06"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-070-01",
       "ACT-LGC-SCR-070-02",
@@ -2083,13 +2530,17 @@
       "ACT-LGC-SCR-070-07",
       "ACT-LGC-SCR-070-08"
     ],
-    "owner_questions": ["Q-TRF-001"],
+    "owner_questions": [
+      "Q-TRF-001"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-071",
-    "aliases": ["legacyNodeId 648:18958"],
+    "aliases": [
+      "legacyNodeId 648:18958"
+    ],
     "name": "Между своими счетами — выбор счета",
     "module": "TRANSFER",
     "route": "/legacy/topup/between (sheet)",
@@ -2107,15 +2558,27 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
-    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
-    "exit_actions": ["ACT-LGC-SCR-071-01", "ACT-LGC-SCR-071-02", "ACT-LGC-SCR-071-03"],
+    "states": [
+      "SHEET_OPEN"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-02",
+      "ACT-LGC-SCR-040-02",
+      "ACT-LGC-SCR-061-06"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-071-01",
+      "ACT-LGC-SCR-071-02",
+      "ACT-LGC-SCR-071-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-073",
-    "aliases": ["legacyNodeId 833:27842"],
+    "aliases": [
+      "legacyNodeId 833:27842"
+    ],
     "name": "Между своими счетами — сумма введена",
     "module": "TRANSFER",
     "route": "/legacy/topup/between",
@@ -2139,8 +2602,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FORM_FILLED", "OVER_BALANCE"],
-    "entry_actions": ["ACT-CAS-HOME-003-02", "ACT-LGC-SCR-040-02", "ACT-LGC-SCR-061-06"],
+    "states": [
+      "FORM_FILLED",
+      "OVER_BALANCE"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-02",
+      "ACT-LGC-SCR-040-02",
+      "ACT-LGC-SCR-061-06"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-073-01",
       "ACT-LGC-SCR-073-02",
@@ -2171,7 +2641,9 @@
   },
   {
     "screen_id": "LGC-SCR-085",
-    "aliases": ["legacyNodeId 648:20712"],
+    "aliases": [
+      "legacyNodeId 648:20712"
+    ],
     "name": "Пополнение картой — форма",
     "module": "TOPUP",
     "route": "/legacy/topup/card",
@@ -2189,8 +2661,14 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "CARD_SYNTHETIC"],
-    "entry_actions": ["ACT-CAS-HOME-003-03", "ACT-LGC-SCR-040-03"],
+    "states": [
+      "DEFAULT",
+      "CARD_SYNTHETIC"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-03",
+      "ACT-LGC-SCR-040-03"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-085-01",
       "ACT-LGC-SCR-085-02",
@@ -2198,12 +2676,18 @@
       "ACT-LGC-SCR-085-04",
       "ACT-LGC-SCR-085-05"
     ],
-    "owner_questions": ["Q-TOPUP-002", "Q-TOPUP-003", "Q-TOPUP-004"],
+    "owner_questions": [
+      "Q-TOPUP-002",
+      "Q-TOPUP-003",
+      "Q-TOPUP-004"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-TOPUP-001",
-    "aliases": ["ExternalCardScreen saved card sheet"],
+    "aliases": [
+      "ExternalCardScreen saved card sheet"
+    ],
     "name": "Пополнение картой — сохраненные карты",
     "module": "TOPUP",
     "route": "/legacy/topup/card (sheet)",
@@ -2221,16 +2705,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
-    "entry_actions": ["ACT-CAS-HOME-003-03", "ACT-LGC-SCR-040-03"],
-    "exit_actions": ["ACT-CAS-TOPUP-001-01", "ACT-CAS-TOPUP-001-02"],
+    "states": [
+      "SHEET_OPEN"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-03",
+      "ACT-LGC-SCR-040-03"
+    ],
+    "exit_actions": [
+      "ACT-CAS-TOPUP-001-01",
+      "ACT-CAS-TOPUP-001-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-087",
-    "aliases": ["legacyNodeId 821:30114"],
+    "aliases": [
+      "legacyNodeId 821:30114"
+    ],
     "name": "Пополнение картой — карта выбрана",
     "module": "TOPUP",
     "route": "/legacy/topup/card",
@@ -2248,9 +2742,18 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SELECTED"],
-    "entry_actions": ["ACT-CAS-HOME-003-03", "ACT-LGC-SCR-040-03"],
-    "exit_actions": ["ACT-LGC-SCR-087-01", "ACT-LGC-SCR-087-02", "ACT-LGC-SCR-087-03"],
+    "states": [
+      "SELECTED"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-003-03",
+      "ACT-LGC-SCR-040-03"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-087-01",
+      "ACT-LGC-SCR-087-02",
+      "ACT-LGC-SCR-087-03"
+    ],
     "owner_questions": [
       "Q-TOPUP-005",
       "Q-TOPUP-006",
@@ -2269,7 +2772,9 @@
   },
   {
     "screen_id": "LGC-SCR-074",
-    "aliases": ["legacyNodeId 648:17510"],
+    "aliases": [
+      "legacyNodeId 648:17510"
+    ],
     "name": "Пополнение наличными — выбор кассы",
     "module": "TOPUP",
     "route": "/legacy/topup/cash",
@@ -2293,20 +2798,31 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["EMPTY", "ORPHAN_ROUTE"],
+    "states": [
+      "EMPTY",
+      "ORPHAN_ROUTE"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-074-02",
       "ACT-LGC-SCR-080-01",
       "ACT-LGC-SCR-081-01",
       "ACT-LGC-SCR-081-02"
     ],
-    "exit_actions": ["ACT-LGC-SCR-074-01", "ACT-LGC-SCR-074-02", "ACT-LGC-SCR-074-03"],
-    "owner_questions": ["Q-TOPUP-001"],
+    "exit_actions": [
+      "ACT-LGC-SCR-074-01",
+      "ACT-LGC-SCR-074-02",
+      "ACT-LGC-SCR-074-03"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-001"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-080",
-    "aliases": ["legacyNodeId 821:30474"],
+    "aliases": [
+      "legacyNodeId 821:30474"
+    ],
     "name": "Пополнение наличными — карта касс",
     "module": "TOPUP",
     "route": "/legacy/topup/cash-map",
@@ -2324,8 +2840,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "MOCK_MAP"],
-    "entry_actions": ["ACT-LGC-SCR-074-02"],
+    "states": [
+      "DEFAULT",
+      "MOCK_MAP"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-074-02"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-080-01",
       "ACT-LGC-SCR-080-02",
@@ -2339,7 +2860,9 @@
   },
   {
     "screen_id": "LGC-SCR-081",
-    "aliases": ["legacyNodeId 821:30532"],
+    "aliases": [
+      "legacyNodeId 821:30532"
+    ],
     "name": "Пополнение наличными — касса выбрана",
     "module": "TOPUP",
     "route": "/legacy/topup/cash-map",
@@ -2357,9 +2880,17 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SELECTED", "PROCESSING_CREATED"],
-    "entry_actions": ["ACT-LGC-SCR-074-02"],
-    "exit_actions": ["ACT-LGC-SCR-081-01", "ACT-LGC-SCR-081-02"],
+    "states": [
+      "SELECTED",
+      "PROCESSING_CREATED"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-074-02"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-081-01",
+      "ACT-LGC-SCR-081-02"
+    ],
     "owner_questions": [
       "Q-TOPUP-003",
       "Q-TOPUP-004",
@@ -2379,7 +2910,10 @@
   },
   {
     "screen_id": "LGC-SCR-041",
-    "aliases": ["legacyNodeId 804:23390", "Figma component only: WD / Method Row node 97:272"],
+    "aliases": [
+      "legacyNodeId 804:23390",
+      "Figma component only: WD / Method Row node 97:272"
+    ],
     "name": "Вывод — выбор способа",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw",
@@ -2397,7 +2931,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT"],
+    "states": [
+      "DEFAULT"
+    ],
     "entry_actions": [
       "ACT-CAS-HOME-004-02",
       "ACT-CAS-HOME-004-03",
@@ -2432,12 +2968,16 @@
       "ACT-LGC-SCR-041-04",
       "ACT-LGC-SCR-041-05"
     ],
-    "owner_questions": ["Q-WD-001"],
+    "owner_questions": [
+      "Q-WD-001"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "WD-002",
-    "aliases": ["legacyNodeId 804:23664"],
+    "aliases": [
+      "legacyNodeId 804:23664"
+    ],
     "name": "Вывод на карту — форма",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/card",
@@ -2467,8 +3007,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED", "TRANSFER_DELAY"],
-    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED",
+      "TRANSFER_DELAY"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-02",
+      "ACT-LGC-SCR-041-02"
+    ],
     "exit_actions": [
       "ACT-WD-002-01",
       "ACT-WD-002-02",
@@ -2498,7 +3045,9 @@
   },
   {
     "screen_id": "LGC-SCR-091",
-    "aliases": ["legacyNodeId 648:17578"],
+    "aliases": [
+      "legacyNodeId 648:17578"
+    ],
     "name": "Вывод на карту — сканер",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/card (overlay)",
@@ -2516,16 +3065,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CAMERA_MOCK"],
-    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
-    "exit_actions": ["ACT-LGC-SCR-091-01", "ACT-LGC-SCR-091-02"],
+    "states": [
+      "CAMERA_MOCK"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-02",
+      "ACT-LGC-SCR-041-02"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-091-01",
+      "ACT-LGC-SCR-091-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-092",
-    "aliases": ["legacyNodeId 648:17672"],
+    "aliases": [
+      "legacyNodeId 648:17672"
+    ],
     "name": "Вывод на карту — карта выбрана",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/card",
@@ -2543,8 +3102,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CARD_SELECTED"],
-    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "states": [
+      "CARD_SELECTED"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-02",
+      "ACT-LGC-SCR-041-02"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-092-01",
       "ACT-LGC-SCR-092-02",
@@ -2562,7 +3126,9 @@
   },
   {
     "screen_id": "CAS-WD-001",
-    "aliases": ["CardWithdrawScreen saved card sheet"],
+    "aliases": [
+      "CardWithdrawScreen saved card sheet"
+    ],
     "name": "Вывод на карту — сохраненные карты",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/card (sheet)",
@@ -2580,16 +3146,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
-    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
-    "exit_actions": ["ACT-CAS-WD-001-01", "ACT-CAS-WD-001-02"],
+    "states": [
+      "SHEET_OPEN"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-02",
+      "ACT-LGC-SCR-041-02"
+    ],
+    "exit_actions": [
+      "ACT-CAS-WD-001-01",
+      "ACT-CAS-WD-001-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "CAS-WD-002",
-    "aliases": ["CardWithdrawScreen account picker"],
+    "aliases": [
+      "CardWithdrawScreen account picker"
+    ],
     "name": "Вывод — выбор счета списания",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/card (sheet)",
@@ -2607,8 +3183,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
-    "entry_actions": ["ACT-CAS-HOME-004-02", "ACT-LGC-SCR-041-02"],
+    "states": [
+      "SHEET_OPEN"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-02",
+      "ACT-LGC-SCR-041-02"
+    ],
     "exit_actions": [
       "ACT-CAS-WD-002-01",
       "ACT-CAS-WD-002-02",
@@ -2621,7 +3202,9 @@
   },
   {
     "screen_id": "WD-004",
-    "aliases": ["legacyNodeId local-draft"],
+    "aliases": [
+      "legacyNodeId local-draft"
+    ],
     "name": "Вывод на баланс телефона",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/phone",
@@ -2651,8 +3234,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED", "SUCCESS"],
-    "entry_actions": ["ACT-CAS-HOME-004-03", "ACT-LGC-SCR-041-03"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED",
+      "SUCCESS"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-03",
+      "ACT-LGC-SCR-041-03"
+    ],
     "exit_actions": [
       "ACT-WD-004-01",
       "ACT-WD-004-02",
@@ -2680,7 +3270,9 @@
   },
   {
     "screen_id": "CAS-WD-003",
-    "aliases": ["PhoneFormWithdrawScreen saved phone sheet"],
+    "aliases": [
+      "PhoneFormWithdrawScreen saved phone sheet"
+    ],
     "name": "Вывод на телефон — сохраненные номера",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/phone (sheet)",
@@ -2698,9 +3290,17 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
-    "entry_actions": ["ACT-CAS-HOME-004-03", "ACT-LGC-SCR-041-03"],
-    "exit_actions": ["ACT-CAS-WD-003-01", "ACT-CAS-WD-003-02"],
+    "states": [
+      "SHEET_OPEN"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-03",
+      "ACT-LGC-SCR-041-03"
+    ],
+    "exit_actions": [
+      "ACT-CAS-WD-003-01",
+      "ACT-CAS-WD-003-02"
+    ],
     "owner_questions": [],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
@@ -2734,8 +3334,14 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "USER_NOT_FOUND", "BLOCKED"],
-    "entry_actions": ["ACT-CAS-HOME-004-04"],
+    "states": [
+      "DEFAULT",
+      "USER_NOT_FOUND",
+      "BLOCKED"
+    ],
+    "entry_actions": [
+      "ACT-CAS-HOME-004-04"
+    ],
     "exit_actions": [
       "ACT-CAS-WD-005-01",
       "ACT-CAS-WD-005-02",
@@ -2770,7 +3376,9 @@
   },
   {
     "screen_id": "LGC-SCR-105",
-    "aliases": ["legacyNodeId 648:17478"],
+    "aliases": [
+      "legacyNodeId 648:17478"
+    ],
     "name": "Вывод наличными — выбор кассы",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/cash",
@@ -2788,7 +3396,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["EMPTY"],
+    "states": [
+      "EMPTY"
+    ],
     "entry_actions": [
       "ACT-CAS-HOME-004-04",
       "ACT-LGC-SCR-041-04",
@@ -2800,13 +3410,19 @@
       "ACT-LGC-SCR-096-01",
       "ACT-LGC-SCR-109-01"
     ],
-    "exit_actions": ["ACT-LGC-SCR-105-01", "ACT-LGC-SCR-105-02", "ACT-LGC-SCR-105-03"],
+    "exit_actions": [
+      "ACT-LGC-SCR-105-01",
+      "ACT-LGC-SCR-105-02",
+      "ACT-LGC-SCR-105-03"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-106",
-    "aliases": ["legacyNodeId 648:17787"],
+    "aliases": [
+      "legacyNodeId 648:17787"
+    ],
     "name": "Вывод наличными — карта касс",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/cash-map",
@@ -2824,7 +3440,10 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "MOCK_MAP"],
+    "states": [
+      "DEFAULT",
+      "MOCK_MAP"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-105-02",
       "ACT-LGC-SCR-093-01",
@@ -2845,7 +3464,9 @@
   },
   {
     "screen_id": "LGC-SCR-108",
-    "aliases": ["legacyNodeId 648:18091"],
+    "aliases": [
+      "legacyNodeId 648:18091"
+    ],
     "name": "Вывод наличными — касса выбрана",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/cash-map",
@@ -2863,7 +3484,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SELECTED"],
+    "states": [
+      "SELECTED"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-105-02",
       "ACT-LGC-SCR-093-01",
@@ -2871,14 +3494,21 @@
       "ACT-LGC-SCR-096-01",
       "ACT-LGC-SCR-109-01"
     ],
-    "exit_actions": ["ACT-LGC-SCR-108-01", "ACT-LGC-SCR-108-02"],
-    "owner_questions": ["Q-WD-010"],
+    "exit_actions": [
+      "ACT-LGC-SCR-108-01",
+      "ACT-LGC-SCR-108-02"
+    ],
+    "owner_questions": [
+      "Q-WD-010"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "LGC-SCR-093",
-    "aliases": ["legacyNodeId 648:18324"],
+    "aliases": [
+      "legacyNodeId 648:18324"
+    ],
     "name": "Вывод — ввод суммы",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/amount",
@@ -2896,8 +3526,12 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT"],
-    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "states": [
+      "DEFAULT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-108-02"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-093-01",
       "ACT-LGC-SCR-093-02",
@@ -2911,7 +3545,9 @@
   },
   {
     "screen_id": "LGC-SCR-095",
-    "aliases": ["legacyNodeId 804:25789"],
+    "aliases": [
+      "legacyNodeId 804:25789"
+    ],
     "name": "Вывод — сумма выше mock-лимита",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/amount",
@@ -2929,8 +3565,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FAILED", "OVER_LIMIT"],
-    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "states": [
+      "FAILED",
+      "OVER_LIMIT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-108-02"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-095-01",
       "ACT-LGC-SCR-095-02",
@@ -2939,12 +3580,16 @@
       "ACT-LGC-SCR-095-05",
       "ACT-LGC-SCR-095-06"
     ],
-    "owner_questions": ["Q-WD-002"],
+    "owner_questions": [
+      "Q-WD-002"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-096",
-    "aliases": ["legacyNodeId 804:25863"],
+    "aliases": [
+      "legacyNodeId 804:25863"
+    ],
     "name": "Вывод — сумма и комиссия",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/amount",
@@ -2962,8 +3607,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FORM_FILLED", "FEE_VISIBLE"],
-    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "states": [
+      "FORM_FILLED",
+      "FEE_VISIBLE"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-108-02"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-096-01",
       "ACT-LGC-SCR-096-02",
@@ -2972,12 +3622,16 @@
       "ACT-LGC-SCR-096-05",
       "ACT-LGC-SCR-096-06"
     ],
-    "owner_questions": ["Q-WD-003"],
+    "owner_questions": [
+      "Q-WD-003"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-109",
-    "aliases": ["legacyNodeId 821:31425"],
+    "aliases": [
+      "legacyNodeId 821:31425"
+    ],
     "name": "Вывод наличными — сумма",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/amount",
@@ -2995,8 +3649,12 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CASH_LAYOUT"],
-    "entry_actions": ["ACT-LGC-SCR-108-02"],
+    "states": [
+      "CASH_LAYOUT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-108-02"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-109-01",
       "ACT-LGC-SCR-109-02",
@@ -3010,7 +3668,9 @@
   },
   {
     "screen_id": "LGC-SCR-097",
-    "aliases": ["legacyNodeId 648:18857"],
+    "aliases": [
+      "legacyNodeId 648:18857"
+    ],
     "name": "Вывод — подтверждение",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/amount (modal)",
@@ -3028,9 +3688,16 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["CONFIRMATION"],
-    "entry_actions": ["ACT-LGC-SCR-108-02"],
-    "exit_actions": ["ACT-LGC-SCR-097-01", "ACT-LGC-SCR-097-02"],
+    "states": [
+      "CONFIRMATION"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-108-02"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-097-01",
+      "ACT-LGC-SCR-097-02"
+    ],
     "owner_questions": [
       "Q-WD-004",
       "Q-ERR-001",
@@ -3047,7 +3714,9 @@
   },
   {
     "screen_id": "LGC-SCR-098",
-    "aliases": ["legacyNodeId 648:17221"],
+    "aliases": [
+      "legacyNodeId 648:17221"
+    ],
     "name": "Вывод — обработка",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/loading",
@@ -3083,7 +3752,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["LOADING"],
+    "states": [
+      "LOADING"
+    ],
     "entry_actions": [
       "ACT-WD-002-09",
       "ACT-LGC-SCR-092-09",
@@ -3092,12 +3763,16 @@
       "ACT-LGC-SCR-097-01"
     ],
     "exit_actions": [],
-    "owner_questions": ["Q-WD-004"],
+    "owner_questions": [
+      "Q-WD-004"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-099",
-    "aliases": ["legacyNodeId 648:17246"],
+    "aliases": [
+      "legacyNodeId 648:17246"
+    ],
     "name": "Вывод — ошибка",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/loading?scenario=error",
@@ -3115,15 +3790,26 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["FAILED"],
+    "states": [
+      "FAILED"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-LGC-SCR-099-01", "ACT-LGC-SCR-099-02"],
-    "owner_questions": ["Q-WD-005", "Q-WD-006"],
+    "exit_actions": [
+      "ACT-LGC-SCR-099-01",
+      "ACT-LGC-SCR-099-02"
+    ],
+    "owner_questions": [
+      "Q-WD-005",
+      "Q-WD-006"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "WD-003",
-    "aliases": ["legacyNodeId 648:17298", "history detail alias legacyNodeId 107:144"],
+    "aliases": [
+      "legacyNodeId 648:17298",
+      "history detail alias legacyNodeId 107:144"
+    ],
     "name": "Вывод — квитанция / результат",
     "module": "WITHDRAW",
     "route": "/legacy/withdraw/loading; /legacy/history/[id]",
@@ -3171,7 +3857,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SUCCESS", "READY_FOR_PICKUP", "PROCESSING"],
+    "states": [
+      "SUCCESS",
+      "READY_FOR_PICKUP",
+      "PROCESSING"
+    ],
     "entry_actions": [
       "ACT-WD-002-09",
       "ACT-LGC-SCR-092-09",
@@ -3179,7 +3869,10 @@
       "ACT-CAS-WD-005-08",
       "ACT-LGC-SCR-097-01"
     ],
-    "exit_actions": ["ACT-WD-003-01", "ACT-WD-003-02"],
+    "exit_actions": [
+      "ACT-WD-003-01",
+      "ACT-WD-003-02"
+    ],
     "owner_questions": [
       "Q-WD-004",
       "Q-WD-005",
@@ -3218,9 +3911,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["HISTORY_RECEIPT"],
+    "states": [
+      "HISTORY_RECEIPT"
+    ],
     "entry_actions": [],
-    "exit_actions": ["ACT-CAS-HIST-005-01"],
+    "exit_actions": [
+      "ACT-CAS-HIST-005-01"
+    ],
     "owner_questions": [],
     "screenshot_qa": "VALIDATED"
   },
@@ -3274,21 +3971,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "CATEGORY_SELECTED", "FAVORITES_EMPTY", "SEARCH_RESULTS", "EMPTY"],
+    "states": [
+      "DEFAULT",
+      "CATEGORY_SELECTED",
+      "FAVORITES_EMPTY",
+      "SEARCH_RESULTS",
+      "EMPTY"
+    ],
     "entry_actions": [
-      "ACT-HOME-001-06",
-      "ACT-HOME-001-07",
-      "ACT-HOME-001-08",
-      "ACT-HOME-001-09",
-      "ACT-LGC-SCR-025-06",
-      "ACT-LGC-SCR-025-07",
-      "ACT-LGC-SCR-025-08",
-      "ACT-LGC-SCR-025-09",
       "ACT-LGC-SCR-025-13",
-      "ACT-LGC-SCR-026-06",
-      "ACT-LGC-SCR-026-07",
-      "ACT-LGC-SCR-026-08",
-      "ACT-LGC-SCR-026-09",
       "ACT-LGC-SCR-026-13",
       "ACT-LGC-SCR-066-12",
       "ACT-PAY-001-10",
@@ -3331,12 +4022,19 @@
       "ACT-PAY-001-22",
       "ACT-PAY-001-23"
     ],
-    "owner_questions": ["Q-PAY-001", "Q-PAY-004", "Q-PAY-006", "Q-PAY-011"],
+    "owner_questions": [
+      "Q-PAY-001",
+      "Q-PAY-004",
+      "Q-PAY-006",
+      "Q-PAY-011"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "CAS-PAY-001",
-    "aliases": ["PaymentCategorySheet"],
+    "aliases": [
+      "PaymentCategorySheet"
+    ],
     "name": "Оплата — выбор категории",
     "module": "PAYMENT",
     "route": "/legacy/payment (sheet)",
@@ -3354,21 +4052,11 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
+    "states": [
+      "SHEET_OPEN"
+    ],
     "entry_actions": [
-      "ACT-HOME-001-06",
-      "ACT-HOME-001-07",
-      "ACT-HOME-001-08",
-      "ACT-HOME-001-09",
-      "ACT-LGC-SCR-025-06",
-      "ACT-LGC-SCR-025-07",
-      "ACT-LGC-SCR-025-08",
-      "ACT-LGC-SCR-025-09",
       "ACT-LGC-SCR-025-13",
-      "ACT-LGC-SCR-026-06",
-      "ACT-LGC-SCR-026-07",
-      "ACT-LGC-SCR-026-08",
-      "ACT-LGC-SCR-026-09",
       "ACT-LGC-SCR-026-13",
       "ACT-LGC-SCR-066-12",
       "ACT-PAY-001-10",
@@ -3455,11 +4143,25 @@
         "path": "screenshots/annotated/PAY-002__after-success-alert.png",
         "note": null,
         "capture_status": "CAPTURED"
+      },
+      {
+        "state": "PREFILLED_FROM_HOME",
+        "path": "screenshots/annotated/PAY-002__prefilled-from-home.png",
+        "note": "Reached from authorized Home recent operation tap (Ubet row)",
+        "capture_status": "CAPTURED"
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED", "LOADING", "SERVICE_UNAVAILABLE", "NOT_FOUND"],
-    "entry_actions": [],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED",
+      "LOADING",
+      "SERVICE_UNAVAILABLE",
+      "NOT_FOUND"
+    ],
+    "entry_actions": [
+      "ACT-PAY-002-15"
+    ],
     "exit_actions": [
       "ACT-PAY-002-01",
       "ACT-PAY-002-02",
@@ -3501,7 +4203,9 @@
   },
   {
     "screen_id": "CAS-PAY-002",
-    "aliases": ["PaymentServiceScreen account picker"],
+    "aliases": [
+      "PaymentServiceScreen account picker"
+    ],
     "name": "Оплата — выбор счета",
     "module": "PAYMENT",
     "route": "/legacy/payment/[id] (sheet)",
@@ -3519,7 +4223,9 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN"],
+    "states": [
+      "SHEET_OPEN"
+    ],
     "entry_actions": [],
     "exit_actions": [
       "ACT-CAS-PAY-002-01",
@@ -3528,12 +4234,16 @@
       "ACT-CAS-PAY-002-04",
       "ACT-CAS-PAY-002-05"
     ],
-    "owner_questions": ["Q-PAY-003"],
+    "owner_questions": [
+      "Q-PAY-003"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-111",
-    "aliases": ["legacyNodeId 980:26609"],
+    "aliases": [
+      "legacyNodeId 980:26609"
+    ],
     "name": "История операций",
     "module": "HISTORY",
     "route": "/legacy/history",
@@ -3563,14 +4273,17 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "DATE_FILTERED", "EMPTY", "GUEST"],
+    "states": [
+      "DEFAULT",
+      "DATE_FILTERED",
+      "EMPTY",
+      "GUEST"
+    ],
     "entry_actions": [
-      "ACT-HOME-001-10",
       "ACT-LGC-SCR-025-10",
       "ACT-LGC-SCR-025-15",
       "ACT-LGC-SCR-026-10",
       "ACT-LGC-SCR-026-15",
-      "ACT-CAS-HOME-005-03",
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06",
       "ACT-LGC-SCR-033-05",
@@ -3614,7 +4327,9 @@
   },
   {
     "screen_id": "CAS-HIST-001",
-    "aliases": ["HistoryDateSheet"],
+    "aliases": [
+      "HistoryDateSheet"
+    ],
     "name": "История — выбор дат",
     "module": "HISTORY",
     "route": "/legacy/history (sheet)",
@@ -3638,14 +4353,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN", "DATE_SELECTED"],
+    "states": [
+      "SHEET_OPEN",
+      "DATE_SELECTED"
+    ],
     "entry_actions": [
-      "ACT-HOME-001-10",
       "ACT-LGC-SCR-025-10",
       "ACT-LGC-SCR-025-15",
       "ACT-LGC-SCR-026-10",
       "ACT-LGC-SCR-026-15",
-      "ACT-CAS-HOME-005-03",
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06",
       "ACT-LGC-SCR-033-05",
@@ -3671,13 +4387,17 @@
       "ACT-CAS-HIST-001-05",
       "ACT-CAS-HIST-001-06"
     ],
-    "owner_questions": ["Q-HIST-009"],
+    "owner_questions": [
+      "Q-HIST-009"
+    ],
     "screenshot_qa": "CAPTURE_GAP",
     "no_screenshot_reason": "CAPTURE_GAP: requested runtime state transition was not confirmed; linked PNG is the nearest reachable base-state fallback and is not evidence of the requested state."
   },
   {
     "screen_id": "CAS-HIST-002",
-    "aliases": ["HistoryActionSheet"],
+    "aliases": [
+      "HistoryActionSheet"
+    ],
     "name": "История — действия с операцией",
     "module": "HISTORY",
     "route": "/legacy/history (sheet)",
@@ -3701,14 +4421,15 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["SHEET_OPEN", "GUEST"],
+    "states": [
+      "SHEET_OPEN",
+      "GUEST"
+    ],
     "entry_actions": [
-      "ACT-HOME-001-10",
       "ACT-LGC-SCR-025-10",
       "ACT-LGC-SCR-025-15",
       "ACT-LGC-SCR-026-10",
       "ACT-LGC-SCR-026-15",
-      "ACT-CAS-HOME-005-03",
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06",
       "ACT-LGC-SCR-033-05",
@@ -3726,13 +4447,21 @@
       "ACT-LGC-SCR-120-01",
       "ACT-QR-001-09"
     ],
-    "exit_actions": ["ACT-CAS-HIST-002-01", "ACT-CAS-HIST-002-02", "ACT-CAS-HIST-002-03"],
-    "owner_questions": ["Q-HIST-004"],
+    "exit_actions": [
+      "ACT-CAS-HIST-002-01",
+      "ACT-CAS-HIST-002-02",
+      "ACT-CAS-HIST-002-03"
+    ],
+    "owner_questions": [
+      "Q-HIST-004"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-113",
-    "aliases": ["legacyNodeId 925:24765"],
+    "aliases": [
+      "legacyNodeId 925:24765"
+    ],
     "name": "История — фильтр",
     "module": "HISTORY",
     "route": "/legacy/history/filter",
@@ -3762,8 +4491,14 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "SELECTED", "EMPTY_RESULT"],
-    "entry_actions": ["ACT-LGC-SCR-026-10"],
+    "states": [
+      "DEFAULT",
+      "SELECTED",
+      "EMPTY_RESULT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-026-10"
+    ],
     "exit_actions": [
       "ACT-LGC-SCR-113-01",
       "ACT-LGC-SCR-113-02",
@@ -3772,12 +4507,16 @@
       "ACT-LGC-SCR-113-05",
       "ACT-LGC-SCR-113-06"
     ],
-    "owner_questions": ["Q-HIST-009"],
+    "owner_questions": [
+      "Q-HIST-009"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
     "screen_id": "LGC-SCR-115",
-    "aliases": ["legacyNodeId varies by status"],
+    "aliases": [
+      "legacyNodeId varies by status"
+    ],
     "name": "История — детали операции",
     "module": "HISTORY",
     "route": "/legacy/history/[id]",
@@ -3813,9 +4552,13 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["PROCESSING", "CANCEL_CONFIRMATION", "REJECTED", "SUCCESS"],
+    "states": [
+      "PROCESSING",
+      "CANCEL_CONFIRMATION",
+      "REJECTED",
+      "SUCCESS"
+    ],
     "entry_actions": [
-      "ACT-CAS-HOME-005-03",
       "ACT-LGC-SCR-032-06",
       "ACT-CAS-HIST-002-03",
       "ACT-LGC-SCR-115-05",
@@ -3842,7 +4585,9 @@
   },
   {
     "screen_id": "LGC-SCR-120",
-    "aliases": ["legacyNodeId 933:25268"],
+    "aliases": [
+      "legacyNodeId 933:25268"
+    ],
     "name": "История — чек",
     "module": "HISTORY",
     "route": "/legacy/history/[id]/receipt",
@@ -3866,10 +4611,24 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["RECEIPT"],
-    "entry_actions": ["ACT-LGC-SCR-115-05"],
-    "exit_actions": ["ACT-LGC-SCR-120-01", "ACT-LGC-SCR-120-02", "ACT-LGC-SCR-120-03"],
-    "owner_questions": ["Q-TOPUP-010", "Q-WD-015", "Q-HIST-005", "Q-HIST-006", "Q-HIST-007"],
+    "states": [
+      "RECEIPT"
+    ],
+    "entry_actions": [
+      "ACT-LGC-SCR-115-05"
+    ],
+    "exit_actions": [
+      "ACT-LGC-SCR-120-01",
+      "ACT-LGC-SCR-120-02",
+      "ACT-LGC-SCR-120-03"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-010",
+      "Q-WD-015",
+      "Q-HIST-005",
+      "Q-HIST-006",
+      "Q-HIST-007"
+    ],
     "screenshot_qa": "VALIDATED"
   },
   {
@@ -3916,7 +4675,12 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["DEFAULT", "FORM_FILLED", "GENERATED", "GUEST"],
+    "states": [
+      "DEFAULT",
+      "FORM_FILLED",
+      "GENERATED",
+      "GUEST"
+    ],
     "entry_actions": [
       "ACT-LGC-SCR-025-14",
       "ACT-LGC-SCR-026-14",
@@ -3963,7 +4727,9 @@
   },
   {
     "screen_id": "CAS-SUPPORT-002",
-    "aliases": ["GLOBAL_SUPPORT_SHEET"],
+    "aliases": [
+      "GLOBAL_SUPPORT_SHEET"
+    ],
     "name": "Служба поддержки",
     "module": "SUPPORT",
     "route": "overlay on /legacy/*",
@@ -3987,8 +4753,16 @@
       }
     ],
     "source_status": "CODE_ONLY",
-    "states": ["GUEST_SHEET", "AUTHORIZED_SHEET", "LINK_UNAVAILABLE"],
-    "entry_actions": ["ACT-GLOBAL-SUPPORT-01", "ACT-HOME-001-13", "ACT-LGC-SCR-025-17"],
+    "states": [
+      "GUEST_SHEET",
+      "AUTHORIZED_SHEET",
+      "LINK_UNAVAILABLE"
+    ],
+    "entry_actions": [
+      "ACT-GLOBAL-SUPPORT-01",
+      "ACT-HOME-001-13",
+      "ACT-LGC-SCR-025-17"
+    ],
     "exit_actions": [
       "ACT-CAS-SUPPORT-002-01",
       "ACT-CAS-SUPPORT-002-02",

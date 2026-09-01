@@ -1,12 +1,10 @@
 # Discovery coverage report
 
-Generated from the read-only route/source/runtime/Figma audit of `loomany/cashello-app` `main` at `cd991994caf961b7182ae9839791ba558a4593a3`.
+Reconciled against product SHA `597754364ada9dc1f51f62fe86b41a2bc0b24e4b` after director visual pass (pre-design baseline `2359692f`).
 
-**Pre-flight note:** The task named starting SHA `dd99190`. At audit time `origin/main` had already fast-forwarded 11 commits (guest public root, support FAB, brand revert). Discovery documents **current `main`**, not the stale SHA.
-
-**Product code changed:** NO\
-**Figma modified:** NO\
-**Local Metro workaround (not committed):** `src/app/routing.test.ts` is picked up as an Expo Router file and crashes web (`describe is not defined`). Capture used a temporary `metro.config.js` blocklist, then removed it.
+**Product code changed during this reconciliation:** NO (docs/screenshots only)
+**Figma modified:** NO
+**Resolved product issue:** `src/app/routing.test.ts` moved to `src/__tests__/` in 597754364ada9dc1f51f62fe86b41a2bc0b24e4b; stock `npm run web` no longer requires Metro blocklist.
 
 ## Counts
 
@@ -18,14 +16,14 @@ Generated from the read-only route/source/runtime/Figma audit of `loomany/cashel
 | Stub routes                                    |                                                  6 |
 | Redirect-only / no UI routes                   | 3 (`/`, `/legacy/stub/qr`, `/legacy/stub/payment`) |
 | DEV_ONLY routes                                |                              1 (`/dev/foundation`) |
-| Logical screens identified                     |                                                 95 |
-| Primary screenshot files present               |                                                 95 |
+| Logical screens identified                     |                                                 94 |
+| Primary screenshot files present               |                                                 94 |
 | Primary screenshots runtime-validated          |                                                 79 |
 | Primary screenshots marked CAPTURE_GAP         |                                                 16 |
-| Annotated state screenshot files present       |                                                159 |
+| Annotated state screenshot files present       |                                                160 |
 | State screenshots runtime-validated            |                                                133 |
 | State screenshots marked CAPTURE_GAP           |                                                 26 |
-| Actions identified                             |                                                444 |
+| Actions identified                             |                                                443 |
 | Interactive icon legend meanings               |                                                 16 |
 | Business process candidates                    |                                                 22 |
 | Owner questions                                |                                                130 |
@@ -50,9 +48,7 @@ Generated from the read-only route/source/runtime/Figma audit of `loomany/cashel
 
 ## Runtime coverage
 
-- Guest: Home (HOME-001), top-up/withdraw sheets (auth gate on method), payment browse, history browse, QR amount (generate gates), support FAB, profile header/tab gate, login CTA.
-- Authorized: Home (`LGC-SCR-025` / alias HOME-002); accounts/sheets; card/CVV/block/limits/PIN; all top-up routes; own-account FX; all withdraw routes including loading/success/error/processing; payment catalog/service; QR generate; history/filter/detail/receipt; profile/phone/PIN/logout/delete; messages/help; search; global support sheet.
-- Guest Home chrome uses the login CTA bar, not `LegacyTabBar`. Payment/history guest browse is via «См. все», not bottom tabs. QR is not in guest chrome (deep-link only).
+- Guest: Home (HOME-001) with «Последние операции» bonus preview row; top-up/withdraw sheets; payment/history browse via other routes; support FAB; login CTA.
 
 ## Unresolved audit/product gaps
 
@@ -67,7 +63,6 @@ Generated from the read-only route/source/runtime/Figma audit of `loomany/cashel
 9. QR has no server intent or lifecycle.
 10. Profile personal/phone/messages/help/search routes have missing or indirect entry points.
 11. Global support FAB URLs are `null` (Alert «Скоро»). In-app messages/help is a separate unfinished flow.
-12. `src/app/routing.test.ts` is treated as a route by Expo Router and crashes stock `npm run web` unless tests are blocklisted in Metro.
 13. No production error/retry/idempotency/provider/KYC/ledger policy is inferable from the prototype.
 14. Twenty-six requested interaction states were not runtime-confirmed before capture. Their PNGs are retained only as nearest-reachable base-state fallbacks and are marked `CAPTURE_GAP` in `screens.json`.
 

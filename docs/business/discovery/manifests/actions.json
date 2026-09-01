@@ -173,7 +173,9 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-AUTH-001"]
+    "owner_questions": [
+      "Q-AUTH-001"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-005-01",
@@ -195,7 +197,9 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-AUTH-012"]
+    "owner_questions": [
+      "Q-AUTH-012"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-005-02",
@@ -239,7 +243,9 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-KYC-004"]
+    "owner_questions": [
+      "Q-KYC-004"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-006-02",
@@ -305,7 +311,9 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-KYC-003"]
+    "owner_questions": [
+      "Q-KYC-003"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-008-01",
@@ -481,7 +489,11 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-AUTH-002", "Q-AUTH-003", "Q-AUTH-005"]
+    "owner_questions": [
+      "Q-AUTH-002",
+      "Q-AUTH-003",
+      "Q-AUTH-005"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-011-03",
@@ -503,7 +515,9 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-AUTH-004"]
+    "owner_questions": [
+      "Q-AUTH-004"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-012-01",
@@ -542,8 +556,12 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
-    "owner_questions": ["Q-AUTH-006"]
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
+    "owner_questions": [
+      "Q-AUTH-006"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-012-03",
@@ -560,7 +578,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -600,7 +620,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -618,7 +640,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -658,7 +682,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -676,7 +702,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -716,8 +744,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
-    "owner_questions": ["Q-AUTH-008", "Q-AUTH-010"]
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
+    "owner_questions": [
+      "Q-AUTH-008",
+      "Q-AUTH-010"
+    ]
   },
   {
     "action_id": "ACT-CAS-AUTH-015-03",
@@ -734,7 +767,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyAuth/screens/PinView.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyAuth/screens/PinView.tsx"],
+    "source_trace": [
+      "src/features/legacyAuth/screens/PinView.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -779,7 +814,9 @@
       "src/features/legacyAuth/machine.ts",
       "src/features/legacyAuth/store.ts"
     ],
-    "owner_questions": ["Q-AUTH-007"]
+    "owner_questions": [
+      "Q-AUTH-007"
+    ]
   },
   {
     "action_id": "ACT-HOME-001-01",
@@ -796,7 +833,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -814,7 +853,9 @@
     "guest_behavior": "Redirects to auth entry",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -881,132 +922,6 @@
     "owner_questions": []
   },
   {
-    "action_id": "ACT-HOME-001-06",
-    "screen_id": "HOME-001",
-    "callout": "06",
-    "label": "См. все — услуги",
-    "control_type": "link",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-HOME-001-07",
-    "screen_id": "HOME-001",
-    "callout": "07",
-    "label": "Ubet",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/ubet",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-HOME-001-08",
-    "screen_id": "HOME-001",
-    "callout": "08",
-    "label": "Beeline",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-HOME-001-09",
-    "screen_id": "HOME-001",
-    "callout": "09",
-    "label": "Робокэш / Займер",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/zaimer",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-HOME-001-10",
-    "screen_id": "HOME-001",
-    "callout": "10",
-    "label": "См. все — история",
-    "control_type": "link",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/history",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-HOME-001-11",
-    "screen_id": "HOME-001",
-    "callout": "11",
-    "label": "Операция истории",
-    "control_type": "row",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "HistoryActionSheet",
-    "handler": "setHistoryAction",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
     "action_id": "ACT-HOME-001-12",
     "screen_id": "HOME-001",
     "callout": "12",
@@ -1042,7 +957,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -1060,8 +977,12 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
-    "owner_questions": ["Q-AUTH-009"]
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
+    "owner_questions": [
+      "Q-AUTH-009"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-025-03",
@@ -1127,98 +1048,14 @@
     "owner_questions": []
   },
   {
-    "action_id": "ACT-LGC-SCR-025-06",
-    "screen_id": "LGC-SCR-025",
-    "callout": "06",
-    "label": "См. все — услуги",
-    "control_type": "link",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-07",
-    "screen_id": "LGC-SCR-025",
-    "callout": "07",
-    "label": "Ubet",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/ubet",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-08",
-    "screen_id": "LGC-SCR-025",
-    "callout": "08",
-    "label": "Beeline",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-09",
-    "screen_id": "LGC-SCR-025",
-    "callout": "09",
-    "label": "Робокэш / Займер",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/zaimer",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
     "action_id": "ACT-LGC-SCR-025-10",
     "screen_id": "LGC-SCR-025",
-    "callout": "10",
-    "label": "См. все — история",
+    "callout": "06",
+    "label": "См. все",
     "control_type": "link",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/history",
-    "handler": "See source component",
+    "handler": "router.push(HISTORY_BRIDGES.root)",
     "mock_effect": "None",
     "precondition": "Screen visible",
     "potential_backend_requirement": "None identified from current UI",
@@ -1226,36 +1063,14 @@
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
     "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-11",
-    "screen_id": "LGC-SCR-025",
-    "callout": "11",
-    "label": "Операция истории",
-    "control_type": "row",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "HistoryActionSheet",
-    "handler": "setHistoryAction",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
+      "src/features/legacyHome/HomeScreen.tsx"
     ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-12",
     "screen_id": "LGC-SCR-025",
-    "callout": "12",
+    "callout": "15",
     "label": "Главная",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1267,13 +1082,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-13",
     "screen_id": "LGC-SCR-025",
-    "callout": "13",
+    "callout": "16",
     "label": "Оплата",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1285,13 +1102,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-14",
     "screen_id": "LGC-SCR-025",
-    "callout": "14",
+    "callout": "17",
     "label": "QR",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1303,13 +1122,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-15",
     "screen_id": "LGC-SCR-025",
-    "callout": "15",
+    "callout": "18",
     "label": "История",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1321,13 +1142,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-16",
     "screen_id": "LGC-SCR-025",
-    "callout": "16",
+    "callout": "19",
     "label": "Профиль",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1339,7 +1162,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -1357,7 +1182,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -1375,7 +1202,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -1442,94 +1271,10 @@
     "owner_questions": []
   },
   {
-    "action_id": "ACT-LGC-SCR-026-06",
-    "screen_id": "LGC-SCR-026",
-    "callout": "06",
-    "label": "См. все — услуги",
-    "control_type": "link",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-07",
-    "screen_id": "LGC-SCR-026",
-    "callout": "07",
-    "label": "Ubet",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/ubet",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-08",
-    "screen_id": "LGC-SCR-026",
-    "callout": "08",
-    "label": "Beeline",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-09",
-    "screen_id": "LGC-SCR-026",
-    "callout": "09",
-    "label": "Робокэш / Займер",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/zaimer",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
     "action_id": "ACT-LGC-SCR-026-10",
     "screen_id": "LGC-SCR-026",
-    "callout": "10",
-    "label": "Фильтр — история",
+    "callout": "06",
+    "label": "Фильтр",
     "control_type": "link",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/history/filter",
@@ -1547,30 +1292,9 @@
     "owner_questions": []
   },
   {
-    "action_id": "ACT-LGC-SCR-026-11",
-    "screen_id": "LGC-SCR-026",
-    "callout": "11",
-    "label": "Операция истории",
-    "control_type": "row",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "HistoryActionSheet",
-    "handler": "setHistoryAction",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
     "action_id": "ACT-LGC-SCR-026-12",
     "screen_id": "LGC-SCR-026",
-    "callout": "12",
+    "callout": "15",
     "label": "Главная",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1582,13 +1306,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-026-13",
     "screen_id": "LGC-SCR-026",
-    "callout": "13",
+    "callout": "16",
     "label": "Оплата",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1600,13 +1326,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-026-14",
     "screen_id": "LGC-SCR-026",
-    "callout": "14",
+    "callout": "17",
     "label": "QR",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1618,13 +1346,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-026-15",
     "screen_id": "LGC-SCR-026",
-    "callout": "15",
+    "callout": "18",
     "label": "История",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1636,13 +1366,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-026-16",
     "screen_id": "LGC-SCR-026",
-    "callout": "16",
+    "callout": "19",
     "label": "Профиль",
     "control_type": "tab",
     "current_destination_type": "ROUTE",
@@ -1654,7 +1386,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHome/HomeScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -1672,7 +1406,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
     "icon_meaning": "Close",
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -1690,7 +1427,10 @@
     "guest_behavior": "GUEST_GATE → /legacy/auth?qaStep=iin",
     "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -1708,7 +1448,10 @@
     "guest_behavior": "GUEST_GATE → /legacy/auth?qaStep=iin",
     "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -1751,7 +1494,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-001"]
+    "owner_questions": [
+      "Q-WD-001"
+    ]
   },
   {
     "action_id": "ACT-CAS-HOME-004-03",
@@ -1792,69 +1537,6 @@
     "source_trace": [
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-CAS-HOME-005-01",
-    "screen_id": "CAS-HOME-005",
-    "callout": "01",
-    "label": "Закрыть / фон",
-    "control_type": "button",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "Close sheet",
-    "handler": "onClose",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHistory/HistoryActionSheet.tsx",
-    "icon_meaning": "Close",
-    "source_trace": [
-      "src/features/legacyHistory/store.ts",
-      "src/features/legacyHistory/mockData.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-CAS-HOME-005-02",
-    "screen_id": "CAS-HOME-005",
-    "callout": "02",
-    "label": "Повторить операцию",
-    "control_type": "button",
-    "current_destination_type": "GUEST_GATE",
-    "current_destination": "operation.repeatHref",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHistory/HistoryActionSheet.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHistory/store.ts",
-      "src/features/legacyHistory/mockData.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-CAS-HOME-005-03",
-    "screen_id": "CAS-HOME-005",
-    "callout": "03",
-    "label": "Поделиться чеком",
-    "control_type": "button",
-    "current_destination_type": "GUEST_GATE",
-    "current_destination": "/legacy/history/[id]",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHistory/HistoryActionSheet.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHistory/store.ts",
-      "src/features/legacyHistory/mockData.ts"
     ],
     "owner_questions": []
   },
@@ -1988,7 +1670,9 @@
       "src/features/legacyAccounts/store.ts",
       "src/features/legacyAccounts/mockData.ts"
     ],
-    "owner_questions": ["Q-ACC-003"]
+    "owner_questions": [
+      "Q-ACC-003"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-031-01",
@@ -2032,7 +1716,9 @@
       "src/features/legacyAccounts/store.ts",
       "src/features/legacyAccounts/mockData.ts"
     ],
-    "owner_questions": ["Q-ACC-001"]
+    "owner_questions": [
+      "Q-ACC-001"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-031-03",
@@ -2054,7 +1740,9 @@
       "src/features/legacyAccounts/store.ts",
       "src/features/legacyAccounts/mockData.ts"
     ],
-    "owner_questions": ["Q-ACC-002"]
+    "owner_questions": [
+      "Q-ACC-002"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-031-04",
@@ -2160,7 +1848,10 @@
       "src/features/legacyAccounts/AccountDetailScreen.tsx",
       "src/features/legacyAccounts/store.ts"
     ],
-    "owner_questions": ["Q-ACC-004", "Q-ACC-005"]
+    "owner_questions": [
+      "Q-ACC-004",
+      "Q-ACC-005"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-032-05",
@@ -2244,7 +1935,9 @@
       "src/features/legacyAccounts/AccountDetailScreen.tsx",
       "src/features/legacyAccounts/store.ts"
     ],
-    "owner_questions": ["Q-CARD-002"]
+    "owner_questions": [
+      "Q-CARD-002"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-033-03",
@@ -2328,7 +2021,9 @@
       "src/features/legacyAccounts/AccountDetailScreen.tsx",
       "src/features/legacyAccounts/store.ts"
     ],
-    "owner_questions": ["Q-ACC-006"]
+    "owner_questions": [
+      "Q-ACC-006"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-034-02",
@@ -2387,7 +2082,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2405,8 +2103,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
-    "owner_questions": ["Q-TOPUP-001"]
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-001"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-040-03",
@@ -2423,7 +2126,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/MethodSheetScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2441,7 +2147,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2459,7 +2168,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": "Eye",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2477,8 +2189,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": "Block",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-008"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-008"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-035-04",
@@ -2495,8 +2212,14 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-001", "Q-CARD-009"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-001",
+      "Q-CARD-009"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-035-05",
@@ -2513,7 +2236,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2531,8 +2257,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-007"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-007"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-035-07",
@@ -2549,8 +2280,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-007"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-007"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-036-01",
@@ -2567,7 +2303,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2585,8 +2324,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": "Eye",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-010"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-010"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-036-03",
@@ -2603,7 +2347,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": "Block",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2621,7 +2368,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2639,7 +2389,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2657,7 +2410,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2675,7 +2431,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2693,8 +2452,14 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-003", "Q-CARD-004"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-003",
+      "Q-CARD-004"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-037-02",
@@ -2711,7 +2476,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2729,7 +2497,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyCard/LimitsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/LimitsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -2747,7 +2517,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2765,7 +2538,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": "Close",
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2783,7 +2559,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2801,7 +2580,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2819,7 +2601,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2837,7 +2622,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2855,7 +2643,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2873,7 +2664,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -2891,8 +2685,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/LimitsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardScreen.tsx", "src/features/legacyCard/store.ts"],
-    "owner_questions": ["Q-CARD-006"]
+    "source_trace": [
+      "src/features/legacyCard/CardScreen.tsx",
+      "src/features/legacyCard/store.ts"
+    ],
+    "owner_questions": [
+      "Q-CARD-006"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-057-01",
@@ -2909,7 +2708,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -2927,8 +2728,12 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
-    "owner_questions": ["Q-CARD-005"]
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
+    "owner_questions": [
+      "Q-CARD-005"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-057-03",
@@ -2945,7 +2750,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -2963,7 +2770,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -2981,7 +2790,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -2999,7 +2810,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3017,7 +2830,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3035,7 +2850,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3053,7 +2870,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyCard/CardPinScreen.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyCard/CardPinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyCard/CardPinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3071,7 +2890,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3089,7 +2910,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3112,7 +2935,9 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-KYC-007"]
+    "owner_questions": [
+      "Q-KYC-007"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-066-04",
@@ -3134,7 +2959,9 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-PROFILE-003"]
+    "owner_questions": [
+      "Q-PROFILE-003"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-066-05",
@@ -3178,7 +3005,9 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-PROFILE-004"]
+    "owner_questions": [
+      "Q-PROFILE-004"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-066-07",
@@ -3283,7 +3112,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3301,7 +3132,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3319,7 +3152,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3337,7 +3172,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3355,7 +3192,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ProfileScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyProfile/ProfileScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ProfileScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3378,7 +3217,9 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-AUTH-011"]
+    "owner_questions": [
+      "Q-AUTH-011"
+    ]
   },
   {
     "action_id": "ACT-CAS-PROFILE-001-02",
@@ -3422,7 +3263,10 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-PROFILE-005", "Q-PROFILE-006"]
+    "owner_questions": [
+      "Q-PROFILE-005",
+      "Q-PROFILE-006"
+    ]
   },
   {
     "action_id": "ACT-CAS-PROFILE-002-02",
@@ -3461,7 +3305,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/PersonalDataScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyProfile/PersonalDataScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/PersonalDataScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3501,7 +3347,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/IdentificationStatusScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyProfile/IdentificationStatusScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/IdentificationStatusScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3519,7 +3367,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyProfile/IdentificationStatusScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyProfile/IdentificationStatusScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/IdentificationStatusScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3537,7 +3387,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/IdentificationStatusScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyProfile/IdentificationStatusScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/IdentificationStatusScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3560,7 +3412,12 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-KYC-001", "Q-KYC-002", "Q-KYC-005", "Q-KYC-006"]
+    "owner_questions": [
+      "Q-KYC-001",
+      "Q-KYC-002",
+      "Q-KYC-005",
+      "Q-KYC-006"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-122-01",
@@ -3577,7 +3434,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ChangePhoneScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyProfile/ChangePhoneScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ChangePhoneScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3622,7 +3481,10 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-PROFILE-001", "Q-PROFILE-002"]
+    "owner_questions": [
+      "Q-PROFILE-001",
+      "Q-PROFILE-002"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-123-01",
@@ -3661,7 +3523,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ChangePhoneVerifyScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyProfile/ChangePhoneVerifyScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ChangePhoneVerifyScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3679,7 +3543,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ChangePhoneVerifyScreen.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyProfile/ChangePhoneVerifyScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ChangePhoneVerifyScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3697,7 +3563,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ChangePinScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyProfile/ChangePinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ChangePinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3715,7 +3583,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ChangePinScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyProfile/ChangePinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ChangePinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3733,7 +3603,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/ChangePinScreen.tsx",
     "icon_meaning": "Backspace",
-    "source_trace": ["src/features/legacyProfile/ChangePinScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/ChangePinScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3751,7 +3623,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/MessagesScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyProfile/MessagesScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/MessagesScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3813,7 +3687,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyProfile/HelpScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyProfile/HelpScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyProfile/HelpScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -3836,7 +3712,9 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-PROFILE-007"]
+    "owner_questions": [
+      "Q-PROFILE-007"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-126-03",
@@ -3858,7 +3736,9 @@
       "src/features/legacyProfile/store.ts",
       "src/features/legacyProfile/mockData.ts"
     ],
-    "owner_questions": ["Q-PROFILE-008"]
+    "owner_questions": [
+      "Q-PROFILE-008"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-061-01",
@@ -4051,7 +3931,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/GuestStubScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHome/GuestStubScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/GuestStubScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4069,7 +3951,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/GuestStubScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHome/GuestStubScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/GuestStubScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4087,7 +3971,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/GuestStubScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHome/GuestStubScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/GuestStubScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4105,7 +3991,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/GuestStubScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHome/GuestStubScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/GuestStubScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4123,7 +4011,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/GuestStubScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHome/GuestStubScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/GuestStubScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4141,7 +4031,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHome/GuestStubScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHome/GuestStubScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/GuestStubScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4159,7 +4051,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4177,7 +4071,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4195,7 +4091,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4213,7 +4111,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4231,8 +4132,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
-    "owner_questions": ["Q-TRF-008"]
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
+    "owner_questions": [
+      "Q-TRF-008"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-069-06",
@@ -4249,7 +4155,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4267,7 +4176,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4285,7 +4197,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4303,7 +4218,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4321,7 +4238,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4339,7 +4258,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4357,8 +4278,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
-    "owner_questions": ["Q-TRF-001"]
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
+    "owner_questions": [
+      "Q-TRF-001"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-070-05",
@@ -4375,7 +4301,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4393,7 +4322,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4411,7 +4343,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4429,7 +4364,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4447,7 +4385,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4465,7 +4406,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4483,7 +4427,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4501,7 +4448,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4519,7 +4468,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4537,7 +4488,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyTopup/BetweenAccountsScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/BetweenAccountsScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4555,7 +4508,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4573,7 +4529,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4591,7 +4550,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4609,7 +4571,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4627,7 +4592,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": [
       "Q-TRF-002",
       "Q-TRF-003",
@@ -4659,7 +4627,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/ExternalCardScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/ExternalCardScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4677,7 +4647,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyTopup/ExternalCardScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/ExternalCardScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4695,7 +4667,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyTopup/ExternalCardScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/ExternalCardScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4713,8 +4687,15 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
-    "owner_questions": ["Q-TOPUP-002", "Q-TOPUP-003", "Q-TOPUP-004"]
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-002",
+      "Q-TOPUP-003",
+      "Q-TOPUP-004"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-085-05",
@@ -4731,7 +4712,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4749,7 +4733,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4767,7 +4754,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4785,7 +4775,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4803,7 +4796,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4821,7 +4817,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/ExternalCardScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": [
       "Q-TOPUP-005",
       "Q-TOPUP-006",
@@ -4851,7 +4850,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashTopupScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/CashTopupScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyTopup/CashTopupScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -4869,7 +4870,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashTopupScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4887,7 +4891,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashTopupScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4905,7 +4912,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4923,7 +4933,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4941,7 +4954,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4959,7 +4975,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4977,7 +4996,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -4995,7 +5017,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -5013,7 +5038,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": []
   },
   {
@@ -5031,7 +5059,10 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyTopup/CashMapScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyTopup/store.ts", "src/features/legacyTopup/mockData.ts"],
+    "source_trace": [
+      "src/features/legacyTopup/store.ts",
+      "src/features/legacyTopup/mockData.ts"
+    ],
     "owner_questions": [
       "Q-TOPUP-008",
       "Q-TOPUP-009",
@@ -5060,7 +5091,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/MethodSelectScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/MethodSelectScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/MethodSelectScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5124,7 +5157,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-001"]
+    "owner_questions": [
+      "Q-WD-001"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-041-05",
@@ -5162,7 +5197,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/CardWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/CardWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5180,7 +5217,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyWithdraw/CardWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/CardWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5198,7 +5237,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyWithdraw/CardWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/CardWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5220,7 +5261,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-013"]
+    "owner_questions": [
+      "Q-WD-013"
+    ]
   },
   {
     "action_id": "ACT-WD-002-05",
@@ -5395,7 +5438,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/CardWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/CardWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5413,7 +5458,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyWithdraw/CardWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/CardWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5431,7 +5478,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyWithdraw/CardWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/CardWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5722,7 +5771,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5740,7 +5791,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5758,7 +5811,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5780,7 +5835,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-014"]
+    "owner_questions": [
+      "Q-WD-014"
+    ]
   },
   {
     "action_id": "ACT-WD-004-05",
@@ -5923,7 +5980,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5941,7 +6000,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5959,7 +6020,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -5981,7 +6044,10 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-P2P-001", "Q-P2P-002"]
+    "owner_questions": [
+      "Q-P2P-001",
+      "Q-P2P-002"
+    ]
   },
   {
     "action_id": "ACT-CAS-WD-005-05",
@@ -6311,7 +6377,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-010"]
+    "owner_questions": [
+      "Q-WD-010"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-093-01",
@@ -6328,7 +6396,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/AmountWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/AmountWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -6451,7 +6521,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/AmountWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/AmountWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -6574,7 +6646,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/AmountWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/AmountWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -6680,7 +6754,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-003"]
+    "owner_questions": [
+      "Q-WD-003"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-109-01",
@@ -6697,7 +6773,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyWithdraw/AmountWithdrawScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyWithdraw/AmountWithdrawScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyWithdraw/AmountWithdrawScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -6824,7 +6902,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-004"]
+    "owner_questions": [
+      "Q-WD-004"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-097-02",
@@ -6866,7 +6946,10 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-005", "Q-WD-006"]
+    "owner_questions": [
+      "Q-WD-005",
+      "Q-WD-006"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-099-02",
@@ -6908,7 +6991,11 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-008", "Q-WD-009", "Q-WD-011"]
+    "owner_questions": [
+      "Q-WD-008",
+      "Q-WD-009",
+      "Q-WD-011"
+    ]
   },
   {
     "action_id": "ACT-WD-003-02",
@@ -6929,7 +7016,9 @@
       "src/features/legacyWithdraw/store.ts",
       "src/features/legacyWithdraw/mockData.ts"
     ],
-    "owner_questions": ["Q-WD-015"]
+    "owner_questions": [
+      "Q-WD-015"
+    ]
   },
   {
     "action_id": "ACT-CAS-HIST-005-01",
@@ -6967,7 +7056,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -6985,7 +7076,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7008,7 +7101,9 @@
       "src/features/legacyPayment/store.ts",
       "src/features/legacyPayment/mockData.ts"
     ],
-    "owner_questions": ["Q-PAY-001"]
+    "owner_questions": [
+      "Q-PAY-001"
+    ]
   },
   {
     "action_id": "ACT-PAY-001-04",
@@ -7162,7 +7257,9 @@
       "src/features/legacyPayment/store.ts",
       "src/features/legacyPayment/mockData.ts"
     ],
-    "owner_questions": ["Q-PAY-004"]
+    "owner_questions": [
+      "Q-PAY-004"
+    ]
   },
   {
     "action_id": "ACT-PAY-001-11",
@@ -7338,7 +7435,9 @@
       "src/features/legacyPayment/store.ts",
       "src/features/legacyPayment/mockData.ts"
     ],
-    "owner_questions": ["Q-PAY-006"]
+    "owner_questions": [
+      "Q-PAY-006"
+    ]
   },
   {
     "action_id": "ACT-PAY-001-19",
@@ -7355,7 +7454,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7373,7 +7474,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7391,7 +7494,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7409,7 +7514,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7427,7 +7534,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyPayment/PaymentScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7576,7 +7685,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7594,8 +7705,12 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
-    "owner_questions": ["Q-PAY-011"]
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
+    "owner_questions": [
+      "Q-PAY-011"
+    ]
   },
   {
     "action_id": "ACT-PAY-002-04",
@@ -7616,7 +7731,10 @@
       "src/features/legacyPayment/PaymentServiceScreen.tsx",
       "src/features/legacyPayment/store.ts"
     ],
-    "owner_questions": ["Q-PAY-002", "Q-PAY-009"]
+    "owner_questions": [
+      "Q-PAY-002",
+      "Q-PAY-009"
+    ]
   },
   {
     "action_id": "ACT-PAY-002-05",
@@ -7637,7 +7755,9 @@
       "src/features/legacyPayment/PaymentServiceScreen.tsx",
       "src/features/legacyPayment/store.ts"
     ],
-    "owner_questions": ["Q-PAY-005"]
+    "owner_questions": [
+      "Q-PAY-005"
+    ]
   },
   {
     "action_id": "ACT-PAY-002-06",
@@ -7730,7 +7850,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7748,7 +7870,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7766,7 +7890,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7784,7 +7910,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7802,7 +7930,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyPayment/PaymentServiceScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyPayment/PaymentServiceScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7929,7 +8059,9 @@
       "src/features/legacyPayment/PaymentServiceScreen.tsx",
       "src/features/legacyPayment/store.ts"
     ],
-    "owner_questions": ["Q-PAY-003"]
+    "owner_questions": [
+      "Q-PAY-003"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-111-01",
@@ -7946,7 +8078,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7964,7 +8098,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -7986,7 +8122,12 @@
       "src/features/legacyHistory/store.ts",
       "src/features/legacyHistory/mockData.ts"
     ],
-    "owner_questions": ["Q-TRF-007", "Q-HIST-001", "Q-HIST-008", "Q-HIST-010"]
+    "owner_questions": [
+      "Q-TRF-007",
+      "Q-HIST-001",
+      "Q-HIST-008",
+      "Q-HIST-010"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-111-04",
@@ -8024,7 +8165,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8042,7 +8185,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8060,7 +8205,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8078,7 +8225,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8096,7 +8245,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/HistoryScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyHistory/HistoryScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/HistoryScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8265,7 +8416,9 @@
       "src/features/legacyHistory/store.ts",
       "src/features/legacyHistory/mockData.ts"
     ],
-    "owner_questions": ["Q-HIST-004"]
+    "owner_questions": [
+      "Q-HIST-004"
+    ]
   },
   {
     "action_id": "ACT-CAS-HIST-002-03",
@@ -8303,7 +8456,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/FilterScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHistory/FilterScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyHistory/FilterScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8409,7 +8564,9 @@
       "src/features/legacyHistory/store.ts",
       "src/features/legacyHistory/mockData.ts"
     ],
-    "owner_questions": ["Q-HIST-009"]
+    "owner_questions": [
+      "Q-HIST-009"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-115-01",
@@ -8472,7 +8629,13 @@
       "src/features/legacyHistory/store.ts",
       "src/features/legacyHistory/mockData.ts"
     ],
-    "owner_questions": ["Q-TOPUP-009", "Q-WD-007", "Q-WD-012", "Q-HIST-002", "Q-HIST-003"]
+    "owner_questions": [
+      "Q-TOPUP-009",
+      "Q-WD-007",
+      "Q-WD-012",
+      "Q-HIST-002",
+      "Q-HIST-003"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-115-04",
@@ -8514,7 +8677,9 @@
       "src/features/legacyHistory/store.ts",
       "src/features/legacyHistory/mockData.ts"
     ],
-    "owner_questions": ["Q-HIST-005"]
+    "owner_questions": [
+      "Q-HIST-005"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-115-06",
@@ -8552,8 +8717,13 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyHistory/ReceiptScreen.tsx",
     "icon_meaning": "Back or close",
-    "source_trace": ["src/features/legacyHistory/ReceiptScreen.tsx"],
-    "owner_questions": ["Q-TOPUP-010", "Q-HIST-006"]
+    "source_trace": [
+      "src/features/legacyHistory/ReceiptScreen.tsx"
+    ],
+    "owner_questions": [
+      "Q-TOPUP-010",
+      "Q-HIST-006"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-120-02",
@@ -8574,7 +8744,9 @@
       "src/features/legacyHistory/store.ts",
       "src/features/legacyHistory/mockData.ts"
     ],
-    "owner_questions": ["Q-HIST-007"]
+    "owner_questions": [
+      "Q-HIST-007"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-120-03",
@@ -8612,7 +8784,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": "Brand / Home",
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8630,7 +8804,9 @@
     "guest_behavior": "Opens profile",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8648,8 +8824,12 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
-    "owner_questions": ["Q-QR-002"]
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
+    "owner_questions": [
+      "Q-QR-002"
+    ]
   },
   {
     "action_id": "ACT-QR-001-04",
@@ -8666,7 +8846,9 @@
     "guest_behavior": "GUEST_GATE → auth",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": [
       "Q-QR-001",
       "Q-QR-003",
@@ -8702,7 +8884,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8720,7 +8904,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8738,7 +8924,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8756,7 +8944,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": "QR",
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8774,7 +8964,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": null,
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8792,7 +8984,9 @@
     "guest_behavior": "Same observable behavior unless noted",
     "component": "src/features/legacyQr/ReceiveQrScreen.tsx",
     "icon_meaning": "Profile",
-    "source_trace": ["src/features/legacyQr/ReceiveQrScreen.tsx"],
+    "source_trace": [
+      "src/features/legacyQr/ReceiveQrScreen.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8816,7 +9010,10 @@
       "src/features/legacyHome/SupportContactFab.tsx",
       "src/features/legacyHome/supportContact.ts"
     ],
-    "owner_questions": ["Q-SUPPORT-001", "Q-SUPPORT-003"]
+    "owner_questions": [
+      "Q-SUPPORT-001",
+      "Q-SUPPORT-003"
+    ]
   },
   {
     "action_id": "ACT-HOME-001-13",
@@ -8833,13 +9030,17 @@
     "guest_behavior": "Visible and enabled for guest",
     "component": "src/features/legacyHome/SupportContactFab.tsx",
     "icon_meaning": "Headset / Support",
-    "source_trace": ["src/features/legacyHome/SupportContactFab.tsx"],
-    "owner_questions": ["Q-SUPPORT-001"]
+    "source_trace": [
+      "src/features/legacyHome/SupportContactFab.tsx"
+    ],
+    "owner_questions": [
+      "Q-SUPPORT-001"
+    ]
   },
   {
     "action_id": "ACT-LGC-SCR-025-17",
     "screen_id": "LGC-SCR-025",
-    "callout": "17",
+    "callout": "20",
     "label": "Служба поддержки",
     "control_type": "icon",
     "current_destination_type": "SHEET",
@@ -8851,8 +9052,12 @@
     "guest_behavior": "N/A — authorized home",
     "component": "src/features/legacyHome/SupportContactFab.tsx",
     "icon_meaning": "Headset / Support",
-    "source_trace": ["src/features/legacyHome/SupportContactFab.tsx"],
-    "owner_questions": ["Q-SUPPORT-001"]
+    "source_trace": [
+      "src/features/legacyHome/SupportContactFab.tsx"
+    ],
+    "owner_questions": [
+      "Q-SUPPORT-001"
+    ]
   },
   {
     "action_id": "ACT-CAS-SUPPORT-002-01",
@@ -8869,7 +9074,9 @@
     "guest_behavior": "Same",
     "component": "src/features/legacyHome/SupportContactSheet.tsx",
     "icon_meaning": "Close",
-    "source_trace": ["src/features/legacyHome/SupportContactSheet.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/SupportContactSheet.tsx"
+    ],
     "owner_questions": []
   },
   {
@@ -8891,7 +9098,11 @@
       "src/features/legacyHome/SupportContactSheet.tsx",
       "src/features/legacyHome/supportContact.ts"
     ],
-    "owner_questions": ["Q-SUPPORT-001", "Q-SUPPORT-004", "Q-SUPPORT-005"]
+    "owner_questions": [
+      "Q-SUPPORT-001",
+      "Q-SUPPORT-004",
+      "Q-SUPPORT-005"
+    ]
   },
   {
     "action_id": "ACT-CAS-SUPPORT-002-03",
@@ -8912,7 +9123,11 @@
       "src/features/legacyHome/SupportContactSheet.tsx",
       "src/features/legacyHome/supportContact.ts"
     ],
-    "owner_questions": ["Q-SUPPORT-001", "Q-SUPPORT-004", "Q-SUPPORT-005"]
+    "owner_questions": [
+      "Q-SUPPORT-001",
+      "Q-SUPPORT-004",
+      "Q-SUPPORT-005"
+    ]
   },
   {
     "action_id": "ACT-CAS-SUPPORT-002-04",
@@ -8929,7 +9144,388 @@
     "guest_behavior": "Same",
     "component": "src/features/legacyHome/SupportContactSheet.tsx",
     "icon_meaning": "Close",
-    "source_trace": ["src/features/legacyHome/SupportContactSheet.tsx"],
+    "source_trace": [
+      "src/features/legacyHome/SupportContactSheet.tsx"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-HOME-001-14",
+    "screen_id": "HOME-001",
+    "callout": "06",
+    "label": "Бонус за регистрацию",
+    "control_type": "row",
+    "current_destination_type": "GUEST_GATE",
+    "current_destination": "/legacy/auth?qaStep=iin",
+    "handler": "router.push(HOME_BRIDGES.login)",
+    "mock_effect": "PROTOTYPE_UI_ONLY — registration bonus copy (+500 Б) is mock UI evidence, not production policy",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Opens auth entry",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-18",
+    "screen_id": "LGC-SCR-025",
+    "callout": "07",
+    "label": "Ubet",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/ubet?phone=7078789911&amount=5000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-19",
+    "screen_id": "LGC-SCR-025",
+    "callout": "08",
+    "label": "Oinabet",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/oinabet?phone=7051234567&amount=20000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-20",
+    "screen_id": "LGC-SCR-025",
+    "callout": "09",
+    "label": "Tennisi",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/tennisi?phone=7017891234&amount=1500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-21",
+    "screen_id": "LGC-SCR-025",
+    "callout": "10",
+    "label": "Робокэш / Займер",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/zaimer?phone=7055551234&amount=10000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-22",
+    "screen_id": "LGC-SCR-025",
+    "callout": "11",
+    "label": "CreditBar",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/creditbar?phone=7070112233&amount=3500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-23",
+    "screen_id": "LGC-SCR-025",
+    "callout": "12",
+    "label": "i-credit.kz",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/icredit?phone=7088887766&amount=7500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-24",
+    "screen_id": "LGC-SCR-025",
+    "callout": "13",
+    "label": "Kengo",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/kengo?phone=7012345678&amount=12000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-025-25",
+    "screen_id": "LGC-SCR-025",
+    "callout": "14",
+    "label": "Sat Credit",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/satcredit?phone=7098765432&amount=2500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-17",
+    "screen_id": "LGC-SCR-026",
+    "callout": "07",
+    "label": "Ubet",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/ubet?phone=7078789911&amount=5000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-18",
+    "screen_id": "LGC-SCR-026",
+    "callout": "08",
+    "label": "Oinabet",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/oinabet?phone=7051234567&amount=20000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-19",
+    "screen_id": "LGC-SCR-026",
+    "callout": "09",
+    "label": "Tennisi",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/tennisi?phone=7017891234&amount=1500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-20",
+    "screen_id": "LGC-SCR-026",
+    "callout": "10",
+    "label": "Робокэш / Займер",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/zaimer?phone=7055551234&amount=10000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-21",
+    "screen_id": "LGC-SCR-026",
+    "callout": "11",
+    "label": "CreditBar",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/creditbar?phone=7070112233&amount=3500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-22",
+    "screen_id": "LGC-SCR-026",
+    "callout": "12",
+    "label": "i-credit.kz",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/icredit?phone=7088887766&amount=7500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-23",
+    "screen_id": "LGC-SCR-026",
+    "callout": "13",
+    "label": "Kengo",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/kengo?phone=7012345678&amount=12000",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-LGC-SCR-026-24",
+    "screen_id": "LGC-SCR-026",
+    "callout": "14",
+    "label": "Sat Credit",
+    "control_type": "row",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/satcredit?phone=7098765432&amount=2500",
+    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/recentOperationsPreview.ts"
+    ],
+    "owner_questions": []
+  },
+  {
+    "action_id": "ACT-PAY-002-15",
+    "screen_id": "PAY-002",
+    "callout": null,
+    "label": "Entry from Home recent operation (prefilled)",
+    "control_type": "navigation",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment/[id]?phone=&amount=",
+    "handler": "PaymentServiceScreen reads phone/amount search params",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — prefills phone and amount from Home preview row",
+    "precondition": "Authorized Home recent operation tapped",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "N/A — authorized Home only",
+    "component": "src/features/legacyPayment/PaymentServiceScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyPayment/PaymentServiceScreen.tsx",
+      "src/features/legacyPayment/mockData.ts"
+    ],
     "owner_questions": []
   }
 ]

@@ -6,13 +6,14 @@ These are interview and implementation-scope candidates only. They do **not** co
 
 **Actor:** GUEST\
 **Entry screen:** `CAS-AUTH-003`\
-**Screens:** `CAS-AUTH-003`, `CAS-AUTH-011`, `CAS-AUTH-012`, `CAS-AUTH-013`, `CAS-AUTH-014`, `LGC-SCR-025`\
-**Actions:** `ACT-CAS-AUTH-003-04`, `ACT-CAS-AUTH-011-02`, `ACT-CAS-AUTH-012-02`\
+**Screens:** `HOME-001`, `CAS-AUTH-003`, `CAS-AUTH-011`, `CAS-AUTH-012`, `CAS-AUTH-013`, `CAS-AUTH-014`, `LGC-SCR-025`\
+**Actions:** `ACT-HOME-001-14`, `ACT-CAS-AUTH-003-04`, `ACT-CAS-AUTH-011-02`, `ACT-CAS-AUTH-012-02`\
 **Current exit states:** AUTHORIZED_HOME, PIN_MISMATCH
 
 **CURRENT PRODUCT OBSERVATION**
 
 - CURRENT_CODE_FACT: authentication is a local state machine with no backend.
+- PROTOTYPE_UI_ONLY: guest Home «+500 Б» row (`ACT-HOME-001-14`) is an alternate auth entry; bonus copy is not production policy.
 
 **OWNER BUSINESS DECISION**
 
@@ -198,13 +199,14 @@ These are interview and implementation-scope candidates only. They do **not** co
 
 **Actor:** GUEST_OR_AUTHORIZED\
 **Entry screen:** `PAY-001`\
-**Screens:** `PAY-001`, `CAS-PAY-001`, `PAY-002`, `CAS-PAY-002`\
-**Actions:** `ACT-PAY-001-10`, `ACT-PAY-002-07`\
+**Screens:** `LGC-SCR-025`, `LGC-SCR-026`, `PAY-001`, `CAS-PAY-001`, `PAY-002`, `CAS-PAY-002`\
+**Actions:** `ACT-LGC-SCR-025-18`…`025-25`, `ACT-LGC-SCR-026-17`…`026-24`, `ACT-PAY-001-10`, `ACT-PAY-002-07`, `ACT-PAY-002-15`\
 **Current exit states:** AUTH_GATE, MOCK_ALERT_SUCCESS
 
 **CURRENT PRODUCT OBSERVATION**
 
 - CURRENT_MOCK_BEHAVIOR: pay ends in a 900 ms Alert without debit/history.
+- CURRENT_MOCK_BEHAVIOR: authorized Home «Последние операции» rows are preview catalog data; row tap is an alternate entry to prefilled `PAY-002` within this process (not a separate business process).
 
 **OWNER BUSINESS DECISION**
 

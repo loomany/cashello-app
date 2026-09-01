@@ -728,89 +728,12 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
 - **Owner dependency:** None recorded
 
-### ACT-HOME-001-06 — [06] См. все — услуги
+### ACT-HOME-001-14 — [06] Бонус за регистрацию
 
-- **Screen / element:** HOME-001 / EL-HOME-001-06
-- **Control:** link
-- **User intent:** См. все — услуги
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-HOME-001-07 — [07] Ubet
-
-- **Screen / element:** HOME-001 / EL-HOME-001-07
-- **Control:** row
-- **User intent:** Ubet
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment/ubet
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-HOME-001-08 — [08] Beeline
-
-- **Screen / element:** HOME-001 / EL-HOME-001-08
-- **Control:** row
-- **User intent:** Beeline
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-HOME-001-09 — [09] Робокэш / Займер
-
-- **Screen / element:** HOME-001 / EL-HOME-001-09
-- **Control:** row
-- **User intent:** Робокэш / Займер
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment/zaimer
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-HOME-001-10 — [10] См. все — история
-
-- **Screen / element:** HOME-001 / EL-HOME-001-10
-- **Control:** link
-- **User intent:** См. все — история
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/history
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-HOME-001-11 — [11] Операция истории
-
-- **Screen / element:** HOME-001 / EL-HOME-001-11
-- **Control:** row
-- **User intent:** Операция истории
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → HistoryActionSheet
-- **Current code handler:** setHistoryAction
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
+- **Screen / element:** HOME-001 / EL-HOME-001-14
+- **User intent:** Open auth from registration bonus preview row
+- **Current destination:** GUEST_GATE → /legacy/auth?qaStep=iin
+- **Classification:** PROTOTYPE_UI_ONLY / CURRENT_MOCK_BEHAVIOR (+500 Б copy is not production policy)
 
 ### ACT-HOME-001-12 — [12] Войти
 
@@ -898,89 +821,20 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
 - **Owner dependency:** None recorded
 
-### ACT-LGC-SCR-025-06 — [06] См. все — услуги
-
-- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-06
-- **Control:** link
-- **User intent:** См. все — услуги
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-025-07 — [07] Ubet
-
-- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-07
-- **Control:** row
-- **User intent:** Ubet
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment/ubet
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-025-08 — [08] Beeline
-
-- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-08
-- **Control:** row
-- **User intent:** Beeline
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-025-09 — [09] Робокэш / Займер
-
-- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-09
-- **Control:** row
-- **User intent:** Робокэш / Займер
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment/zaimer
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-025-10 — [10] См. все — история
+### ACT-LGC-SCR-025-10 — [06] См. все
 
 - **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-10
-- **Control:** link
-- **User intent:** См. все — история
-- **Precondition:** Screen visible
+- **User intent:** Open full history from «Последние операции»
 - **Current destination:** ROUTE → /legacy/history
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
 
-### ACT-LGC-SCR-025-11 — [11] Операция истории
+### ACT-LGC-SCR-025-18 — [07] Ubet (последняя операция)
 
-- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-11
-- **Control:** row
-- **User intent:** Операция истории
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → HistoryActionSheet
-- **Current code handler:** setHistoryAction
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
+- **Current destination:** ROUTE → /legacy/payment/ubet?phone=&amount= (prefill)
+- **Classification:** CURRENT_MOCK_BEHAVIOR preview row
+
+### ACT-LGC-SCR-025-19 … ACT-LGC-SCR-025-25 — [08–14] Other recent-operation rows
+
+- **Current destination:** prefilled PAY-002 per service (mock preview data)
 
 ### ACT-LGC-SCR-025-12 — [12] Главная
 
@@ -1124,89 +978,13 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
 - **Owner dependency:** None recorded
 
-### ACT-LGC-SCR-026-06 — [06] См. все — услуги
+### ACT-LGC-SCR-026-10 — [06] Фильтр
 
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-06
-- **Control:** link
-- **User intent:** См. все — услуги
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-07 — [07] Ubet
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-07
-- **Control:** row
-- **User intent:** Ubet
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment/ubet
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-08 — [08] Beeline
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-08
-- **Control:** row
-- **User intent:** Beeline
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-09 — [09] Робокэш / Займер
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-09
-- **Control:** row
-- **User intent:** Робокэш / Займер
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/payment/zaimer
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-10 — [10] Фильтр — история
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-10
-- **Control:** link
-- **User intent:** Фильтр — история
-- **Precondition:** Screen visible
 - **Current destination:** ROUTE → /legacy/history/filter
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
 
-### ACT-LGC-SCR-026-11 — [11] Операция истории
+### ACT-LGC-SCR-026-17 … ACT-LGC-SCR-026-24 — [07–14] Recent-operation rows
 
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-11
-- **Control:** row
-- **User intent:** Операция истории
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → HistoryActionSheet
-- **Current code handler:** setHistoryAction
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
+- **Current destination:** prefilled PAY-002 (mock preview)
 
 ### ACT-LGC-SCR-026-12 — [12] Главная
 
@@ -1380,49 +1158,6 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Source trace:** `src/features/legacyWithdraw/store.ts`, `src/features/legacyWithdraw/mockData.ts`
 - **Owner dependency:** None recorded
 
-## CAS-HOME-005 — Главная — действия с операцией
-
-### ACT-CAS-HOME-005-01 — [01] Закрыть / фон
-
-- **Screen / element:** CAS-HOME-005 / EL-CAS-HOME-005-01
-- **Control:** button; icon meaning: Close
-- **User intent:** Закрыть / фон
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → Close sheet
-- **Current code handler:** onClose
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHistory/store.ts`, `src/features/legacyHistory/mockData.ts`
-- **Owner dependency:** None recorded
-
-### ACT-CAS-HOME-005-02 — [02] Повторить операцию
-
-- **Screen / element:** CAS-HOME-005 / EL-CAS-HOME-005-02
-- **Control:** button
-- **User intent:** Повторить операцию
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → operation.repeatHref
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHistory/store.ts`, `src/features/legacyHistory/mockData.ts`
-- **Owner dependency:** None recorded
-
-### ACT-CAS-HOME-005-03 — [03] Поделиться чеком
-
-- **Screen / element:** CAS-HOME-005 / EL-CAS-HOME-005-03
-- **Control:** button
-- **User intent:** Поделиться чеком
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → /legacy/history/[id]
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHistory/store.ts`, `src/features/legacyHistory/mockData.ts`
-- **Owner dependency:** None recorded
 
 ## LGC-SCR-029 — Счета — список
 
@@ -6411,3 +6146,9 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Potential backend requirement:** None identified from current UI
 - **Source trace:** `src/features/legacyQr/ReceiveQrScreen.tsx`
 - **Owner dependency:** None recorded
+
+### ACT-PAY-002-15 — Entry from Home recent operation (prefilled)
+
+- **Screen:** PAY-002
+- **Current destination:** phone/amount search params applied on mount
+- **Classification:** CURRENT_CODE_FACT at product SHA 597754364ada9dc1f51f62fe86b41a2bc0b24e4b

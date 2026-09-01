@@ -20,7 +20,7 @@ Classification labels used: `FIGMA_FACT`, `CURRENT_CODE_FACT`, `CURRENT_RUNTIME_
 | `+not-found`                      | `src/app/+not-found.tsx`                     | DEBUG       | —                                                                                                                                                                                                                                              | NO — Framework error placeholder, not a product screen                                                      |
 | `/dev/foundation`                 | `src/app/dev/foundation.tsx`                 | DEV_ONLY    | —                                                                                                                                                                                                                                              | NO — Infrastructure lab explicitly marked non-product                                                       |
 | `/legacy/auth`                    | `src/app/legacy/auth.tsx`                    | STATE       | `CAS-AUTH-001`, `CAS-AUTH-002`, `CAS-AUTH-003`, `CAS-AUTH-004`, `CAS-AUTH-005`, `CAS-AUTH-006`, `CAS-AUTH-007`, `CAS-AUTH-008`, `CAS-AUTH-009`, `CAS-AUTH-010`, `CAS-AUTH-011`, `CAS-AUTH-012`, `CAS-AUTH-013`, `CAS-AUTH-014`, `CAS-AUTH-015` | YES                                                                                                         |
-| `/legacy/home`                    | `src/app/legacy/home.tsx`                    | STATE       | `HOME-001`, `LGC-SCR-025`, `LGC-SCR-026`, `CAS-HOME-003`, `CAS-HOME-004`, `CAS-HOME-005`                                                                                                                                                       | YES                                                                                                         |
+| `/legacy/home`                    | `src/app/legacy/home.tsx`                    | STATE       | `HOME-001`, `LGC-SCR-025`, `LGC-SCR-026`, `CAS-HOME-003`, `CAS-HOME-004`                                                                                                                                                       | YES                                                                                                         |
 | `/legacy/search`                  | `src/app/legacy/search.tsx`                  | PRODUCT     | `LGC-SCR-061`                                                                                                                                                                                                                                  | YES                                                                                                         |
 | `/legacy/qr`                      | `src/app/legacy/qr.tsx`                      | PRODUCT     | `QR-001`                                                                                                                                                                                                                                       | YES                                                                                                         |
 | `/legacy/messages`                | `src/app/legacy/messages.tsx`                | PRODUCT     | `LGC-SCR-125`                                                                                                                                                                                                                                  | YES                                                                                                         |
@@ -633,7 +633,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 **Purpose:** Browsable guest landing page with zeroed account previews and login gates.
 
 **Entry points:** `ACT-CAS-AUTH-003-01`, `ACT-CAS-AUTH-003-02`, `ACT-CAS-AUTH-012-01`, `ACT-CAS-AUTH-013-01`, `ACT-CAS-AUTH-014-01`, `ACT-CAS-AUTH-015-01`, `ACT-HOME-001-01`, `ACT-CAS-PROFILE-001-01`\
-**Exit points:** `ACT-HOME-001-01`, `ACT-HOME-001-02`, `ACT-HOME-001-03`, `ACT-HOME-001-04`, `ACT-HOME-001-05`, `ACT-HOME-001-06`, `ACT-HOME-001-07`, `ACT-HOME-001-08`, `ACT-HOME-001-09`, `ACT-HOME-001-10`, `ACT-HOME-001-11`, `ACT-HOME-001-12`\
+**Exit points:** `ACT-HOME-001-01`, `ACT-HOME-001-02`, `ACT-HOME-001-03`, `ACT-HOME-001-04`, `ACT-HOME-001-05`, `ACT-HOME-001-14`, `ACT-HOME-001-12`, `ACT-HOME-001-13`\
 **Visible business data:** 0 ₸ / 0 ₽ / 0 $ / 0 Б; Service and history preview mock rows
 
 **Interactive elements**
@@ -643,12 +643,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 - [03] `ACT-HOME-001-03` — Показать / скрыть балансы → LOCAL_STATE: balancesHidden
 - [04] `ACT-HOME-001-04` — Пополнить → LOCAL_STATE: TopupSelectSheet
 - [05] `ACT-HOME-001-05` — Вывести → LOCAL_STATE: WithdrawSelectSheet
-- [06] `ACT-HOME-001-06` — См. все — услуги → ROUTE: /legacy/payment
-- [07] `ACT-HOME-001-07` — Ubet → ROUTE: /legacy/payment/ubet
-- [08] `ACT-HOME-001-08` — Beeline → ROUTE: /legacy/payment
-- [09] `ACT-HOME-001-09` — Робокэш / Займер → ROUTE: /legacy/payment/zaimer
-- [10] `ACT-HOME-001-10` — См. все — история → ROUTE: /legacy/history
-- [11] `ACT-HOME-001-11` — Операция истории → LOCAL_STATE: HistoryActionSheet
+- [06] `ACT-HOME-001-14` — Бонус за регистрацию → GUEST_GATE: /legacy/auth?qaStep=iin (PROTOTYPE_UI_ONLY mock +500 Б copy)
 - [12] `ACT-HOME-001-12` — Войти → ROUTE: /legacy/auth?qaStep=iin
 - [13] `ACT-HOME-001-13` — Служба поддержки (headset FAB) → SHEET: CAS-SUPPORT-002
 
@@ -691,12 +686,15 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 - [03] `ACT-LGC-SCR-025-03` — Показать / скрыть балансы → LOCAL_STATE: balancesHidden
 - [04] `ACT-LGC-SCR-025-04` — Пополнить → LOCAL_STATE: TopupSelectSheet
 - [05] `ACT-LGC-SCR-025-05` — Вывести → LOCAL_STATE: WithdrawSelectSheet
-- [06] `ACT-LGC-SCR-025-06` — См. все — услуги → ROUTE: /legacy/payment
-- [07] `ACT-LGC-SCR-025-07` — Ubet → ROUTE: /legacy/payment/ubet
-- [08] `ACT-LGC-SCR-025-08` — Beeline → ROUTE: /legacy/payment
-- [09] `ACT-LGC-SCR-025-09` — Робокэш / Займер → ROUTE: /legacy/payment/zaimer
-- [10] `ACT-LGC-SCR-025-10` — См. все — история → ROUTE: /legacy/history
-- [11] `ACT-LGC-SCR-025-11` — Операция истории → LOCAL_STATE: HistoryActionSheet
+- [06] `ACT-LGC-SCR-025-10` — См. все → ROUTE: /legacy/history
+- [07] `ACT-LGC-SCR-025-18` — Ubet (последняя операция) → ROUTE: /legacy/payment/ubet?phone=&amount= (CURRENT_MOCK_BEHAVIOR)
+- [08] `ACT-LGC-SCR-025-19` — Oinabet → prefilled PAY-002
+- [09] `ACT-LGC-SCR-025-20` — Tennisi → prefilled PAY-002
+- [10] `ACT-LGC-SCR-025-21` — Робокэш / Займер → prefilled PAY-002
+- [11] `ACT-LGC-SCR-025-22` — CreditBar → prefilled PAY-002
+- [12] `ACT-LGC-SCR-025-23` — i-credit.kz → prefilled PAY-002
+- [13] `ACT-LGC-SCR-025-24` — Kengo → prefilled PAY-002
+- [14] `ACT-LGC-SCR-025-25` — Sat Credit → prefilled PAY-002
 - [12] `ACT-LGC-SCR-025-12` — Главная → ROUTE: /legacy/home
 - [13] `ACT-LGC-SCR-025-13` — Оплата → ROUTE: /legacy/payment
 - [14] `ACT-LGC-SCR-025-14` — QR → ROUTE: /legacy/qr
@@ -743,12 +741,8 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 - [03] `ACT-LGC-SCR-026-03` — Показать / скрыть балансы → LOCAL_STATE: balancesHidden
 - [04] `ACT-LGC-SCR-026-04` — Пополнить → LOCAL_STATE: TopupSelectSheet
 - [05] `ACT-LGC-SCR-026-05` — Вывести → LOCAL_STATE: WithdrawSelectSheet
-- [06] `ACT-LGC-SCR-026-06` — См. все — услуги → ROUTE: /legacy/payment
-- [07] `ACT-LGC-SCR-026-07` — Ubet → ROUTE: /legacy/payment/ubet
-- [08] `ACT-LGC-SCR-026-08` — Beeline → ROUTE: /legacy/payment
-- [09] `ACT-LGC-SCR-026-09` — Робокэш / Займер → ROUTE: /legacy/payment/zaimer
-- [10] `ACT-LGC-SCR-026-10` — Фильтр — история → ROUTE: /legacy/history/filter
-- [11] `ACT-LGC-SCR-026-11` — Операция истории → LOCAL_STATE: HistoryActionSheet
+- [06] `ACT-LGC-SCR-026-10` — Фильтр → ROUTE: /legacy/history/filter
+- [07–14] `ACT-LGC-SCR-026-17`…`026-24` — Последние операции rows → prefilled PAY-002 (CURRENT_MOCK_BEHAVIOR)
 - [12] `ACT-LGC-SCR-026-12` — Главная → ROUTE: /legacy/home
 - [13] `ACT-LGC-SCR-026-13` — Оплата → ROUTE: /legacy/payment
 - [14] `ACT-LGC-SCR-026-14` — QR → ROUTE: /legacy/qr
@@ -842,42 +836,6 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 - OWNER_DECISION_REQUIRED: `Q-WD-001`
 
-## CAS-HOME-005 — Главная — действия с операцией
-
-**Canonical ID:** CAS-HOME-005\
-**Aliases:** Home HistoryActionSheet\
-**Module:** HOME\
-**Route:** `/legacy/home (sheet)`\
-**Auth state:** MIXED\
-**Figma:** NONE — CODE_ONLY\
-**Legacy node alias:** None\
-**Frontend:** `src/features/legacyHistory/HistoryActionSheet.tsx`\
-**Primary screenshot:** [Главная — действия с операцией](./screenshots/annotated/CAS-HOME-005__history-action-sheet.png)\
-**State screenshots:** [SHEET_OPEN](./screenshots/annotated/CAS-HOME-005__history-action-sheet.png)
-
-**Purpose:** Action sheet opened from a Home history row.
-
-**Entry points:** `ACT-CAS-AUTH-003-01`, `ACT-CAS-AUTH-003-02`, `ACT-CAS-AUTH-012-01`, `ACT-CAS-AUTH-013-01`, `ACT-CAS-AUTH-014-01`, `ACT-CAS-AUTH-015-01`, `ACT-HOME-001-01`, `ACT-LGC-SCR-025-01`, `ACT-LGC-SCR-025-12`, `ACT-LGC-SCR-026-01`, `ACT-LGC-SCR-026-12`, `ACT-LGC-SCR-029-01`\
-**Exit points:** `ACT-CAS-HOME-005-01`, `ACT-CAS-HOME-005-02`, `ACT-CAS-HOME-005-03`\
-**Visible business data:** See annotated screenshot; no production truth inferred.
-
-**Interactive elements**
-
-- [01] `ACT-CAS-HOME-005-01` — Закрыть / фон → LOCAL_STATE: Close sheet
-- [02] `ACT-CAS-HOME-005-02` — Повторить операцию → GUEST_GATE: operation.repeatHref
-- [03] `ACT-CAS-HOME-005-03` — Поделиться чеком → GUEST_GATE: /legacy/history/[id]
-
-**CURRENT PRODUCT OBSERVATION**
-
-- CURRENT_RUNTIME_FACT: repeat uses the operation repeatHref; share opens the operation detail route.
-
-**CURRENT MOCK / PROTOTYPE BEHAVIOR**
-
-- PROTOTYPE_UI_ONLY: “Поделиться чеком” navigates to detail instead of invoking a share API.
-
-**OWNER BUSINESS DECISION**
-
-- OWNER_DECISION_REQUIRED: None recorded
 
 ## CAS-SUPPORT-002 — Служба поддержки
 
@@ -3322,7 +3280,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 **Purpose:** Browse/search/filter a static bookmaker, digital and MFO service catalog.
 
-**Entry points:** `ACT-HOME-001-06`, `ACT-HOME-001-07`, `ACT-HOME-001-08`, `ACT-HOME-001-09`, `ACT-LGC-SCR-025-06`, `ACT-LGC-SCR-025-07`, `ACT-LGC-SCR-025-08`, `ACT-LGC-SCR-025-09`, `ACT-LGC-SCR-025-13`, `ACT-LGC-SCR-026-06`, `ACT-LGC-SCR-026-07`, `ACT-LGC-SCR-026-08`\
+**Entry points:** `ACT-LGC-SCR-025-18`…`025-25`, `ACT-LGC-SCR-026-17`…`026-24`, `ACT-LGC-SCR-025-13`\
 **Exit points:** `ACT-PAY-001-01`, `ACT-PAY-001-02`, `ACT-PAY-001-03`, `ACT-PAY-001-04`, `ACT-PAY-001-05`, `ACT-PAY-001-06`, `ACT-PAY-001-07`, `ACT-PAY-001-08`, `ACT-PAY-001-09`, `ACT-PAY-001-10`, `ACT-PAY-001-11`, `ACT-PAY-001-12`, `ACT-PAY-001-13`, `ACT-PAY-001-14`, `ACT-PAY-001-15`, `ACT-PAY-001-16`, `ACT-PAY-001-17`, `ACT-PAY-001-18`, `ACT-PAY-001-19`, `ACT-PAY-001-20`, `ACT-PAY-001-21`, `ACT-PAY-001-22`, `ACT-PAY-001-23`\
 **Visible business data:** See annotated screenshot; no production truth inferred.
 
@@ -3380,7 +3338,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 **Purpose:** Select a catalog category.
 
-**Entry points:** `ACT-HOME-001-06`, `ACT-HOME-001-07`, `ACT-HOME-001-08`, `ACT-HOME-001-09`, `ACT-LGC-SCR-025-06`, `ACT-LGC-SCR-025-07`, `ACT-LGC-SCR-025-08`, `ACT-LGC-SCR-025-09`, `ACT-LGC-SCR-025-13`, `ACT-LGC-SCR-026-06`, `ACT-LGC-SCR-026-07`, `ACT-LGC-SCR-026-08`\
+**Entry points:** `ACT-LGC-SCR-025-18`…`025-25`, `ACT-LGC-SCR-026-17`…`026-24`, `ACT-LGC-SCR-025-13`\
 **Exit points:** `ACT-CAS-PAY-001-01`, `ACT-CAS-PAY-001-02`, `ACT-CAS-PAY-001-03`, `ACT-CAS-PAY-001-04`, `ACT-CAS-PAY-001-05`\
 **Visible business data:** See annotated screenshot; no production truth inferred.
 
@@ -3507,7 +3465,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 **Purpose:** Browse local canonical/live operation history.
 
-**Entry points:** `ACT-HOME-001-10`, `ACT-LGC-SCR-025-10`, `ACT-LGC-SCR-025-15`, `ACT-LGC-SCR-026-10`, `ACT-LGC-SCR-026-15`, `ACT-CAS-HOME-005-03`, `ACT-LGC-SCR-032-05`, `ACT-LGC-SCR-032-06`, `ACT-LGC-SCR-033-05`, `ACT-LGC-SCR-066-14`, `ACT-WD-003-01`, `ACT-CAS-HIST-005-01`\
+**Entry points:** `ACT-LGC-SCR-025-10`, `ACT-LGC-SCR-025-18`, `ACT-LGC-SCR-025-15`, `ACT-LGC-SCR-026-10`, `ACT-LGC-SCR-026-15`, `ACT-LGC-SCR-032-05`, `ACT-LGC-SCR-032-06`, `ACT-LGC-SCR-033-05`, `ACT-LGC-SCR-066-14`, `ACT-WD-003-01`, `ACT-CAS-HIST-005-01`\
 **Exit points:** `ACT-LGC-SCR-111-01`, `ACT-LGC-SCR-111-02`, `ACT-LGC-SCR-111-03`, `ACT-LGC-SCR-111-04`, `ACT-LGC-SCR-111-05`, `ACT-LGC-SCR-111-06`, `ACT-LGC-SCR-111-07`, `ACT-LGC-SCR-111-08`, `ACT-LGC-SCR-111-09`\
 **Visible business data:** See annotated screenshot; no production truth inferred.
 
@@ -3552,7 +3510,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 **Purpose:** Select or reset a date range.
 
-**Entry points:** `ACT-HOME-001-10`, `ACT-LGC-SCR-025-10`, `ACT-LGC-SCR-025-15`, `ACT-LGC-SCR-026-10`, `ACT-LGC-SCR-026-15`, `ACT-CAS-HOME-005-03`, `ACT-LGC-SCR-032-05`, `ACT-LGC-SCR-032-06`, `ACT-LGC-SCR-033-05`, `ACT-LGC-SCR-066-14`, `ACT-WD-003-01`, `ACT-CAS-HIST-005-01`\
+**Entry points:** `ACT-LGC-SCR-025-10`, `ACT-LGC-SCR-025-18`, `ACT-LGC-SCR-025-15`, `ACT-LGC-SCR-026-10`, `ACT-LGC-SCR-026-15`, `ACT-LGC-SCR-032-05`, `ACT-LGC-SCR-032-06`, `ACT-LGC-SCR-033-05`, `ACT-LGC-SCR-066-14`, `ACT-WD-003-01`, `ACT-CAS-HIST-005-01`\
 **Exit points:** `ACT-CAS-HIST-001-01`, `ACT-CAS-HIST-001-02`, `ACT-CAS-HIST-001-03`, `ACT-CAS-HIST-001-04`, `ACT-CAS-HIST-001-05`, `ACT-CAS-HIST-001-06`\
 **Visible business data:** See annotated screenshot; no production truth inferred.
 
@@ -3592,7 +3550,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 **Purpose:** Repeat an operation or open its receipt/detail.
 
-**Entry points:** `ACT-HOME-001-10`, `ACT-LGC-SCR-025-10`, `ACT-LGC-SCR-025-15`, `ACT-LGC-SCR-026-10`, `ACT-LGC-SCR-026-15`, `ACT-CAS-HOME-005-03`, `ACT-LGC-SCR-032-05`, `ACT-LGC-SCR-032-06`, `ACT-LGC-SCR-033-05`, `ACT-LGC-SCR-066-14`, `ACT-WD-003-01`, `ACT-CAS-HIST-005-01`\
+**Entry points:** `ACT-LGC-SCR-025-10`, `ACT-LGC-SCR-025-18`, `ACT-LGC-SCR-025-15`, `ACT-LGC-SCR-026-10`, `ACT-LGC-SCR-026-15`, `ACT-LGC-SCR-032-05`, `ACT-LGC-SCR-032-06`, `ACT-LGC-SCR-033-05`, `ACT-LGC-SCR-066-14`, `ACT-WD-003-01`, `ACT-CAS-HIST-005-01`\
 **Exit points:** `ACT-CAS-HIST-002-01`, `ACT-CAS-HIST-002-02`, `ACT-CAS-HIST-002-03`\
 **Visible business data:** See annotated screenshot; no production truth inferred.
 
@@ -3670,7 +3628,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 
 **Purpose:** Legacy detail sheet for live-appended operations without withdraw_receipt variant.
 
-**Entry points:** `ACT-CAS-HOME-005-03`, `ACT-LGC-SCR-032-06`, `ACT-CAS-HIST-002-03`, `ACT-LGC-SCR-115-05`, `ACT-LGC-SCR-120-01`\
+**Entry points:** `ACT-LGC-SCR-111-08`, `ACT-LGC-SCR-032-06`, `ACT-CAS-HIST-002-03`, `ACT-LGC-SCR-115-05`, `ACT-LGC-SCR-120-01`\
 **Exit points:** `ACT-LGC-SCR-115-01`, `ACT-LGC-SCR-115-02`, `ACT-LGC-SCR-115-03`, `ACT-LGC-SCR-115-04`, `ACT-LGC-SCR-115-05`, `ACT-LGC-SCR-115-06`\
 **Visible business data:** See annotated screenshot; no production truth inferred.
 

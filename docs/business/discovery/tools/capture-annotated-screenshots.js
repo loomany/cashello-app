@@ -237,6 +237,21 @@ async function runStep(page, step) {
   }
   if (Array.isArray(step.clickXY) && step.clickXY.length === 2) {
     await page.mouse.click(step.clickXY[0], step.clickXY[1]);
+    return;
+  }
+  if (typeof step.scrollY === 'number') {
+    await page.evaluate((y) => {
+      const nodes = Array.from(document.querySelectorAll('div'));
+      const scrollable = nodes.find((el) => {
+        const style = window.getComputedStyle(el);
+        return (
+          (style.overflowY === 'auto' || style.overflowY === 'scroll') &&
+          el.scrollHeight > el.clientHeight + 40
+        );
+      });
+      if (scrollable) scrollable.scrollTop = y;
+      else window.scrollTo(0, y);
+    }, step.scrollY);
   }
 }
 
