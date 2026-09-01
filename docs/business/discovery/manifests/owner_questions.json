@@ -1502,7 +1502,7 @@
     "options": [
       "OTHER / OWNER EXPLANATION: ______"
     ],
-    "current_prototype_fact": "PROTOTYPE_UI_ONLY: проценты — статические подписи.",
+    "current_prototype_fact": "OWNER_APPROVED_CURRENT_BASE_RATE: 2% (owner wording 2026-09-01 «+2% бонуса у нас базовый пока», subject to future change). CURRENT_CODE_FACT: authorized Home recent-operation rows display +N Б at this rate via Math.round (prototype display only). MFO commission rules and full calculation policy remain undecided.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
     "decision_type": "BUSINESS_DECISION"

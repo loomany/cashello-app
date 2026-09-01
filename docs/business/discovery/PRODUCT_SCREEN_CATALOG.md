@@ -671,7 +671,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 **Legacy node alias:** 765:22510\
 **Frontend:** `src/features/legacyHome/HomeScreen.tsx`\
 **Primary screenshot:** [Главная авторизованного пользователя](./screenshots/annotated/LGC-SCR-025__authorized-home.png)\
-**State screenshots:** [AUTHORIZED](./screenshots/annotated/LGC-SCR-025__authorized-home.png), [BALANCES_HIDDEN](./screenshots/annotated/LGC-SCR-025__balances-hidden.png)
+**State screenshots:** [AUTHORIZED](./screenshots/annotated/LGC-SCR-025__authorized-home.png), [BALANCES_HIDDEN](./screenshots/annotated/LGC-SCR-025__balances-hidden.png), [RECENT_OPS_SCROLLED](./screenshots/annotated/LGC-SCR-025__recent-ops-scrolled.png)
 
 **Purpose:** Primary authorized navigation and balance overview.
 
@@ -687,7 +687,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 - [04] `ACT-LGC-SCR-025-04` — Пополнить → LOCAL_STATE: TopupSelectSheet
 - [05] `ACT-LGC-SCR-025-05` — Вывести → LOCAL_STATE: WithdrawSelectSheet
 - [06] `ACT-LGC-SCR-025-10` — См. все → ROUTE: /legacy/history
-- [07] `ACT-LGC-SCR-025-18` — Ubet (последняя операция) → ROUTE: /legacy/payment/ubet?phone=&amount= (CURRENT_MOCK_BEHAVIOR)
+- [07] `ACT-LGC-SCR-025-18` — Ubet (последняя операция) → ROUTE: /legacy/payment/ubet?phone=&amount= (CURRENT_MOCK_BEHAVIOR). Row shows service name, phone, negative wallet amount (e.g. `−5 000 ₸`), and positive base bonus indicator below amount (e.g. `+100 Б` at 2%).
 - [08] `ACT-LGC-SCR-025-19` — Oinabet → prefilled PAY-002
 - [09] `ACT-LGC-SCR-025-20` — Tennisi → prefilled PAY-002
 - [10] `ACT-LGC-SCR-025-21` — Робокэш / Займер → prefilled PAY-002
@@ -710,6 +710,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 **CURRENT MOCK / PROTOTYPE BEHAVIOR**
 
 - CURRENT_MOCK_BEHAVIOR: balances, bonus, services and operations are synthetic.
+- OWNER_APPROVED_CURRENT_BASE_RATE: authorized recent-operation rows display `+N Б` computed at **2%** of the mock operation amount (owner wording 2026-09-01: «+2% бонуса у нас базовый пока»). `Math.round` is CURRENT_CODE_FACT prototype display only — not approved production rounding policy.
 
 **OWNER BUSINESS DECISION**
 
@@ -752,6 +753,7 @@ Non-route files under `src/app/**`: `src/app/+html.tsx`, `src/app/_layout.tsx`, 
 **CURRENT PRODUCT OBSERVATION**
 
 - CURRENT_CODE_FACT: selected only by the historyLink query parameter/debug jump.
+- OWNER_APPROVED_CURRENT_BASE_RATE: recent-operation rows show the same 2% base bonus presentation as `LGC-SCR-025` (negative KZT amount + positive `+N Б` below).
 
 **CURRENT MOCK / PROTOTYPE BEHAVIOR**
 

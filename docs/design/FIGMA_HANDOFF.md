@@ -167,7 +167,7 @@ Equivalent full routes: `/legacy/withdraw`, `/legacy/topup` (sheet chrome).
 | Bonus chip | 500 Б `44:236` | `homeCopy.headerBonus` hardcoded `500 Б` | `PARTIAL_MATCH` — value mock |
 | Account card | Hidden balance •••••• | `guestBalanceLabel()` zeros / hidden | `MATCHED_IMPLEMENTATION` |
 | Top-up / Withdraw controls | Visible on card | Shown; gated to login on action | `MATCHED_IMPLEMENTATION` |
-| Recent operations | «Последние операции» (guest: 1 bonus row; authorized: 8 mock rows) | `PARTIAL_MATCH` — runtime ahead of Figma frame `7:5` |
+| Recent operations | «Последние операции» (guest: 1 registration bonus row; authorized: 8 mock rows with `+N Б` at 2% base rate) | `PARTIAL_MATCH` — runtime ahead of Figma frame `7:5` |
 | Bottom CTA | **Войти** primary button | Guest CTA bar replaces tab bar | `MATCHED_IMPLEMENTATION` |
 | Tab bar | Absent in Figma | Absent for guest | `MATCHED_IMPLEMENTATION` |
 
@@ -661,3 +661,9 @@ No authentication tokens or private URLs are included.
 - **Current code:** Home uses «Последние операции» instead of separate Services + History sections.
 - **Runtime is ahead of Figma** for these Home sections; do not treat Figma frame `7:5` as full current-product spec.
 - **+500 Б registration bonus** on guest Home is PROTOTYPE_UI_ONLY evidence, not an answered owner policy.
+
+## Recent-operations bonus drift (0c79651)
+
+- **Figma file:** Cashello — Daur (`RbjNBmxd2FERlisMJoru3I`) — **UNCHANGED**
+- **Current code:** authorized Home recent-operation rows display negative KZT amount plus positive `+N Б` computed at owner-approved current base rate **2%**.
+- **Runtime is ahead of Figma** for this presentation; do not treat Figma frame `7:5` as full current-product spec.

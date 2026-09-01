@@ -1080,7 +1080,7 @@ Required-by: `REQUIRED_BEFORE_BACKEND`, `REQUIRED_BEFORE_PRODUCTION`, `CAN_DECID
 **Affected actions:** `ACT-PAY-001-10`\
 **Decision class:** BUSINESS_DECISION
 
-**Current prototype:** PROTOTYPE_UI_ONLY: проценты — статические подписи.
+**Current prototype:** OWNER_APPROVED_CURRENT_BASE_RATE: **2%** (owner wording 2026-09-01: «+2% бонуса у нас базовый пока», subject to future change). CURRENT_CODE_FACT: authorized Home recent-operation rows display computed `+N Б` at this rate (`Math.round` — prototype display only). MFO commission rules and broader bonus economics remain undecided — question stays **UNANSWERED**.
 
 ## Q-PAY-005 — P0 / REQUIRED_BEFORE_BACKEND
 

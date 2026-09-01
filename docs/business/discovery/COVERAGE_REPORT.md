@@ -1,6 +1,6 @@
 # Discovery coverage report
 
-Reconciled against product SHA `597754364ada9dc1f51f62fe86b41a2bc0b24e4b` after director visual pass (pre-design baseline `2359692f`).
+Reconciled against product SHA `0c79651ebd6be0c77078e18e031587aaebe08a4a` after recent-operations bonus display (previous baseline `57061e07`).
 
 **Product code changed during this reconciliation:** NO (docs/screenshots only)
 **Figma modified:** NO
@@ -48,7 +48,8 @@ Reconciled against product SHA `597754364ada9dc1f51f62fe86b41a2bc0b24e4b` after 
 
 ## Runtime coverage
 
-- Guest: Home (HOME-001) with «Последние операции» bonus preview row; top-up/withdraw sheets; payment/history browse via other routes; support FAB; login CTA.
+- Guest: Home (HOME-001) with «Последние операции» registration bonus preview row (`+500 Б`, unchanged).
+- Authorized: Home (`LGC-SCR-025` / `LGC-SCR-026`) recent-operation rows show negative KZT debit plus positive `+N Б` at owner-approved current base rate **2%** (prototype display).
 
 ## Unresolved audit/product gaps
 

@@ -72,9 +72,10 @@ It validates JSON parsing, stable-ID uniqueness and cross-references, screenshot
 
 ## Reconciled product baseline
 
-- **Product SHA:** `597754364ada9dc1f51f62fe86b41a2bc0b24e4b` (director visual pass)
-- **Pre-design SHA:** `2359692f3ded08fdea66b5ea260f485e894dfd7b`
-- Home changed after original discovery; manifests/screenshots reconciled against current code.
-- Figma HOME-001 frame unchanged; runtime Home sections may differ (see FIGMA_HANDOFF.md).
-- Bonus +500 Б UI is prototype evidence only — owner questions remain UNANSWERED unless explicitly decided.
-- Delta record: [2026-09-01 director visual delta](../changes/2026-09-01-director-visual-delta.md)
+- **Product SHA:** `0c79651ebd6be0c77078e18e031587aaebe08a4a` (recent-operations bonus display)
+- **Previous baseline:** `57061e07c363e69acc449595a3966a5103fcbb47`
+- **Director visual pass SHA:** `597754364ada9dc1f51f62fe86b41a2bc0b24e4b`
+- OWNER_APPROVED_CURRENT_BASE_RATE: **2%** for authorized Home recent-operation bonus display (owner may change later).
+- Guest `+500 Б` registration row remains separate PROTOTYPE_UI_ONLY evidence.
+- Figma HOME-001 frame unchanged; runtime Home may differ (see [FIGMA_HANDOFF.md](../design/FIGMA_HANDOFF.md)).
+- Delta records: [2026-09-01 director visual delta](./changes/2026-09-01-director-visual-delta.md), [2026-09-01 recent operations bonus](./changes/2026-09-01-recent-operations-bonus.md)

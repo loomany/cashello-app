@@ -671,7 +671,7 @@
       {
         "state": "RECENT_OPS_SCROLLED",
         "path": "screenshots/annotated/LGC-SCR-025__recent-ops-scrolled.png",
-        "note": "Lower recent-operation rows visible after scroll",
+        "note": "Lower recent-operation rows visible after scroll; rows show negative KZT amount and +N Б base bonus at 2%",
         "capture_status": "CAPTURED"
       }
     ],

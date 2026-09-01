@@ -207,6 +207,7 @@ These are interview and implementation-scope candidates only. They do **not** co
 
 - CURRENT_MOCK_BEHAVIOR: pay ends in a 900 ms Alert without debit/history.
 - CURRENT_MOCK_BEHAVIOR: authorized Home «Последние операции» rows are preview catalog data; row tap is an alternate entry to prefilled `PAY-002` within this process (not a separate business process).
+- OWNER_APPROVED_CURRENT_BASE_RATE: authorized Home preview rows display positive `+N Б` at **2%** of the mock operation amount (e.g. `−5 000 ₸` / `+100 Б`). Eligibility, settlement, reversal, and production rounding remain under `Q-PAY-004` and related questions.
 
 **OWNER BUSINESS DECISION**
 
