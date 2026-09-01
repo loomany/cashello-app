@@ -42,6 +42,7 @@ const REQUIRED = [
   'docs/backend/TALGAT_HANDOFF.md',
   'docs/backend/NEW_APP_HANDOFF_AUDIT_REPORT.md',
   'docs/business/OLD_CASHHELLO_PURGE_REPORT.md',
+  'docs/business/discovery/manifests/source_interactions.json',
 ];
 
 for (const rel of REQUIRED) {
@@ -91,6 +92,45 @@ for (const action of actions) {
 }
 ok('action screen refs + required fields');
 
+// --- Source raw interaction inventory → action catalog ---
+const rawInteractions = readJson('docs/business/discovery/manifests/source_interactions.json');
+const VALID_MAPPING = new Set(['MAPPED', 'UI_LOCAL', 'DUPLICATE_BEHAVIOR', 'CURRENT_UI_GAP']);
+const rawIds = new Set();
+
+for (const raw of rawInteractions) {
+  if (rawIds.has(raw.interaction_id)) fail(`duplicate source interaction ${raw.interaction_id}`);
+  rawIds.add(raw.interaction_id);
+  if (!VALID_MAPPING.has(raw.mapping_status)) {
+    fail(`source ${raw.interaction_id} invalid mapping_status ${raw.mapping_status}`);
+  }
+  if (['MAPPED', 'DUPLICATE_BEHAVIOR', 'CURRENT_UI_GAP'].includes(raw.mapping_status)) {
+    if (!raw.catalog_action_id) fail(`source ${raw.interaction_id} missing catalog_action_id`);
+    else if (!actionIds.has(raw.catalog_action_id)) {
+      fail(`source ${raw.interaction_id} refs missing catalog action ${raw.catalog_action_id}`);
+    }
+  }
+  if (raw.mapping_status === 'UI_LOCAL' && raw.catalog_action_id) {
+    fail(`source ${raw.interaction_id} UI_LOCAL must not have catalog_action_id`);
+  }
+}
+
+const mappedFromSource = new Set(
+  rawInteractions
+    .filter((r) => ['MAPPED', 'DUPLICATE_BEHAVIOR'].includes(r.mapping_status))
+    .map((r) => r.catalog_action_id),
+);
+const gapFromSource = new Set(
+  rawInteractions
+    .filter((r) => r.mapping_status === 'CURRENT_UI_GAP')
+    .map((r) => r.catalog_action_id),
+);
+for (const action of actions) {
+  if (!['MVP', 'MVP_PARTIAL_PENDING'].includes(action.mvp_status)) continue;
+  if (mappedFromSource.has(action.action_id) || gapFromSource.has(action.action_id)) continue;
+  fail(`MVP action ${action.action_id} has no source interaction mapping`);
+}
+ok(`source interaction inventory → catalog (${rawInteractions.length} raw, ${mappedFromSource.size} mapped actions)`);
+
 // Matrix ↔ action catalog alignment
 if (matrix.length !== actions.length) {
   fail(`matrix rows ${matrix.length} != actions ${actions.length}`);
@@ -106,7 +146,7 @@ for (const row of matrix) {
   if (row.backend_needed === 'yes' && !row.backend_capability) {
     fail(`matrix ${row.action_id} backend_needed=yes but backend_capability empty`);
   }
-  const noBackend = ['OUT_OF_MVP', 'FUTURE', 'PARKED_ILYA', 'LATER', 'STUB', 'ORPHANED', 'DEV_ONLY'];
+  const noBackend = ['OUT_OF_MVP', 'FUTURE', 'PARKED_ILYA', 'LATER', 'STUB', 'ORPHANED', 'DEV_ONLY', 'CURRENT_UI_GAP'];
   if (noBackend.includes(row.mvp_status) && row.backend_needed === 'yes') {
     fail(`${row.action_id}: ${row.mvp_status} cannot have backend_needed=yes`);
   }
@@ -225,6 +265,7 @@ console.log(
       actions: actions.length,
       processes: processes.length,
       matrix: matrix.length,
+      source_interactions: rawInteractions.length,
       screenshot_ref: shotRefs,
     },
     null,

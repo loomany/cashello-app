@@ -278,16 +278,16 @@
 
 | Field | Value |
 | --- | --- |
-| MVP status | MVP |
+| MVP status | MVP_TARGET |
 | Actors | AUTHORIZED |
-| Trigger | Not linked from profile UI currently |
-| Happy path | Change phone → OTP verify |
+| Trigger | NOT_LINKED — Profile shows phone read-only |
+| Happy path | Profile → change phone → OTP verify → updated phone |
 | Money effect | None |
 | Backend-owned | users.changePhone |
-| Screens (NEW-*) | NEW-ORPH phone routes |
-| Actions | NONE_IN_CURRENT_NAV |
+| Screens (NEW-*) | NEW-PROF-001,NEW-ORPH phone routes |
+| Actions | NEW-ACT-PROF-GAP-01 |
 | Owner decisions | Q-AUTH-002 |
-| Stop conditions | Flow exists but unreachable — flag for frontend |
+| Stop conditions | CURRENT_UI_GAP — backend may prepare API but UI entry missing |
 
 ## BP-PROFILE-002 — Выход и удаление аккаунта
 
@@ -330,7 +330,7 @@
 | Money effect | None |
 | Backend-owned | support.contactConfig only |
 | Screens (NEW-*) | NEW-SUPPORT-001 |
-| Actions | NEW-ACT-SUP-01..03 |
+| Actions | NEW-ACT-SUP-01..04,NEW-ACT-SUP-GAP-01 |
 | Owner decisions | Q-SUPPORT-001,Q-SUPPORT-002 |
 | Stop conditions | Not ticket system |
 

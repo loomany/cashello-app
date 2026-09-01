@@ -380,23 +380,23 @@
   {
     "process_id": "BP-PROFILE-001",
     "name": "Смена телефона",
-    "mvp_status": "MVP",
+    "mvp_status": "MVP_TARGET",
     "actors": "AUTHORIZED",
-    "preconditions": "Orphaned flow exists",
-    "trigger": "Not linked from profile UI currently",
-    "happy_path": "Change phone → OTP verify",
+    "preconditions": "Phone change routes exist in source",
+    "trigger": "NOT_LINKED — Profile shows phone read-only",
+    "happy_path": "Profile → change phone → OTP verify → updated phone",
     "alternate_paths": "N/A",
     "error_paths": "OTP fail",
     "money_effect": "None",
     "backend_owned": "users.changePhone",
-    "frontend_owned": "Orphaned phone routes",
-    "screens": "NEW-ORPH phone routes",
-    "actions": "NONE_IN_CURRENT_NAV",
+    "frontend_owned": "CURRENT_UI_GAP — /legacy/profile/phone routes orphaned",
+    "screens": "NEW-PROF-001,NEW-ORPH phone routes",
+    "actions": "NEW-ACT-PROF-GAP-01",
     "history_effect": "None",
     "notifications": "UNKNOWN",
     "owner_decisions": "Q-AUTH-002",
-    "open_questions": "Link from profile UI",
-    "stop_conditions": "Flow exists but unreachable — flag for frontend"
+    "open_questions": "Add change-phone link to Profile UI",
+    "stop_conditions": "CURRENT_UI_GAP — backend may prepare API but UI entry missing"
   },
   {
     "process_id": "BP-PROFILE-002",
@@ -454,11 +454,11 @@
     "backend_owned": "support.contactConfig only",
     "frontend_owned": "NEW-SUPPORT-001",
     "screens": "NEW-SUPPORT-001",
-    "actions": "NEW-ACT-SUP-01..03",
+    "actions": "NEW-ACT-SUP-01..04,NEW-ACT-SUP-GAP-01",
     "history_effect": "None",
     "notifications": "N/A",
     "owner_decisions": "Q-SUPPORT-001,Q-SUPPORT-002",
-    "open_questions": "Phone link optional",
+    "open_questions": "CURRENT_UI_GAP — phone CTA absent; owner target remains WA+TG+phone per Q-SUPPORT-001",
     "stop_conditions": "Not ticket system"
   }
 ]

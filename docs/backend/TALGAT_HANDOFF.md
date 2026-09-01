@@ -5,7 +5,7 @@
 Previous Cashhello screenshot/UI generation is **deprecated** and **must not** be used for backend implementation. Deleted screenshot files are not backend requirements.
 
 **Audit date:** 2026-09-01  
-**HEAD:** `4379c6ba172e23e2392b27a40ecc1e4879a3daf4`  
+**HEAD:** `dcda86d80c4deb10b4e228236f3a062b19b5cf5b`  
 **Live:** https://cashello.scholarshiptop.com/legacy/home?guest=1  
 **Live vs source:** CURRENT_SOURCE_BUILD (see LIVE_SITE_PARITY_REPORT — bundle tracks repo; screenshots removed intentionally)
 
@@ -75,13 +75,13 @@ See [OWNER_DECISIONS_RESOLVED.md](../business/OWNER_DECISIONS_RESOLVED.md). Key 
 
 ## 5. Business processes
 
-22 processes in [BUSINESS_PROCESS_SPEC.md](../business/BUSINESS_PROCESS_SPEC.md). MVP count: 11 full MVP + 3 partial pending.
+22 processes in [BUSINESS_PROCESS_SPEC.md](../business/BUSINESS_PROCESS_SPEC.md). MVP count: 10 full MVP + 3 partial pending.
 
 ---
 
 ## 6. Screen / action / API map
 
-- **64** actions across **43** current-product screens
+- **76** actions across **43** current-product screens
 - Matrix: [SCREEN_API_MATRIX.json](./SCREEN_API_MATRIX.json) — **zero screenshot_ref**
 
 ---

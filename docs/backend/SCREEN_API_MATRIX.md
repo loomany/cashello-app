@@ -16,6 +16,8 @@
 | NEW-ACT-SUP-01 | NEW-SUPPORT-001 | OVERLAY:global/support | Support FAB | Access external customer support | MVP_APPROVED | config_only | support.contactConfig |
 | NEW-ACT-SUP-02 | NEW-SUPPORT-001 | OVERLAY:global/support | Telegram | Contact support via Telegram | MVP_APPROVED | config_only | support.contactConfig |
 | NEW-ACT-SUP-03 | NEW-SUPPORT-001 | OVERLAY:global/support | WhatsApp | Contact support via WhatsApp | MVP_APPROVED | config_only | support.contactConfig |
+| NEW-ACT-SUP-04 | NEW-SUPPORT-001 | OVERLAY:global/support | Закрыть | Dismiss support channel picker | MVP_APPROVED | no | — |
+| NEW-ACT-SUP-GAP-01 | NEW-SUPPORT-001 | OVERLAY:global/support | Phone support (absent) | Owner target includes phone support per Q-SUPPORT-001 | MVP_APPROVED | config_only | support.contactConfig |
 | NEW-ACT-HOME-G01 | NEW-HOME-001 | /legacy/home?guest=1 | Cashhello brand | Reset to home root | MVP_APPROVED | no | — |
 | NEW-ACT-HOME-G02 | NEW-HOME-001 | /legacy/home?guest=1 | Profile avatar | Start login/registration | MVP_APPROVED | yes | auth.resolvePhone |
 | NEW-ACT-HOME-G03 | NEW-HOME-001 | /legacy/home?guest=1 | Show/hide balance | Privacy toggle for balance display | MVP_APPROVED | no | — |
@@ -37,6 +39,9 @@
 | NEW-ACT-WD-S01 | NEW-SHEET-WD-001 | OVERLAY:home/withdraw | На карту | Withdraw to external bank card | MVP_APPROVED | yes | withdraw.create |
 | NEW-ACT-WD-S02 | NEW-SHEET-WD-001 | OVERLAY:home/withdraw | На телефон | Withdraw to phone wallet | MVP_APPROVED | yes | withdraw.create |
 | NEW-ACT-WD-S03 | NEW-SHEET-WD-001 | OVERLAY:home/withdraw | Пользователю Cashhello | P2P transfer to Cashello user by phone | MVP_PARTIAL_PENDING | yes | p2p.lookupRecipient |
+| NEW-ACT-WD-S04 | NEW-SHEET-WD-001 | OVERLAY:home/withdraw | Закрыть | Cancel withdraw method selection | MVP_APPROVED | no | — |
+| NEW-ACT-WD-S05 | NEW-SHEET-WD-001 | OVERLAY:home/withdraw | Backdrop dismiss | Dismiss withdraw sheet via backdrop tap | MVP_APPROVED | no | — |
+| NEW-ACT-TOP-S04 | NEW-SHEET-TOPUP-001 | OVERLAY:home/topup | Backdrop dismiss | Dismiss top-up sheet via backdrop tap | MVP_APPROVED | no | — |
 | NEW-ACT-TOP-01 | NEW-TOPUP-001 | /legacy/topup/between | Подтвердить перевод | Execute internal account transfer | MVP_PARTIAL_PENDING | yes | transfers.internal |
 | NEW-ACT-TOP-02 | NEW-TOPUP-002 | /legacy/topup/card | Пополнить | Charge external card to credit account | MVP_APPROVED | yes | topup.card |
 | NEW-ACT-WD-01 | NEW-WD-001 | /legacy/withdraw/card | Отправить | Submit card withdrawal | MVP_APPROVED | yes | withdraw.create |
@@ -51,6 +56,9 @@
 | NEW-ACT-PAY-05 | NEW-PAY-002 | /legacy/payment/[id] | Оплатить | Pay utility/service from account | MVP_APPROVED | yes | payments.service |
 | NEW-ACT-PAY-06 | NEW-PAY-002 | /legacy/payment/[id] | Favorite heart | Save service to favorites | MVP_APPROVED | yes | catalog.favorites |
 | NEW-ACT-PAY-07 | NEW-PAY-002 | /legacy/payment/[id] | Pay-from account picker | Select funding account including bonus | MVP_APPROVED | yes | accounts.list |
+| NEW-ACT-PAY-08 | NEW-PAY-SHEET-001 | OVERLAY:payment/category | Category select row | Filter payment catalog by category | MVP_APPROVED | yes | catalog.browse |
+| NEW-ACT-PAY-09 | NEW-PAY-SHEET-001 | OVERLAY:payment/category | Закрыть | Close category filter without change | MVP_APPROVED | no | — |
+| NEW-ACT-PAY-10 | NEW-PAY-SHEET-001 | OVERLAY:payment/category | Backdrop dismiss | Dismiss category sheet via backdrop | MVP_APPROVED | no | — |
 | NEW-ACT-QR-01 | NEW-QR-001 | /legacy/qr | Сгенерировать | Generate receive QR for amount | FUTURE | no | — |
 | NEW-ACT-QR-02 | NEW-QR-001 | /legacy/qr | Сбросить | Clear QR form | FUTURE | no | — |
 | NEW-ACT-HIST-01 | NEW-HIST-001 | /legacy/history | Date filter trigger | Filter history by date range | MVP_APPROVED | yes | transactions.query |
@@ -64,9 +72,13 @@
 | NEW-ACT-PROF-04 | NEW-PROF-001 | /legacy/profile | Документы | View legal documents placeholder | STUB | no | — |
 | NEW-ACT-PROF-05 | NEW-PROF-001 | /legacy/profile | Выйти | End session | MVP_APPROVED | yes | auth.logout |
 | NEW-ACT-PROF-06 | NEW-PROF-001 | /legacy/profile | Удалить аккаунт | Delete account and restart auth | MVP_APPROVED | yes | users.delete |
-| NEW-ACT-PROF-07 | NEW-PROF-SHEET-001 | OVERLAY:profile/logout | Подтвердить выход | Confirm logout | MVP_APPROVED | yes | auth.logout |
+| NEW-ACT-PROF-07 | NEW-PROF-SHEET-001 | OVERLAY:profile/logout | Подтвердить выход | Confirm logout and revoke session | MVP_APPROVED | yes | auth.logout |
 | NEW-ACT-PROF-08 | NEW-PROF-003 | /legacy/profile/pin | PIN keypad digits | Enter new PIN twice | MVP_APPROVED | yes | auth.changePin |
-| NEW-ACT-AUTH-01 | NEW-AUTH-003 | /legacy/auth?qaStep=iin | Continue phone/IIN | Submit identifier to start auth | MVP_APPROVED | yes | auth.resolvePhone |
+| NEW-ACT-PROF-09 | NEW-PROF-SHEET-002 | OVERLAY:profile/delete | Подтвердить удаление | Confirm account deletion and restart auth | MVP_APPROVED | yes | users.delete |
+| NEW-ACT-PROF-10 | NEW-PROF-SHEET-001 | OVERLAY:profile/logout | Отмена выхода | Cancel logout | MVP_APPROVED | no | — |
+| NEW-ACT-PROF-11 | NEW-PROF-SHEET-002 | OVERLAY:profile/delete | Отмена удаления | Cancel account deletion | MVP_APPROVED | no | — |
+| NEW-ACT-PROF-GAP-01 | NEW-PROF-001 | /legacy/profile | Change phone (absent) | Change registered phone number | CURRENT_UI_GAP | no | users.changePhone |
+| NEW-ACT-AUTH-01 | NEW-AUTH-003 | /legacy/auth?qaStep=iin | Submit phone (loginAction) | Submit phone to receive WhatsApp OTP — normal auth path | MVP_APPROVED | yes | auth.resolvePhone |
 | NEW-ACT-AUTH-02 | NEW-AUTH-011 | /legacy/auth | Verify OTP | Verify WhatsApp OTP code | MVP_APPROVED | yes | auth.verifyOtp |
 | NEW-ACT-AUTH-03 | NEW-AUTH-012 | /legacy/auth | PIN create digits | Create new PIN | MVP_APPROVED | yes | auth.setPin |
 | NEW-ACT-AUTH-04 | NEW-AUTH-015 | /legacy/auth | PIN login digits | Returning user authentication | MVP_APPROVED | yes | auth.loginPin |

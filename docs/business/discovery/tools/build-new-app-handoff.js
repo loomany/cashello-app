@@ -10,6 +10,7 @@ const { execSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '../../../..');
 const { AUDIT_DATE, START_HEAD, ENTRY, ROUTES, SCREENS } = require('./new-app-handoff-data');
 const { ACTIONS } = require('./new-app-actions-data');
+const { writeManifest: writeSourceInteractions } = require('./source-interaction-inventory');
 const cls = require('./handoff-classification');
 
 function endHead() {
@@ -56,10 +57,11 @@ writeJson('docs/business/NEW_APP_SCREEN_CATALOG.json', SCREENS);
 writeJson('docs/business/NEW_APP_ACTION_CATALOG.json', ACTIONS);
 
 // --- SCREEN_API_MATRIX (no screenshot_ref) ---
-const MVP_NO_BACKEND = new Set(['OUT_OF_MVP', 'FUTURE', 'PARKED_ILYA', 'LATER', 'STUB', 'DEV_ONLY', 'ORPHANED']);
+const MVP_NO_BACKEND = new Set(['OUT_OF_MVP', 'FUTURE', 'PARKED_ILYA', 'LATER', 'STUB', 'DEV_ONLY', 'ORPHANED', 'CURRENT_UI_GAP', 'MVP_TARGET']);
 
 function mapMvpStatus(mvp) {
   if (mvp === 'MVP' || mvp === 'MVP_PARTIAL_PENDING') return mvp === 'MVP' ? 'MVP_APPROVED' : 'MVP_PARTIAL_PENDING';
+  if (mvp === 'MVP_TARGET') return 'CURRENT_UI_GAP';
   if (mvp === 'FUTURE') return 'FUTURE';
   if (mvp === 'PARKED_ILYA') return 'PARKED_ILYA';
   if (mvp === 'OUT_OF_MVP') return 'OUT_OF_MVP';
@@ -84,9 +86,11 @@ const matrix = ACTIONS.map((a) => {
           ? 'OUT_OF_SCOPE'
           : mvpStatus === 'LATER'
             ? 'LATER'
-            : mvpStatus === 'ORPHANED' || mvpStatus === 'STUB'
-              ? 'NOT_IN_CURRENT_APP'
-              : null;
+            : mvpStatus === 'CURRENT_UI_GAP'
+              ? 'CURRENT_UI_GAP'
+              : mvpStatus === 'ORPHANED' || mvpStatus === 'STUB'
+                ? 'NOT_IN_CURRENT_APP'
+                : null;
 
   return {
     action_id: a.action_id,
@@ -137,10 +141,10 @@ const PROCESSES = [
   { process_id: 'BP-HIST-002', name: 'Повтор операции', mvp_status: 'MVP_PARTIAL_PENDING', actors: 'AUTHORIZED', preconditions: 'Prior debit op exists', trigger: 'History action sheet repeat', happy_path: 'Prefill withdraw/payment form from op', alternate_paths: 'Unsupported op type', error_paths: 'UNKNOWN', money_effect: 'New operation if confirmed', backend_owned: 'transactions.repeat', frontend_owned: 'NEW-HIST-SHEET-002', screens: 'NEW-HIST-SHEET-002', actions: 'NEW-ACT-HIST-03', history_effect: 'New op if completed', notifications: 'UNKNOWN', owner_decisions: 'Q-P2P-003', open_questions: 'Confirmation rules', stop_conditions: null },
   { process_id: 'BP-CARD-001', name: 'Карта PayDala', mvp_status: 'PARKED_ILYA', actors: 'AUTHORIZED', preconditions: 'Q-CARD-001', trigger: 'Orphaned card routes', happy_path: 'N/A current app', alternate_paths: 'N/A', error_paths: 'N/A', money_effect: 'N/A', backend_owned: 'DO_NOT_IMPLEMENT', frontend_owned: 'NEW-OLD-CARD-001', screens: 'NEW-OLD-CARD-001', actions: 'NONE_IN_CURRENT_APP', history_effect: 'N/A', notifications: 'N/A', owner_decisions: 'Q-CARD-001', open_questions: 'All card', stop_conditions: 'Not in current nav' },
   { process_id: 'BP-CARD-002', name: 'PIN карты', mvp_status: 'PARKED_ILYA', actors: 'AUTHORIZED', preconditions: 'Q-CARD-001', trigger: 'Orphaned /legacy/card/pin', happy_path: 'N/A current app', alternate_paths: 'N/A', error_paths: 'N/A', money_effect: 'N/A', backend_owned: 'DO_NOT_IMPLEMENT', frontend_owned: 'Orphaned card/pin route', screens: 'NEW-OLD-CARD-001', actions: 'NONE_IN_CURRENT_APP', history_effect: 'N/A', notifications: 'N/A', owner_decisions: 'Q-CARD-001', open_questions: 'Card PIN policy', stop_conditions: 'PARKED with card product' },
-  { process_id: 'BP-PROFILE-001', name: 'Смена телефона', mvp_status: 'MVP', actors: 'AUTHORIZED', preconditions: 'Orphaned flow exists', trigger: 'Not linked from profile UI currently', happy_path: 'Change phone → OTP verify', alternate_paths: 'N/A', error_paths: 'OTP fail', money_effect: 'None', backend_owned: 'users.changePhone', frontend_owned: 'Orphaned phone routes', screens: 'NEW-ORPH phone routes', actions: 'NONE_IN_CURRENT_NAV', history_effect: 'None', notifications: 'UNKNOWN', owner_decisions: 'Q-AUTH-002', open_questions: 'Link from profile UI', stop_conditions: 'Flow exists but unreachable — flag for frontend' },
+  { process_id: 'BP-PROFILE-001', name: 'Смена телефона', mvp_status: 'MVP_TARGET', actors: 'AUTHORIZED', preconditions: 'Phone change routes exist in source', trigger: 'NOT_LINKED — Profile shows phone read-only', happy_path: 'Profile → change phone → OTP verify → updated phone', alternate_paths: 'N/A', error_paths: 'OTP fail', money_effect: 'None', backend_owned: 'users.changePhone', frontend_owned: 'CURRENT_UI_GAP — /legacy/profile/phone routes orphaned', screens: 'NEW-PROF-001,NEW-ORPH phone routes', actions: 'NEW-ACT-PROF-GAP-01', history_effect: 'None', notifications: 'UNKNOWN', owner_decisions: 'Q-AUTH-002', open_questions: 'Add change-phone link to Profile UI', stop_conditions: 'CURRENT_UI_GAP — backend may prepare API but UI entry missing' },
   { process_id: 'BP-PROFILE-002', name: 'Выход и удаление аккаунта', mvp_status: 'MVP', actors: 'AUTHORIZED', preconditions: 'Session', trigger: 'Profile logout/delete', happy_path: 'Confirm → revoke session → guest home or auth', alternate_paths: 'Cancel sheet', error_paths: 'UNKNOWN', money_effect: 'None', backend_owned: 'auth.logout, users.delete', frontend_owned: 'NEW-PROF-001 sheets', screens: 'NEW-PROF-001,NEW-PROF-SHEET-001,NEW-PROF-SHEET-002', actions: 'NEW-ACT-PROF-05..07', history_effect: 'None', notifications: 'N/A', owner_decisions: 'Q-AUTH-010', open_questions: 'Delete cooling-off', stop_conditions: null },
   { process_id: 'BP-SUPPORT-001', name: 'Internal help form', mvp_status: 'LATER', actors: 'AUTHORIZED', preconditions: 'Q-PROFILE-007', trigger: 'Orphaned messages/help', happy_path: 'DO NOT IMPLEMENT MVP', alternate_paths: 'N/A', error_paths: 'N/A', money_effect: 'None', backend_owned: 'LATER', frontend_owned: 'NEW-OLD-MSG-001', screens: 'NEW-OLD-MSG-001', actions: 'NONE', history_effect: 'N/A', notifications: 'N/A', owner_decisions: 'Q-PROFILE-007', open_questions: 'Internal chat', stop_conditions: 'Use external support instead' },
-  { process_id: 'BP-SUPPORT-002', name: 'External support FAB', mvp_status: 'MVP', actors: 'ANY', preconditions: 'Config URLs', trigger: 'Support FAB any screen', happy_path: 'Open sheet → WA or TG deep link', alternate_paths: 'Link unavailable alert', error_paths: 'Linking failure', money_effect: 'None', backend_owned: 'support.contactConfig only', frontend_owned: 'NEW-SUPPORT-001', screens: 'NEW-SUPPORT-001', actions: 'NEW-ACT-SUP-01..03', history_effect: 'None', notifications: 'N/A', owner_decisions: 'Q-SUPPORT-001,Q-SUPPORT-002', open_questions: 'Phone link optional', stop_conditions: 'Not ticket system' },
+  { process_id: 'BP-SUPPORT-002', name: 'External support FAB', mvp_status: 'MVP', actors: 'ANY', preconditions: 'Config URLs', trigger: 'Support FAB any screen', happy_path: 'Open sheet → WA or TG deep link', alternate_paths: 'Link unavailable alert', error_paths: 'Linking failure', money_effect: 'None', backend_owned: 'support.contactConfig only', frontend_owned: 'NEW-SUPPORT-001', screens: 'NEW-SUPPORT-001', actions: 'NEW-ACT-SUP-01..04,NEW-ACT-SUP-GAP-01', history_effect: 'None', notifications: 'N/A', owner_decisions: 'Q-SUPPORT-001,Q-SUPPORT-002', open_questions: 'CURRENT_UI_GAP — phone CTA absent; owner target remains WA+TG+phone per Q-SUPPORT-001', stop_conditions: 'Not ticket system' },
 ];
 
 writeJson('docs/business/BUSINESS_PROCESS_SPEC.json', PROCESSES);
@@ -510,6 +514,9 @@ fs.writeFileSync(
 writeJson('docs/business/discovery/SCREENSHOT_SCOPE_MANIFEST.json', [
   { status: 'DEPRECATED', reason: 'Screenshots deleted; use NEW_APP_* catalogs', audit_date: AUDIT_DATE },
 ]);
+
+const sourceInteractionCount = writeSourceInteractions(ROOT);
+console.log('WROTE source_interactions.json', `(${sourceInteractionCount} rows)`);
 
 console.log('BUILD COMPLETE');
 console.log(
