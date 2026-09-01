@@ -728,6 +728,18 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
 - **Owner dependency:** None recorded
 
+### ACT-HOME-001-06 — [06] Последние (segment)
+
+- **Current destination:** LOCAL_STATE — active segment on guest Home
+
+### ACT-HOME-001-15 — [07] Все (segment)
+
+- **Current destination:** GUEST_GATE → /legacy/auth?qaStep=iin
+
+### ACT-HOME-001-16 — [08] История (segment)
+
+- **Current destination:** GUEST_GATE → /legacy/auth?qaStep=iin
+
 ### ACT-HOME-001-14 — [06] Бонус за регистрацию
 
 - **Screen / element:** HOME-001 / EL-HOME-001-14
@@ -821,20 +833,31 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
 - **Owner dependency:** None recorded
 
-### ACT-LGC-SCR-025-10 — [06] См. все
+### ACT-LGC-SCR-025-06 — [06] Последние (segment)
 
-- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-10
-- **User intent:** Open full history from «Последние операции»
+- **Screen / element:** LGC-SCR-025 / EL-LGC-SCR-025-06
+- **User intent:** Keep active recent-operations preview on Home
+- **Current destination:** LOCAL_STATE — paymentsTab=recent (no navigation)
+- **Classification:** CURRENT_CODE_FACT at product SHA 86e9d3bee9ca13a82474f4acdcdec8f5d0eb3134
+
+### ACT-LGC-SCR-025-07 — [07] Все (segment)
+
+- **Current destination:** ROUTE → /legacy/payment
+- **Classification:** CURRENT_CODE_FACT — alternate entry into BP-PAY-001 catalog browse
+
+### ACT-LGC-SCR-025-10 — [08] История (segment)
+
 - **Current destination:** ROUTE → /legacy/history
+- **Classification:** CURRENT_CODE_FACT — alternate entry into BP-HIST-001 (replaces former «См. все» control)
 
-### ACT-LGC-SCR-025-18 — [07] Ubet (последняя операция)
+### ACT-LGC-SCR-025-18 — [09] Ubet (recent operation)
 
 - **Current destination:** ROUTE → /legacy/payment/ubet?phone=&amount= (prefill)
-- **Classification:** CURRENT_MOCK_BEHAVIOR preview row
+- **Classification:** CURRENT_MOCK_BEHAVIOR preview row with 2% bonus display
 
-### ACT-LGC-SCR-025-19 … ACT-LGC-SCR-025-25 — [08–14] Other recent-operation rows
+### ACT-LGC-SCR-025-19 … ACT-LGC-SCR-025-21 — [10–12] Other recent-operation rows
 
-- **Current destination:** prefilled PAY-002 per service (mock preview data)
+- **Current destination:** prefilled PAY-002 per service (4 rows total on Home)
 
 ### ACT-LGC-SCR-025-12 — [12] Главная
 
@@ -904,258 +927,6 @@ Present on every `/legacy/*` screen via `SupportContactHost`. Numbered on HOME-0
 - **Guest/auth behavior:** Same observable behavior unless noted
 - **Potential backend requirement:** None identified from current UI
 - **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-## LGC-SCR-026 — Главная — ссылка фильтра истории
-
-### ACT-LGC-SCR-026-01 — [01] Cashhello — на главную
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-01
-- **Control:** logo; icon meaning: Brand / Home
-- **User intent:** Cashhello — на главную
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/home
-- **Current code handler:** navigateHome / router.replace
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-02 — [02] Профиль
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-02
-- **Control:** icon; icon meaning: Profile
-- **User intent:** Профиль
-- **Precondition:** Screen visible
-- **Current destination:** ROUTE → /legacy/profile
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** Opens profile
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-03 — [03] Показать / скрыть балансы
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-03
-- **Control:** icon; icon meaning: Eye
-- **User intent:** Показать / скрыть балансы
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → balancesHidden
-- **Current code handler:** setBalancesHidden
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-04 — [04] Пополнить
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-04
-- **Control:** button; icon meaning: Top-up
-- **User intent:** Пополнить
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → TopupSelectSheet
-- **Current code handler:** setTopupOpen(true)
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-05 — [05] Вывести
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-05
-- **Control:** button; icon meaning: Withdraw
-- **User intent:** Вывести
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → WithdrawSelectSheet
-- **Current code handler:** setWithdrawOpen(true)
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`, `src/features/legacyHome/session.ts`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-10 — [06] Фильтр
-
-- **Current destination:** ROUTE → /legacy/history/filter
-
-### ACT-LGC-SCR-026-17 … ACT-LGC-SCR-026-24 — [07–14] Recent-operation rows
-
-- **Current destination:** prefilled PAY-002 (mock preview)
-
-### ACT-LGC-SCR-026-12 — [12] Главная
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-12
-- **Control:** tab
-- **User intent:** Главная
-- **Precondition:** Tab bar visible; active=home
-- **Current destination:** ROUTE → /legacy/home
-- **Current code handler:** LegacyTabBar.go
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-13 — [13] Оплата
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-13
-- **Control:** tab
-- **User intent:** Оплата
-- **Precondition:** Tab bar visible; active=home
-- **Current destination:** ROUTE → /legacy/payment
-- **Current code handler:** LegacyTabBar.go
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-14 — [14] QR
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-14
-- **Control:** tab; icon meaning: QR
-- **User intent:** QR
-- **Precondition:** Tab bar visible; active=home
-- **Current destination:** ROUTE → /legacy/qr
-- **Current code handler:** LegacyTabBar.go
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-15 — [15] История
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-15
-- **Control:** tab
-- **User intent:** История
-- **Precondition:** Tab bar visible; active=home
-- **Current destination:** ROUTE → /legacy/history
-- **Current code handler:** LegacyTabBar.go
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-### ACT-LGC-SCR-026-16 — [16] Профиль
-
-- **Screen / element:** LGC-SCR-026 / EL-LGC-SCR-026-16
-- **Control:** tab; icon meaning: Profile
-- **User intent:** Профиль
-- **Precondition:** Tab bar visible; active=home
-- **Current destination:** ROUTE → /legacy/profile
-- **Current code handler:** LegacyTabBar.go
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyHome/HomeScreen.tsx`
-- **Owner dependency:** None recorded
-
-## CAS-HOME-003 — Главная — выбор способа пополнения
-
-### ACT-CAS-HOME-003-01 — [01] Закрыть
-
-- **Screen / element:** CAS-HOME-003 / EL-CAS-HOME-003-01
-- **Control:** button; icon meaning: Close
-- **User intent:** Закрыть
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → Close sheet
-- **Current code handler:** onClose
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyTopup/store.ts`, `src/features/legacyTopup/mockData.ts`
-- **Owner dependency:** None recorded
-
-### ACT-CAS-HOME-003-02 — [02] Между счетами
-
-- **Screen / element:** CAS-HOME-003 / EL-CAS-HOME-003-02
-- **Control:** button
-- **User intent:** Между счетами
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → /legacy/topup/between?to=kzt-primary
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** GUEST_GATE → /legacy/auth?qaStep=iin
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyTopup/store.ts`, `src/features/legacyTopup/mockData.ts`
-- **Owner dependency:** None recorded
-
-### ACT-CAS-HOME-003-03 — [03] Картой другого банка
-
-- **Screen / element:** CAS-HOME-003 / EL-CAS-HOME-003-03
-- **Control:** button
-- **User intent:** Картой другого банка
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → /legacy/topup/card?to=kzt-primary
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** GUEST_GATE → /legacy/auth?qaStep=iin
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyTopup/store.ts`, `src/features/legacyTopup/mockData.ts`
-- **Owner dependency:** None recorded
-
-## CAS-HOME-004 — Главная — выбор способа вывода
-
-### ACT-CAS-HOME-004-01 — [01] Закрыть
-
-- **Screen / element:** CAS-HOME-004 / EL-CAS-HOME-004-01
-- **Control:** button; icon meaning: Close
-- **User intent:** Закрыть
-- **Precondition:** Screen visible
-- **Current destination:** LOCAL_STATE → Close sheet
-- **Current code handler:** onClose
-- **Current mock effect:** None
-- **Guest/auth behavior:** Same observable behavior unless noted
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyWithdraw/store.ts`, `src/features/legacyWithdraw/mockData.ts`
-- **Owner dependency:** None recorded
-
-### ACT-CAS-HOME-004-02 — [02] Карта
-
-- **Screen / element:** CAS-HOME-004 / EL-CAS-HOME-004-02
-- **Control:** button
-- **User intent:** Карта
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → /legacy/withdraw/card
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** GUEST_GATE → /legacy/auth?qaStep=iin
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyWithdraw/store.ts`, `src/features/legacyWithdraw/mockData.ts`
-- **Owner dependency:** `Q-WD-001`
-
-### ACT-CAS-HOME-004-03 — [03] Баланс телефона
-
-- **Screen / element:** CAS-HOME-004 / EL-CAS-HOME-004-03
-- **Control:** button
-- **User intent:** Баланс телефона
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → /legacy/withdraw/phone
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** GUEST_GATE → /legacy/auth?qaStep=iin
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyWithdraw/store.ts`, `src/features/legacyWithdraw/mockData.ts`
-- **Owner dependency:** None recorded
-
-### ACT-CAS-HOME-004-04 — [04] Пользователю Cashhello
-
-- **Screen / element:** CAS-HOME-004 / EL-CAS-HOME-004-04
-- **Control:** button
-- **User intent:** Пользователю Cashhello
-- **Precondition:** Screen visible
-- **Current destination:** GUEST_GATE → /legacy/withdraw/cashhello-user
-- **Current code handler:** See source component
-- **Current mock effect:** None
-- **Guest/auth behavior:** GUEST_GATE → /legacy/auth?qaStep=iin
-- **Potential backend requirement:** None identified from current UI
-- **Source trace:** `src/features/legacyWithdraw/store.ts`, `src/features/legacyWithdraw/mockData.ts`
 - **Owner dependency:** None recorded
 
 

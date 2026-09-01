@@ -17,7 +17,9 @@
       "ACT-HOME-001-14",
       "ACT-CAS-AUTH-003-04",
       "ACT-CAS-AUTH-011-02",
-      "ACT-CAS-AUTH-012-02"
+      "ACT-CAS-AUTH-012-02",
+      "ACT-HOME-001-15",
+      "ACT-HOME-001-16"
     ],
     "exit_states": [
       "AUTHORIZED_HOME",
@@ -424,7 +426,6 @@
     "entry_screen": "PAY-001",
     "screens": [
       "LGC-SCR-025",
-      "LGC-SCR-026",
       "PAY-001",
       "CAS-PAY-001",
       "PAY-002",
@@ -435,21 +436,10 @@
       "ACT-LGC-SCR-025-19",
       "ACT-LGC-SCR-025-20",
       "ACT-LGC-SCR-025-21",
-      "ACT-LGC-SCR-025-22",
-      "ACT-LGC-SCR-025-23",
-      "ACT-LGC-SCR-025-24",
-      "ACT-LGC-SCR-025-25",
-      "ACT-LGC-SCR-026-17",
-      "ACT-LGC-SCR-026-18",
-      "ACT-LGC-SCR-026-19",
-      "ACT-LGC-SCR-026-20",
-      "ACT-LGC-SCR-026-21",
-      "ACT-LGC-SCR-026-22",
-      "ACT-LGC-SCR-026-23",
-      "ACT-LGC-SCR-026-24",
       "ACT-PAY-001-10",
       "ACT-PAY-002-07",
-      "ACT-PAY-002-15"
+      "ACT-PAY-002-15",
+      "ACT-LGC-SCR-025-07"
     ],
     "exit_states": [
       "AUTH_GATE",
@@ -529,12 +519,14 @@
       "LGC-SCR-115",
       "LGC-SCR-120",
       "WD-003",
-      "CAS-HIST-005"
+      "CAS-HIST-005",
+      "LGC-SCR-025"
     ],
     "actions": [
       "ACT-LGC-SCR-111-03",
       "ACT-CAS-HIST-002-03",
-      "ACT-LGC-SCR-115-05"
+      "ACT-LGC-SCR-115-05",
+      "ACT-LGC-SCR-025-10"
     ],
     "exit_states": [
       "DETAIL",

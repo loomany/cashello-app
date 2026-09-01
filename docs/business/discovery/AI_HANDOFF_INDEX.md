@@ -58,10 +58,12 @@ Audited `main` SHA: `0c79651ebd6be0c77078e18e031587aaebe08a4a` (GitHub `loomany/
 
 ## Reconciled product baseline
 
-- **Product SHA:** `0c79651ebd6be0c77078e18e031587aaebe08a4a` (recent-operations bonus display)
-- **Previous baseline:** `57061e07c363e69acc449595a3966a5103fcbb47`
-- **Director visual pass SHA:** `597754364ada9dc1f51f62fe86b41a2bc0b24e4b`
-- OWNER_APPROVED_CURRENT_BASE_RATE: **2%** for authorized Home recent-operation bonus display (owner may change later).
-- Guest `+500 Б` registration row remains separate PROTOTYPE_UI_ONLY evidence.
-- Figma HOME-001 frame unchanged; runtime Home may differ (see FIGMA_HANDOFF.md).
+- **Product SHA:** `86e9d3bee9ca13a82474f4acdcdec8f5d0eb3134` (owner visual pass VIS2 — home payment navigation)
+- **Previous baseline:** `dbb0acd38228321e7e3dd0132974bbcf294a878c`
+- Home segmented navigation: `Последние | Все | История`
+- Authorized `Последние`: 4 recent-operation rows; 2% bonus display preserved
+- Guest `+500 Б` registration row preserved
+- `LGC-SCR-026` retired; `/legacy/home?historyLink=filter` is compatibility alias of `LGC-SCR-025`
+- Logical screens: **93**; actions: **425**; business processes: **22**
+- Delta record: [2026-09-01 home payment navigation](../changes/2026-09-01-home-payment-navigation.md)
 - Delta records: [2026-09-01 director visual delta](../changes/2026-09-01-director-visual-delta.md), [2026-09-01 recent operations bonus](../changes/2026-09-01-recent-operations-bonus.md)

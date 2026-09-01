@@ -1050,9 +1050,9 @@
   {
     "action_id": "ACT-LGC-SCR-025-10",
     "screen_id": "LGC-SCR-025",
-    "callout": "06",
-    "label": "См. все",
-    "control_type": "link",
+    "callout": "08",
+    "label": "История",
+    "control_type": "segment",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/history",
     "handler": "router.push(HISTORY_BRIDGES.root)",
@@ -1063,7 +1063,8 @@
     "component": "src/features/legacyHome/HomeScreen.tsx",
     "icon_meaning": null,
     "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/paymentsSegment.ts"
     ],
     "owner_questions": []
   },
@@ -1150,230 +1151,6 @@
   {
     "action_id": "ACT-LGC-SCR-025-16",
     "screen_id": "LGC-SCR-025",
-    "callout": "19",
-    "label": "Профиль",
-    "control_type": "tab",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/profile",
-    "handler": "LegacyTabBar.go",
-    "mock_effect": "None",
-    "precondition": "Tab bar visible; active=home",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "Profile",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-01",
-    "screen_id": "LGC-SCR-026",
-    "callout": "01",
-    "label": "Cashhello — на главную",
-    "control_type": "logo",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/home",
-    "handler": "navigateHome / router.replace",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "Brand / Home",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-02",
-    "screen_id": "LGC-SCR-026",
-    "callout": "02",
-    "label": "Профиль",
-    "control_type": "icon",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/profile",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Opens profile",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "Profile",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-03",
-    "screen_id": "LGC-SCR-026",
-    "callout": "03",
-    "label": "Показать / скрыть балансы",
-    "control_type": "icon",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "balancesHidden",
-    "handler": "setBalancesHidden",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "Eye",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-04",
-    "screen_id": "LGC-SCR-026",
-    "callout": "04",
-    "label": "Пополнить",
-    "control_type": "button",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "TopupSelectSheet",
-    "handler": "setTopupOpen(true)",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "Top-up",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-05",
-    "screen_id": "LGC-SCR-026",
-    "callout": "05",
-    "label": "Вывести",
-    "control_type": "button",
-    "current_destination_type": "LOCAL_STATE",
-    "current_destination": "WithdrawSelectSheet",
-    "handler": "setWithdrawOpen(true)",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "Withdraw",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-10",
-    "screen_id": "LGC-SCR-026",
-    "callout": "06",
-    "label": "Фильтр",
-    "control_type": "link",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/history/filter",
-    "handler": "See source component",
-    "mock_effect": "None",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/session.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-12",
-    "screen_id": "LGC-SCR-026",
-    "callout": "15",
-    "label": "Главная",
-    "control_type": "tab",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/home",
-    "handler": "LegacyTabBar.go",
-    "mock_effect": "None",
-    "precondition": "Tab bar visible; active=home",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-13",
-    "screen_id": "LGC-SCR-026",
-    "callout": "16",
-    "label": "Оплата",
-    "control_type": "tab",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment",
-    "handler": "LegacyTabBar.go",
-    "mock_effect": "None",
-    "precondition": "Tab bar visible; active=home",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-14",
-    "screen_id": "LGC-SCR-026",
-    "callout": "17",
-    "label": "QR",
-    "control_type": "tab",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/qr",
-    "handler": "LegacyTabBar.go",
-    "mock_effect": "None",
-    "precondition": "Tab bar visible; active=home",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": "QR",
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-15",
-    "screen_id": "LGC-SCR-026",
-    "callout": "18",
-    "label": "История",
-    "control_type": "tab",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/history",
-    "handler": "LegacyTabBar.go",
-    "mock_effect": "None",
-    "precondition": "Tab bar visible; active=home",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-16",
-    "screen_id": "LGC-SCR-026",
     "callout": "19",
     "label": "Профиль",
     "control_type": "tab",
@@ -9173,13 +8950,13 @@
   {
     "action_id": "ACT-LGC-SCR-025-18",
     "screen_id": "LGC-SCR-025",
-    "callout": "07",
+    "callout": "09",
     "label": "Ubet",
     "control_type": "row",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/payment/ubet?phone=7078789911&amount=5000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "handler": "router.push(recentOperationPaymentHref(row))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — preview catalog row with 2% bonus display",
     "precondition": "Screen visible",
     "potential_backend_requirement": "None identified from current UI",
     "guest_behavior": "Same observable behavior unless noted",
@@ -9187,20 +8964,21 @@
     "icon_meaning": null,
     "source_trace": [
       "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
+      "src/features/legacyHome/recentOperationsPreview.ts",
+      "src/features/legacyHome/paymentsSegment.ts"
     ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-19",
     "screen_id": "LGC-SCR-025",
-    "callout": "08",
+    "callout": "10",
     "label": "Oinabet",
     "control_type": "row",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/payment/oinabet?phone=7051234567&amount=20000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "handler": "router.push(recentOperationPaymentHref(row))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — preview catalog row with 2% bonus display",
     "precondition": "Screen visible",
     "potential_backend_requirement": "None identified from current UI",
     "guest_behavior": "Same observable behavior unless noted",
@@ -9208,20 +8986,21 @@
     "icon_meaning": null,
     "source_trace": [
       "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
+      "src/features/legacyHome/recentOperationsPreview.ts",
+      "src/features/legacyHome/paymentsSegment.ts"
     ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-20",
     "screen_id": "LGC-SCR-025",
-    "callout": "09",
+    "callout": "11",
     "label": "Tennisi",
     "control_type": "row",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/payment/tennisi?phone=7017891234&amount=1500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "handler": "router.push(recentOperationPaymentHref(row))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — preview catalog row with 2% bonus display",
     "precondition": "Screen visible",
     "potential_backend_requirement": "None identified from current UI",
     "guest_behavior": "Same observable behavior unless noted",
@@ -9229,20 +9008,21 @@
     "icon_meaning": null,
     "source_trace": [
       "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
+      "src/features/legacyHome/recentOperationsPreview.ts",
+      "src/features/legacyHome/paymentsSegment.ts"
     ],
     "owner_questions": []
   },
   {
     "action_id": "ACT-LGC-SCR-025-21",
     "screen_id": "LGC-SCR-025",
-    "callout": "10",
+    "callout": "12",
     "label": "Робокэш / Займер",
     "control_type": "row",
     "current_destination_type": "ROUTE",
     "current_destination": "/legacy/payment/zaimer?phone=7055551234&amount=10000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
+    "handler": "router.push(recentOperationPaymentHref(row))",
+    "mock_effect": "CURRENT_MOCK_BEHAVIOR — preview catalog row with 2% bonus display",
     "precondition": "Screen visible",
     "potential_backend_requirement": "None identified from current UI",
     "guest_behavior": "Same observable behavior unless noted",
@@ -9250,259 +9030,8 @@
     "icon_meaning": null,
     "source_trace": [
       "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-22",
-    "screen_id": "LGC-SCR-025",
-    "callout": "11",
-    "label": "CreditBar",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/creditbar?phone=7070112233&amount=3500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-23",
-    "screen_id": "LGC-SCR-025",
-    "callout": "12",
-    "label": "i-credit.kz",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/icredit?phone=7088887766&amount=7500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-24",
-    "screen_id": "LGC-SCR-025",
-    "callout": "13",
-    "label": "Kengo",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/kengo?phone=7012345678&amount=12000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-025-25",
-    "screen_id": "LGC-SCR-025",
-    "callout": "14",
-    "label": "Sat Credit",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/satcredit?phone=7098765432&amount=2500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-17",
-    "screen_id": "LGC-SCR-026",
-    "callout": "07",
-    "label": "Ubet",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/ubet?phone=7078789911&amount=5000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-18",
-    "screen_id": "LGC-SCR-026",
-    "callout": "08",
-    "label": "Oinabet",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/oinabet?phone=7051234567&amount=20000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-19",
-    "screen_id": "LGC-SCR-026",
-    "callout": "09",
-    "label": "Tennisi",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/tennisi?phone=7017891234&amount=1500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-20",
-    "screen_id": "LGC-SCR-026",
-    "callout": "10",
-    "label": "Робокэш / Займер",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/zaimer?phone=7055551234&amount=10000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-21",
-    "screen_id": "LGC-SCR-026",
-    "callout": "11",
-    "label": "CreditBar",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/creditbar?phone=7070112233&amount=3500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-22",
-    "screen_id": "LGC-SCR-026",
-    "callout": "12",
-    "label": "i-credit.kz",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/icredit?phone=7088887766&amount=7500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-23",
-    "screen_id": "LGC-SCR-026",
-    "callout": "13",
-    "label": "Kengo",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/kengo?phone=7012345678&amount=12000",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
-    ],
-    "owner_questions": []
-  },
-  {
-    "action_id": "ACT-LGC-SCR-026-24",
-    "screen_id": "LGC-SCR-026",
-    "callout": "14",
-    "label": "Sat Credit",
-    "control_type": "row",
-    "current_destination_type": "ROUTE",
-    "current_destination": "/legacy/payment/satcredit?phone=7098765432&amount=2500",
-    "handler": "router.push(PAYMENT_BRIDGES.service(id, { phoneDigits, amountKzt }))",
-    "mock_effect": "CURRENT_MOCK_BEHAVIOR — PROTOTYPE_UI_ONLY preview data",
-    "precondition": "Screen visible",
-    "potential_backend_requirement": "None identified from current UI",
-    "guest_behavior": "Same observable behavior unless noted",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "icon_meaning": null,
-    "source_trace": [
-      "src/features/legacyHome/HomeScreen.tsx",
-      "src/features/legacyHome/recentOperationsPreview.ts"
+      "src/features/legacyHome/recentOperationsPreview.ts",
+      "src/features/legacyHome/paymentsSegment.ts"
     ],
     "owner_questions": []
   },
@@ -9527,5 +9056,110 @@
       "src/features/legacyPayment/mockData.ts"
     ],
     "owner_questions": []
+  },
+  {
+    "mock_effect": "Active segment — shows 4 recent-operation preview rows; no navigation",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/paymentsSegment.ts"
+    ],
+    "owner_questions": [],
+    "action_id": "ACT-LGC-SCR-025-06",
+    "screen_id": "LGC-SCR-025",
+    "callout": "06",
+    "label": "Последние",
+    "control_type": "segment",
+    "current_destination_type": "LOCAL_STATE",
+    "current_destination": "paymentsTab=recent",
+    "handler": "resolvePaymentsSegmentHref(recent) → null"
+  },
+  {
+    "mock_effect": "None",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Same observable behavior unless noted",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/paymentsSegment.ts"
+    ],
+    "owner_questions": [],
+    "action_id": "ACT-LGC-SCR-025-07",
+    "screen_id": "LGC-SCR-025",
+    "callout": "07",
+    "label": "Все",
+    "control_type": "segment",
+    "current_destination_type": "ROUTE",
+    "current_destination": "/legacy/payment",
+    "handler": "router.push(PAYMENT_BRIDGES.root)"
+  },
+  {
+    "mock_effect": "Active segment — guest registration bonus preview row; no navigation",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Stays on guest Home",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/paymentsSegment.ts"
+    ],
+    "owner_questions": [],
+    "action_id": "ACT-HOME-001-06",
+    "screen_id": "HOME-001",
+    "callout": "06",
+    "label": "Последние",
+    "control_type": "segment",
+    "current_destination_type": "LOCAL_STATE",
+    "current_destination": "paymentsTab=recent",
+    "handler": "resolvePaymentsSegmentHref(recent) → null"
+  },
+  {
+    "mock_effect": "None",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Opens auth entry",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/paymentsSegment.ts"
+    ],
+    "owner_questions": [],
+    "action_id": "ACT-HOME-001-15",
+    "screen_id": "HOME-001",
+    "callout": "07",
+    "label": "Все",
+    "control_type": "segment",
+    "current_destination_type": "GUEST_GATE",
+    "current_destination": "/legacy/auth?qaStep=iin",
+    "handler": "router.push(HOME_BRIDGES.login)"
+  },
+  {
+    "mock_effect": "None",
+    "precondition": "Screen visible",
+    "potential_backend_requirement": "None identified from current UI",
+    "guest_behavior": "Opens auth entry",
+    "component": "src/features/legacyHome/HomeScreen.tsx",
+    "icon_meaning": null,
+    "source_trace": [
+      "src/features/legacyHome/HomeScreen.tsx",
+      "src/features/legacyHome/paymentsSegment.ts"
+    ],
+    "owner_questions": [],
+    "action_id": "ACT-HOME-001-16",
+    "screen_id": "HOME-001",
+    "callout": "08",
+    "label": "История",
+    "control_type": "segment",
+    "current_destination_type": "GUEST_GATE",
+    "current_destination": "/legacy/auth?qaStep=iin",
+    "handler": "router.push(HOME_BRIDGES.login)"
   }
 ]

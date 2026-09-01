@@ -630,6 +630,9 @@
       "ACT-HOME-001-03",
       "ACT-HOME-001-04",
       "ACT-HOME-001-05",
+      "ACT-HOME-001-06",
+      "ACT-HOME-001-15",
+      "ACT-HOME-001-16",
       "ACT-HOME-001-12",
       "ACT-HOME-001-13",
       "ACT-HOME-001-14"
@@ -667,12 +670,6 @@
         "path": "screenshots/annotated/LGC-SCR-025__balances-hidden.png",
         "note": null,
         "capture_status": "CAPTURED"
-      },
-      {
-        "state": "RECENT_OPS_SCROLLED",
-        "path": "screenshots/annotated/LGC-SCR-025__recent-ops-scrolled.png",
-        "note": "Lower recent-operation rows visible after scroll; rows show negative KZT amount and +N Б base bonus at 2%",
-        "capture_status": "CAPTURED"
       }
     ],
     "source_status": "CODE_ONLY",
@@ -692,8 +689,6 @@
       "ACT-HOME-001-01",
       "ACT-LGC-SCR-025-01",
       "ACT-LGC-SCR-025-12",
-      "ACT-LGC-SCR-026-01",
-      "ACT-LGC-SCR-026-12",
       "ACT-LGC-SCR-029-01",
       "ACT-LGC-SCR-040-01",
       "ACT-LGC-SCR-066-01",
@@ -739,78 +734,35 @@
       "ACT-LGC-SCR-025-03",
       "ACT-LGC-SCR-025-04",
       "ACT-LGC-SCR-025-05",
+      "ACT-LGC-SCR-025-06",
+      "ACT-LGC-SCR-025-07",
       "ACT-LGC-SCR-025-10",
+      "ACT-LGC-SCR-025-18",
+      "ACT-LGC-SCR-025-19",
+      "ACT-LGC-SCR-025-20",
+      "ACT-LGC-SCR-025-21",
       "ACT-LGC-SCR-025-12",
       "ACT-LGC-SCR-025-13",
       "ACT-LGC-SCR-025-14",
       "ACT-LGC-SCR-025-15",
       "ACT-LGC-SCR-025-16",
-      "ACT-LGC-SCR-025-17",
-      "ACT-LGC-SCR-025-18",
-      "ACT-LGC-SCR-025-19",
-      "ACT-LGC-SCR-025-20",
-      "ACT-LGC-SCR-025-21",
-      "ACT-LGC-SCR-025-22",
-      "ACT-LGC-SCR-025-23",
-      "ACT-LGC-SCR-025-24",
-      "ACT-LGC-SCR-025-25"
+      "ACT-LGC-SCR-025-17"
     ],
     "owner_questions": [
       "Q-AUTH-009"
     ],
-    "screenshot_qa": "VALIDATED"
-  },
-  {
-    "screen_id": "LGC-SCR-026",
-    "aliases": [
-      "legacyNodeId 980:26275"
+    "screenshot_qa": "VALIDATED",
+    "route_aliases": [
+      "/legacy/home?historyLink=filter"
     ],
-    "name": "Главная — ссылка фильтра истории",
-    "module": "HOME",
-    "route": "/legacy/home?historyLink=filter",
-    "auth_state": "AUTHORIZED",
-    "figma_node": null,
-    "legacy_node": "980:26275",
-    "component": "src/features/legacyHome/HomeScreen.tsx",
-    "screenshot": "screenshots/annotated/LGC-SCR-026__history-filter-link.png",
-    "screenshots": [
+    "legacy_route_notes": [
       {
-        "state": "FILTER_LINK_VARIANT",
-        "path": "screenshots/annotated/LGC-SCR-026__history-filter-link.png",
-        "note": null,
-        "capture_status": "CAPTURED"
+        "route": "/legacy/home?historyLink=filter",
+        "classification": "LEGACY_ROUTE_ALIAS",
+        "canonical_screen_id": "LGC-SCR-025",
+        "note": "Compatibility alias — query ignored; not a separate logical screen (LGC-SCR-026 retired)"
       }
-    ],
-    "source_status": "CODE_ONLY",
-    "states": [
-      "AUTHORIZED",
-      "FILTER_LINK_VARIANT",
-      "RECENT_OPERATIONS_PREVIEW"
-    ],
-    "entry_actions": [],
-    "exit_actions": [
-      "ACT-LGC-SCR-026-01",
-      "ACT-LGC-SCR-026-02",
-      "ACT-LGC-SCR-026-03",
-      "ACT-LGC-SCR-026-04",
-      "ACT-LGC-SCR-026-05",
-      "ACT-LGC-SCR-026-10",
-      "ACT-LGC-SCR-026-12",
-      "ACT-LGC-SCR-026-13",
-      "ACT-LGC-SCR-026-14",
-      "ACT-LGC-SCR-026-15",
-      "ACT-LGC-SCR-026-16",
-      "ACT-LGC-SCR-026-17",
-      "ACT-LGC-SCR-026-18",
-      "ACT-LGC-SCR-026-19",
-      "ACT-LGC-SCR-026-20",
-      "ACT-LGC-SCR-026-21",
-      "ACT-LGC-SCR-026-22",
-      "ACT-LGC-SCR-026-23",
-      "ACT-LGC-SCR-026-24"
-    ],
-    "owner_questions": [],
-    "screenshot_qa": "VALIDATED"
+    ]
   },
   {
     "screen_id": "CAS-HOME-003",
@@ -856,8 +808,6 @@
       "ACT-HOME-001-01",
       "ACT-LGC-SCR-025-01",
       "ACT-LGC-SCR-025-12",
-      "ACT-LGC-SCR-026-01",
-      "ACT-LGC-SCR-026-12",
       "ACT-LGC-SCR-029-01",
       "ACT-LGC-SCR-040-01",
       "ACT-LGC-SCR-066-01",
@@ -948,8 +898,6 @@
       "ACT-HOME-001-01",
       "ACT-LGC-SCR-025-01",
       "ACT-LGC-SCR-025-12",
-      "ACT-LGC-SCR-026-01",
-      "ACT-LGC-SCR-026-12",
       "ACT-LGC-SCR-029-01",
       "ACT-LGC-SCR-040-01",
       "ACT-LGC-SCR-066-01",
@@ -1706,8 +1654,6 @@
     "entry_actions": [
       "ACT-LGC-SCR-025-02",
       "ACT-LGC-SCR-025-16",
-      "ACT-LGC-SCR-026-02",
-      "ACT-LGC-SCR-026-16",
       "ACT-LGC-SCR-066-02",
       "ACT-LGC-SCR-066-03",
       "ACT-LGC-SCR-066-07",
@@ -1788,8 +1734,6 @@
     "entry_actions": [
       "ACT-LGC-SCR-025-02",
       "ACT-LGC-SCR-025-16",
-      "ACT-LGC-SCR-026-02",
-      "ACT-LGC-SCR-026-16",
       "ACT-LGC-SCR-066-02",
       "ACT-LGC-SCR-066-03",
       "ACT-LGC-SCR-066-07",
@@ -1855,8 +1799,6 @@
     "entry_actions": [
       "ACT-LGC-SCR-025-02",
       "ACT-LGC-SCR-025-16",
-      "ACT-LGC-SCR-026-02",
-      "ACT-LGC-SCR-026-16",
       "ACT-LGC-SCR-066-02",
       "ACT-LGC-SCR-066-03",
       "ACT-LGC-SCR-066-07",
@@ -3980,7 +3922,6 @@
     ],
     "entry_actions": [
       "ACT-LGC-SCR-025-13",
-      "ACT-LGC-SCR-026-13",
       "ACT-LGC-SCR-066-12",
       "ACT-PAY-001-10",
       "ACT-PAY-001-11",
@@ -4057,7 +3998,6 @@
     ],
     "entry_actions": [
       "ACT-LGC-SCR-025-13",
-      "ACT-LGC-SCR-026-13",
       "ACT-LGC-SCR-066-12",
       "ACT-PAY-001-10",
       "ACT-PAY-001-11",
@@ -4282,8 +4222,6 @@
     "entry_actions": [
       "ACT-LGC-SCR-025-10",
       "ACT-LGC-SCR-025-15",
-      "ACT-LGC-SCR-026-10",
-      "ACT-LGC-SCR-026-15",
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06",
       "ACT-LGC-SCR-033-05",
@@ -4360,8 +4298,6 @@
     "entry_actions": [
       "ACT-LGC-SCR-025-10",
       "ACT-LGC-SCR-025-15",
-      "ACT-LGC-SCR-026-10",
-      "ACT-LGC-SCR-026-15",
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06",
       "ACT-LGC-SCR-033-05",
@@ -4428,8 +4364,6 @@
     "entry_actions": [
       "ACT-LGC-SCR-025-10",
       "ACT-LGC-SCR-025-15",
-      "ACT-LGC-SCR-026-10",
-      "ACT-LGC-SCR-026-15",
       "ACT-LGC-SCR-032-05",
       "ACT-LGC-SCR-032-06",
       "ACT-LGC-SCR-033-05",
@@ -4496,9 +4430,7 @@
       "SELECTED",
       "EMPTY_RESULT"
     ],
-    "entry_actions": [
-      "ACT-LGC-SCR-026-10"
-    ],
+    "entry_actions": [],
     "exit_actions": [
       "ACT-LGC-SCR-113-01",
       "ACT-LGC-SCR-113-02",
@@ -4683,7 +4615,6 @@
     ],
     "entry_actions": [
       "ACT-LGC-SCR-025-14",
-      "ACT-LGC-SCR-026-14",
       "ACT-LGC-SCR-066-13",
       "ACT-PAY-001-21",
       "ACT-PAY-002-11",

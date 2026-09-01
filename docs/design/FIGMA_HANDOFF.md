@@ -667,3 +667,11 @@ No authentication tokens or private URLs are included.
 - **Figma file:** Cashello — Daur (`RbjNBmxd2FERlisMJoru3I`) — **UNCHANGED**
 - **Current code:** authorized Home recent-operation rows display negative KZT amount plus positive `+N Б` computed at owner-approved current base rate **2%**.
 - **Runtime is ahead of Figma** for this presentation; do not treat Figma frame `7:5` as full current-product spec.
+
+## VIS2 Home payment navigation drift (86e9d3b)
+
+- **Figma file:** unchanged
+- **Runtime Home:** segmented plaque `Последние | Все | История` inside payments card
+- **Authorized `Последние`:** 4 recent-operation preview rows (was 8 in prior docs baseline)
+- **Figma modified:** NO — runtime ahead of Figma frame `7:5` / HOME body
+- **LGC-SCR-026:** retired; `/legacy/home?historyLink=filter` is alias of LGC-SCR-025 only

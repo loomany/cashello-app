@@ -199,8 +199,8 @@ These are interview and implementation-scope candidates only. They do **not** co
 
 **Actor:** GUEST_OR_AUTHORIZED\
 **Entry screen:** `PAY-001`\
-**Screens:** `LGC-SCR-025`, `LGC-SCR-026`, `PAY-001`, `CAS-PAY-001`, `PAY-002`, `CAS-PAY-002`\
-**Actions:** `ACT-LGC-SCR-025-18`…`025-25`, `ACT-LGC-SCR-026-17`…`026-24`, `ACT-PAY-001-10`, `ACT-PAY-002-07`, `ACT-PAY-002-15`\
+**Screens:** `LGC-SCR-025`, `LGC-SCR-025`, `PAY-001`, `CAS-PAY-001`, `PAY-002`, `CAS-PAY-002`\
+**Actions:** `ACT-LGC-SCR-025-18`…`025-25`, `ACT-LGC-SCR-025-10`…`026-24`, `ACT-PAY-001-10`, `ACT-PAY-002-07`, `ACT-PAY-002-15`\
 **Current exit states:** AUTH_GATE, MOCK_ALERT_SUCCESS
 
 **CURRENT PRODUCT OBSERVATION**
