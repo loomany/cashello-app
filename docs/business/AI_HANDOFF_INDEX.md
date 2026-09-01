@@ -11,42 +11,41 @@ The application is a frontend prototype with mock financial behavior and no prod
 
 ## Read in this order
 
-1. [Owner decisions pending](./OWNER_DECISIONS_PENDING.md) — unresolved decisions that must not be inferred from the prototype.
-2. [Discovery handoff index](./discovery/AI_HANDOFF_INDEX.md) — evidence classes, stable-ID lookup, and discovery boundaries.
-3. [Business process candidates](./discovery/BUSINESS_PROCESS_CANDIDATES.md) and [current flow map](./discovery/CURRENT_FLOW_MAP.md) — candidate processes and currently observed transitions.
-4. [Product screen catalog](./discovery/PRODUCT_SCREEN_CATALOG.md) and [UI action catalog](./discovery/UI_ACTION_CATALOG.md) — screen- and control-level evidence.
-5. [Owner questionnaire](./discovery/OWNER_QUESTIONNAIRE.md) — complete human-readable decision prompts.
-6. [Coverage report](./discovery/COVERAGE_REPORT.md) — scope, counts, runtime coverage, and known capture gaps.
+1. **[Talgat handoff](../backend/TALGAT_HANDOFF.md)** — single backend entry point (NEW app only, audit 2026-09-01).
+2. **[NEW app route map](./NEW_APP_ROUTE_MAP.md)** · **[NEW app screen catalog](./NEW_APP_SCREEN_CATALOG.md)** · **[NEW app action catalog](./NEW_APP_ACTION_CATALOG.md)** — current product from source code.
+3. [Owner decisions resolved](./OWNER_DECISIONS_RESOLVED.md) — approved answers from Phase C audit.
+4. [Owner decisions pending](./OWNER_DECISIONS_PENDING.md) — remaining unanswered questions.
+5. [Business rules](./BUSINESS_RULES.md) and [Business process spec](./BUSINESS_PROCESS_SPEC.md) — approved rules and processes (NEW-* IDs).
+6. [Screen API matrix](../backend/SCREEN_API_MATRIX.md) — screen → API mapping (no screenshot evidence).
+7. [Old Cashhello purge report](./OLD_CASHHELLO_PURGE_REPORT.md) — what is historical vs current.
 
-For implementation-specific context, also consult the [backend handoff](../backend/BACKEND_HANDOFF.md), [API integration map](../backend/API_INTEGRATION_MAP.md), and [Figma handoff](../design/FIGMA_HANDOFF.md).
+**Historical only (do not use for backend):** [discovery/PRODUCT_SCREEN_CATALOG.md](./discovery/PRODUCT_SCREEN_CATALOG.md), [discovery/UI_ACTION_CATALOG.md](./discovery/UI_ACTION_CATALOG.md), [discovery/CURRENT_FLOW_MAP.md](./discovery/CURRENT_FLOW_MAP.md), [discovery/manifests/screens.json](./discovery/manifests/screens.json). Previous annotated screenshots were **deleted** and are not evidence.
+
+For implementation-specific context, also consult [backend handoff](../backend/BACKEND_HANDOFF.md), [API integration map](../backend/API_INTEGRATION_MAP.md), and [Figma handoff](../design/FIGMA_HANDOFF.md).
 
 ## Source-of-truth order
 
-1. Explicit owner-approved business decisions
-2. `BUSINESS_PROCESS_SPEC.md` and `BUSINESS_RULES.md` when they exist
-3. Discovery manifests and catalogs
-4. Backend and design handoff documents
-5. Source code and observed prototype runtime
+1. **Current app entry** — `/` → `/legacy/home?guest=1` (`src/app/index.tsx`, `publicRoot.ts`)
+2. **Reachable navigation** from entry (see NEW_APP_ROUTE_MAP)
+3. **`src/**` implementation**
+4. Explicit owner-approved business decisions
+5. NEW_APP_* catalogs and BUSINESS_PROCESS_SPEC
+6. Historical discovery manifests (reconciliation only — not evidence)
+
+Previous Cashhello screenshots are **NOT** a source of truth. They were intentionally removed.
 
 Current mock behavior, UI copy, delays, amounts, fees, limits, statuses, and static rates are evidence about the prototype only. They are not production rules unless the owner explicitly approves them.
 
 ## Stable-ID lookup
 
-Use the machine-readable manifests for precise lookup and cross-references:
+**Use NEW-* IDs for current handoff:**
 
-- [screens.json](./discovery/manifests/screens.json)
-- [actions.json](./discovery/manifests/actions.json)
-- [flows.json](./discovery/manifests/flows.json)
-- [owner_questions.json](./discovery/manifests/owner_questions.json)
+- [NEW_APP_SCREEN_CATALOG.json](./NEW_APP_SCREEN_CATALOG.json) — `NEW-HOME-001`, `NEW-AUTH-*`, `NEW-PAY-*`, etc.
+- [NEW_APP_ACTION_CATALOG.json](./NEW_APP_ACTION_CATALOG.json) — `NEW-ACT-*`
+- [BUSINESS_PROCESS_SPEC.json](./BUSINESS_PROCESS_SPEC.json) — `BP-*`
+- [owner_questions.json](./discovery/manifests/owner_questions.json) — `Q-*`
 
-Stable ID prefixes:
-
-- `HOME-*`, `CAS-*`, `LGC-SCR-*`, `PAY-*`, `QR-*`, `WD-*` — logical screens
-- `ACT-*` — UI actions
-- `BP-*` — business process candidates
-- `Q-*` — owner decisions
-
-Follow IDs across manifests instead of inferring behavior from filenames or screenshots. Annotated evidence is under [screenshots/annotated](./discovery/screenshots/annotated/); states marked `CAPTURE_GAP` are not runtime-validated captures of the named state.
+Legacy CAS-/LGC-/ACT-* IDs in discovery manifests are **historical only**.
 
 ## AI working rules
 
@@ -58,7 +57,7 @@ Follow IDs across manifests instead of inferring behavior from filenames or scre
 
 ## Package snapshot
 
-The discovery package records 93 logical screens, 425 actions, 22 business process candidates, and 130 owner questions. Every owner question is currently `UNANSWERED`; see [Owner decisions pending](./OWNER_DECISIONS_PENDING.md) for the decision queue.
+The discovery package records 93 logical screens, 425 actions, 22 business process candidates, and 130 owner questions. After handoff audit 2026-09-01: **15 answered**, **11 PARKED_ILYA**, **97 UNANSWERED** — see [Owner decisions resolved](./OWNER_DECISIONS_RESOLVED.md).
 
 ## Validation
 

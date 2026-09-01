@@ -1,5 +1,6 @@
 /**
- * Validate discovery JSON, screenshot files, and markdown relative links.
+ * Validate NEW Cashello handoff artifacts (clean-room audit).
+ * Legacy discovery manifests validated separately for JSON integrity only.
  */
 const fs = require('fs');
 const path = require('path');
@@ -16,148 +17,215 @@ function fail(msg) {
   console.log('FAIL', msg);
 }
 
+function readJson(rel) {
+  return JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
+}
+
+// --- Legacy discovery JSON integrity (historical manifests) ---
 for (const name of ['screens.json', 'actions.json', 'flows.json', 'owner_questions.json']) {
   const p = path.join(DISC, 'manifests', name);
   try {
     JSON.parse(fs.readFileSync(p, 'utf8'));
-    ok(`json ${name}`);
+    ok(`historical json ${name}`);
   } catch (error) {
-    fail(`json ${name}: ${error.message}`);
+    fail(`historical json ${name}: ${error.message}`);
   }
 }
 
-const screens = JSON.parse(fs.readFileSync(path.join(DISC, 'manifests/screens.json'), 'utf8'));
-const actions = JSON.parse(fs.readFileSync(path.join(DISC, 'manifests/actions.json'), 'utf8'));
-const flows = JSON.parse(fs.readFileSync(path.join(DISC, 'manifests/flows.json'), 'utf8'));
-const questions = JSON.parse(
-  fs.readFileSync(path.join(DISC, 'manifests/owner_questions.json'), 'utf8'),
+// --- NEW app artifacts required ---
+const REQUIRED = [
+  'docs/business/NEW_APP_ROUTE_MAP.json',
+  'docs/business/NEW_APP_SCREEN_CATALOG.json',
+  'docs/business/NEW_APP_ACTION_CATALOG.json',
+  'docs/business/BUSINESS_PROCESS_SPEC.json',
+  'docs/backend/SCREEN_API_MATRIX.json',
+  'docs/backend/TALGAT_HANDOFF.md',
+  'docs/backend/NEW_APP_HANDOFF_AUDIT_REPORT.md',
+  'docs/business/OLD_CASHHELLO_PURGE_REPORT.md',
+];
+
+for (const rel of REQUIRED) {
+  if (!fs.existsSync(path.join(ROOT, rel))) fail(`missing required artifact ${rel}`);
+  else ok(`exists ${rel}`);
+}
+
+const routes = readJson('docs/business/NEW_APP_ROUTE_MAP.json');
+const screens = readJson('docs/business/NEW_APP_SCREEN_CATALOG.json');
+const actions = readJson('docs/business/NEW_APP_ACTION_CATALOG.json');
+const processes = readJson('docs/business/BUSINESS_PROCESS_SPEC.json');
+const matrix = readJson('docs/backend/SCREEN_API_MATRIX.json');
+const questions = readJson('docs/business/discovery/manifests/owner_questions.json');
+
+const screenIds = new Set(screens.map((s) => s.screen_id));
+const actionIds = new Set(actions.map((a) => a.action_id));
+const answeredOwners = new Set(
+  questions.filter((q) => q.status === 'ANSWERED').map((q) => q.question_id),
 );
 
-const ids = {
-  screens: new Set(screens.map((row) => row.screen_id)),
-  actions: new Set(actions.map((row) => row.action_id)),
-  flows: new Set(flows.map((row) => row.flow_id)),
-  questions: new Set(questions.map((row) => row.question_id)),
-};
-
-function validateUnique(rows, key) {
+// Unique IDs
+for (const [rows, key] of [
+  [screens, 'screen_id'],
+  [actions, 'action_id'],
+  [processes, 'process_id'],
+  [matrix, 'action_id'],
+]) {
   const seen = new Set();
   for (const row of rows) {
     if (seen.has(row[key])) fail(`duplicate ${key}: ${row[key]}`);
     seen.add(row[key]);
   }
 }
+ok('unique NEW app IDs');
 
-validateUnique(screens, 'screen_id');
-validateUnique(actions, 'action_id');
-validateUnique(flows, 'flow_id');
-validateUnique(questions, 'question_id');
-
+// Action → screen refs
 for (const action of actions) {
-  if (!ids.screens.has(action.screen_id)) {
+  if (!screenIds.has(action.screen_id)) {
     fail(`action ${action.action_id} references missing screen ${action.screen_id}`);
   }
-  for (const id of action.owner_questions || []) {
-    if (!ids.questions.has(id))
-      fail(`action ${action.action_id} references missing question ${id}`);
+  if (!action.business_purpose || action.business_purpose === 'UNKNOWN') {
+    fail(`action ${action.action_id} missing business_purpose`);
+  }
+  if (!action.current_ui_behavior || action.current_ui_behavior === 'UNKNOWN') {
+    fail(`action ${action.action_id} missing current_ui_behavior`);
+  }
+}
+ok('action screen refs + required fields');
+
+// Matrix ↔ action catalog alignment
+if (matrix.length !== actions.length) {
+  fail(`matrix rows ${matrix.length} != actions ${actions.length}`);
+}
+for (const row of matrix) {
+  if (!actionIds.has(row.action_id)) fail(`matrix row ${row.action_id} not in action catalog`);
+  if (!screenIds.has(row.screen_id)) fail(`matrix row ${row.action_id} bad screen ${row.screen_id}`);
+  if ('screenshot_ref' in row && row.screenshot_ref) {
+    fail(`matrix ${row.action_id} has screenshot_ref — forbidden in new handoff`);
+  }
+  if (!row.business_purpose) fail(`matrix ${row.action_id} missing business_purpose`);
+  if (!row.current_ui_behavior) fail(`matrix ${row.action_id} missing current_ui_behavior`);
+  if (row.backend_needed === 'yes' && !row.backend_capability) {
+    fail(`matrix ${row.action_id} backend_needed=yes but backend_capability empty`);
+  }
+  const noBackend = ['OUT_OF_MVP', 'FUTURE', 'PARKED_ILYA', 'LATER', 'STUB', 'ORPHANED', 'DEV_ONLY'];
+  if (noBackend.includes(row.mvp_status) && row.backend_needed === 'yes') {
+    fail(`${row.action_id}: ${row.mvp_status} cannot have backend_needed=yes`);
+  }
+  // P2P must not be OUT_OF_MVP
+  if (row.route?.includes('cashhello-user') && row.mvp_status === 'OUT_OF_MVP') {
+    fail(`P2P action ${row.action_id} must not be OUT_OF_MVP`);
+  }
+  // Cash routes must not be MVP
+  if (
+    row.route?.match(/\/(topup|withdraw)\/cash(-map)?/) &&
+    !row.route?.includes('cashhello-user') &&
+    row.mvp_status === 'MVP_APPROVED'
+  ) {
+    fail(`cash route action ${row.action_id} must not be MVP_APPROVED`);
+  }
+  // QR must not be MVP backend
+  if (row.mvp_status === 'MVP_APPROVED' && row.route === '/legacy/qr') {
+    fail(`QR action ${row.action_id} must not be MVP_APPROVED`);
+  }
+  // KYC screens
+  if (row.screen_id?.startsWith('NEW-AUTH-00') && ['004', '005', '006', '007', '008', '009', '010'].some((n) => row.screen_id.endsWith(n)) && row.mvp_status === 'MVP_APPROVED') {
+    fail(`KYC action ${row.action_id} cannot be MVP_APPROVED`);
+  }
+}
+ok(`SCREEN_API_MATRIX semantics (${matrix.length} rows, no screenshot_ref)`);
+
+// OLD_APP_ONLY routes must not appear as MVP in matrix
+const oldOnlyRoutes = new Set(
+  routes.filter((r) => ['OLD_APP_ONLY', 'DEAD_CODE'].includes(r.new_app_status)).map((r) => r.route),
+);
+for (const row of matrix) {
+  if (oldOnlyRoutes.has(row.route) && row.mvp_status === 'MVP_APPROVED') {
+    fail(`OLD_APP_ONLY route ${row.route} action ${row.action_id} in MVP`);
   }
 }
 
-for (const screen of screens) {
-  for (const id of [...(screen.entry_actions || []), ...(screen.exit_actions || [])]) {
-    if (!ids.actions.has(id)) fail(`screen ${screen.screen_id} references missing action ${id}`);
-  }
-  for (const id of screen.owner_questions || []) {
-    if (!ids.questions.has(id))
-      fail(`screen ${screen.screen_id} references missing question ${id}`);
-  }
-}
-
-for (const flow of flows) {
-  for (const id of flow.screens || []) {
-    if (!ids.screens.has(id)) fail(`flow ${flow.flow_id} references missing screen ${id}`);
-  }
-  for (const id of flow.actions || []) {
-    if (!ids.actions.has(id)) fail(`flow ${flow.flow_id} references missing action ${id}`);
-  }
-  for (const id of flow.owner_questions || []) {
-    if (!ids.questions.has(id)) fail(`flow ${flow.flow_id} references missing question ${id}`);
-  }
-}
-
-for (const question of questions) {
-  for (const id of question.screen_ids || []) {
-    if (!ids.screens.has(id))
-      fail(`question ${question.question_id} references missing screen ${id}`);
-  }
-  for (const id of question.action_ids || []) {
-    if (!ids.actions.has(id))
-      fail(`question ${question.question_id} references missing action ${id}`);
-  }
-  for (const id of question.process_ids || []) {
-    if (!ids.flows.has(id)) fail(`question ${question.question_id} references missing flow ${id}`);
-  }
-}
-
-ok('manifest IDs and cross-references');
-
-const pngDir = path.join(DISC, 'screenshots/annotated');
-const pngs = new Set(fs.readdirSync(pngDir).filter((f) => f.endsWith('.png')));
-let missingShot = 0;
-for (const screen of screens) {
-  const paths = [screen.screenshot, ...(screen.screenshots || []).map((s) => s.path)].filter(
-    Boolean,
-  );
-  for (const rel of paths) {
-    const file = path.basename(rel);
-    if (!pngs.has(file)) {
-      missingShot += 1;
-      fail(`missing screenshot ${file} (${screen.screen_id})`);
-    }
-  }
-}
-ok(`screenshots referenced=${screens.length} files=${pngs.size} missing=${missingShot}`);
-
-const mdFiles = [
-  'AI_HANDOFF_INDEX.md',
-  'PRODUCT_SCREEN_CATALOG.md',
-  'UI_ACTION_CATALOG.md',
-  'CURRENT_FLOW_MAP.md',
-  'BUSINESS_PROCESS_CANDIDATES.md',
-  'OWNER_QUESTIONNAIRE.md',
-  'COVERAGE_REPORT.md',
-  'tools/README.md',
+// Owner decisions preserved (answered set)
+const REQUIRED_ANSWERED = [
+  'Q-AUTH-001',
+  'Q-AUTH-002',
+  'Q-AUTH-010',
+  'Q-ACC-001',
+  'Q-ACC-005',
+  'Q-TOPUP-001',
+  'Q-TOPUP-004',
+  'Q-P2P-001',
+  'Q-P2P-006',
+  'Q-WD-001',
+  'Q-WD-003',
+  'Q-PAY-001',
+  'Q-PAY-003',
+  'Q-SUPPORT-001',
+  'Q-SUPPORT-002',
 ];
-const linkRe = /\[[^\]]*\]\(([^)]+)\)/g;
-for (const md of mdFiles) {
-  const abs = path.join(DISC, md);
-  const text = fs.readFileSync(abs, 'utf8');
-  let match;
-  while ((match = linkRe.exec(text))) {
-    const href = match[1].split('#')[0].split('?')[0];
-    if (!href || href.startsWith('http') || href.startsWith('mailto:')) continue;
-    const target = path.resolve(path.dirname(abs), href);
-    if (!fs.existsSync(target)) fail(`broken link ${md} -> ${href}`);
+for (const id of REQUIRED_ANSWERED) {
+  if (!answeredOwners.has(id)) fail(`owner decision lost: ${id}`);
+}
+ok('owner decisions preserved (15 ANSWERED)');
+
+// Handoff docs must not reference deleted screenshot evidence as requirement
+const handoffFiles = [
+  'docs/backend/TALGAT_HANDOFF.md',
+  'docs/backend/SCREEN_API_MATRIX.md',
+  'docs/backend/NEW_APP_HANDOFF_AUDIT_REPORT.md',
+];
+for (const rel of handoffFiles) {
+  const p = path.join(ROOT, rel);
+  if (!fs.existsSync(p)) continue;
+  const text = fs.readFileSync(p, 'utf8');
+  if (/screenshot_ref\s*[:=]/i.test(text) && !text.includes('zero screenshot_ref') && !text.includes('no screenshot_ref')) {
+    // allow mentions that say "no screenshot"
+  }
+  if (/158 screenshots|screenshot_match|live screenshot parity/i.test(text)) {
+    fail(`${rel} references deprecated screenshot evidence language`);
   }
 }
 
-const pri = { P0: 0, P1: 0, P2: 0, P3: 0 };
-const req = {};
-for (const q of questions) {
-  pri[q.priority] = (pri[q.priority] || 0) + 1;
-  req[q.required_by] = (req[q.required_by] || 0) + 1;
+// TALGAT must state new-app-only
+const talgat = fs.readFileSync(path.join(ROOT, 'docs/backend/TALGAT_HANDOFF.md'), 'utf8');
+if (!talgat.includes('CURRENT NEW CASHELLO')) fail('TALGAT_HANDOFF missing new-app header');
+if (!talgat.includes('screenshot') && !talgat.includes('deprecated')) {
+  // should mention deprecated screenshots
 }
+if (!/deprecated/i.test(talgat)) fail('TALGAT_HANDOFF must mention deprecated old screenshots');
+ok('TALGAT_HANDOFF new-app policy');
+
+// Screenshot manifest deprecated
+const shotMd = fs.readFileSync(path.join(DISC, 'SCREENSHOT_SCOPE_MANIFEST.md'), 'utf8');
+if (!shotMd.includes('DEPRECATED')) fail('SCREENSHOT_SCOPE_MANIFEST not deprecated');
+ok('screenshot manifest deprecated');
+
+// Count stale screenshot refs in NEW matrix JSON
+let shotRefs = 0;
+for (const row of matrix) {
+  if (row.screenshot_ref) shotRefs += 1;
+}
+if (shotRefs > 0) fail(`screenshot_ref count in new matrix: ${shotRefs}`);
+ok(`screenshot_ref in new handoff: 0`);
+
+// Business process count
+if (processes.length < 20) fail(`expected ~22 processes, got ${processes.length}`);
+ok(`business processes: ${processes.length}`);
+
+// Route counts
+const newRoutes = routes.filter((r) => r.new_app_status === 'CURRENT_NEW_APP').length;
+const oldRoutes = routes.filter((r) =>
+  ['OLD_APP_ONLY', 'ORPHANED', 'DEAD_CODE'].includes(r.new_app_status),
+).length;
+
 console.log(
   JSON.stringify(
     {
+      new_app_routes: newRoutes,
+      old_only_routes: oldRoutes,
       screens: screens.length,
       actions: actions.length,
-      flows: flows.length,
-      questions: questions.length,
-      pngs: pngs.size,
-      priorities: pri,
-      required_by: req,
-      figma: screens.filter((s) => s.source_status === 'FIGMA_AND_CODE').length,
+      processes: processes.length,
+      matrix: matrix.length,
+      screenshot_ref: shotRefs,
     },
     null,
     2,

@@ -1,5 +1,7 @@
 # Cashello Backend Handoff
 
+> **SCOPE WARNING (reconciliation 2026-09-01):** This document describes **current source architecture** and prototype behavior. It is **NOT** the approved MVP backend scope. For what Talgat may implement, read **[TALGAT_HANDOFF.md](./TALGAT_HANDOFF.md)** first. Cash top-up, cash withdrawal, QR, card, KYC provider, and internal support tickets are **not** approved backend work unless explicitly listed there.
+
 **Audience:** Backend developer  
 **Canonical repository:** [loomany/cashello-app](https://github.com/loomany/cashello-app) — branch `main`
 **Public baseline:** `75ce303c037f57d5fc50d1f3f22ade5025ac157e` (root commit of this repository)
@@ -550,6 +552,8 @@ Sensitive payment card data should be tokenized/provider-owned. Do not store ful
 ---
 
 ## 16. Backend replacement points
+
+> **Not MVP scope:** Rows for cash top-up, cash withdrawal, QR production, card issuer, and KYC provider describe **prototype UI only** — see [TALGAT_HANDOFF.md](./TALGAT_HANDOFF.md) DO NOT IMPLEMENT list.
 
 Summary table — see `API_INTEGRATION_MAP.md` for full capability map.
 

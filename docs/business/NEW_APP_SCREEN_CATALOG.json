@@ -1,0 +1,1070 @@
+[
+  {
+    "screen_id": "NEW-ENTRY-001",
+    "name": "App entry redirect",
+    "route": "/",
+    "source_file": "src/app/index.tsx",
+    "auth_mode": "PUBLIC",
+    "entry_points": [
+      "APP_LAUNCH"
+    ],
+    "exit_points": [
+      "NEW-HOME-001"
+    ],
+    "purpose": "Bootstrap to public guest home",
+    "current_state": "LIVE",
+    "mvp_status": "MVP",
+    "business_process": null,
+    "owner_dependencies": [],
+    "backend_needed": "no",
+    "notes": "No UI"
+  },
+  {
+    "screen_id": "NEW-HOME-001",
+    "name": "Guest Home",
+    "route": "/legacy/home?guest=1",
+    "source_file": "src/features/legacyHome/HomeScreen.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-ENTRY-001",
+      "NEW-PROF-SHEET-001",
+      "NEW-AUTH-001 exit"
+    ],
+    "exit_points": [
+      "NEW-AUTH-003",
+      "NEW-SHEET-TOPUP-001",
+      "NEW-SHEET-WD-001",
+      "NEW-SUPPORT-001"
+    ],
+    "purpose": "Browse app as guest; gated financial actions",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001",
+    "owner_dependencies": [
+      "Q-AUTH-001"
+    ],
+    "backend_needed": "partial",
+    "notes": "Zero balances; login CTA"
+  },
+  {
+    "screen_id": "NEW-HOME-002",
+    "name": "Authorized Home",
+    "route": "/legacy/home",
+    "source_file": "src/features/legacyHome/HomeScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-AUTH-015",
+      "TAB:home",
+      "NEW-WD-004"
+    ],
+    "exit_points": [
+      "NEW-PAY-001",
+      "NEW-PAY-002",
+      "NEW-HIST-001",
+      "NEW-SHEET-TOPUP-001",
+      "NEW-SHEET-WD-001"
+    ],
+    "purpose": "Primary hub — balances, quick actions, recent payments",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-ACC-001",
+    "owner_dependencies": [
+      "Q-ACC-001",
+      "Q-ACC-005"
+    ],
+    "backend_needed": "yes",
+    "notes": "Mock balances from store"
+  },
+  {
+    "screen_id": "NEW-AUTH-001",
+    "name": "Auth splash",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/OnboardingView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH flow start"
+    ],
+    "exit_points": [
+      "NEW-AUTH-002"
+    ],
+    "purpose": "Brand splash before onboarding",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001",
+    "owner_dependencies": [
+      "Q-AUTH-001"
+    ],
+    "backend_needed": "no",
+    "notes": "Auto-advance 1.4s"
+  },
+  {
+    "screen_id": "NEW-AUTH-002",
+    "name": "Auth onboarding",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/OnboardingView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-001"
+    ],
+    "exit_points": [
+      "NEW-AUTH-003"
+    ],
+    "purpose": "Product intro carousel",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001",
+    "owner_dependencies": [],
+    "backend_needed": "no",
+    "notes": "Skippable"
+  },
+  {
+    "screen_id": "NEW-AUTH-003",
+    "name": "Phone / IIN entry (login entry)",
+    "route": "/legacy/auth?qaStep=iin",
+    "source_file": "src/features/legacyAuth/screens/RegisterIinView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-HOME-001 login",
+      "NEW-HOME-001 gated",
+      "NEW-SHEET-TOPUP-001 guest",
+      "NEW-SHEET-WD-001 guest"
+    ],
+    "exit_points": [
+      "NEW-AUTH-004",
+      "NEW-HOME-001"
+    ],
+    "purpose": "Start auth — phone determines login vs register",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001,BP-AUTH-002",
+    "owner_dependencies": [
+      "Q-AUTH-001",
+      "Q-AUTH-002"
+    ],
+    "backend_needed": "yes",
+    "notes": "Guest login skips splash via qaStep=iin"
+  },
+  {
+    "screen_id": "NEW-AUTH-004",
+    "name": "Identity intro (KYC prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/IdentityView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-003"
+    ],
+    "exit_points": [
+      "NEW-AUTH-005"
+    ],
+    "purpose": "KYC identity step intro",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "DO NOT IMPLEMENT — Q-KYC-001 parked"
+  },
+  {
+    "screen_id": "NEW-AUTH-005",
+    "name": "Face camera (KYC prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-004"
+    ],
+    "exit_points": [
+      "NEW-AUTH-006",
+      "NEW-AUTH-007"
+    ],
+    "purpose": "Face capture prototype",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "KYC parked"
+  },
+  {
+    "screen_id": "NEW-AUTH-006",
+    "name": "Face fallback (KYC prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/FaceFallbackView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-005 fail"
+    ],
+    "exit_points": [
+      "NEW-AUTH-007"
+    ],
+    "purpose": "Alternate face capture",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "KYC parked"
+  },
+  {
+    "screen_id": "NEW-AUTH-007",
+    "name": "Document front (KYC prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-005",
+      "NEW-AUTH-006"
+    ],
+    "exit_points": [
+      "NEW-AUTH-008"
+    ],
+    "purpose": "ID document front",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "KYC parked"
+  },
+  {
+    "screen_id": "NEW-AUTH-008",
+    "name": "Document turn (KYC prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-007"
+    ],
+    "exit_points": [
+      "NEW-AUTH-009"
+    ],
+    "purpose": "ID document flip guidance",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "KYC parked"
+  },
+  {
+    "screen_id": "NEW-AUTH-009",
+    "name": "Document back (KYC prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/components/CameraChrome.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-008"
+    ],
+    "exit_points": [
+      "NEW-AUTH-010"
+    ],
+    "purpose": "ID document back",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "KYC parked"
+  },
+  {
+    "screen_id": "NEW-AUTH-010",
+    "name": "KYC phone step (prototype)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/PhoneView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-009"
+    ],
+    "exit_points": [
+      "NEW-AUTH-011"
+    ],
+    "purpose": "Phone re-entry in KYC chain",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "Distinct from normal auth phone step"
+  },
+  {
+    "screen_id": "NEW-AUTH-011",
+    "name": "WhatsApp OTP verification",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/PhoneView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-010",
+      "NEW-AUTH-003 phone submit"
+    ],
+    "exit_points": [
+      "NEW-AUTH-012",
+      "NEW-AUTH-015"
+    ],
+    "purpose": "Verify OTP via WhatsApp",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001,BP-AUTH-002",
+    "owner_dependencies": [
+      "Q-AUTH-002",
+      "Q-AUTH-010"
+    ],
+    "backend_needed": "yes",
+    "notes": "WhatsApp OTP owner-approved"
+  },
+  {
+    "screen_id": "NEW-AUTH-012",
+    "name": "Create PIN",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/PinView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-011 new user"
+    ],
+    "exit_points": [
+      "NEW-AUTH-013"
+    ],
+    "purpose": "Set app PIN for new user",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "4-digit PIN pad"
+  },
+  {
+    "screen_id": "NEW-AUTH-013",
+    "name": "Repeat PIN",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/PinView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-012"
+    ],
+    "exit_points": [
+      "NEW-AUTH-014",
+      "NEW-HOME-002"
+    ],
+    "purpose": "Confirm PIN match",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Mismatch → pinError"
+  },
+  {
+    "screen_id": "NEW-AUTH-014",
+    "name": "PIN mismatch error",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/PinView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-013 mismatch"
+    ],
+    "exit_points": [
+      "NEW-AUTH-012"
+    ],
+    "purpose": "PIN mismatch recovery",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Retry create PIN"
+  },
+  {
+    "screen_id": "NEW-AUTH-015",
+    "name": "PIN login (returning user)",
+    "route": "/legacy/auth",
+    "source_file": "src/features/legacyAuth/screens/PinView.tsx",
+    "auth_mode": "GUEST",
+    "entry_points": [
+      "NEW-AUTH-011 returning"
+    ],
+    "exit_points": [
+      "NEW-HOME-002"
+    ],
+    "purpose": "Returning user PIN entry",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-AUTH-002",
+    "owner_dependencies": [
+      "Q-AUTH-010"
+    ],
+    "backend_needed": "yes",
+    "notes": "Single session policy"
+  },
+  {
+    "screen_id": "NEW-PAY-001",
+    "name": "Payment catalog",
+    "route": "/legacy/payment",
+    "source_file": "src/features/legacyPayment/PaymentScreen.tsx",
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "entry_points": [
+      "TAB:payment",
+      "NEW-HOME-002"
+    ],
+    "exit_points": [
+      "NEW-PAY-002",
+      "NEW-PAY-SHEET-001"
+    ],
+    "purpose": "Browse/search service catalog",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PAY-001",
+    "owner_dependencies": [
+      "Q-PAY-001"
+    ],
+    "backend_needed": "yes",
+    "notes": "Backend-owned catalog"
+  },
+  {
+    "screen_id": "NEW-PAY-002",
+    "name": "Service payment form",
+    "route": "/legacy/payment/[id]",
+    "source_file": "src/features/legacyPayment/PaymentServiceScreen.tsx",
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "entry_points": [
+      "NEW-PAY-001",
+      "NEW-HOME-002 recent"
+    ],
+    "exit_points": [
+      "ALERT"
+    ],
+    "purpose": "Pay utility/service from account",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PAY-001",
+    "owner_dependencies": [
+      "Q-PAY-003",
+      "Q-PAY-001"
+    ],
+    "backend_needed": "yes",
+    "notes": "Bonus account allowed per Q-PAY-003"
+  },
+  {
+    "screen_id": "NEW-QR-001",
+    "name": "Receive QR",
+    "route": "/legacy/qr",
+    "source_file": "src/features/legacyQr/ReceiveQrScreen.tsx",
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "entry_points": [
+      "TAB:qr"
+    ],
+    "exit_points": [],
+    "purpose": "Generate receive QR with amount",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "FUTURE",
+    "business_process": "BP-QR-001",
+    "owner_dependencies": [
+      "Q-QR-001",
+      "Q-QR-002",
+      "Q-QR-003",
+      "Q-QR-010"
+    ],
+    "backend_needed": "no",
+    "notes": "NO MVP backend"
+  },
+  {
+    "screen_id": "NEW-HIST-001",
+    "name": "History list",
+    "route": "/legacy/history",
+    "source_file": "src/features/legacyHistory/HistoryScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "TAB:history",
+      "NEW-HOME-002"
+    ],
+    "exit_points": [
+      "NEW-HIST-SHEET-001",
+      "NEW-HIST-SHEET-002",
+      "NEW-HIST-002"
+    ],
+    "purpose": "View transaction history",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-HIST-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Mock seeded ops"
+  },
+  {
+    "screen_id": "NEW-HIST-002",
+    "name": "Operation detail",
+    "route": "/legacy/history/[id]",
+    "source_file": "src/features/legacyHistory/OperationDetailsScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-HIST-SHEET-002",
+      "NEW-HIST-001"
+    ],
+    "exit_points": [
+      "NEW-HIST-003"
+    ],
+    "purpose": "View single operation details",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-HIST-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Cancel/repeat partially parked"
+  },
+  {
+    "screen_id": "NEW-HIST-003",
+    "name": "Receipt",
+    "route": "/legacy/history/[id]/receipt",
+    "source_file": "src/features/legacyHistory/ReceiptScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-HIST-002"
+    ],
+    "exit_points": [],
+    "purpose": "Share/view receipt",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-HIST-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Receipt format OWNER_DECISION_REQUIRED"
+  },
+  {
+    "screen_id": "NEW-PROF-001",
+    "name": "Profile",
+    "route": "/legacy/profile",
+    "source_file": "src/features/legacyProfile/ProfileScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "TAB:profile"
+    ],
+    "exit_points": [
+      "NEW-PROF-002",
+      "NEW-PROF-003",
+      "NEW-STUB-001",
+      "NEW-PROF-SHEET-001",
+      "NEW-PROF-SHEET-002"
+    ],
+    "purpose": "Account settings and session",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PROFILE-001,BP-PROFILE-002",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Phone read-only display"
+  },
+  {
+    "screen_id": "NEW-PROF-002",
+    "name": "Identification status",
+    "route": "/legacy/profile/status",
+    "source_file": "src/features/legacyProfile/IdentificationStatusScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-PROF-001"
+    ],
+    "exit_points": [],
+    "purpose": "Show KYC/identification progress",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-KYC-001",
+    "owner_dependencies": [
+      "Q-KYC-001"
+    ],
+    "backend_needed": "no",
+    "notes": "Display only until KYC decided"
+  },
+  {
+    "screen_id": "NEW-PROF-003",
+    "name": "Change PIN",
+    "route": "/legacy/profile/pin",
+    "source_file": "src/features/legacyProfile/ChangePinScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-PROF-001"
+    ],
+    "exit_points": [
+      "NEW-PROF-001"
+    ],
+    "purpose": "Change app PIN in settings",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PROFILE-002",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "PIN pad flow"
+  },
+  {
+    "screen_id": "NEW-STUB-001",
+    "name": "Documents stub",
+    "route": "/legacy/stub/documents",
+    "source_file": "src/features/legacyHome/GuestStubScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-PROF-001"
+    ],
+    "exit_points": [
+      "NEW-HOME-002"
+    ],
+    "purpose": "Placeholder documents list",
+    "current_state": "STUB",
+    "mvp_status": "STUB",
+    "business_process": null,
+    "owner_dependencies": [],
+    "backend_needed": "no",
+    "notes": "No backend"
+  },
+  {
+    "screen_id": "NEW-TOPUP-001",
+    "name": "Between accounts top-up",
+    "route": "/legacy/topup/between",
+    "source_file": "src/features/legacyTopup/BetweenAccountsScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-SHEET-TOPUP-001"
+    ],
+    "exit_points": [
+      "NEW-HOME-002"
+    ],
+    "purpose": "Transfer between own accounts",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP_PARTIAL_PENDING",
+    "business_process": "BP-TRF-001",
+    "owner_dependencies": [
+      "Q-TRF-001",
+      "Q-TRF-004"
+    ],
+    "backend_needed": "yes",
+    "notes": "FX rules parked"
+  },
+  {
+    "screen_id": "NEW-TOPUP-002",
+    "name": "External card top-up",
+    "route": "/legacy/topup/card",
+    "source_file": "src/features/legacyTopup/ExternalCardScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-SHEET-TOPUP-001"
+    ],
+    "exit_points": [
+      "NEW-HOME-002"
+    ],
+    "purpose": "Top up from external bank card",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-TOPUP-001",
+    "owner_dependencies": [
+      "Q-TOPUP-004"
+    ],
+    "backend_needed": "yes",
+    "notes": "Dynamic fees Q-TOPUP-004"
+  },
+  {
+    "screen_id": "NEW-WD-001",
+    "name": "Withdraw to card",
+    "route": "/legacy/withdraw/card",
+    "source_file": "src/features/legacyWithdraw/CardWithdrawScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-SHEET-WD-001"
+    ],
+    "exit_points": [
+      "NEW-WD-004"
+    ],
+    "purpose": "Withdraw to external card",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-WD-001",
+    "owner_dependencies": [
+      "Q-WD-003"
+    ],
+    "backend_needed": "yes",
+    "notes": "Dynamic fees"
+  },
+  {
+    "screen_id": "NEW-WD-002",
+    "name": "Withdraw to phone",
+    "route": "/legacy/withdraw/phone",
+    "source_file": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-SHEET-WD-001"
+    ],
+    "exit_points": [
+      "NEW-WD-004"
+    ],
+    "purpose": "Withdraw to phone number",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-WD-002",
+    "owner_dependencies": [
+      "Q-WD-003"
+    ],
+    "backend_needed": "yes",
+    "notes": "Not P2P — external phone withdraw"
+  },
+  {
+    "screen_id": "NEW-WD-003",
+    "name": "P2P Cashhello user",
+    "route": "/legacy/withdraw/cashhello-user",
+    "source_file": "src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-SHEET-WD-001"
+    ],
+    "exit_points": [
+      "NEW-WD-004"
+    ],
+    "purpose": "Send to another Cashello user by phone",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP_PARTIAL_PENDING",
+    "business_process": "BP-P2P-001",
+    "owner_dependencies": [
+      "Q-P2P-001",
+      "Q-P2P-002",
+      "Q-P2P-003",
+      "Q-P2P-006"
+    ],
+    "backend_needed": "yes",
+    "notes": "NOT cash — P2P by phone Q-P2P-001"
+  },
+  {
+    "screen_id": "NEW-WD-004",
+    "name": "Withdraw processing/success",
+    "route": "/legacy/withdraw/loading",
+    "source_file": "src/features/legacyWithdraw/LoadingWithdrawScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-WD-001",
+      "NEW-WD-002",
+      "NEW-WD-003"
+    ],
+    "exit_points": [
+      "NEW-HOME-002"
+    ],
+    "purpose": "Show processing then success mock",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-WD-001,BP-WD-002,BP-P2P-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Mock delay then home"
+  },
+  {
+    "screen_id": "NEW-SHEET-TOPUP-001",
+    "name": "Top-up method sheet",
+    "route": "OVERLAY:home/topup",
+    "source_file": "src/features/legacyTopup/MethodSheetScreen.tsx",
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "entry_points": [
+      "NEW-HOME-001",
+      "NEW-HOME-002"
+    ],
+    "exit_points": [
+      "NEW-TOPUP-001",
+      "NEW-TOPUP-002",
+      "NEW-AUTH-003"
+    ],
+    "purpose": "Select top-up method",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-TOPUP-001",
+    "owner_dependencies": [
+      "Q-TOPUP-001",
+      "Q-TOPUP-004"
+    ],
+    "backend_needed": "yes",
+    "notes": "Cash method removed from sheet per Q-TOPUP-001"
+  },
+  {
+    "screen_id": "NEW-SHEET-WD-001",
+    "name": "Withdraw method sheet",
+    "route": "OVERLAY:home/withdraw",
+    "source_file": "src/features/legacyHome/WithdrawSelectSheet.tsx",
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "entry_points": [
+      "NEW-HOME-001",
+      "NEW-HOME-002"
+    ],
+    "exit_points": [
+      "NEW-WD-001",
+      "NEW-WD-002",
+      "NEW-WD-003",
+      "NEW-AUTH-003"
+    ],
+    "purpose": "Select withdraw method",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-WD-001,BP-WD-002,BP-P2P-001",
+    "owner_dependencies": [
+      "Q-WD-001",
+      "Q-WD-003",
+      "Q-P2P-001"
+    ],
+    "backend_needed": "yes",
+    "notes": "Cash methods not in sheet"
+  },
+  {
+    "screen_id": "NEW-SUPPORT-001",
+    "name": "Support contact sheet",
+    "route": "OVERLAY:global/support",
+    "source_file": "src/features/legacyHome/SupportContactSheet.tsx",
+    "auth_mode": "ANY",
+    "entry_points": [
+      "GLOBAL:SupportContactFab"
+    ],
+    "exit_points": [],
+    "purpose": "External support channels WA/TG",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-SUPPORT-002",
+    "owner_dependencies": [
+      "Q-SUPPORT-001",
+      "Q-SUPPORT-002"
+    ],
+    "backend_needed": "config_only",
+    "notes": "Deep links only — not internal chat"
+  },
+  {
+    "screen_id": "NEW-PAY-SHEET-001",
+    "name": "Payment category sheet",
+    "route": "OVERLAY:payment/category",
+    "source_file": "src/features/legacyPayment/PaymentCategorySheet.tsx",
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "entry_points": [
+      "NEW-PAY-001"
+    ],
+    "exit_points": [
+      "NEW-PAY-001"
+    ],
+    "purpose": "Filter catalog by category",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PAY-001",
+    "owner_dependencies": [
+      "Q-PAY-001"
+    ],
+    "backend_needed": "yes",
+    "notes": "Category from backend catalog"
+  },
+  {
+    "screen_id": "NEW-HIST-SHEET-001",
+    "name": "History date sheet",
+    "route": "OVERLAY:history/date",
+    "source_file": "src/features/legacyHistory/HistoryDateSheet.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-HIST-001"
+    ],
+    "exit_points": [
+      "NEW-HIST-001"
+    ],
+    "purpose": "Pick date range filter",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-HIST-001",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "In-tree; /history/filter route orphaned"
+  },
+  {
+    "screen_id": "NEW-HIST-SHEET-002",
+    "name": "History action sheet",
+    "route": "OVERLAY:history/action",
+    "source_file": "src/features/legacyHistory/HistoryActionSheet.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-HIST-001"
+    ],
+    "exit_points": [
+      "NEW-HIST-002",
+      "NEW-WD-001"
+    ],
+    "purpose": "Repeat op or share receipt",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP_PARTIAL_PENDING",
+    "business_process": "BP-HIST-002",
+    "owner_dependencies": [
+      "Q-P2P-003"
+    ],
+    "backend_needed": "yes",
+    "notes": "Repeat behavior partially parked"
+  },
+  {
+    "screen_id": "NEW-PROF-SHEET-001",
+    "name": "Logout confirmation",
+    "route": "OVERLAY:profile/logout",
+    "source_file": "src/features/legacyProfile/ProfileConfirmSheet.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-PROF-001"
+    ],
+    "exit_points": [
+      "NEW-HOME-001"
+    ],
+    "purpose": "Confirm session logout",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PROFILE-002",
+    "owner_dependencies": [
+      "Q-AUTH-010"
+    ],
+    "backend_needed": "yes",
+    "notes": "Revokes session per Q-AUTH-010"
+  },
+  {
+    "screen_id": "NEW-PROF-SHEET-002",
+    "name": "Delete account confirmation",
+    "route": "OVERLAY:profile/delete",
+    "source_file": "src/features/legacyProfile/ProfileConfirmSheet.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [
+      "NEW-PROF-001"
+    ],
+    "exit_points": [
+      "NEW-AUTH-001"
+    ],
+    "purpose": "Confirm account deletion restart",
+    "current_state": "PROTOTYPE",
+    "mvp_status": "MVP",
+    "business_process": "BP-PROFILE-002",
+    "owner_dependencies": [],
+    "backend_needed": "yes",
+    "notes": "Resets to auth flow"
+  },
+  {
+    "screen_id": "NEW-ORPH-001",
+    "name": "Search (orphaned)",
+    "route": "/legacy/search",
+    "source_file": "src/features/legacySearch/SearchScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [],
+    "exit_points": [],
+    "purpose": "Global search prototype",
+    "current_state": "ORPHANED",
+    "mvp_status": "ORPHANED",
+    "business_process": null,
+    "owner_dependencies": [],
+    "backend_needed": "no",
+    "notes": "No inbound nav from current app"
+  },
+  {
+    "screen_id": "NEW-ORPH-002",
+    "name": "Accounts list (orphaned)",
+    "route": "/legacy/accounts",
+    "source_file": "src/features/legacyAccounts/AccountsListScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [],
+    "exit_points": [],
+    "purpose": "List all accounts",
+    "current_state": "ORPHANED",
+    "mvp_status": "ORPHANED",
+    "business_process": "BP-ACC-001",
+    "owner_dependencies": [
+      "Q-ACC-002"
+    ],
+    "backend_needed": "no",
+    "notes": "Not in current tab nav"
+  },
+  {
+    "screen_id": "NEW-OLD-CASH-TOPUP",
+    "name": "Cash top-up (old/unreachable)",
+    "route": "/legacy/topup/cash",
+    "source_file": "src/features/legacyTopup/CashTopupScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [],
+    "exit_points": [],
+    "purpose": "Cash desk top-up",
+    "current_state": "UNREACHABLE",
+    "mvp_status": "OUT_OF_MVP",
+    "business_process": "BP-TOPUP-002",
+    "owner_dependencies": [
+      "Q-TOPUP-001"
+    ],
+    "backend_needed": "no",
+    "notes": "DO NOT IMPLEMENT"
+  },
+  {
+    "screen_id": "NEW-OLD-CASH-WD",
+    "name": "Cash withdraw (old/unreachable)",
+    "route": "/legacy/withdraw/cash",
+    "source_file": "src/features/legacyWithdraw/CashWithdrawScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [],
+    "exit_points": [],
+    "purpose": "Cash pickup withdraw",
+    "current_state": "UNREACHABLE",
+    "mvp_status": "OUT_OF_MVP",
+    "business_process": "BP-WD-003",
+    "owner_dependencies": [
+      "Q-WD-001"
+    ],
+    "backend_needed": "no",
+    "notes": "DO NOT IMPLEMENT"
+  },
+  {
+    "screen_id": "NEW-OLD-CARD-001",
+    "name": "Card product (orphaned)",
+    "route": "/legacy/card",
+    "source_file": "src/features/legacyCard/CardScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [],
+    "exit_points": [],
+    "purpose": "PayDala card management",
+    "current_state": "ORPHANED",
+    "mvp_status": "PARKED_ILYA",
+    "business_process": "BP-CARD-001",
+    "owner_dependencies": [
+      "Q-CARD-001"
+    ],
+    "backend_needed": "no",
+    "notes": "Card product parked"
+  },
+  {
+    "screen_id": "NEW-OLD-MSG-001",
+    "name": "Messages (orphaned)",
+    "route": "/legacy/messages",
+    "source_file": "src/features/legacyProfile/MessagesScreen.tsx",
+    "auth_mode": "AUTHORIZED",
+    "entry_points": [],
+    "exit_points": [],
+    "purpose": "Internal messaging",
+    "current_state": "ORPHANED",
+    "mvp_status": "LATER",
+    "business_process": "BP-SUPPORT-001",
+    "owner_dependencies": [
+      "Q-PROFILE-007"
+    ],
+    "backend_needed": "no",
+    "notes": "Internal support LATER"
+  },
+  {
+    "screen_id": "NEW-DEV-001",
+    "name": "Foundation lab",
+    "route": "/dev/foundation",
+    "source_file": "src/app/dev/foundation.tsx",
+    "auth_mode": "DEV",
+    "entry_points": [
+      "+not-found"
+    ],
+    "exit_points": [],
+    "purpose": "Design system validation",
+    "current_state": "DEV_ONLY",
+    "mvp_status": "DEV_ONLY",
+    "business_process": null,
+    "owner_dependencies": [],
+    "backend_needed": "no",
+    "notes": "Not product UI"
+  }
+]

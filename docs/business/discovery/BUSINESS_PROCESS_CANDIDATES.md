@@ -358,3 +358,34 @@ These are interview and implementation-scope candidates only. They do **not** co
 **OWNER BUSINESS DECISION**
 
 - OWNER_DECISION_REQUIRED: `Q-SUPPORT-001`, `Q-SUPPORT-002`, `Q-SUPPORT-003`, `Q-SUPPORT-004`, `Q-SUPPORT-005`
+
+---
+
+## Final MVP status (handoff audit 2026-09-01)
+
+Added by closure audit. Does not remove candidate history above. Authoritative spec: [BUSINESS_PROCESS_SPEC.md](../BUSINESS_PROCESS_SPEC.md).
+
+| flow_id | Final status |
+| --- | --- |
+| BP-AUTH-001 | MVP |
+| BP-AUTH-002 | MVP |
+| BP-KYC-001 | PARKED_ILYA |
+| BP-ACC-001 | MVP |
+| BP-ACC-002 | PARKED_ILYA |
+| BP-TOPUP-001 | MVP |
+| BP-TOPUP-002 | OUT_OF_MVP |
+| BP-TRF-001 | MVP_PARTIAL_PENDING |
+| BP-P2P-001 | MVP_PARTIAL_PENDING |
+| BP-WD-001 | MVP |
+| BP-WD-002 | MVP |
+| BP-WD-003 | OUT_OF_MVP |
+| BP-PAY-001 | MVP |
+| BP-QR-001 | FUTURE |
+| BP-HIST-001 | MVP |
+| BP-HIST-002 | MVP_PARTIAL_PENDING |
+| BP-CARD-001 | PARKED_ILYA |
+| BP-CARD-002 | PARKED_ILYA |
+| BP-PROFILE-001 | MVP |
+| BP-PROFILE-002 | MVP |
+| BP-SUPPORT-001 | LATER |
+| BP-SUPPORT-002 | MVP |

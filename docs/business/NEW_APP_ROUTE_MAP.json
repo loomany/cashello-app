@@ -1,0 +1,640 @@
+[
+  {
+    "route": "/",
+    "source_file": "src/app/index.tsx",
+    "screen_component": "Redirect",
+    "reachable_from": [
+      "APP_ENTRY"
+    ],
+    "destination_children": [
+      "/legacy/home?guest=1"
+    ],
+    "auth_mode": "PUBLIC",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Root redirect via PUBLIC_ROOT_HREF"
+  },
+  {
+    "route": "/legacy/home?guest=1",
+    "source_file": "src/app/legacy/home.tsx",
+    "screen_component": "LegacyHomeScreen(variant=guest)",
+    "reachable_from": [
+      "APP_ENTRY",
+      "/"
+    ],
+    "destination_children": [
+      "/legacy/auth?qaStep=iin",
+      "SHEET:topup",
+      "SHEET:withdraw",
+      "SHEET:support"
+    ],
+    "auth_mode": "GUEST",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Public root — guest browse"
+  },
+  {
+    "route": "/legacy/home",
+    "source_file": "src/app/legacy/home.tsx",
+    "screen_component": "LegacyHomeScreen(variant=authorized)",
+    "reachable_from": [
+      "/legacy/auth complete",
+      "TAB:home"
+    ],
+    "destination_children": [
+      "/legacy/payment",
+      "/legacy/history",
+      "/legacy/payment/[id]",
+      "SHEET:topup",
+      "SHEET:withdraw"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Authorized home with tab bar"
+  },
+  {
+    "route": "/legacy/auth",
+    "source_file": "src/app/legacy/auth.tsx",
+    "screen_component": "LegacyAuthRoute",
+    "reachable_from": [
+      "HOME:login CTA",
+      "HOME:gated actions",
+      "PROFILE:delete confirm"
+    ],
+    "destination_children": [
+      "/legacy/home",
+      "/legacy/home?guest=1"
+    ],
+    "auth_mode": "GUEST_OR_FLOW",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Multi-step auth state machine"
+  },
+  {
+    "route": "/legacy/payment",
+    "source_file": "src/app/legacy/payment/index.tsx",
+    "screen_component": "PaymentScreen",
+    "reachable_from": [
+      "TAB:payment",
+      "HOME:payments Все"
+    ],
+    "destination_children": [
+      "/legacy/payment/[id]",
+      "SHEET:category"
+    ],
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Service catalog browse"
+  },
+  {
+    "route": "/legacy/payment/[id]",
+    "source_file": "src/app/legacy/payment/[id].tsx",
+    "screen_component": "PaymentServiceScreen",
+    "reachable_from": [
+      "/legacy/payment",
+      "HOME:recent ops"
+    ],
+    "destination_children": [
+      "ALERT:pay mock"
+    ],
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Single service payment form"
+  },
+  {
+    "route": "/legacy/qr",
+    "source_file": "src/app/legacy/qr.tsx",
+    "screen_component": "ReceiveQrScreen",
+    "reachable_from": [
+      "TAB:qr"
+    ],
+    "destination_children": [],
+    "auth_mode": "GUEST_OR_AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "QR receive — FUTURE backend"
+  },
+  {
+    "route": "/legacy/history",
+    "source_file": "src/app/legacy/history/index.tsx",
+    "screen_component": "HistoryScreen",
+    "reachable_from": [
+      "TAB:history",
+      "HOME:payments История"
+    ],
+    "destination_children": [
+      "/legacy/history/[id]",
+      "SHEET:date",
+      "SHEET:action"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Transaction list"
+  },
+  {
+    "route": "/legacy/history/[id]",
+    "source_file": "src/app/legacy/history/[id]/index.tsx",
+    "screen_component": "OperationDetailsScreen",
+    "reachable_from": [
+      "HISTORY:action sheet",
+      "DEBUG"
+    ],
+    "destination_children": [
+      "/legacy/history/[id]/receipt"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Operation detail"
+  },
+  {
+    "route": "/legacy/history/[id]/receipt",
+    "source_file": "src/app/legacy/history/[id]/receipt.tsx",
+    "screen_component": "ReceiptScreen",
+    "reachable_from": [
+      "/legacy/history/[id]"
+    ],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Receipt view/share"
+  },
+  {
+    "route": "/legacy/profile",
+    "source_file": "src/app/legacy/profile/index.tsx",
+    "screen_component": "ProfileScreen",
+    "reachable_from": [
+      "TAB:profile",
+      "HOME:avatar guest"
+    ],
+    "destination_children": [
+      "/legacy/profile/status",
+      "/legacy/profile/pin",
+      "/legacy/stub/documents",
+      "/legacy/home?guest=1",
+      "/legacy/auth"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Profile hub"
+  },
+  {
+    "route": "/legacy/profile/status",
+    "source_file": "src/app/legacy/profile/status.tsx",
+    "screen_component": "IdentificationStatusScreen",
+    "reachable_from": [
+      "/legacy/profile"
+    ],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "KYC status display — provider PARKED_ILYA"
+  },
+  {
+    "route": "/legacy/profile/pin",
+    "source_file": "src/app/legacy/profile/pin.tsx",
+    "screen_component": "ChangePinScreen",
+    "reachable_from": [
+      "/legacy/profile"
+    ],
+    "destination_children": [
+      "/legacy/profile"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Change app PIN"
+  },
+  {
+    "route": "/legacy/stub/documents",
+    "source_file": "src/app/legacy/stub/documents.tsx",
+    "screen_component": "GuestStubScreen",
+    "reachable_from": [
+      "/legacy/profile"
+    ],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "STUB",
+    "notes": "Documents stub — no backend"
+  },
+  {
+    "route": "/legacy/topup/between",
+    "source_file": "src/app/legacy/topup/between.tsx",
+    "screen_component": "BetweenAccountsScreen",
+    "reachable_from": [
+      "SHEET:topup authorized"
+    ],
+    "destination_children": [
+      "/legacy/home"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Own-account transfer top-up"
+  },
+  {
+    "route": "/legacy/topup/card",
+    "source_file": "src/app/legacy/topup/card.tsx",
+    "screen_component": "ExternalCardScreen",
+    "reachable_from": [
+      "SHEET:topup authorized"
+    ],
+    "destination_children": [
+      "/legacy/home"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "External card top-up"
+  },
+  {
+    "route": "/legacy/withdraw/card",
+    "source_file": "src/app/legacy/withdraw/card.tsx",
+    "screen_component": "CardWithdrawScreen",
+    "reachable_from": [
+      "SHEET:withdraw authorized"
+    ],
+    "destination_children": [
+      "/legacy/withdraw/loading"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Withdraw to external card"
+  },
+  {
+    "route": "/legacy/withdraw/phone",
+    "source_file": "src/app/legacy/withdraw/phone.tsx",
+    "screen_component": "PhoneWithdrawScreen",
+    "reachable_from": [
+      "SHEET:withdraw authorized"
+    ],
+    "destination_children": [
+      "/legacy/withdraw/loading"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Withdraw to phone"
+  },
+  {
+    "route": "/legacy/withdraw/cashhello-user",
+    "source_file": "src/app/legacy/withdraw/cashhello-user.tsx",
+    "screen_component": "CashhelloUserWithdrawScreen",
+    "reachable_from": [
+      "SHEET:withdraw authorized"
+    ],
+    "destination_children": [
+      "/legacy/withdraw/loading"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "P2P by phone — NOT cash withdrawal"
+  },
+  {
+    "route": "/legacy/withdraw/loading",
+    "source_file": "src/app/legacy/withdraw/loading.tsx",
+    "screen_component": "LoadingWithdrawScreen",
+    "reachable_from": [
+      "withdraw flows submit"
+    ],
+    "destination_children": [
+      "/legacy/home"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "CURRENT_REACHABLE",
+    "new_app_status": "CURRENT_NEW_APP",
+    "notes": "Processing/success mock"
+  },
+  {
+    "route": "/legacy/search",
+    "source_file": "src/app/legacy/search.tsx",
+    "screen_component": "SearchScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "ORPHANED",
+    "notes": "HOME_BRIDGES.search defined but no UI link"
+  },
+  {
+    "route": "/legacy/accounts",
+    "source_file": "src/app/legacy/accounts/index.tsx",
+    "screen_component": "AccountsListScreen",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/accounts/[id]"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "ORPHANED",
+    "notes": "Not linked from current tab/home nav"
+  },
+  {
+    "route": "/legacy/accounts/[id]",
+    "source_file": "src/app/legacy/accounts/[id].tsx",
+    "screen_component": "AccountDetailScreen",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/card",
+      "/legacy/history/[id]"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "ORPHANED",
+    "notes": "Reachable only from orphaned accounts/search"
+  },
+  {
+    "route": "/legacy/card",
+    "source_file": "src/app/legacy/card/index.tsx",
+    "screen_component": "CardScreen",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/card/limits",
+      "/legacy/card/pin"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Card product PARKED_ILYA Q-CARD-001"
+  },
+  {
+    "route": "/legacy/card/limits",
+    "source_file": "src/app/legacy/card/limits.tsx",
+    "screen_component": "LimitsScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Card limits — PARKED_ILYA"
+  },
+  {
+    "route": "/legacy/card/pin",
+    "source_file": "src/app/legacy/card/pin.tsx",
+    "screen_component": "CardPinScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Card PIN — PARKED_ILYA"
+  },
+  {
+    "route": "/legacy/messages",
+    "source_file": "src/app/legacy/messages.tsx",
+    "screen_component": "MessagesScreen",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/help"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Internal support LATER Q-PROFILE-007"
+  },
+  {
+    "route": "/legacy/help",
+    "source_file": "src/app/legacy/help.tsx",
+    "screen_component": "HelpScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Internal help form LATER"
+  },
+  {
+    "route": "/legacy/profile/personal",
+    "source_file": "src/app/legacy/profile/personal.tsx",
+    "screen_component": "PersonalDataScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "ORPHANED",
+    "notes": "No profile nav link"
+  },
+  {
+    "route": "/legacy/profile/phone",
+    "source_file": "src/app/legacy/profile/phone/index.tsx",
+    "screen_component": "ChangePhoneScreen",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/profile/phone/verify"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "ORPHANED",
+    "notes": "Phone change flow exists but not linked from profile UI"
+  },
+  {
+    "route": "/legacy/profile/phone/verify",
+    "source_file": "src/app/legacy/profile/phone/verify.tsx",
+    "screen_component": "ChangePhoneVerifyScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "ORPHANED",
+    "notes": "Orphaned with phone change"
+  },
+  {
+    "route": "/legacy/topup",
+    "source_file": "src/app/legacy/topup/index.tsx",
+    "screen_component": "MethodSheetScreen(route)",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/topup/between",
+      "/legacy/topup/card"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "DEAD_CODE",
+    "notes": "Home uses in-tree TopupSelectSheet instead"
+  },
+  {
+    "route": "/legacy/topup/cash",
+    "source_file": "src/app/legacy/topup/cash.tsx",
+    "screen_component": "CashTopupScreen",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/topup/cash-map"
+    ],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "UNREACHABLE",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Cash top-up OUT_OF_MVP Q-TOPUP-001"
+  },
+  {
+    "route": "/legacy/topup/cash-map",
+    "source_file": "src/app/legacy/topup/cash-map.tsx",
+    "screen_component": "CashMapScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "UNREACHABLE",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Cash desk map — OUT_OF_MVP"
+  },
+  {
+    "route": "/legacy/withdraw",
+    "source_file": "src/app/legacy/withdraw/index.tsx",
+    "screen_component": "MethodSelectScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "DEAD_CODE",
+    "notes": "Home sheet skips this hub"
+  },
+  {
+    "route": "/legacy/withdraw/cash",
+    "source_file": "src/app/legacy/withdraw/cash.tsx",
+    "screen_component": "CashWithdrawScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "UNREACHABLE",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Cash withdrawal OUT_OF_MVP Q-WD-001"
+  },
+  {
+    "route": "/legacy/withdraw/cash-map",
+    "source_file": "src/app/legacy/withdraw/cash-map.tsx",
+    "screen_component": "CashMapWithdrawScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "UNREACHABLE",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Cash pickup OUT_OF_MVP"
+  },
+  {
+    "route": "/legacy/withdraw/amount",
+    "source_file": "src/app/legacy/withdraw/amount.tsx",
+    "screen_component": "AmountWithdrawScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "UNREACHABLE",
+    "new_app_status": "OLD_APP_ONLY",
+    "notes": "Cash flow step — unreachable"
+  },
+  {
+    "route": "/legacy/history/filter",
+    "source_file": "src/app/legacy/history/filter.tsx",
+    "screen_component": "FilterScreen",
+    "reachable_from": [
+      "DEBUG only"
+    ],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "DEV_ONLY",
+    "new_app_status": "ORPHANED",
+    "notes": "History uses in-tree date sheet; filter route debug-only"
+  },
+  {
+    "route": "/legacy/stub/registration",
+    "source_file": "src/app/legacy/stub/registration.tsx",
+    "screen_component": "GuestStubScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "GUEST",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "STUB",
+    "notes": "Bridge unused"
+  },
+  {
+    "route": "/legacy/stub/bonus",
+    "source_file": "src/app/legacy/stub/bonus.tsx",
+    "screen_component": "GuestStubScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "ANY",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "STUB",
+    "notes": "Bridge unused"
+  },
+  {
+    "route": "/legacy/stub/cashhello-user",
+    "source_file": "src/app/legacy/stub/cashhello-user.tsx",
+    "screen_component": "GuestStubScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "ANY",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "STUB",
+    "notes": "Live P2P uses /withdraw/cashhello-user"
+  },
+  {
+    "route": "/legacy/stub/linked-cards",
+    "source_file": "src/app/legacy/stub/linked-cards.tsx",
+    "screen_component": "GuestStubScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "STUB",
+    "notes": "Profile bridge unused"
+  },
+  {
+    "route": "/legacy/stub/suggest-idea",
+    "source_file": "src/app/legacy/stub/suggest-idea.tsx",
+    "screen_component": "GuestStubScreen",
+    "reachable_from": [],
+    "destination_children": [],
+    "auth_mode": "AUTHORIZED",
+    "runtime_status": "ORPHANED",
+    "new_app_status": "STUB",
+    "notes": "Profile bridge unused"
+  },
+  {
+    "route": "/legacy/stub/qr",
+    "source_file": "src/app/legacy/stub/qr.tsx",
+    "screen_component": "Redirect",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/qr"
+    ],
+    "auth_mode": "ANY",
+    "runtime_status": "ALIAS",
+    "new_app_status": "DEAD_CODE",
+    "notes": "Redirect alias"
+  },
+  {
+    "route": "/legacy/stub/payment",
+    "source_file": "src/app/legacy/stub/payment.tsx",
+    "screen_component": "Redirect",
+    "reachable_from": [],
+    "destination_children": [
+      "/legacy/payment"
+    ],
+    "auth_mode": "ANY",
+    "runtime_status": "ALIAS",
+    "new_app_status": "DEAD_CODE",
+    "notes": "Redirect alias"
+  },
+  {
+    "route": "/dev/foundation",
+    "source_file": "src/app/dev/foundation.tsx",
+    "screen_component": "FoundationScreen",
+    "reachable_from": [
+      "+not-found"
+    ],
+    "destination_children": [],
+    "auth_mode": "DEV",
+    "runtime_status": "DEV_ONLY",
+    "new_app_status": "DEV_ONLY",
+    "notes": "Design system lab"
+  }
+]

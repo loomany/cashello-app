@@ -1,5 +1,7 @@
 # API Integration Map
 
+> **Reconciliation 2026-09-01:** Authoritative MVP scope per capability is in [SCREEN_API_MATRIX.json](./SCREEN_API_MATRIX.json) and [TALGAT_HANDOFF.md](./TALGAT_HANDOFF.md). This map preserves **current prototype facts** + draft endpoints. OTP production channel = **WhatsApp** (owner-approved); prototype still shows SMS UI copy.
+
 **Audience:** Backend developer  
 **Canonical repository:** [loomany/cashello-app](https://github.com/loomany/cashello-app) — branch `main`
 **Companion docs:** [BACKEND_HANDOFF.md](./BACKEND_HANDOFF.md) · [FIGMA_HANDOFF.md](../design/FIGMA_HANDOFF.md)
@@ -14,12 +16,12 @@ Endpoint names are **DRAFT only**. Confidence labels: `CURRENT_CODE_FACT`, `PROT
 |------------|-------|-------------|-------------|-------------------------|-----------------|-------------------|------------|
 | Splash / entry | `/legacy/auth` | `src/features/legacyAuth/LegacyAuthRoute.tsx` | Auto-advance timer 1400ms | App config, maintenance mode | Query | `GET /v1/app/config` | TECHNICAL_RECOMMENDATION |
 | Phone registration start | `/legacy/auth` (step `iin`) | `src/features/legacyAuth/screens/RegisterIinView.tsx` | 10-digit validation only | Registration session ID | Command | `POST /v1/auth/register/start` | TECHNICAL_RECOMMENDATION |
-| SMS OTP send | step `verification` | `src/features/legacyAuth/screens/PhoneView.tsx` | Any 4 digits accepted | OTP delivery status, resend cooldown | Command | `POST /v1/auth/otp/send` | CURRENT_CODE_FACT (mock) |
-| SMS OTP verify | step `verification` | `src/features/legacyAuth/machine.ts` | `SET_SMS` auto-advances | Valid/invalid, attempts remaining | Command | `POST /v1/auth/otp/verify` | CURRENT_CODE_FACT (mock) |
+| WhatsApp OTP send | step `verification` | `src/features/legacyAuth/screens/PhoneView.tsx` | Any 4 digits accepted (mock) | OTP delivery status, resend cooldown | Command | `POST /v1/auth/otp/send` | CURRENT_CODE_FACT (mock UI); **MVP:** WhatsApp delivery |
+| WhatsApp OTP verify | step `verification` | `src/features/legacyAuth/machine.ts` | `SET_SMS` auto-advances | Valid/invalid, attempts remaining | Command | `POST /v1/auth/otp/verify` | CURRENT_CODE_FACT (mock); **MVP** |
 | PIN create | step `pinCreate`/`pinRepeat` | `src/features/legacyAuth/screens/PinView.tsx` | Local 6-digit match | PIN set confirmation | Command | `POST /v1/auth/pin/set` | CURRENT_CODE_FACT (mock) |
 | PIN login (returning) | step `pinLogin` | `src/features/legacyAuth/machine.ts` | Any 6 digits → complete | Session tokens | Command | `POST /v1/auth/login` | PROTOTYPE_ONLY (no UI link) |
-| KYC face capture | step `face` | `src/features/legacyAuth/components/CameraChrome.tsx` | Tap to continue | Liveness result | Command | `POST /v1/kyc/liveness` | PROTOTYPE_ONLY |
-| KYC document capture | steps `document*` | `src/features/legacyAuth/components/CameraChrome.tsx` | Mock capture button | Document OCR result | Command | `POST /v1/kyc/documents` | PROTOTYPE_ONLY |
+| KYC face capture | step `face` | `src/features/legacyAuth/components/CameraChrome.tsx` | Tap to continue | Liveness result | Command | `POST /v1/kyc/liveness` | PROTOTYPE_ONLY · **mvp_status: PARKED_ILYA — DO NOT IMPLEMENT** |
+| KYC document capture | steps `document*` | `src/features/legacyAuth/components/CameraChrome.tsx` | Mock capture button | Document OCR result | Command | `POST /v1/kyc/documents` | PROTOTYPE_ONLY · **mvp_status: PARKED_ILYA — DO NOT IMPLEMENT** |
 | Logout | `/legacy/profile` | `src/features/legacyProfile/ProfileScreen.tsx` | Client flag only | Session revoke | Command | `POST /v1/auth/logout` | CURRENT_CODE_FACT |
 | Delete account | `/legacy/profile` | `src/features/legacyProfile/ProfileScreen.tsx` | Navigate to auth | Account deletion | Command | `DELETE /v1/users/me` | OWNER_DECISION_REQUIRED |
 
@@ -47,7 +49,7 @@ Endpoint names are **DRAFT only**. Confidence labels: `CURRENT_CODE_FACT`, `PROT
 | Push preference | `/legacy/profile` | `src/features/legacyProfile/store.ts` | `pushEnabled` boolean | Notification settings | Command | `PATCH /v1/users/me/settings` | CURRENT_CODE_FACT |
 | Promo code | `/legacy/profile` | `src/features/legacyProfile/ProfileScreen.tsx` | Alert stub | Validation result | Command | `POST /v1/promo/apply` | OWNER_DECISION_REQUIRED |
 | Messages inbox | `/legacy/messages` | `src/features/legacyProfile/MessagesScreen.tsx` | `CANONICAL_MESSAGES` | Notification list | Query | `GET /v1/notifications` | CURRENT_CODE_FACT |
-| Help ticket | `/legacy/help` | `src/features/legacyProfile/HelpScreen.tsx` | Alert stub | Ticket creation | Command | `POST /v1/support/tickets` | OWNER_DECISION_REQUIRED |
+| Help ticket | `/legacy/help` | `src/features/legacyProfile/HelpScreen.tsx` | Alert stub | Ticket creation | Command | `POST /v1/support/tickets` | **LATER — DO NOT IMPLEMENT** |
 
 ---
 
@@ -142,10 +144,12 @@ Endpoint names are **DRAFT only**. Confidence labels: `CURRENT_CODE_FACT`, `PROT
 
 ## TOPUP — CASH
 
+> **mvp_status: OUT_OF_MVP — DO NOT IMPLEMENT.** Prototype UI only.
+
 | UI Feature | Route | Source File | Mock Source | Required Data from Backend | Command / Query | Possible Endpoint | Confidence |
 |------------|-------|-------------|-------------|-------------------------|-----------------|-------------------|------------|
-| Cash desk list | `/legacy/topup/cash-map` | `src/features/legacyTopup/CashMapScreen.tsx` | `CASH_DESKS` static | Desk locations | Query | `GET /v1/cash-desks` | CURRENT_CODE_FACT |
-| Confirm cash topup | `/legacy/topup/cash-map` | `src/features/legacyTopup/store.ts` → `confirmCashDesk()` | Pending history, amount 8000 | Topup request, pickup code | Command | `POST /v1/topup/cash` | CURRENT_CODE_FACT |
+| Cash desk list | `/legacy/topup/cash-map` | `src/features/legacyTopup/CashMapScreen.tsx` | `CASH_DESKS` static | Desk locations | Query | `GET /v1/cash-desks` | PROTOTYPE_ONLY · **OUT_OF_MVP** |
+| Confirm cash topup | `/legacy/topup/cash-map` | `src/features/legacyTopup/store.ts` → `confirmCashDesk()` | Pending history, amount 8000 | Topup request, pickup code | Command | `POST /v1/topup/cash` | PROTOTYPE_ONLY · **OUT_OF_MVP** |
 
 ---
 
@@ -157,8 +161,8 @@ Endpoint names are **DRAFT only**. Confidence labels: `CURRENT_CODE_FACT`, `PROT
 | Home withdraw sheet | `/legacy/home` | `src/features/legacyHome/WithdrawSelectSheet.tsx` | card, phone, cashhello-user | Same | Query | `GET /v1/withdraw/methods` | CURRENT_CODE_FACT |
 | Card withdraw | `/legacy/withdraw/card` | `src/features/legacyWithdraw/CardWithdrawScreen.tsx` | 3s timer → success | Saved cards, limits | Command | `POST /v1/withdraw/card` | CURRENT_CODE_FACT |
 | Phone withdraw | `/legacy/withdraw/phone` | `src/features/legacyWithdraw/PhoneFormWithdrawScreen.tsx` | Saved phones demo | Phone validation, limits | Command | `POST /v1/withdraw/phone` | CURRENT_CODE_FACT |
-| Cashhello user | `/legacy/withdraw/cashhello-user` | `PhoneFormWithdrawScreen.tsx` (variant) | P2P-style | Recipient lookup | Command | `POST /v1/withdraw/p2p` | CURRENT_CODE_FACT |
-| Cash pickup | `/legacy/withdraw/cash` → amount → loading | `AmountWithdrawScreen.tsx`, `LoadingWithdrawScreen.tsx` | Amount 1000–1970, fee 30 | Desk, amount validation, fee | Command | `POST /v1/withdraw/cash` | PROTOTYPE_ONLY limits |
+| Cashhello user (P2P) | `/legacy/withdraw/cashhello-user` | `PhoneFormWithdrawScreen.tsx` (variant) | P2P-style | Recipient lookup by phone | Command | `POST /v1/p2p/transfer` | **MVP_PARTIAL_PENDING** — NOT cash withdrawal |
+| Cash pickup | `/legacy/withdraw/cash` → amount → loading | `AmountWithdrawScreen.tsx`, `LoadingWithdrawScreen.tsx` | Amount 1000–1970, fee 30 | Desk, amount validation, fee | Command | `POST /v1/withdraw/cash` | PROTOTYPE_ONLY · **OUT_OF_MVP — DO NOT IMPLEMENT** |
 | Withdraw settlement | `/legacy/withdraw/loading` | `src/features/legacyWithdraw/store.ts` → `confirmAndSettle()` | Local debit + history | Final status, tx ID | Query/Command | `GET /v1/withdraw/{id}` | CURRENT_CODE_FACT |
 | Withdraw fee quote | amount screens | `src/features/legacyWithdraw/mockData.ts` | `MOCK_FEE_KZT: 30` | Fee calculation | Query | `GET /v1/withdraw/quote?amount=&method=` | PROTOTYPE_ONLY |
 
@@ -200,16 +204,20 @@ Server persistence: `OWNER_DECISION_REQUIRED` — currently client-only.
 
 ## QR RECEIVE
 
+> **mvp_status: FUTURE — NO MVP BACKEND CONTRACT.** Home tab QR navigation is UI-only entry to this flow.
+
 | UI Feature | Route | Source File | Mock Source | Required Data from Backend | Command / Query | Possible Endpoint | Confidence |
 |------------|-------|-------------|-------------|-------------------------|-----------------|-------------------|------------|
-| QR amount input | `/legacy/qr` | `src/features/legacyQr/ReceiveQrScreen.tsx` | Local `amountDigits` | Client-only form state | — | — | CURRENT_CODE_FACT |
-| Generate QR | `/legacy/qr` | `src/features/legacyQr/mockData.ts` | `cashhello://pay?amount=&currency=KZT` | Payment intent ID, signed payload, expiry | Command | `POST /v1/qr/receive` | CURRENT_CODE_FACT (local draft) |
-| QR payment status | (none) | — | Not implemented | Payer completion status | Query | `GET /v1/qr/intents/{id}` | BACKEND_DECISION_REQUIRED |
-| Inbound QR pay | (none) | — | Not implemented | Payer-side scan + pay | Command | `POST /v1/qr/pay` | BACKEND_DECISION_REQUIRED |
+| QR amount input | `/legacy/qr` | `src/features/legacyQr/ReceiveQrScreen.tsx` | Local `amountDigits` | Client-only form state | — | — | CURRENT_CODE_FACT · **FUTURE** |
+| Generate QR | `/legacy/qr` | `src/features/legacyQr/mockData.ts` | `cashhello://pay?amount=&currency=KZT` | Payment intent ID, signed payload, expiry | Command | `POST /v1/qr/receive` | PROTOTYPE_ONLY · **FUTURE — DO NOT IMPLEMENT** |
+| QR payment status | (none) | — | Not implemented | Payer completion status | Query | `GET /v1/qr/intents/{id}` | **FUTURE — DO NOT IMPLEMENT** |
+| Inbound QR pay | (none) | — | Not implemented | Payer-side scan + pay | Command | `POST /v1/qr/pay` | **FUTURE — DO NOT IMPLEMENT** |
 
 ---
 
 ## CARD (PayDala card)
+
+> **mvp_status: PARKED_ILYA — DO NOT IMPLEMENT** until Q-CARD-001 resolved.
 
 | UI Feature | Route | Source File | Mock Source | Required Data from Backend | Command / Query | Possible Endpoint | Confidence |
 |------------|-------|-------------|-------------|-------------------------|-----------------|-------------------|------------|
@@ -259,10 +267,35 @@ Server persistence: `OWNER_DECISION_REQUIRED` — currently client-only.
 
 See [BACKEND_HANDOFF.md §22](./BACKEND_HANDOFF.md#22-recommended-integration-order).
 
-**Highest-risk mock points to replace first:**
+**Highest-risk mock points to replace first (MVP only):**
 
-1. Auth OTP/PIN — `src/features/legacyAuth/machine.ts`
+1. Auth WhatsApp OTP/PIN — `src/features/legacyAuth/machine.ts`
 2. Legacy balance mutations — `src/features/legacyTopup/store.ts`, `src/features/legacyWithdraw/store.ts`
-3. Withdraw settlement — `confirmAndSettle()`
+3. Withdraw settlement (non-cash) — `confirmAndSettle()`
 4. Payment execution — `src/features/legacyPayment/PaymentServiceScreen.tsx`
-5. QR payload generation — `src/features/legacyQr/mockData.ts`
+5. P2P Cashhello-user — `/legacy/withdraw/cashhello-user` (NOT cash withdrawal)
+
+**DO NOT IMPLEMENT (MVP scope):** QR payload, cash top-up, cash withdrawal, card issuer, KYC provider, internal support tickets.
+
+---
+
+## MVP status reconciliation (2026-09-01)
+
+| Capability area | mvp_status | Backend work |
+| --- | --- | --- |
+| Auth (phone/OTP/PIN/session) | MVP | Yes |
+| KYC capture (CAS-AUTH-004..010) | PARKED_ILYA | **DO NOT IMPLEMENT** |
+| Accounts list/balances | MVP | Yes |
+| Open account / primary / statement | PARKED_ILYA (Q-ACC-002/003/006) | Blocked pending owner |
+| External card top-up | MVP | Yes |
+| Cash top-up / cash desks | OUT_OF_MVP | **DO NOT IMPLEMENT** |
+| Own-account transfer | MVP_PARTIAL_PENDING | Yes (FX parked) |
+| P2P `/withdraw/cashhello-user` | MVP_PARTIAL_PENDING | Yes |
+| Withdraw card/phone | MVP | Yes |
+| Cash withdrawal | OUT_OF_MVP | **DO NOT IMPLEMENT** |
+| Service catalog + payment | MVP | Yes |
+| QR receive/pay | FUTURE | **DO NOT IMPLEMENT** |
+| History/receipt | MVP | Yes |
+| PayDala card | PARKED_ILYA | **DO NOT IMPLEMENT** |
+| External support FAB | MVP | config_only |
+| Internal help/messages/ticket | LATER | **DO NOT IMPLEMENT** |

@@ -24,8 +24,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: любой телефон идет в один и тот же сценарий создания PIN.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Backend determines new vs returning user by phone after phone entry. No separate login/register chooser in product UX.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-AUTH-002",
@@ -47,8 +52,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: принимаются любые четыре цифры.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "OTP delivery via WhatsApp. Evolution vs Meta provider selection is a later technical decision, not a product blocker.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-AUTH-003",
@@ -71,7 +81,8 @@
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: показан статический текст 00:34, реального срока нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "PROVIDER_COMPLIANCE"
   },
   {
     "question_id": "Q-AUTH-004",
@@ -94,7 +105,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: текст повторной отправки не нажимается.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-005",
@@ -117,7 +129,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: неверного кода не существует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-006",
@@ -142,7 +155,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: принимается любая последовательность из шести цифр.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-007",
@@ -165,7 +179,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: надпись видима, но не имеет действия.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-008",
@@ -188,7 +203,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: сессия — только локальный флаг guest/authorized.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-009",
@@ -211,7 +227,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: автоматического истечения нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-010",
@@ -233,8 +250,13 @@
     ],
     "current_prototype_fact": "UNKNOWN: прототип не моделирует устройства или серверные сессии.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Single active authorized device/session per user. A new successful login revokes the previous session/device.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-AUTH-011",
@@ -257,7 +279,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: сбрасывается только локальное состояние.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-AUTH-012",
@@ -282,7 +305,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: основной runtime-путь полностью обходит KYC-экраны.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ACC-001",
@@ -306,8 +330,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: показаны два KZT и один USD счет; RUB предлагается, но не создается.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "On registration, backend auto-creates four accounts: KZT (primary), bonus, USD, and RUB.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-ACC-002",
@@ -329,8 +358,12 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: KZT/USD/RUB варианты только записывают lastOpenCurrency.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ACC-003",
@@ -352,8 +385,12 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: меняется локальный primaryAccountId.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ACC-004",
@@ -375,8 +412,13 @@
     ],
     "current_prototype_fact": "UNKNOWN: UI не определяет правило; некоторые mock-операции ограничивают debit, другие не валидируют сумму.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "owner_answer": "PARKED_ILYA — negative balance / overdraft policy unresolved.",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ACC-005",
@@ -398,8 +440,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: показано одно число balance на счет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "User sees one visible ordinary balance per currency. When an operation is accepted/sent, amount is visually debited; on failure, amount is restored. No separate visible hold/reserve balance in MVP UX.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-ACC-006",
@@ -421,8 +468,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: выбор только записывается локально; файла нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "owner_answer": "PARKED_ILYA — statement and requisites format unresolved.",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TOPUP-001",
@@ -445,8 +497,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: cash-маршруты существуют, но способ не показан в основном sheet.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OUT_OF_MVP",
+    "owner_answer": "NO cash top-up. NO Cashello cash desks in MVP or approved scope.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-TOPUP-002",
@@ -469,7 +526,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: используется фиксированная сумма 1500 ₸ без поля ввода.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TOPUP-003",
@@ -494,7 +552,8 @@
     "current_prototype_fact": "UNKNOWN: производственных лимитов нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TOPUP-004",
@@ -518,8 +577,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: комиссия пополнения не рассчитывается.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Top-up fees and conditions are dynamic and backend-owned per method.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-TOPUP-005",
@@ -542,7 +606,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: подтверждение банка отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TOPUP-006",
@@ -565,7 +630,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: баланс вообще не увеличивается; добавляется только успешная история.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TOPUP-007",
@@ -589,7 +655,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: карточный mock сразу пишет “Успешно”.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TOPUP-008",
@@ -611,8 +678,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: после выбора кассы создается фиксированная сумма 8000 ₸.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "N/A",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "NOT_APPLICABLE",
+    "owner_answer": "N/A — cash desk top-up removed from MVP (see Q-TOPUP-001).",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-TOPUP-009",
@@ -637,8 +709,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: операция помечается cancellable и “В обработке”, но экран пополнения не ведет к отмене.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "N/A",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "NOT_APPLICABLE",
+    "owner_answer": "N/A — cash desk top-up removed from MVP (see Q-TOPUP-001).",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-TOPUP-010",
@@ -662,7 +739,8 @@
     "current_prototype_fact": "UNKNOWN: refund/reversal не моделируется.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-001",
@@ -684,8 +762,12 @@
     ],
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: статические NBK 458.48 KZT/USD и 5.43 KZT/RUB на 2026-08-26.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-002",
@@ -708,7 +790,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: срока курса и повторного котирования нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-003",
@@ -731,7 +814,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: используется локальная числовая конвертация.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-004",
@@ -753,8 +837,12 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: история записывает fee=0.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-005",
@@ -777,7 +865,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: поле допускает до 9 цифр; бизнес-лимита нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-006",
@@ -800,7 +889,8 @@
     "current_prototype_fact": "CURRENT_RUNTIME_FACT: 999 999 999 ₸ проходит; debit ограничивается балансом, credit считается от запрошенной суммы.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-007",
@@ -823,7 +913,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: операция сразу “Успешно”; отмены нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-TRF-008",
@@ -846,7 +937,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: параметр to передается, но экран сбрасывает destination.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-P2P-001",
@@ -868,8 +960,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: форма принимает телефон, но любой ввод всегда дает “Пользователь не найден”.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Recipient lookup/search is strictly by phone number.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-P2P-002",
@@ -891,8 +988,12 @@
     ],
     "current_prototype_fact": "UNKNOWN: карточки подтверждения получателя нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-P2P-003",
@@ -914,8 +1015,12 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: отдельного подтверждения нет; CTA сейчас недостижима.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-P2P-004",
@@ -938,7 +1043,8 @@
     "current_prototype_fact": "UNKNOWN: ошибочный получатель и возврат не моделируются.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-P2P-005",
@@ -960,8 +1066,12 @@
     ],
     "current_prototype_fact": "UNKNOWN: flow заблокирован до выполнения.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-P2P-006",
@@ -983,8 +1093,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: лимиты не реализованы.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Limits are operation-specific and backend-driven; may depend on method, user tier, KYC, and other backend rules.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-P2P-007",
@@ -1009,7 +1124,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: KYC status не участвует в проверке.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-P2P-008",
@@ -1033,7 +1149,8 @@
     "current_prototype_fact": "UNKNOWN: уведомления P2P отсутствуют.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-001",
@@ -1060,8 +1177,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: два меню содержат разные способы.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Non-cash withdraw methods (card, phone, Cashhello user/P2P) remain in MVP. Cash withdrawal is OUT_OF_MVP.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-WD-002",
@@ -1088,7 +1210,8 @@
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: 1000–1970 ₸ действует только на amount/cash path; card/phone принимают любую сумму >0.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-003",
@@ -1114,8 +1237,13 @@
     ],
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: store использует плоские 30 ₸.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Withdraw fees are dynamic and backend-owned per method.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-WD-004",
@@ -1145,7 +1273,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: success списывает локальный баланс после таймера; processing не описывает резерв.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-005",
@@ -1170,7 +1299,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: error ставит “Отклонено”; полноценного резерва/возврата нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-006",
@@ -1194,7 +1324,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: error receipt имеет только завершение/мок-share.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-007",
@@ -1221,7 +1352,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: cancel доступен только live history op с cancellable=true.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-008",
@@ -1246,7 +1378,8 @@
     "current_prototype_fact": "UNKNOWN: manual review не моделируется.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-009",
@@ -1269,7 +1402,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: статус “Готов к выдаче” не имеет срока.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-010",
@@ -1293,7 +1427,8 @@
     "current_prototype_fact": "UNKNOWN: нет кода выдачи, документа или подтверждения кассира.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-011",
@@ -1316,7 +1451,8 @@
     "current_prototype_fact": "UNKNOWN: проверка получателя не определена.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-012",
@@ -1340,7 +1476,8 @@
     "current_prototype_fact": "UNKNOWN: expiry/reversal cash pickup отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-013",
@@ -1363,7 +1500,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: принимается любая строка от 16 цифр.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-014",
@@ -1386,7 +1524,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: проверяется только длина 10 цифр.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-WD-015",
@@ -1412,7 +1551,8 @@
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: экран и share-alert не являются подтвержденным фискальным/банковским документом.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-001",
@@ -1434,8 +1574,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: каталог и available находятся в static mockData.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Service catalog is fully backend-owned: categories, services, availability, fees, bonus rules, and conditions.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-PAY-002",
@@ -1458,7 +1603,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: все сервисы используют одинаковый телефон + сумму.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-003",
@@ -1480,8 +1626,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: бонусный счет всегда предлагается.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Bonus account may pay for services. Detailed restrictions are backend-driven.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-PAY-004",
@@ -1505,7 +1656,8 @@
     "current_prototype_fact": "OWNER_APPROVED_CURRENT_BASE_RATE: 2% (owner wording 2026-09-01 «+2% бонуса у нас базовый пока», subject to future change). CURRENT_CODE_FACT: authorized Home recent-operation rows display +N Б at this rate via Math.round (prototype display only). MFO commission rules and full calculation policy remain undecided.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-005",
@@ -1528,7 +1680,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: требуется только amount > 0.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-006",
@@ -1552,7 +1705,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: unavailable rows disabled; deep-link все равно открывает форму.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-007",
@@ -1575,7 +1729,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: баланс не списывается вообще.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-008",
@@ -1599,7 +1754,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: через 900 мс показывается Alert “принято”; истории нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-009",
@@ -1622,7 +1778,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: provider reject/error UI отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-010",
@@ -1646,7 +1803,8 @@
     "current_prototype_fact": "UNKNOWN: refund/correction не моделируются.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-011",
@@ -1670,7 +1828,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: favorites — локальный Zustand.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PAY-012",
@@ -1695,7 +1854,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: оплата не добавляет историю и не создает чек.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-001",
@@ -1717,8 +1877,13 @@
     ],
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: каждый клик создает локальную строку с суммой.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "FUTURE",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OUT_OF_MVP",
+    "owner_answer": "QR receive/pay flows are FUTURE — not MVP backend contract.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "UNASSIGNED"
   },
   {
     "question_id": "Q-QR-002",
@@ -1740,8 +1905,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: сумма >0 обязательна.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "FUTURE",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OUT_OF_MVP",
+    "owner_answer": "QR receive/pay flows are FUTURE — not MVP backend contract.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "UNASSIGNED"
   },
   {
     "question_id": "Q-QR-003",
@@ -1763,8 +1933,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: payload содержит только amount и currency.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "FUTURE",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OUT_OF_MVP",
+    "owner_answer": "QR receive/pay flows are FUTURE — not MVP backend contract.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "UNASSIGNED"
   },
   {
     "question_id": "Q-QR-004",
@@ -1787,7 +1962,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: срока действия нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-005",
@@ -1810,7 +1986,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: payload переиспользуем и не имеет intent ID.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-006",
@@ -1833,7 +2010,8 @@
     "current_prototype_fact": "UNKNOWN: плательщик и статус не представлены.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-007",
@@ -1857,7 +2035,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: нет polling, push или экрана результата.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-008",
@@ -1880,7 +2059,8 @@
     "current_prototype_fact": "UNKNOWN: cancel/refund отсутствуют.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-009",
@@ -1903,7 +2083,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: share-кнопки нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-QR-010",
@@ -1927,8 +2108,13 @@
     ],
     "current_prototype_fact": "UNKNOWN: payload не содержит типа получателя/операции.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "FUTURE",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OUT_OF_MVP",
+    "owner_answer": "QR receive/pay flows are FUTURE — not MVP backend contract.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "UNASSIGNED"
   },
   {
     "question_id": "Q-HIST-001",
@@ -1951,7 +2137,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: показываются пять seed-операций и append из topup/withdraw; service payment не попадает.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-002",
@@ -1976,7 +2163,8 @@
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: используются строки “В обработке”, “Отклонено”, “Готов к выдаче”, “Успешно”.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-003",
@@ -1999,7 +2187,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: только операции с локальным cancellable=true.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-004",
@@ -2022,7 +2211,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: используется repeatHref; одна seed-операция ведет через redirect в каталог.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-005",
@@ -2046,7 +2236,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: receiptEligible задается в local history record.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-006",
@@ -2070,7 +2261,8 @@
     "current_prototype_fact": "UNKNOWN: retention не моделируется.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-007",
@@ -2094,7 +2286,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: share/download — Alert; action sheet “share” открывает detail.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-008",
@@ -2117,7 +2310,8 @@
     "current_prototype_fact": "UNKNOWN: correction/reversal relation отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-009",
@@ -2141,7 +2335,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: применение полного фильтра очищает dateFrom/dateTo.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-HIST-010",
@@ -2164,7 +2359,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: в History входящие строки не нажимаются, а Home preview нажимает все.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-001",
@@ -2187,8 +2383,12 @@
     ],
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: показан один “Неидентифицированный” статус и 25%.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-002",
@@ -2211,7 +2411,8 @@
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: три значения 12 975 ₸ и locked features статичны.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-003",
@@ -2235,7 +2436,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: камера ничего не сохраняет и не отправляет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-004",
@@ -2259,7 +2461,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: есть только faceFallback; результата проверки нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-005",
@@ -2282,7 +2485,8 @@
     "current_prototype_fact": "UNKNOWN: re-verification не моделируется.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-006",
@@ -2305,7 +2509,8 @@
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: есть статический age badge без поведения.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-007",
@@ -2329,7 +2534,8 @@
     "current_prototype_fact": "UNKNOWN: blocked-user state отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-KYC-008",
@@ -2360,7 +2566,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: ни один money screen не проверяет KYC status.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-001",
@@ -2384,7 +2591,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: локальная четырехзначная проверка; старый номер не участвует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-002",
@@ -2407,7 +2615,8 @@
     "current_prototype_fact": "UNKNOWN: уникальность номера не проверяется.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-003",
@@ -2430,7 +2639,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: submit показывает Alert и не меняет продукт.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-004",
@@ -2453,7 +2663,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: один локальный pushEnabled switch.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-005",
@@ -2476,7 +2687,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: только переход на auth; данные и деньги не удаляются.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-006",
@@ -2499,7 +2711,8 @@
     "current_prototype_fact": "UNKNOWN: retention/deletion policy отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-PROFILE-007",
@@ -2521,8 +2734,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: текст можно ввести, но кнопки отправки нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "LATER",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "LATER",
+    "owner_answer": "Internal in-app chat/ticket support is LATER — not MVP.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "LATER"
   },
   {
     "question_id": "Q-PROFILE-008",
@@ -2545,7 +2763,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: attachment — Alert без файла.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "FRONTEND"
   },
   {
     "question_id": "Q-CARD-001",
@@ -2567,8 +2786,12 @@
     ],
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: показан один синтетический card visual.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "PARKED_ILYA",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "PARKED_ILYA",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-002",
@@ -2592,7 +2815,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: issuance/activation flow отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-003",
@@ -2615,7 +2839,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: есть только blocked=true и нет разблокировки.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-004",
@@ -2638,7 +2863,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: unfreeze UI отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-005",
@@ -2661,7 +2887,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: вводится только новый PIN и повтор.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-006",
@@ -2685,7 +2912,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: один локальный preset limit применяется сразу.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-007",
@@ -2709,7 +2937,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: нажатия только ставят локальные flags.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-008",
@@ -2732,7 +2961,8 @@
     "current_prototype_fact": "UNKNOWN: replacement/expiry flows отсутствуют.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-009",
@@ -2755,7 +2985,8 @@
     "current_prototype_fact": "UNKNOWN: card fees не показаны.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-CARD-010",
@@ -2778,7 +3009,8 @@
     "current_prototype_fact": "CURRENT_RUNTIME_FACT: CVV показывается одним нажатием без challenge.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-001",
@@ -2823,7 +3055,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: в основном есть только локальная длина/amount>0; provider validation отсутствует.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-002",
@@ -2868,7 +3101,8 @@
     "current_prototype_fact": "UNKNOWN: backend error states не реализованы.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-003",
@@ -2913,7 +3147,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: только каталог может статически disable сервис.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-004",
@@ -2961,7 +3196,8 @@
     "current_prototype_fact": "CURRENT_MOCK_BEHAVIOR: timers всегда выбирают заранее заданный локальный outcome.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-005",
@@ -3006,7 +3242,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: общей защиты от duplicate tap/idempotency в UI нет.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-006",
@@ -3051,7 +3288,8 @@
     "current_prototype_fact": "UNKNOWN: восстановление состояния и resume отсутствуют.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-007",
@@ -3096,7 +3334,8 @@
     "current_prototype_fact": "UNKNOWN: SLA pending/manual review не определен.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-ERR-008",
@@ -3141,7 +3380,8 @@
     "current_prototype_fact": "UNKNOWN: поздний reject/reversal не моделируется.",
     "why_it_matters": "Ответ определяет ожидаемое поведение продукта и границы backend-реализации.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "ILYA"
   },
   {
     "question_id": "Q-SUPPORT-001",
@@ -3171,8 +3411,13 @@
     ],
     "current_prototype_fact": "CURRENT_CODE_FACT: FAB на всех /legacy/* экранах открывает sheet «Служба поддержки». CURRENT_MOCK_BEHAVIOR: SUPPORT_CONTACT_LINKS.telegram/whatsapp = null → Alert «Скоро».",
     "why_it_matters": "Без рабочих каналов пользователь не может связаться с поддержкой в production.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "External support channels: WhatsApp, Telegram, and phone call.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-SUPPORT-002",
@@ -3200,8 +3445,13 @@
     ],
     "current_prototype_fact": "PROTOTYPE_UI_ONLY: тексты «Телеграм 24/7» и «Whatsapp 24/7».",
     "why_it_matters": "Нельзя обещать круглосуточную поддержку, если операционно это не так.",
-    "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "status": "ANSWERED",
+    "decision_type": "BUSINESS_DECISION",
+    "answer_status": "OWNER_APPROVED",
+    "owner_answer": "Support availability target: 24/7.",
+    "answered_at": "2026-09-01",
+    "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
+    "decision_owner": "OWNER"
   },
   {
     "question_id": "Q-SUPPORT-003",
@@ -3229,7 +3479,8 @@
     "current_prototype_fact": "CURRENT_RUNTIME_FACT: FAB виден и гостю, и авторизованному пользователю.",
     "why_it_matters": "Нужно понять, идентифицируется ли обратившийся и какие данные передавать оператору.",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "FRONTEND"
   },
   {
     "question_id": "Q-SUPPORT-004",
@@ -3253,7 +3504,8 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: SUPPORT_CONTACT_LINKS = { telegram: null, whatsapp: null }.",
     "why_it_matters": "Без URL кнопки останутся заглушкой «Скоро».",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "FRONTEND"
   },
   {
     "question_id": "Q-SUPPORT-005",
@@ -3283,6 +3535,7 @@
     "current_prototype_fact": "CURRENT_CODE_FACT: FAB — внешние каналы-заглушки. LGC-SCR-125/126 — отдельные экраны сообщений/помощи без отправки.",
     "why_it_matters": "Иначе в продукте будет три несогласованных «поддержки».",
     "status": "UNANSWERED",
-    "decision_type": "BUSINESS_DECISION"
+    "decision_type": "BUSINESS_DECISION",
+    "decision_owner": "FRONTEND"
   }
 ]

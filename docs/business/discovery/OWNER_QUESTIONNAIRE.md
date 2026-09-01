@@ -1,6 +1,8 @@
 # Cashello owner questionnaire
 
-Status of every item: **UNANSWERED**. Choices are prompts, not recommended rules. The owner may always choose **OTHER / OWNER EXPLANATION**.
+> **Audit 2026-09-01:** Per-question status and answers are authoritative in [manifests/owner_questions.json](./manifests/owner_questions.json). Summary: [OWNER_DECISIONS_RESOLVED.md](../OWNER_DECISIONS_RESOLVED.md). Original prompts below preserved.
+
+Status of every item: see JSON manifest (15 ANSWERED, 97 UNANSWERED as of audit). Choices are prompts, not recommended rules. The owner may always choose **OTHER / OWNER EXPLANATION**.
 
 Priorities: P0 money/safety/blocking; P1 core behavior; P2 operations/support; P3 cosmetic.\
 Required-by: `REQUIRED_BEFORE_BACKEND`, `REQUIRED_BEFORE_PRODUCTION`, `CAN_DECIDE_LATER`.

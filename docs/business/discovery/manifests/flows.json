@@ -33,7 +33,10 @@
       "Q-AUTH-005",
       "Q-AUTH-006",
       "Q-AUTH-012"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-AUTH-002",
@@ -57,7 +60,10 @@
       "Q-AUTH-008",
       "Q-AUTH-009",
       "Q-AUTH-010"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-KYC-001",
@@ -93,7 +99,10 @@
       "Q-KYC-006",
       "Q-KYC-007",
       "Q-KYC-008"
-    ]
+    ],
+    "mvp_status": "PARKED_ILYA",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-ACC-001",
@@ -119,7 +128,10 @@
       "Q-ACC-004",
       "Q-ACC-005",
       "Q-ACC-006"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-ACC-002",
@@ -140,7 +152,10 @@
     "owner_questions": [
       "Q-ACC-001",
       "Q-ACC-002"
-    ]
+    ],
+    "mvp_status": "PARKED_ILYA",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-TOPUP-001",
@@ -177,7 +192,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-TOPUP-002",
@@ -211,7 +229,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "OUT_OF_MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-TRF-001",
@@ -249,7 +270,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "MVP_PARTIAL_PENDING",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-P2P-001",
@@ -286,7 +310,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "MVP_PARTIAL_PENDING",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-WD-001",
@@ -332,7 +359,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-WD-002",
@@ -372,7 +402,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-WD-003",
@@ -417,7 +450,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "OUT_OF_MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-PAY-001",
@@ -467,7 +503,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-QR-001",
@@ -505,7 +544,10 @@
       "Q-ERR-006",
       "Q-ERR-007",
       "Q-ERR-008"
-    ]
+    ],
+    "mvp_status": "FUTURE",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-HIST-001",
@@ -543,7 +585,10 @@
       "Q-HIST-008",
       "Q-HIST-009",
       "Q-HIST-010"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-HIST-002",
@@ -568,7 +613,10 @@
       "Q-WD-007",
       "Q-HIST-003",
       "Q-HIST-004"
-    ]
+    ],
+    "mvp_status": "MVP_PARTIAL_PENDING",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-CARD-001",
@@ -600,7 +648,10 @@
       "Q-CARD-008",
       "Q-CARD-009",
       "Q-CARD-010"
-    ]
+    ],
+    "mvp_status": "PARKED_ILYA",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-CARD-002",
@@ -621,7 +672,10 @@
     ],
     "owner_questions": [
       "Q-CARD-005"
-    ]
+    ],
+    "mvp_status": "PARKED_ILYA",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-PROFILE-001",
@@ -643,7 +697,10 @@
     "owner_questions": [
       "Q-PROFILE-001",
       "Q-PROFILE-002"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-PROFILE-002",
@@ -672,7 +729,10 @@
       "Q-PROFILE-004",
       "Q-PROFILE-005",
       "Q-PROFILE-006"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-SUPPORT-001",
@@ -693,7 +753,10 @@
     "owner_questions": [
       "Q-PROFILE-007",
       "Q-PROFILE-008"
-    ]
+    ],
+    "mvp_status": "LATER",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   },
   {
     "flow_id": "BP-SUPPORT-002",
@@ -720,6 +783,9 @@
       "Q-SUPPORT-003",
       "Q-SUPPORT-004",
       "Q-SUPPORT-005"
-    ]
+    ],
+    "mvp_status": "MVP",
+    "mvp_status_updated_at": "2026-09-01",
+    "mvp_status_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION"
   }
 ]
