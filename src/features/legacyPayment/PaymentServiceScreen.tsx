@@ -97,7 +97,7 @@ export function PaymentServiceScreen() {
   const router = useRouter();
   const onBack = useLegacyBack(LEGACY_BACK_FALLBACKS.paymentService);
   const isGuest = useLegacySessionStore((s) => s.isGuest);
-  const params = useLocalSearchParams<{ id?: string }>();
+  const params = useLocalSearchParams<{ id?: string; phone?: string; amount?: string }>();
   const serviceId = typeof params.id === 'string' ? params.id : '';
   const service = getPaymentService(serviceId);
 
@@ -122,6 +122,22 @@ export function PaymentServiceScreen() {
       if (payTimer.current) clearTimeout(payTimer.current);
     };
   }, []);
+
+  useEffect(() => {
+    const phoneParam = typeof params.phone === 'string' ? params.phone : '';
+    if (phoneParam) {
+      setPhoneDigits(parseKzPhoneInput(phoneParam, ''));
+    } else {
+      setPhoneDigits('');
+    }
+
+    const amountParam = typeof params.amount === 'string' ? params.amount : '';
+    if (amountParam) {
+      setAmountDigits(amountParam.replace(/\D/g, '').slice(0, 12));
+    } else {
+      setAmountDigits('');
+    }
+  }, [params.phone, params.amount, serviceId]);
 
   const route = service ? PAYMENT_BRIDGES.service(service.id) : PAYMENT_BRIDGES.root;
 

@@ -23,9 +23,22 @@ export type PaymentSection = {
   items: PaymentService[];
 };
 
+export type PaymentServiceDraft = {
+  phoneDigits?: string;
+  amountKzt?: number;
+};
+
 export const PAYMENT_BRIDGES = {
   root: '/legacy/payment',
-  service: (id: string) => `/legacy/payment/${id}`,
+  service: (id: string, draft?: PaymentServiceDraft) => {
+    const path = `/legacy/payment/${id}`;
+    if (!draft?.phoneDigits && !draft?.amountKzt) return path;
+    const qs = new URLSearchParams();
+    if (draft.phoneDigits) qs.set('phone', draft.phoneDigits);
+    if (draft.amountKzt != null && draft.amountKzt > 0) qs.set('amount', String(draft.amountKzt));
+    const query = qs.toString();
+    return query ? `${path}?${query}` : path;
+  },
 } as const;
 
 export function getPaymentService(id: string): PaymentService | undefined {

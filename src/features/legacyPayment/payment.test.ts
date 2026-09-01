@@ -21,6 +21,9 @@ describe('LOCAL_DRAFT payment catalog', () => {
 
   it('resolves service detail bridge', () => {
     expect(PAYMENT_BRIDGES.service('ubet')).toBe('/legacy/payment/ubet');
+    expect(PAYMENT_BRIDGES.service('tennisi', { phoneDigits: '7078789911', amountKzt: 1500 })).toBe(
+      '/legacy/payment/tennisi?phone=7078789911&amount=1500',
+    );
     expect(getPaymentService('ubet')?.name).toBe('Ubet');
     expect(getPaymentService('missing')).toBeUndefined();
   });

@@ -1,5 +1,6 @@
 import { homeAccounts, homeCopy, homePromoBanners, homeServicesPreview } from '@/features/legacyHome/copy';
 import { HOME_BRIDGES, HOME_HISTORY } from '@/features/legacyHome/mockData';
+import { GUEST_RECENT_OPERATION, homeRecentOperationsPreview } from '@/features/legacyHome/recentOperationsPreview';
 import { homeHref, profileHref, guestBalanceLabel } from '@/features/legacyHome/session';
 import { reduceLegacyAuth } from '@/features/legacyAuth/machine';
 import { INITIAL_LEGACY_AUTH } from '@/features/legacyAuth/types';
@@ -26,6 +27,7 @@ describe('legacy Home reconstruction (RECON-002)', () => {
     expect(homeCopy.balanceAmountUsd).toBe('123 $');
     expect(homeAccounts.map((row) => row.id)).toEqual(['kzt', 'rub', 'usd']);
     expect(homeCopy.history).toBe('История');
+    expect(homeCopy.recentOperations).toBe('Последние операции');
     expect(homeCopy.services).toBe('Сервисы');
     expect(homeCopy.seeAll).toBe('См. все');
     expect(homeServicesPreview.map((row) => row.name)).toEqual(['Ubet', 'Beeline', 'Zaimer']);
@@ -34,6 +36,7 @@ describe('legacy Home reconstruction (RECON-002)', () => {
     expect(homeCopy.filter).toBe('Фильтр');
     expect(homeCopy.withdraw).toBe('Вывести деньги');
     expect(homeCopy.registrationBonus).toBe('Бонус за регистрацию');
+    expect(homeCopy.registrationBonusHint).toBe('За регистрацию вам будет начислено 500 бонусов');
     expect(homeCopy.registrationBonusStatus).toBe('');
     expect(homeCopy.registrationBonusAmount).toBe('+500 Б');
     expect(HOME_HISTORY).toHaveLength(6);
@@ -44,6 +47,32 @@ describe('legacy Home reconstruction (RECON-002)', () => {
       'Отклонено',
       'В обработке',
       'Отклонено',
+    ]);
+  });
+
+  it('builds guest recent operation preview for registration bonus', () => {
+    expect(GUEST_RECENT_OPERATION.title).toBe('Бонус за регистрацию');
+    expect(GUEST_RECENT_OPERATION.subtitle).toBe('За регистрацию вам будет начислено 500 бонусов');
+    expect(GUEST_RECENT_OPERATION.amount).toBe('+500 Б');
+  });
+
+  it('builds recent operations preview from payment catalog', () => {
+    const rows = homeRecentOperationsPreview(8);
+    expect(rows).toHaveLength(8);
+    expect(rows[0]?.name).toBe('Ubet');
+    expect(rows[0]?.phone).toBe('+77078789911');
+    expect(rows[0]?.phoneDigits).toBe('7078789911');
+    expect(rows[0]?.amountKzt).toBe(5000);
+    expect(rows[0]?.amount).toBe('−5 000 ₸');
+    expect(rows.map((row) => row.serviceId)).toEqual([
+      'ubet',
+      'oinabet',
+      'tennisi',
+      'zaimer',
+      'creditbar',
+      'icredit',
+      'kengo',
+      'satcredit',
     ]);
   });
 

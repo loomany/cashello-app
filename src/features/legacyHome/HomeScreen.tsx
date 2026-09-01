@@ -21,21 +21,20 @@ import {
   CashhelloBrand,
   EyeGlyph,
   GiftGlyph,
-  HistoryArrow,
   ProfileBonusHeader,
   TopupGlyph,
   WithdrawGlyph,
 } from '@/features/legacyHome/HomeIcons';
-import { homeCopy, homePromoBanners, homeServicesPreview } from '@/features/legacyHome/copy';
-import { latestHomeHistoryRows } from '@/features/legacyHome/historyPreview';
+import { homeCopy, homePromoBanners } from '@/features/legacyHome/copy';
 import { LegacyTabBar } from '@/features/legacyHome/LegacyTabBar';
+import {
+  GUEST_RECENT_OPERATION,
+  homeRecentOperationsPreview,
+} from '@/features/legacyHome/recentOperationsPreview';
 import { WithdrawSelectSheet } from '@/features/legacyHome/WithdrawSelectSheet';
-import { HOME_BRIDGES, type HomeHistoryRow } from '@/features/legacyHome/mockData';
+import { HOME_BRIDGES } from '@/features/legacyHome/mockData';
 import { profileHref, navigateHome, useLegacySessionStore } from '@/features/legacyHome/session';
-import { HistoryActionSheet } from '@/features/legacyHistory/HistoryActionSheet';
-import { HistoryListIconView } from '@/features/legacyHistory/HistoryOpIcon';
-import { HISTORY_BRIDGES, type LegacyHistoryOp } from '@/features/legacyHistory/mockData';
-import { useLegacyHistoryStore } from '@/features/legacyHistory/store';
+import { HISTORY_BRIDGES } from '@/features/legacyHistory/mockData';
 import { PAYMENT_BRIDGES } from '@/features/legacyPayment/mockData';
 import { TopupSelectSheet } from '@/features/legacyTopup/MethodSheetScreen';
 import { formatLegacyBalance } from '@/features/legacyTopup/mockData';
@@ -56,8 +55,7 @@ const HOME_ACCOUNT_DEFS = [
   { id: 'usd', labelKey: 'balanceLabelUsd' as const, accountId: 'usd', currency: 'USD' as const },
 ];
 
-/** Home preview services that have a payment catalog counterpart. */
-const HOME_SERVICE_PAYMENT_IDS = new Set(['ubet', 'zaimer']);
+const RECENT_OPERATIONS_PREVIEW = homeRecentOperationsPreview(8);
 
 type Props = {
   historyLink?: 'seeAll' | 'filter';
@@ -84,9 +82,6 @@ export function LegacyHomeScreen({
   const [balancesHidden, setBalancesHidden] = useState(isGuest);
   const [withdrawOpen, setWithdrawOpen] = useState(false);
   const [topupOpen, setTopupOpen] = useState(openTopup);
-  const [actionOp, setActionOp] = useState<LegacyHistoryOp | null>(null);
-  const operations = useLegacyHistoryStore((s) => s.operations);
-  const getById = useLegacyHistoryStore((s) => s.getById);
   const balances = useLegacyTopupStore((s) => s.balances);
   const accountCards = useMemo(
     () =>
@@ -102,10 +97,6 @@ export function LegacyHomeScreen({
           : formatLegacyBalance(balances[row.accountId] ?? 0, row.currency),
       })),
     [balances, isGuest],
-  );
-  const preview = useMemo<HomeHistoryRow[]>(
-    () => latestHomeHistoryRows(operations, 4),
-    [operations],
   );
   const nodeId = historyLink === 'filter' ? '980:26275' : '765:22510';
   const historyAction = historyLink === 'filter' ? homeCopy.filter : homeCopy.seeAll;
@@ -145,47 +136,8 @@ export function LegacyHomeScreen({
 
   const go = (href: string) => () => router.push(href as never);
 
-  const gateOr = (action: () => void) => {
-    if (isGuest) {
-      router.push(HOME_BRIDGES.login as never);
-      return;
-    }
-    action();
-  };
-
   const onTopup = () => setTopupOpen(true);
   const onWithdraw = () => setWithdrawOpen(true);
-
-  const closeActionSheet = () => setActionOp(null);
-
-  const onHistoryRowPress = (row: HomeHistoryRow) => {
-    const op = getById(row.id);
-    if (op) setActionOp(op);
-  };
-
-  const onRepeat = () => {
-    const href = actionOp?.repeatHref;
-    closeActionSheet();
-    gateOr(() => {
-      if (href) router.push(href as never);
-    });
-  };
-
-  const onShareReceipt = () => {
-    const id = actionOp?.id;
-    closeActionSheet();
-    gateOr(() => {
-      if (id) router.push(HISTORY_BRIDGES.detail(id) as never);
-    });
-  };
-
-  const onServicePress = (serviceId: string) => {
-    if (HOME_SERVICE_PAYMENT_IDS.has(serviceId)) {
-      router.push(PAYMENT_BRIDGES.service(serviceId) as never);
-      return;
-    }
-    router.push(PAYMENT_BRIDGES.root as never);
-  };
 
   const onAccountsScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const clamped = carouselSnapIndex(
@@ -245,7 +197,7 @@ export function LegacyHomeScreen({
         </View>
 
         <ScrollView
-          style={styles.scroll}
+          style={[styles.scroll, styles.scrollFitContent]}
           contentContainerStyle={[
             styles.scrollContent,
             isGuest ? styles.scrollContentGuest : styles.scrollContentAuthorized,
@@ -357,49 +309,77 @@ export function LegacyHomeScreen({
           </View>
 
           <View style={styles.sectionHead}>
-            <Text style={styles.section}>{homeCopy.services}</Text>
-            <Pressable accessibilityRole="button" onPress={go(HOME_BRIDGES.payment)}>
-              <Text style={styles.link}>{homeCopy.seeAll}</Text>
-            </Pressable>
-          </View>
-
-          <View style={styles.servicesCard}>
-            {homeServicesPreview.map((service, index) => (
-              <View key={service.id}>
-                {index > 0 ? <View style={styles.divider} /> : null}
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityLabel={service.name}
-                  onPress={() => onServicePress(service.id)}
-                  style={styles.serviceRow}
-                >
-                  <View style={[styles.serviceIconSlot, { backgroundColor: service.background }]}>
-                    <Image source={service.logo} style={styles.serviceLogo} resizeMode="contain" />
-                  </View>
-                  <Text style={styles.serviceName}>{service.name}</Text>
-                  {service.badge ? <Text style={styles.serviceBadge}>{service.badge}</Text> : null}
-                </Pressable>
-              </View>
-            ))}
-          </View>
-
-          <View style={styles.sectionHead}>
-            <Text style={styles.section}>{homeCopy.history}</Text>
-            <Pressable
-              accessibilityRole="button"
-              onPress={go(historyLink === 'filter' ? HISTORY_BRIDGES.filter : HISTORY_BRIDGES.root)}
-            >
-              <Text style={styles.link}>{historyAction}</Text>
-            </Pressable>
+            <Text style={styles.section}>{homeCopy.recentOperations}</Text>
+            {!isGuest ? (
+              <Pressable
+                accessibilityRole="button"
+                onPress={go(historyLink === 'filter' ? HISTORY_BRIDGES.filter : HISTORY_BRIDGES.root)}
+              >
+                <Text style={styles.link}>{historyAction}</Text>
+              </Pressable>
+            ) : null}
           </View>
 
           <View style={styles.historyCard}>
-            {preview.map((row, index) => (
-              <View key={row.id}>
-                {index > 0 ? <View style={styles.divider} /> : null}
-                <HistoryRowView row={row} onPress={() => onHistoryRowPress(row)} />
-              </View>
-            ))}
+            {isGuest ? (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={GUEST_RECENT_OPERATION.title}
+                onPress={go(HOME_BRIDGES.login)}
+                style={styles.recentRow}
+              >
+                <View style={styles.giftSlot}>
+                  <GiftGlyph />
+                </View>
+                <View style={styles.recentTextCol}>
+                  <View style={styles.recentTitleRow}>
+                    <Text style={styles.recentName} numberOfLines={1}>
+                      {GUEST_RECENT_OPERATION.title}
+                    </Text>
+                    <Text style={[styles.recentAmount, styles.recentAmountBonus]}>
+                      {GUEST_RECENT_OPERATION.amount}
+                    </Text>
+                  </View>
+                  <Text style={styles.recentPhone} numberOfLines={2}>
+                    {GUEST_RECENT_OPERATION.subtitle}
+                  </Text>
+                </View>
+              </Pressable>
+            ) : (
+              RECENT_OPERATIONS_PREVIEW.map((row, index) => (
+                <View key={row.id}>
+                  {index > 0 ? <View style={styles.divider} /> : null}
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={`${row.name} ${row.phone}`}
+                    onPress={() =>
+                      router.push(
+                        PAYMENT_BRIDGES.service(row.serviceId, {
+                          phoneDigits: row.phoneDigits,
+                          amountKzt: row.amountKzt,
+                        }) as never,
+                      )
+                    }
+                    style={styles.recentRow}
+                  >
+                    <View style={[styles.serviceIconSlot, { backgroundColor: row.logoBackground }]}>
+                      <Image source={row.logo} style={styles.serviceLogo} resizeMode="contain" />
+                    </View>
+                    <View style={styles.recentTextCol}>
+                      <View style={styles.recentTitleRow}>
+                        <Text style={styles.recentName} numberOfLines={1}>
+                          {row.name}
+                        </Text>
+                        <Text style={styles.recentAmount}>{row.amount}</Text>
+                      </View>
+                      <Text style={styles.recentPhone} numberOfLines={1}>
+                        {row.phone}
+                      </Text>
+                    </View>
+                  </Pressable>
+                </View>
+              ))
+            )}
           </View>
         </ScrollView>
 
@@ -429,55 +409,8 @@ export function LegacyHomeScreen({
         onClose={() => setTopupOpen(false)}
         requireAuth={isGuest}
       />
-      <HistoryActionSheet
-        visible={Boolean(actionOp)}
-        op={actionOp}
-        onClose={closeActionSheet}
-        onRepeat={onRepeat}
-        onShareReceipt={onShareReceipt}
-      />
     </DebugMetaHost>
   );
-}
-
-function HistoryRowView({ row, onPress }: { row: HomeHistoryRow; onPress: () => void }) {
-  const amountIn = row.direction === 'in' || row.amount.trim().startsWith('+');
-  return (
-    <Pressable accessibilityRole="button" onPress={onPress} style={styles.row}>
-      <HomeHistoryIcon row={row} />
-      <View style={styles.rowText}>
-        <Text style={styles.rowTitle} numberOfLines={1}>
-          {row.title}
-        </Text>
-        {row.status ? <Text style={styles.rowStatus}>{row.status}</Text> : null}
-      </View>
-      {row.amount ? (
-        <Text
-          style={[
-            styles.rowAmount,
-            row.amountEmphasis && styles.rowAmountEmph,
-            amountIn && styles.rowAmountIn,
-          ]}
-        >
-          {row.amount}
-        </Text>
-      ) : null}
-    </Pressable>
-  );
-}
-
-function HomeHistoryIcon({ row }: { row: HomeHistoryRow }) {
-  if (row.icon === 'gift') {
-    return (
-      <View style={styles.giftSlot}>
-        <GiftGlyph />
-      </View>
-    );
-  }
-  if (row.icon === 'ubet' || row.icon === 'phone' || row.icon === 'card') {
-    return <HistoryListIconView icon={row.icon} size="md" />;
-  }
-  return <HistoryArrow direction={row.direction} tone={row.tone} />;
 }
 
 function Jump({ label, onPress }: { label: string; onPress: () => void }) {
@@ -501,9 +434,10 @@ const styles = StyleSheet.create({
   },
   headerActions: { flexDirection: 'row', gap: 15 },
   scroll: { flex: 1, backgroundColor: legacyColor.homeBackground },
+  scrollFitContent: { flex: 0, flexShrink: 1 },
   scrollContent: { paddingTop: 15, paddingBottom: 16 },
-  scrollContentGuest: { paddingBottom: 96 },
-  scrollContentAuthorized: { paddingBottom: 88 },
+  scrollContentGuest: { paddingBottom: 8 },
+  scrollContentAuthorized: { paddingBottom: 8 },
   carouselViewport: { overflow: 'hidden' },
   bannersTrack: {
     paddingHorizontal: legacySpace.screenX,
@@ -733,6 +667,24 @@ const styles = StyleSheet.create({
   rowAmount: { ...legacyType.field, color: legacyColor.textTertiary },
   rowAmountEmph: { color: legacyColor.textPrimary },
   rowAmountIn: { color: legacyColor.logoGreen },
+  recentRow: {
+    minHeight: 56,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    paddingVertical: 8,
+  },
+  recentTextCol: { flex: 1, minWidth: 0, gap: 2 },
+  recentTitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8,
+  },
+  recentName: { ...legacyType.field, color: legacyColor.textPrimary, flex: 1 },
+  recentPhone: { ...legacyType.body, color: legacyColor.textSecondary },
+  recentAmount: { ...legacyType.field, color: legacyColor.textPrimary },
+  recentAmountBonus: { color: legacyColor.logoGreen },
   jumps: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 8 },
   jump: {
     backgroundColor: legacyColor.field,

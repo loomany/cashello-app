@@ -12,6 +12,7 @@ export const homeCopy = {
   allAccounts: 'Все',
   services: 'Сервисы',
   history: 'История',
+  recentOperations: 'Последние операции',
   seeAll: 'См. все',
   filter: 'Фильтр',
   withdraw: 'Вывести деньги',
@@ -22,6 +23,7 @@ export const homeCopy = {
   registrationBonus: 'Бонус за регистрацию',
   registrationBonusStatus: '',
   registrationBonusAmount: '+500 Б',
+  registrationBonusHint: 'За регистрацию вам будет начислено 500 бонусов',
   searchCancel: 'Отменить',
   searchHistory: 'История поиска',
 } as const;
