@@ -31,11 +31,17 @@ import {
   GUEST_RECENT_OPERATION,
   homeRecentOperationsPreview,
 } from '@/features/legacyHome/recentOperationsPreview';
+import {
+  HOME_RECENT_OPERATIONS_LIMIT,
+  type PaymentsTab,
+  PAYMENTS_TABS,
+  recentOperationPaymentHref,
+  resolvePaymentsSegmentHref,
+} from '@/features/legacyHome/paymentsSegment';
 import { WithdrawSelectSheet } from '@/features/legacyHome/WithdrawSelectSheet';
 import { HOME_BRIDGES } from '@/features/legacyHome/mockData';
+import { resolveHomeScreenMeta, HOME_HISTORY_LINK_FILTER_ALIAS } from '@/features/legacyHome/homeScreenMeta';
 import { profileHref, navigateHome, useLegacySessionStore } from '@/features/legacyHome/session';
-import { HISTORY_BRIDGES } from '@/features/legacyHistory/mockData';
-import { PAYMENT_BRIDGES } from '@/features/legacyPayment/mockData';
 import { TopupSelectSheet } from '@/features/legacyTopup/MethodSheetScreen';
 import { formatLegacyBalance } from '@/features/legacyTopup/mockData';
 import { useLegacyTopupStore } from '@/features/legacyTopup/store';
@@ -55,10 +61,9 @@ const HOME_ACCOUNT_DEFS = [
   { id: 'usd', labelKey: 'balanceLabelUsd' as const, accountId: 'usd', currency: 'USD' as const },
 ];
 
-const RECENT_OPERATIONS_PREVIEW = homeRecentOperationsPreview(8);
+const RECENT_OPERATIONS_PREVIEW = homeRecentOperationsPreview(HOME_RECENT_OPERATIONS_LIMIT);
 
 type Props = {
-  historyLink?: 'seeAll' | 'filter';
   /** Guest Home (HOME-001) vs authorized Home (HOME-002). */
   variant?: 'authorized' | 'guest';
   /** Open top-up method sheet on mount (LOCAL_DRAFT / capture). */
@@ -66,7 +71,6 @@ type Props = {
 };
 
 export function LegacyHomeScreen({
-  historyLink = 'seeAll',
   variant = 'authorized',
   openTopup = false,
 }: Props) {
@@ -98,8 +102,8 @@ export function LegacyHomeScreen({
       })),
     [balances, isGuest],
   );
-  const nodeId = historyLink === 'filter' ? '980:26275' : '765:22510';
-  const historyAction = historyLink === 'filter' ? homeCopy.filter : homeCopy.seeAll;
+  const homeScreenMeta = resolveHomeScreenMeta(isGuest);
+  const [paymentsTab, setPaymentsTab] = useState<PaymentsTab>('recent');
   const fallbackCarouselWidth =
     windowWidth >= DESKTOP_FRAME_BREAKPOINT ? FRAME_WIDTH : windowWidth;
   const cardWidth =
@@ -130,8 +134,8 @@ export function LegacyHomeScreen({
     route: isGuest ? HOME_BRIDGES.guestHome : '/legacy/home',
     taskId: isGuest ? 'DESIGN-001' : 'RECON-002',
     prototypeStatus: 'in_progress',
-    screenId: isGuest ? 'HOME-001' : historyLink === 'filter' ? 'LGC-SCR-026' : 'LGC-SCR-025',
-    legacyNodeId: isGuest ? '7:5' : nodeId,
+    screenId: homeScreenMeta.screenId,
+    legacyNodeId: homeScreenMeta.legacyNodeId,
   });
 
   const go = (href: string) => () => router.push(href as never);
@@ -166,7 +170,10 @@ export function LegacyHomeScreen({
       route={isGuest ? HOME_BRIDGES.guestHome : '/legacy/home'}
       extra={
         <View style={styles.jumps}>
-          <Jump label="Filter Home" onPress={() => router.replace('/legacy/home?historyLink=filter')} />
+          <Jump
+            label="Home historyLink alias"
+            onPress={() => router.replace(HOME_HISTORY_LINK_FILTER_ALIAS as never)}
+          />
           <Jump
             label="Primary Home"
             onPress={() => {
@@ -308,19 +315,37 @@ export function LegacyHomeScreen({
             ))}
           </View>
 
-          <View style={styles.sectionHead}>
-            <Text style={styles.section}>{homeCopy.recentOperations}</Text>
-            {!isGuest ? (
-              <Pressable
-                accessibilityRole="button"
-                onPress={go(historyLink === 'filter' ? HISTORY_BRIDGES.filter : HISTORY_BRIDGES.root)}
-              >
-                <Text style={styles.link}>{historyAction}</Text>
-              </Pressable>
-            ) : null}
-          </View>
+          <View style={styles.paymentsPlaque}>
+            <View style={styles.paymentsSegmentTrack}>
+              {PAYMENTS_TABS.map((tab) => {
+                const active = paymentsTab === tab.id;
+                return (
+                  <Pressable
+                    key={tab.id}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: active }}
+                    accessibilityLabel={homeCopy[tab.labelKey]}
+                    onPress={() => {
+                      const href = resolvePaymentsSegmentHref(tab.id, isGuest);
+                      if (href === null) {
+                        setPaymentsTab('recent');
+                        return;
+                      }
+                      router.push(href as never);
+                    }}
+                    style={[styles.paymentsSegment, active && styles.paymentsSegmentActive]}
+                  >
+                    <Text
+                      style={[styles.paymentsSegmentLabel, active && styles.paymentsSegmentLabelActive]}
+                    >
+                      {homeCopy[tab.labelKey]}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
 
-          <View style={styles.historyCard}>
+            <View style={styles.paymentsList}>
             {isGuest ? (
               <Pressable
                 accessibilityRole="button"
@@ -352,14 +377,7 @@ export function LegacyHomeScreen({
                   <Pressable
                     accessibilityRole="button"
                     accessibilityLabel={`${row.name} ${row.phone}`}
-                    onPress={() =>
-                      router.push(
-                        PAYMENT_BRIDGES.service(row.serviceId, {
-                          phoneDigits: row.phoneDigits,
-                          amountKzt: row.amountKzt,
-                        }) as never,
-                      )
-                    }
+                    onPress={() => router.push(recentOperationPaymentHref(row) as never)}
                     style={styles.recentRow}
                   >
                     <View style={[styles.serviceIconSlot, { backgroundColor: row.logoBackground }]}>
@@ -383,6 +401,7 @@ export function LegacyHomeScreen({
                 </View>
               ))
             )}
+            </View>
           </View>
         </ScrollView>
 
@@ -591,16 +610,52 @@ const styles = StyleSheet.create({
     width: 16,
     borderRadius: 3,
   },
-  sectionHead: {
+  paymentsPlaque: {
     marginTop: 30,
-    marginBottom: 10,
-    paddingHorizontal: legacySpace.screenX,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    marginHorizontal: legacySpace.screenX,
+    backgroundColor: legacyColor.surface,
+    borderWidth: 1,
+    borderColor: legacyColor.border,
+    borderRadius: legacyRadius.field,
+    paddingHorizontal: 12,
+    paddingTop: 12,
+    paddingBottom: 8,
   },
-  section: { ...legacyType.homeSection, color: legacyColor.textPrimary },
-  link: { ...legacyType.caption, color: legacyColor.primary },
+  paymentsSegmentTrack: {
+    flexDirection: 'row',
+    backgroundColor: legacyColor.homeBackground,
+    borderRadius: 10,
+    padding: 3,
+    marginBottom: 10,
+  },
+  paymentsSegment: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  paymentsSegmentActive: {
+    backgroundColor: legacyColor.surface,
+    shadowColor: '#1226AA',
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+  },
+  paymentsSegmentLabel: {
+    fontSize: 13,
+    lineHeight: 16,
+    fontWeight: '600',
+    color: legacyColor.textSecondary,
+    fontFamily: legacyFontFamily,
+  },
+  paymentsSegmentLabelActive: {
+    color: legacyColor.primary,
+  },
+  paymentsList: {
+    paddingTop: 2,
+  },
   servicesCard: {
     marginHorizontal: legacySpace.screenX,
     backgroundColor: legacyColor.surface,
@@ -633,15 +688,6 @@ const styles = StyleSheet.create({
   },
   serviceName: { ...legacyType.field, color: legacyColor.textPrimary, flex: 1 },
   serviceBadge: { ...legacyType.caption, color: legacyColor.logoGreen },
-  historyCard: {
-    marginHorizontal: legacySpace.screenX,
-    backgroundColor: legacyColor.surface,
-    borderWidth: 1,
-    borderColor: legacyColor.border,
-    borderRadius: legacyRadius.field,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
   divider: {
     height: StyleSheet.hairlineWidth,
     backgroundColor: legacyColor.border,

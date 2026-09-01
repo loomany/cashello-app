@@ -33,6 +33,9 @@ describe('legacy Home reconstruction (RECON-002)', () => {
     expect(homeAccounts.map((row) => row.id)).toEqual(['kzt', 'rub', 'usd']);
     expect(homeCopy.history).toBe('История');
     expect(homeCopy.recentOperations).toBe('Последние операции');
+    expect(homeCopy.paymentsRecent).toBe('Последние');
+    expect(homeCopy.paymentsAll).toBe('Все');
+    expect(homeCopy.paymentsHistory).toBe('История');
     expect(homeCopy.services).toBe('Сервисы');
     expect(homeCopy.seeAll).toBe('См. все');
     expect(homeServicesPreview.map((row) => row.name)).toEqual(['Ubet', 'Beeline', 'Zaimer']);
