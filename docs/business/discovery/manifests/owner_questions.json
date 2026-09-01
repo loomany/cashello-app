@@ -333,7 +333,7 @@
     "status": "ANSWERED",
     "decision_type": "BUSINESS_DECISION",
     "answer_status": "OWNER_APPROVED",
-    "owner_answer": "On registration, backend auto-creates four accounts: KZT (primary), bonus, USD, and RUB.",
+    "owner_answer": "On registration, backend auto-creates four accounts: KZT, bonus, USD, and RUB.",
     "answered_at": "2026-09-01",
     "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
     "decision_owner": "OWNER"
@@ -1096,7 +1096,7 @@
     "status": "ANSWERED",
     "decision_type": "BUSINESS_DECISION",
     "answer_status": "OWNER_APPROVED",
-    "owner_answer": "Limits are operation-specific and backend-driven; may depend on method, user tier, KYC, and other backend rules.",
+    "owner_answer": "Limits are operation-specific and backend-driven.",
     "answered_at": "2026-09-01",
     "answer_evidence": "CURSOR_CASHELLO_FULL_HANDOFF_AUDIT_TZ.md Phase C; CASHELLO_HANDOFF_FINAL_RECONCILIATION",
     "decision_owner": "OWNER"

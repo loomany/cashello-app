@@ -247,6 +247,67 @@ for (const id of REQUIRED_ANSWERED) {
 }
 ok('owner decisions preserved (15 ANSWERED)');
 
+// --- Canonical owner answers must not be expanded in derived docs ---
+const CANONICAL_OWNER_ANSWERS = {
+  'Q-ACC-001': 'On registration, backend auto-creates four accounts: KZT, bonus, USD, and RUB.',
+  'Q-P2P-006': 'Limits are operation-specific and backend-driven.',
+};
+
+for (const [qid, canonical] of Object.entries(CANONICAL_OWNER_ANSWERS)) {
+  const row = questions.find((q) => q.question_id === qid);
+  if (!row) fail(`canonical owner question missing: ${qid}`);
+  else if (row.owner_answer !== canonical) {
+    fail(`${qid} owner_answer must be canonical (got: ${row.owner_answer})`);
+  }
+}
+
+const DERIVED_OWNER_DOCS = [
+  'docs/business/BUSINESS_RULES.md',
+  'docs/backend/API_CONTRACT_REQUIREMENTS.md',
+];
+
+const FORBIDDEN_OWNER_DERIVATIONS = [
+  { qid: 'Q-ACC-001', pattern: /KZT\s*\(\s*primary\s*\)/i, label: 'KZT (primary)' },
+  { qid: 'Q-ACC-001', pattern: /four accounts:[^.\n]*\(primary\)/i, label: 'account (primary) qualifier' },
+  {
+    qid: 'Q-P2P-006',
+    pattern: /limits are operation-specific and backend-driven;\s*may depend on/i,
+    label: 'expanded Q-P2P-006 limits clause',
+  },
+  {
+    qid: 'Q-P2P-006',
+    pattern: /backend-driven\s*\(\s*method\s*\/\s*user\s*\/\s*KYC\s*\)/i,
+    label: 'BR-LIM-001 method/user/KYC parenthetical',
+  },
+  {
+    qid: 'Q-P2P-006',
+    pattern: /per-operation limits from backend;\s*may depend on user,\s*KYC tier,\s*method,\s*amount,\s*velocity/i,
+    label: 'API limits as owner-approved dependency list',
+  },
+];
+
+for (const rel of DERIVED_OWNER_DOCS) {
+  const text = fs.readFileSync(path.join(ROOT, rel), 'utf8');
+  for (const rule of FORBIDDEN_OWNER_DERIVATIONS) {
+    if (rule.pattern.test(text)) {
+      fail(`${rel} expands canonical ${rule.qid} (${rule.label})`);
+    }
+  }
+}
+
+const businessRules = fs.readFileSync(path.join(ROOT, 'docs/business/BUSINESS_RULES.md'), 'utf8');
+if (!/BR-LIM-001 \| Limits operation-specific, backend-driven \| OWNER_APPROVED/.test(businessRules)) {
+  fail('BR-LIM-001 must be operation-specific backend-driven only');
+}
+if (/BR-ACC-008 \|.*OWNER_APPROVED/.test(businessRules)) {
+  fail('BR-ACC-008 must not be OWNER_APPROVED');
+}
+if (/BR-TECH-003 \|.*OWNER_APPROVED/.test(businessRules)) {
+  fail('BR-TECH-003 must not be OWNER_APPROVED');
+}
+
+ok('canonical owner answers not expanded in derived docs');
+
 // Handoff docs must not reference deleted screenshot evidence as requirement
 const handoffFiles = [
   'docs/backend/TALGAT_HANDOFF.md',

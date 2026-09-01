@@ -10,7 +10,7 @@ This is **not** an invented OpenAPI spec. It defines cross-cutting backend requi
 
 ## Money representation
 
-- All ledger amounts: **integer minor units** (e.g. tiyn for KZT where 1 KZT = 100 minor — confirm currency exponent per ISO).
+- **TECHNICAL_RECOMMENDATION:** All ledger amounts as **integer minor units** (e.g. tiyn for KZT where 1 KZT = 100 minor — confirm currency exponent per ISO).
 - Never use floating point in ledger or API payloads.
 - Client may display major units; server is authoritative.
 - Unify account IDs (replace `kzt-primary` vs `acc_kzt` split) in API layer.
@@ -36,8 +36,9 @@ This is **not** an invented OpenAPI spec. It defines cross-cutting backend requi
 
 ## Dynamic limits
 
-- Per-operation limits from backend; may depend on user, KYC tier, method, amount, velocity.
+- Per-operation limits from backend.
 - Return structured limit errors with machine-readable codes.
+- **TECHNICAL_RECOMMENDATION / TBD:** Limit evaluation may consider user profile, KYC tier, method, amount, or velocity — backend architecture choice, not owner-approved business rule.
 
 ## Catalog
 

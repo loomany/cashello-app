@@ -2,7 +2,7 @@
 
 **Audit date:** 2026-09-01  
 **Repository HEAD:** see [TALGAT_HANDOFF.md](../backend/TALGAT_HANDOFF.md)  
-**Evidence class key:** `OWNER_APPROVED` | `PARKED_ILYA` | `CURRENT_UI_ONLY` | `PROTOTYPE_MOCK` | `LATER` | `OUT_OF_MVP` | `FUTURE`
+**Evidence class key:** `OWNER_APPROVED` | `PARKED_ILYA` | `CURRENT_UI_ONLY` | `PROTOTYPE_MOCK` | `LATER` | `OUT_OF_MVP` | `FUTURE` | `TECHNICAL_RECOMMENDATION`
 
 Stable rule IDs below. Mock numeric values in source are **never** production rules unless marked `OWNER_APPROVED`.
 
@@ -29,7 +29,7 @@ Stable rule IDs below. Mock numeric values in source are **never** production ru
 | BR-ACC-005 | Negative balance / overdraft policy | PARKED_ILYA | Q-ACC-004 |
 | BR-ACC-006 | Statement and requisites format (Выписка/реквизиты) | PARKED_ILYA | Q-ACC-006 |
 | BR-ACC-007 | Legacy `kzt-primary` / foundation `acc_kzt` IDs = migration boundary only | CURRENT_UI_ONLY | — |
-| BR-ACC-008 | Canonical production money = integer minor units server-side | OWNER_APPROVED | — |
+| BR-ACC-008 | Canonical production money = integer minor units server-side | TECHNICAL_RECOMMENDATION | — |
 
 ## Fees
 
@@ -45,7 +45,7 @@ Stable rule IDs below. Mock numeric values in source are **never** production ru
 
 | Rule ID | Rule | Status | Owner Q |
 | --- | --- | --- | --- |
-| BR-LIM-001 | Limits operation-specific, backend-driven (method/user/KYC) | OWNER_APPROVED | Q-P2P-006 |
+| BR-LIM-001 | Limits operation-specific, backend-driven | OWNER_APPROVED | Q-P2P-006 |
 | BR-LIM-002 | `MOCK_MIN_KZT=1000`, `MOCK_MAX_KZT=1970` cash withdraw | PROTOTYPE_MOCK | — |
 | BR-LIM-003 | Card spending limit presets 10k–500k KZT | PROTOTYPE_MOCK | Q-CARD-001 |
 | BR-LIM-004 | KYC tier limits (`12 975 ₸` static copy) | PROTOTYPE_MOCK | Q-KYC-001 |
@@ -132,7 +132,7 @@ Stable rule IDs below. Mock numeric values in source are **never** production ru
 | --- | --- | --- |
 | BR-TECH-001 | Legacy major-unit Zustand store ≠ production ledger | CURRENT_UI_ONLY |
 | BR-TECH-002 | Foundation minor-unit store ≠ automatic production schema | CURRENT_UI_ONLY |
-| BR-TECH-003 | Production contract = canonical minor-unit balances from backend | OWNER_APPROVED |
+| BR-TECH-003 | Production contract = canonical minor-unit balances from backend | TECHNICAL_RECOMMENDATION |
 | BR-TECH-004 | Legacy `LegacyHistoryOp` enums ≠ production ledger enums | PROTOTYPE_MOCK |
 | BR-TECH-005 | Client cancel changes status only; no balance restore in prototype | PROTOTYPE_MOCK |
 
